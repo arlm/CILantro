@@ -124,7 +124,12 @@ namespace CILantro.Engine.Parser
 
             var quotedString = new StringLiteral(GrammarNames.QuotedString, "\"");
 
-            var integer = new NumberLiteral(GrammarNames.Integer, NumberOptions.IntOnly | NumberOptions.AllowSign);
+            var decInteger = new NumberLiteral(GrammarNames.DecInteger, NumberOptions.IntOnly | NumberOptions.AllowSign);
+            var hexInteger = new RegexBasedTerminal(GrammarNames.HexInteger, "0x[A-F0-9]{1,}");
+            var integer = new NonTerminal(GrammarNames.Integer);
+            integer.Rule =
+                decInteger |
+                hexInteger;
 
             var hexByte = new RegexBasedTerminal(GrammarNames.HexByte, "[A-F0-9]{2}");
 

@@ -552,6 +552,9 @@
   <data name="CustomType" xml:space="preserve">
     <value>CustomType</value>
   </data>
+  <data name="DecInteger" xml:space="preserve">
+    <value>DecInteger</value>
+  </data>
   <data name="EqualsSign" xml:space="preserve">
     <value>EqualsSign</value>
   </data>
@@ -563,6 +566,9 @@
   </data>
   <data name="HexBytes" xml:space="preserve">
     <value>HexBytes</value>
+  </data>
+  <data name="HexInteger" xml:space="preserve">
+    <value>HexInteger</value>
   </data>
   <data name="InstanceToken" xml:space="preserve">
     <value>InstanceToken</value>

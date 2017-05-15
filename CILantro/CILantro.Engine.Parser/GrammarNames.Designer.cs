@@ -628,6 +628,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DecInteger.
+        /// </summary>
+        internal static string DecInteger {
+            get {
+                return ResourceManager.GetString("DecInteger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Declaration.
         /// </summary>
         internal static string Declaration {
@@ -768,6 +777,15 @@ namespace CILantro.Engine.Parser {
         internal static string HexBytes {
             get {
                 return ResourceManager.GetString("HexBytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HexInteger.
+        /// </summary>
+        internal static string HexInteger {
+            get {
+                return ResourceManager.GetString("HexInteger", resourceCulture);
             }
         }
         

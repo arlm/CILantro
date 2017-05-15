@@ -12,7 +12,7 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             var intArgument = 0;
 
             var integerNode = node.GetChildIntegerNode();
-            intArgument = int.Parse(integerNode.Token.ValueString);
+            intArgument = integerNode.GetIntegerNodeValue();
 
             var instructionIntNode = node.GetChildInstructionIntNode();
 

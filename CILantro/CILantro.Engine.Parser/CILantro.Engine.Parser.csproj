@@ -57,6 +57,7 @@
     <Compile Include="CILGrammar.cs" />
     <Compile Include="CILParser.cs" />
     <Compile Include="Extensions\ParseTreeNodeExtensions.cs" />
+    <Compile Include="Extensions\ParseTreeNodeIntegerExtensions.cs" />
     <Compile Include="GrammarNames.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -525,6 +525,9 @@
   <data name="AlignmentToken" xml:space="preserve">
     <value>AlignmentToken</value>
   </data>
+  <data name="AnsiToken" xml:space="preserve">
+    <value>AnsiToken</value>
+  </data>
   <data name="AssemblyDeclaration" xml:space="preserve">
     <value>AssemblyDeclaration</value>
   </data>
@@ -533,6 +536,12 @@
   </data>
   <data name="AssemblyRefDeclaration" xml:space="preserve">
     <value>AssemblyRefDeclaration</value>
+  </data>
+  <data name="AutoToken" xml:space="preserve">
+    <value>AutoToken</value>
+  </data>
+  <data name="BeforefieldinitToken" xml:space="preserve">
+    <value>BeforefieldinitToken</value>
   </data>
   <data name="BoolToken" xml:space="preserve">
     <value>BoolToken</value>
@@ -561,11 +570,17 @@
   <data name="DotCorflagsToken" xml:space="preserve">
     <value>DotCorflagsToken</value>
   </data>
+  <data name="DotCtorToken" xml:space="preserve">
+    <value>DotCtorToken</value>
+  </data>
   <data name="DotFileToken" xml:space="preserve">
     <value>DotFileToken</value>
   </data>
   <data name="DotImagebaseToken" xml:space="preserve">
     <value>DotImagebaseToken</value>
+  </data>
+  <data name="DotMaxstackToken" xml:space="preserve">
+    <value>DotMaxstackToken</value>
   </data>
   <data name="DotModuleToken" xml:space="preserve">
     <value>DotModuleToken</value>
@@ -579,6 +594,9 @@
   <data name="EqualsSign" xml:space="preserve">
     <value>EqualsSign</value>
   </data>
+  <data name="ExtendsToken" xml:space="preserve">
+    <value>ExtendsToken</value>
+  </data>
   <data name="HashToken" xml:space="preserve">
     <value>HashToken</value>
   </data>
@@ -591,8 +609,14 @@
   <data name="HexInteger" xml:space="preserve">
     <value>HexInteger</value>
   </data>
+  <data name="HidebysigToken" xml:space="preserve">
+    <value>HidebysigToken</value>
+  </data>
   <data name="InstanceToken" xml:space="preserve">
     <value>InstanceToken</value>
+  </data>
+  <data name="Ldarg0Token" xml:space="preserve">
+    <value>Ldarg0Token</value>
   </data>
   <data name="LongInteger" xml:space="preserve">
     <value>LongInteger</value>
@@ -600,11 +624,23 @@
   <data name="ModuleHead" xml:space="preserve">
     <value>ModuleHead</value>
   </data>
+  <data name="PrivateToken" xml:space="preserve">
+    <value>PrivateToken</value>
+  </data>
   <data name="PublicKeyTokenHead" xml:space="preserve">
     <value>PublicKeyTokenHead</value>
   </data>
   <data name="PublickeytokenToken" xml:space="preserve">
     <value>PublickeytokenToken</value>
+  </data>
+  <data name="PublicToken" xml:space="preserve">
+    <value>PublicToken</value>
+  </data>
+  <data name="RtspecialnameToken" xml:space="preserve">
+    <value>RtspecialnameToken</value>
+  </data>
+  <data name="SpecialnameToken" xml:space="preserve">
+    <value>SpecialnameToken</value>
   </data>
   <data name="VerToken" xml:space="preserve">
     <value>VerToken</value>

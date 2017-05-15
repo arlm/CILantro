@@ -30,8 +30,11 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
 
             var methodNameNode = node.GetChildMethodNameNode();
             var methodNameNameNode = methodNameNode.GetChildNameNode();
-            var methodNameIdNode = methodNameNameNode.GetChildIdNode();
-            methodName = methodNameIdNode.ChildNodes.First().Token.ValueString;
+            if(methodNameNameNode != null)
+            {
+                var methodNameIdNode = methodNameNameNode.GetChildIdNode();
+                methodName = methodNameIdNode.ChildNodes.First().Token.ValueString;
+            }
 
             var argumentsTypesList = new List<Type>();
             var signatureArguments0Node = node.GetChildSignatureArguments0Node();

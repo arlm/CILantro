@@ -522,6 +522,9 @@
   <data name="AlgorithmToken" xml:space="preserve">
     <value>AlgorithmToken</value>
   </data>
+  <data name="AlignmentToken" xml:space="preserve">
+    <value>AlignmentToken</value>
+  </data>
   <data name="AssemblyDeclaration" xml:space="preserve">
     <value>AssemblyDeclaration</value>
   </data>
@@ -555,6 +558,24 @@
   <data name="DecInteger" xml:space="preserve">
     <value>DecInteger</value>
   </data>
+  <data name="DotCorflagsToken" xml:space="preserve">
+    <value>DotCorflagsToken</value>
+  </data>
+  <data name="DotFileToken" xml:space="preserve">
+    <value>DotFileToken</value>
+  </data>
+  <data name="DotImagebaseToken" xml:space="preserve">
+    <value>DotImagebaseToken</value>
+  </data>
+  <data name="DotModuleToken" xml:space="preserve">
+    <value>DotModuleToken</value>
+  </data>
+  <data name="DotStackreserveToken" xml:space="preserve">
+    <value>DotStackreserveToken</value>
+  </data>
+  <data name="DotSubsystemToken" xml:space="preserve">
+    <value>DotSubsystemToken</value>
+  </data>
   <data name="EqualsSign" xml:space="preserve">
     <value>EqualsSign</value>
   </data>
@@ -572,6 +593,12 @@
   </data>
   <data name="InstanceToken" xml:space="preserve">
     <value>InstanceToken</value>
+  </data>
+  <data name="LongInteger" xml:space="preserve">
+    <value>LongInteger</value>
+  </data>
+  <data name="ModuleHead" xml:space="preserve">
+    <value>ModuleHead</value>
   </data>
   <data name="PublicKeyTokenHead" xml:space="preserve">
     <value>PublicKeyTokenHead</value>

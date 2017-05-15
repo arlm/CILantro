@@ -7,6 +7,7 @@ namespace CILantro.Engine.Parser
         public CILGrammar()
         {
             // comments
+
             var lineComment = new CommentTerminal(GrammarNames.LineComment, "//", "\n");
 
             NonGrammarTerminals.Add(lineComment);
@@ -31,6 +32,7 @@ namespace CILantro.Engine.Parser
             var addovfToken = ToTerm("add.ovf", GrammarNames.AddovfToken);
             var addovfunToken = ToTerm("add.ovf.un", GrammarNames.AddovfunToken);
             var algorithmToken = ToTerm("algorithm", GrammarNames.AlgorithmToken);
+            var alignmentToken = ToTerm("alignment", GrammarNames.AlignmentToken);
             var andToken = ToTerm("and", GrammarNames.AndToken);
             var beqToken = ToTerm("beq", GrammarNames.BeqToken);
             var beqsToken = ToTerm("beq.s", GrammarNames.BeqsToken);
@@ -72,8 +74,14 @@ namespace CILantro.Engine.Parser
             var divunToken = ToTerm("div.un", GrammarNames.DivunToken);
             var dotAssemblyToken = ToTerm(".assembly", GrammarNames.DotAssemblyToken);
             var dotClassToken = ToTerm(".class", GrammarNames.DotClassToken);
+            var dotCorflagsToken = ToTerm(".corflags", GrammarNames.DotCorflagsToken);
             var dotEntrypointToken = ToTerm(".entrypoint", GrammarNames.DotEntrypointToken);
+            var dotFileToken = ToTerm(".file", GrammarNames.DotFileToken);
+            var dotImagebaseToken = ToTerm(".imagebase", GrammarNames.DotImagebaseToken);
             var dotMethodToken = ToTerm(".method", GrammarNames.DotMethodToken);
+            var dotModuleToken = ToTerm(".module", GrammarNames.DotModuleToken);
+            var dotStackreserveToken = ToTerm(".stackreserve", GrammarNames.DotStackreserveToken);
+            var dotSubsystemToken = ToTerm(".subsystem", GrammarNames.DotSubsystemToken);
             var dupToken = ToTerm("dup", GrammarNames.DupToken);
             var externToken = ToTerm("extern", GrammarNames.ExternToken);
             var hashToken = ToTerm(".hash", GrammarNames.HashToken);
@@ -126,10 +134,17 @@ namespace CILantro.Engine.Parser
 
             var decInteger = new NumberLiteral(GrammarNames.DecInteger, NumberOptions.IntOnly | NumberOptions.AllowSign);
             var hexInteger = new RegexBasedTerminal(GrammarNames.HexInteger, "0x[A-F0-9]{1,}");
+
             var integer = new NonTerminal(GrammarNames.Integer);
             integer.Rule =
                 decInteger |
                 hexInteger;
+
+            var longInteger = new NonTerminal(GrammarNames.LongInteger);
+            longInteger.Rule =
+                decInteger |
+                hexInteger;
+
 
             var hexByte = new RegexBasedTerminal(GrammarNames.HexByte, "[A-F0-9]{2}");
 
@@ -391,11 +406,20 @@ namespace CILantro.Engine.Parser
                 Empty |
                 assemblyRefDeclarations + assemblyRefDeclaration;
 
+            var moduleHead = new NonTerminal(GrammarNames.ModuleHead);
+            moduleHead.Rule = dotModuleToken + name;
+
             var declaration = new NonTerminal(GrammarNames.Declaration);
             declaration.Rule =
                 classHead + leftBrace + classDeclarations + rightBrace |
                 assemblyHead + leftBrace + assemblyDeclarations + rightBrace |
-                assemblyRefHead + leftBrace + assemblyRefDeclarations + rightBrace;
+                assemblyRefHead + leftBrace + assemblyRefDeclarations + rightBrace |
+                moduleHead |
+                dotSubsystemToken + integer |
+                dotCorflagsToken + integer |
+                dotFileToken + alignmentToken + integer |
+                dotImagebaseToken + longInteger |
+                dotStackreserveToken + integer;
 
             var declarations = new NonTerminal(GrammarNames.Declarations);
             declarations.Rule =

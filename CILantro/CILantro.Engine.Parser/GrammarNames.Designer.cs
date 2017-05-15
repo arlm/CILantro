@@ -97,6 +97,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AlignmentToken.
+        /// </summary>
+        internal static string AlignmentToken {
+            get {
+                return ResourceManager.GetString("AlignmentToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AndToken.
         /// </summary>
         internal static string AndToken {
@@ -700,6 +709,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DotCorflagsToken.
+        /// </summary>
+        internal static string DotCorflagsToken {
+            get {
+                return ResourceManager.GetString("DotCorflagsToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DotEntrypointToken.
         /// </summary>
         internal static string DotEntrypointToken {
@@ -709,11 +727,56 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DotFileToken.
+        /// </summary>
+        internal static string DotFileToken {
+            get {
+                return ResourceManager.GetString("DotFileToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DotImagebaseToken.
+        /// </summary>
+        internal static string DotImagebaseToken {
+            get {
+                return ResourceManager.GetString("DotImagebaseToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DotMethodToken.
         /// </summary>
         internal static string DotMethodToken {
             get {
                 return ResourceManager.GetString("DotMethodToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DotModuleToken.
+        /// </summary>
+        internal static string DotModuleToken {
+            get {
+                return ResourceManager.GetString("DotModuleToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DotStackreserveToken.
+        /// </summary>
+        internal static string DotStackreserveToken {
+            get {
+                return ResourceManager.GetString("DotStackreserveToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DotSubsystemToken.
+        /// </summary>
+        internal static string DotSubsystemToken {
+            get {
+                return ResourceManager.GetString("DotSubsystemToken", resourceCulture);
             }
         }
         
@@ -1087,6 +1150,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LongInteger.
+        /// </summary>
+        internal static string LongInteger {
+            get {
+                return ResourceManager.GetString("LongInteger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ManagedToken.
         /// </summary>
         internal static string ManagedToken {
@@ -1137,6 +1209,15 @@ namespace CILantro.Engine.Parser {
         internal static string MethodName {
             get {
                 return ResourceManager.GetString("MethodName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ModuleHead.
+        /// </summary>
+        internal static string ModuleHead {
+            get {
+                return ResourceManager.GetString("ModuleHead", resourceCulture);
             }
         }
         

@@ -519,4 +519,31 @@
   <data name="LineComment" xml:space="preserve">
     <value>LineComment</value>
   </data>
+  <data name="AssemblyOrRefDeclaration" xml:space="preserve">
+    <value>AssemblyOrRefDeclaration</value>
+  </data>
+  <data name="AssemblyRefDeclaration" xml:space="preserve">
+    <value>AssemblyRefDeclaration</value>
+  </data>
+  <data name="Bytes" xml:space="preserve">
+    <value>Bytes</value>
+  </data>
+  <data name="EqualsSign" xml:space="preserve">
+    <value>EqualsSign</value>
+  </data>
+  <data name="HexByte" xml:space="preserve">
+    <value>HexByte</value>
+  </data>
+  <data name="HexBytes" xml:space="preserve">
+    <value>HexBytes</value>
+  </data>
+  <data name="PublicKeyTokenHead" xml:space="preserve">
+    <value>PublicKeyTokenHead</value>
+  </data>
+  <data name="PublickeytokenToken" xml:space="preserve">
+    <value>PublickeytokenToken</value>
+  </data>
+  <data name="VerToken" xml:space="preserve">
+    <value>VerToken</value>
+  </data>
 </root>

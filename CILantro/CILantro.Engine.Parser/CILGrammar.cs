@@ -17,6 +17,7 @@ namespace CILantro.Engine.Parser
             var dot = ToTerm(".", GrammarNames.Dot);
             var comma = ToTerm(",", GrammarNames.Comma);
             var plus = ToTerm("+", GrammarNames.Plus);
+            var equalsSign = ToTerm("=", GrammarNames.EqualsSign);
             var leftBrace = ToTerm("{", GrammarNames.LeftBrace);
             var rightBrace = ToTerm("}", GrammarNames.RightBrace);
             var leftParenthesis = ToTerm("(", GrammarNames.LeftParenthesis);
@@ -97,6 +98,7 @@ namespace CILantro.Engine.Parser
             var notToken = ToTerm("not", GrammarNames.NotToken);
             var orToken = ToTerm("or", GrammarNames.OrToken);
             var popToken = ToTerm("pop", GrammarNames.PopToken);
+            var publickeytokenToken = ToTerm(".publickeytoken", GrammarNames.PublickeytokenToken);
             var retToken = ToTerm("ret", GrammarNames.RetToken);
             var shlToken = ToTerm("shl", GrammarNames.ShlToken);
             var shrToken = ToTerm("shr", GrammarNames.ShrToken);
@@ -106,6 +108,7 @@ namespace CILantro.Engine.Parser
             var subovfToken = ToTerm("sub.ovf", GrammarNames.SubovfToken);
             var subovfunToken = ToTerm("sub.ovf.un", GrammarNames.SubovfunToken);
             var valuetypeToken = ToTerm("valuetype", GrammarNames.ValuetypeToken);
+            var verToken = ToTerm(".ver", GrammarNames.VerToken);
             var voidToken = ToTerm("void", GrammarNames.VoidToken);
             var xorToken = ToTerm("xor", GrammarNames.XorToken);
 
@@ -116,6 +119,8 @@ namespace CILantro.Engine.Parser
             var quotedString = new StringLiteral(GrammarNames.QuotedString, "\"");
 
             var integer = new NumberLiteral(GrammarNames.Integer, NumberOptions.IntOnly | NumberOptions.AllowSign);
+
+            var hexByte = new RegexBasedTerminal(GrammarNames.HexByte, "[A-F0-9]{2}");
 
             // productions
 
@@ -140,6 +145,16 @@ namespace CILantro.Engine.Parser
 
             var className = new NonTerminal(GrammarNames.ClassName);
             className.Rule = leftSquareBracket + name + rightSquareBracket + slashedName;
+
+            var hexBytes = new NonTerminal(GrammarNames.HexBytes);
+            hexBytes.Rule =
+                hexByte |
+                hexBytes + hexByte;
+
+            var bytes = new NonTerminal(GrammarNames.Bytes);
+            bytes.Rule =
+                Empty |
+                hexBytes;
 
             var type = new NonTerminal(GrammarNames.Type);
             type.Rule =
@@ -297,6 +312,9 @@ namespace CILantro.Engine.Parser
             var implementsClause = new NonTerminal(GrammarNames.ImplementsClause);
             implementsClause.Rule = Empty;
 
+            var publicKeyTokenHead = new NonTerminal(GrammarNames.PublicKeyTokenHead);
+            publicKeyTokenHead.Rule = publickeytokenToken + equalsSign + leftParenthesis;
+
             var classAttributes = new NonTerminal(GrammarNames.ClassAttributes);
             classAttributes.Rule = Empty;
 
@@ -314,6 +332,9 @@ namespace CILantro.Engine.Parser
             var assemblyAttributes = new NonTerminal(GrammarNames.AssemblyAttributes);
             assemblyAttributes.Rule = Empty;
 
+            var assemblyOrRefDeclaration = new NonTerminal(GrammarNames.AssemblyOrRefDeclaration);
+            assemblyOrRefDeclaration.Rule = verToken + integer + colon + integer + colon + integer + colon + integer;
+
             var assemblyHead = new NonTerminal(GrammarNames.AssemblyHead);
             assemblyHead.Rule = dotAssemblyToken + assemblyAttributes + name;
 
@@ -323,8 +344,15 @@ namespace CILantro.Engine.Parser
             var assemblyRefHead = new NonTerminal(GrammarNames.AssemblyRefHead);
             assemblyRefHead.Rule = dotAssemblyToken + externToken + name;
 
+            var assemblyRefDeclaration = new NonTerminal(GrammarNames.AssemblyRefDeclaration);
+            assemblyRefDeclaration.Rule =
+                assemblyOrRefDeclaration |
+                publicKeyTokenHead + bytes + rightParenthesis;
+
             var assemblyRefDeclarations = new NonTerminal(GrammarNames.AssemblyRefDeclarations);
-            assemblyRefDeclarations.Rule = Empty;
+            assemblyRefDeclarations.Rule =
+                Empty |
+                assemblyRefDeclarations + assemblyRefDeclaration;
 
             var declaration = new NonTerminal(GrammarNames.Declaration);
             declaration.Rule =

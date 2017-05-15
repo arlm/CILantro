@@ -88,6 +88,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AlgorithmToken.
+        /// </summary>
+        internal static string AlgorithmToken {
+            get {
+                return ResourceManager.GetString("AlgorithmToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AndToken.
         /// </summary>
         internal static string AndToken {
@@ -102,6 +111,15 @@ namespace CILantro.Engine.Parser {
         internal static string AssemblyAttributes {
             get {
                 return ResourceManager.GetString("AssemblyAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AssemblyDeclaration.
+        /// </summary>
+        internal static string AssemblyDeclaration {
+            get {
+                return ResourceManager.GetString("AssemblyDeclaration", resourceCulture);
             }
         }
         
@@ -340,6 +358,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BoolToken.
+        /// </summary>
+        internal static string BoolToken {
+            get {
+                return ResourceManager.GetString("BoolToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BrfalsesToken.
         /// </summary>
         internal static string BrfalsesToken {
@@ -556,6 +583,51 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CtorToken.
+        /// </summary>
+        internal static string CtorToken {
+            get {
+                return ResourceManager.GetString("CtorToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CustomAttributeDeclaration.
+        /// </summary>
+        internal static string CustomAttributeDeclaration {
+            get {
+                return ResourceManager.GetString("CustomAttributeDeclaration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CustomHead.
+        /// </summary>
+        internal static string CustomHead {
+            get {
+                return ResourceManager.GetString("CustomHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CustomToken.
+        /// </summary>
+        internal static string CustomToken {
+            get {
+                return ResourceManager.GetString("CustomToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CustomType.
+        /// </summary>
+        internal static string CustomType {
+            get {
+                return ResourceManager.GetString("CustomType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Declaration.
         /// </summary>
         internal static string Declaration {
@@ -673,6 +745,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HashToken.
+        /// </summary>
+        internal static string HashToken {
+            get {
+                return ResourceManager.GetString("HashToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to HexByte.
         /// </summary>
         internal static string HexByte {
@@ -723,6 +804,15 @@ namespace CILantro.Engine.Parser {
         internal static string ImplementsClause {
             get {
                 return ResourceManager.GetString("ImplementsClause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InstanceToken.
+        /// </summary>
+        internal static string InstanceToken {
+            get {
+                return ResourceManager.GetString("InstanceToken", resourceCulture);
             }
         }
         

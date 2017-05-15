@@ -30,6 +30,7 @@ namespace CILantro.Engine.Parser
             var addToken = ToTerm("add", GrammarNames.AddToken);
             var addovfToken = ToTerm("add.ovf", GrammarNames.AddovfToken);
             var addovfunToken = ToTerm("add.ovf.un", GrammarNames.AddovfunToken);
+            var algorithmToken = ToTerm("algorithm", GrammarNames.AlgorithmToken);
             var andToken = ToTerm("and", GrammarNames.AndToken);
             var beqToken = ToTerm("beq", GrammarNames.BeqToken);
             var beqsToken = ToTerm("beq.s", GrammarNames.BeqsToken);
@@ -51,6 +52,7 @@ namespace CILantro.Engine.Parser
             var bltunsToken = ToTerm("blt.un.s", GrammarNames.BltunsToken);
             var bneunToken = ToTerm("bne.un", GrammarNames.BneunToken);
             var bneunsToken = ToTerm("bne.un.s", GrammarNames.BneunsToken);
+            var boolToken = ToTerm("bool", GrammarNames.BoolToken);
             var brToken = ToTerm("br", GrammarNames.BrToken);
             var brsToken = ToTerm("br.s", GrammarNames.BrsToken);
             var brfalseToken = ToTerm("brfalse", GrammarNames.BrfalseToken);
@@ -64,6 +66,8 @@ namespace CILantro.Engine.Parser
             var cilToken = ToTerm("cil", GrammarNames.CilToken);
             var cltToken = ToTerm("clt", GrammarNames.CltToken);
             var cltunToken = ToTerm("clt.un", GrammarNames.CltunToken);
+            var ctorToken = ToTerm(".ctor", GrammarNames.CtorToken);
+            var customToken = ToTerm(".custom", GrammarNames.CustomToken);
             var divToken = ToTerm("div", GrammarNames.DivToken);
             var divunToken = ToTerm("div.un", GrammarNames.DivunToken);
             var dotAssemblyToken = ToTerm(".assembly", GrammarNames.DotAssemblyToken);
@@ -72,6 +76,8 @@ namespace CILantro.Engine.Parser
             var dotMethodToken = ToTerm(".method", GrammarNames.DotMethodToken);
             var dupToken = ToTerm("dup", GrammarNames.DupToken);
             var externToken = ToTerm("extern", GrammarNames.ExternToken);
+            var hashToken = ToTerm(".hash", GrammarNames.HashToken);
+            var instanceToken = ToTerm("instance", GrammarNames.InstanceToken);
             var int32Token = ToTerm("int32", GrammarNames.Int32Token);
             var ldci4Token = ToTerm("ldc.i4", GrammarNames.Ldci4Token);
             var ldci40Token = ToTerm("ldc.i4.0", GrammarNames.Ldci40Token);
@@ -161,6 +167,7 @@ namespace CILantro.Engine.Parser
                 stringToken |
                 valuetypeToken + className |
                 voidToken |
+                boolToken |
                 int32Token;
 
             var typeSpecification = new NonTerminal(GrammarNames.TypeSpecification);
@@ -172,7 +179,9 @@ namespace CILantro.Engine.Parser
             callKind.Rule = Empty;
 
             var callConventions = new NonTerminal(GrammarNames.CallConventions);
-            callConventions.Rule = callKind;
+            callConventions.Rule =
+                instanceToken + callConventions |
+                callKind;
 
             var paramAttributes = new NonTerminal(GrammarNames.ParamAttributes);
             paramAttributes.Rule = Empty;
@@ -189,6 +198,20 @@ namespace CILantro.Engine.Parser
             signatureArguments0.Rule =
                 Empty |
                 signatureArguments1;
+
+            var customType = new NonTerminal(GrammarNames.CustomType);
+            customType.Rule =
+                callConventions + type + typeSpecification + colon + colon + ctorToken + leftParenthesis + signatureArguments0 + rightParenthesis |
+                callConventions + type + ctorToken + leftParenthesis + signatureArguments0 + rightParenthesis;
+
+            var customHead = new NonTerminal(GrammarNames.CustomHead);
+            customHead.Rule = customToken + customType + equalsSign + leftParenthesis;
+
+            var customAttributeDeclaration = new NonTerminal(GrammarNames.CustomAttributeDeclaration);
+            customAttributeDeclaration.Rule =
+                customToken + customType |
+                customToken + customType + equalsSign + complexQuotedString |
+                customHead + bytes + rightParenthesis;
 
             var instructionNone = new NonTerminal(GrammarNames.InstructionNone);
             instructionNone.Rule =
@@ -333,13 +356,22 @@ namespace CILantro.Engine.Parser
             assemblyAttributes.Rule = Empty;
 
             var assemblyOrRefDeclaration = new NonTerminal(GrammarNames.AssemblyOrRefDeclaration);
-            assemblyOrRefDeclaration.Rule = verToken + integer + colon + integer + colon + integer + colon + integer;
+            assemblyOrRefDeclaration.Rule =
+                verToken + integer + colon + integer + colon + integer + colon + integer |
+                customAttributeDeclaration;
 
             var assemblyHead = new NonTerminal(GrammarNames.AssemblyHead);
             assemblyHead.Rule = dotAssemblyToken + assemblyAttributes + name;
 
+            var assemblyDeclaration = new NonTerminal(GrammarNames.AssemblyDeclaration);
+            assemblyDeclaration.Rule =
+                hashToken + algorithmToken + integer |
+                assemblyOrRefDeclaration;
+
             var assemblyDeclarations = new NonTerminal(GrammarNames.AssemblyDeclarations);
-            assemblyDeclarations.Rule = Empty;
+            assemblyDeclarations.Rule =
+                Empty |
+                assemblyDeclarations + assemblyDeclaration;
 
             var assemblyRefHead = new NonTerminal(GrammarNames.AssemblyRefHead);
             assemblyRefHead.Rule = dotAssemblyToken + externToken + name;

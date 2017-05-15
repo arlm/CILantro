@@ -519,23 +519,53 @@
   <data name="LineComment" xml:space="preserve">
     <value>LineComment</value>
   </data>
+  <data name="AlgorithmToken" xml:space="preserve">
+    <value>AlgorithmToken</value>
+  </data>
+  <data name="AssemblyDeclaration" xml:space="preserve">
+    <value>AssemblyDeclaration</value>
+  </data>
   <data name="AssemblyOrRefDeclaration" xml:space="preserve">
     <value>AssemblyOrRefDeclaration</value>
   </data>
   <data name="AssemblyRefDeclaration" xml:space="preserve">
     <value>AssemblyRefDeclaration</value>
   </data>
+  <data name="BoolToken" xml:space="preserve">
+    <value>BoolToken</value>
+  </data>
   <data name="Bytes" xml:space="preserve">
     <value>Bytes</value>
   </data>
+  <data name="CtorToken" xml:space="preserve">
+    <value>CtorToken</value>
+  </data>
+  <data name="CustomAttributeDeclaration" xml:space="preserve">
+    <value>CustomAttributeDeclaration</value>
+  </data>
+  <data name="CustomHead" xml:space="preserve">
+    <value>CustomHead</value>
+  </data>
+  <data name="CustomToken" xml:space="preserve">
+    <value>CustomToken</value>
+  </data>
+  <data name="CustomType" xml:space="preserve">
+    <value>CustomType</value>
+  </data>
   <data name="EqualsSign" xml:space="preserve">
     <value>EqualsSign</value>
+  </data>
+  <data name="HashToken" xml:space="preserve">
+    <value>HashToken</value>
   </data>
   <data name="HexByte" xml:space="preserve">
     <value>HexByte</value>
   </data>
   <data name="HexBytes" xml:space="preserve">
     <value>HexBytes</value>
+  </data>
+  <data name="InstanceToken" xml:space="preserve">
+    <value>InstanceToken</value>
   </data>
   <data name="PublicKeyTokenHead" xml:space="preserve">
     <value>PublicKeyTokenHead</value>

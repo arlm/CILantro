@@ -646,15 +646,6 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CustomToken.
-        /// </summary>
-        internal static string CustomToken {
-            get {
-                return ResourceManager.GetString("CustomToken", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to CustomType.
         /// </summary>
         internal static string CustomType {
@@ -754,6 +745,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DotCustomToken.
+        /// </summary>
+        internal static string DotCustomToken {
+            get {
+                return ResourceManager.GetString("DotCustomToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DotEntrypointToken.
         /// </summary>
         internal static string DotEntrypointToken {
@@ -768,6 +768,15 @@ namespace CILantro.Engine.Parser {
         internal static string DotFileToken {
             get {
                 return ResourceManager.GetString("DotFileToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DotHashToken.
+        /// </summary>
+        internal static string DotHashToken {
+            get {
+                return ResourceManager.GetString("DotHashToken", resourceCulture);
             }
         }
         
@@ -808,6 +817,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DotPublickeytokenToken.
+        /// </summary>
+        internal static string DotPublickeytokenToken {
+            get {
+                return ResourceManager.GetString("DotPublickeytokenToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DotStackreserveToken.
         /// </summary>
         internal static string DotStackreserveToken {
@@ -822,6 +840,15 @@ namespace CILantro.Engine.Parser {
         internal static string DotSubsystemToken {
             get {
                 return ResourceManager.GetString("DotSubsystemToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DotVerToken.
+        /// </summary>
+        internal static string DotVerToken {
+            get {
+                return ResourceManager.GetString("DotVerToken", resourceCulture);
             }
         }
         
@@ -867,15 +894,6 @@ namespace CILantro.Engine.Parser {
         internal static string ExternToken {
             get {
                 return ResourceManager.GetString("ExternToken", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HashToken.
-        /// </summary>
-        internal static string HashToken {
-            get {
-                return ResourceManager.GetString("HashToken", resourceCulture);
             }
         }
         
@@ -1411,15 +1429,6 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PublickeytokenToken.
-        /// </summary>
-        internal static string PublickeytokenToken {
-            get {
-                return ResourceManager.GetString("PublickeytokenToken", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to PublicToken.
         /// </summary>
         internal static string PublicToken {
@@ -1614,15 +1623,6 @@ namespace CILantro.Engine.Parser {
         internal static string ValuetypeToken {
             get {
                 return ResourceManager.GetString("ValuetypeToken", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to VerToken.
-        /// </summary>
-        internal static string VerToken {
-            get {
-                return ResourceManager.GetString("VerToken", resourceCulture);
             }
         }
         

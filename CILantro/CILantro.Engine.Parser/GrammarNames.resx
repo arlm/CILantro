@@ -558,8 +558,8 @@
   <data name="CustomHead" xml:space="preserve">
     <value>CustomHead</value>
   </data>
-  <data name="CustomToken" xml:space="preserve">
-    <value>CustomToken</value>
+  <data name="DotCustomToken" xml:space="preserve">
+    <value>DotCustomToken</value>
   </data>
   <data name="CustomType" xml:space="preserve">
     <value>CustomType</value>
@@ -597,8 +597,8 @@
   <data name="ExtendsToken" xml:space="preserve">
     <value>ExtendsToken</value>
   </data>
-  <data name="HashToken" xml:space="preserve">
-    <value>HashToken</value>
+  <data name="DotHashToken" xml:space="preserve">
+    <value>DotHashToken</value>
   </data>
   <data name="HexByte" xml:space="preserve">
     <value>HexByte</value>
@@ -630,8 +630,8 @@
   <data name="PublicKeyTokenHead" xml:space="preserve">
     <value>PublicKeyTokenHead</value>
   </data>
-  <data name="PublickeytokenToken" xml:space="preserve">
-    <value>PublickeytokenToken</value>
+  <data name="DotPublickeytokenToken" xml:space="preserve">
+    <value>DotPublickeytokenToken</value>
   </data>
   <data name="PublicToken" xml:space="preserve">
     <value>PublicToken</value>
@@ -642,7 +642,7 @@
   <data name="SpecialnameToken" xml:space="preserve">
     <value>SpecialnameToken</value>
   </data>
-  <data name="VerToken" xml:space="preserve">
-    <value>VerToken</value>
+  <data name="DotVerToken" xml:space="preserve">
+    <value>DotVerToken</value>
   </data>
 </root>

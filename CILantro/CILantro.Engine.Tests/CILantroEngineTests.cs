@@ -94,6 +94,7 @@ namespace CILantro.Engine.Tests
                         var outputData = outputDataReader.ReadToEnd();
 
                         Assert.Equal(expectedOutputData, outputData);
+                        Assert.Equal(-1, inputDataStream.Read());
                     }
                 }
             }

@@ -8,6 +8,8 @@ namespace CILantro.Engine.AST.ASTNodes
     {
         public List<CILInstruction> Instructions { get; set; }
 
+        public bool IsEntryPoint { get; set; }
+
         public CILInstruction GetNextInstruction(CILInstruction currentInstruction)
         {
             var currentIndex = Instructions.IndexOf(currentInstruction);

@@ -1,6 +1,7 @@
 ﻿using CILantro.Engine.AST.ASTNodes;
 using CILantro.Engine.Parser.Extensions;
 using Irony.Parsing;
+using System.Collections.Generic;
 
 namespace CILantro.Engine.Parser.CILASTConstruction
 {
@@ -15,15 +16,22 @@ namespace CILantro.Engine.Parser.CILASTConstruction
 
         public override CILClass BuildNode(ParseTreeNode node)
         {
-            CILMethod cilMethod = null;
+            var methods = new List<CILMethod>();
 
             var classDeclarationsNode = node.GetChildClassDeclarationsNode();
             var classDeclarationNode = classDeclarationsNode.GetChildClassDeclarationNode();
-            cilMethod = _methodBuilder.BuildNode(classDeclarationNode);
+            while(classDeclarationNode != null)
+            {
+                var method = _methodBuilder.BuildNode(classDeclarationNode);
+                methods.Add(method);
+
+                classDeclarationsNode = classDeclarationsNode.GetChildClassDeclarationsNode();
+                classDeclarationNode = classDeclarationsNode.GetChildClassDeclarationNode();
+            }
 
             return new CILClass
             {
-                Method = cilMethod
+                Methods = methods
             };
         }
     }

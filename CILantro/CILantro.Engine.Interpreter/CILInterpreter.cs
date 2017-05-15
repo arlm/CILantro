@@ -30,7 +30,7 @@ namespace CILantro.Engine.Interpreter
             Console.SetOut(StreamWriter);
             StreamWriter.AutoFlush = true;
 
-            var entryPoint = Program.Class.Method;
+            var entryPoint = Program.EntryPoint;
             var currentInstruction = entryPoint.Instructions.First();
 
             while (currentInstruction != null)

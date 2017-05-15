@@ -18,17 +18,24 @@ namespace CILantro.Engine.Parser.CILASTConstruction
         public override CILMethod BuildNode(ParseTreeNode node)
         {
             var cilInstructions = new List<CILInstruction>();
+            var isEntryPoint = false;
 
             var methodDeclarationsNode = node.GetChildMethodDeclarationsNode();
             while(methodDeclarationsNode != null && methodDeclarationsNode.ChildNodes.Any())
             {
                 var methodDeclarationNode = methodDeclarationsNode.GetChildMethodDeclarationNode();
-                var instructionNode = methodDeclarationNode.GetChildInstructionNode();
 
+                var instructionNode = methodDeclarationNode.GetChildInstructionNode();
                 if (instructionNode != null)
                 {
                     var instruction = _instructionBuilder.BuildNode(instructionNode);
                     cilInstructions.Add(instruction);
+                }
+
+                var entryPointNode = methodDeclarationNode.GetChildDotEntrypointTokenNode();
+                if(entryPointNode != null)
+                {
+                    isEntryPoint = true;
                 }
 
                 methodDeclarationsNode = methodDeclarationsNode.GetChildMethodDeclarationsNode();
@@ -38,7 +45,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction
 
             var resultMethod = new CILMethod
             {
-                Instructions = cilInstructions
+                Instructions = cilInstructions,
+                IsEntryPoint = isEntryPoint
             };
 
             foreach(var cilInstruction in cilInstructions)

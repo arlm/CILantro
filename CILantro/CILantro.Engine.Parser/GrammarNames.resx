@@ -645,4 +645,46 @@
   <data name="DotVerToken" xml:space="preserve">
     <value>DotVerToken</value>
   </data>
+  <data name="CallvirtToken" xml:space="preserve">
+    <value>CallvirtToken</value>
+  </data>
+  <data name="DotLocalsToken" xml:space="preserve">
+    <value>DotLocalsToken</value>
+  </data>
+  <data name="InitToken" xml:space="preserve">
+    <value>InitToken</value>
+  </data>
+  <data name="Ldloc0Token" xml:space="preserve">
+    <value>Ldloc0Token</value>
+  </data>
+  <data name="Ldloc1Token" xml:space="preserve">
+    <value>Ldloc1Token</value>
+  </data>
+  <data name="Ldloc2Token" xml:space="preserve">
+    <value>Ldloc2Token</value>
+  </data>
+  <data name="Ldloc3Token" xml:space="preserve">
+    <value>Ldloc3Token</value>
+  </data>
+  <data name="LocalsHead" xml:space="preserve">
+    <value>LocalsHead</value>
+  </data>
+  <data name="RemToken" xml:space="preserve">
+    <value>RemToken</value>
+  </data>
+  <data name="RemunToken" xml:space="preserve">
+    <value>RemunToken</value>
+  </data>
+  <data name="Stloc0Token" xml:space="preserve">
+    <value>Stloc0Token</value>
+  </data>
+  <data name="Stloc1Token" xml:space="preserve">
+    <value>Stloc1Token</value>
+  </data>
+  <data name="Stloc2Token" xml:space="preserve">
+    <value>Stloc2Token</value>
+  </data>
+  <data name="Stloc3Token" xml:space="preserve">
+    <value>Stloc3Token</value>
+  </data>
 </root>

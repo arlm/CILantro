@@ -493,6 +493,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CallvirtToken.
+        /// </summary>
+        internal static string CallvirtToken {
+            get {
+                return ResourceManager.GetString("CallvirtToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CeqToken.
         /// </summary>
         internal static string CeqToken {
@@ -790,6 +799,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DotLocalsToken.
+        /// </summary>
+        internal static string DotLocalsToken {
+            get {
+                return ResourceManager.GetString("DotLocalsToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DotMaxstackToken.
         /// </summary>
         internal static string DotMaxstackToken {
@@ -966,6 +984,15 @@ namespace CILantro.Engine.Parser {
         internal static string ImplementsClause {
             get {
                 return ResourceManager.GetString("ImplementsClause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InitToken.
+        /// </summary>
+        internal static string InitToken {
+            get {
+                return ResourceManager.GetString("InitToken", resourceCulture);
             }
         }
         
@@ -1177,6 +1204,42 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ldloc0Token.
+        /// </summary>
+        internal static string Ldloc0Token {
+            get {
+                return ResourceManager.GetString("Ldloc0Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ldloc1Token.
+        /// </summary>
+        internal static string Ldloc1Token {
+            get {
+                return ResourceManager.GetString("Ldloc1Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ldloc2Token.
+        /// </summary>
+        internal static string Ldloc2Token {
+            get {
+                return ResourceManager.GetString("Ldloc2Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ldloc3Token.
+        /// </summary>
+        internal static string Ldloc3Token {
+            get {
+                return ResourceManager.GetString("Ldloc3Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LdstrToken.
         /// </summary>
         internal static string LdstrToken {
@@ -1236,6 +1299,15 @@ namespace CILantro.Engine.Parser {
         internal static string LineComment {
             get {
                 return ResourceManager.GetString("LineComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LocalsHead.
+        /// </summary>
+        internal static string LocalsHead {
+            get {
+                return ResourceManager.GetString("LocalsHead", resourceCulture);
             }
         }
         
@@ -1447,6 +1519,24 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RemToken.
+        /// </summary>
+        internal static string RemToken {
+            get {
+                return ResourceManager.GetString("RemToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RemunToken.
+        /// </summary>
+        internal static string RemunToken {
+            get {
+                return ResourceManager.GetString("RemunToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RetToken.
         /// </summary>
         internal static string RetToken {
@@ -1560,6 +1650,42 @@ namespace CILantro.Engine.Parser {
         internal static string StaticToken {
             get {
                 return ResourceManager.GetString("StaticToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stloc0Token.
+        /// </summary>
+        internal static string Stloc0Token {
+            get {
+                return ResourceManager.GetString("Stloc0Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stloc1Token.
+        /// </summary>
+        internal static string Stloc1Token {
+            get {
+                return ResourceManager.GetString("Stloc1Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stloc2Token.
+        /// </summary>
+        internal static string Stloc2Token {
+            get {
+                return ResourceManager.GetString("Stloc2Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stloc3Token.
+        /// </summary>
+        internal static string Stloc3Token {
+            get {
+                return ResourceManager.GetString("Stloc3Token", resourceCulture);
             }
         }
         

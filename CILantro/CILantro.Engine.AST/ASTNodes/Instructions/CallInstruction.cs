@@ -19,6 +19,7 @@ namespace CILantro.Engine.AST.ASTNodes.Instructions
                 var argument = state.Stack.Pop();
                 argumentsList.Add(argument);
             }
+            argumentsList.Reverse();
 
             var result = reflectedMethod.Invoke(null, argumentsList.ToArray());
             if (reflectedMethod.ReturnType != typeof(void))

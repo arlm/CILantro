@@ -39,14 +39,17 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             var argumentsTypesList = new List<Type>();
             var signatureArguments0Node = node.GetChildSignatureArguments0Node();
             var signatureArguments1Node = signatureArguments0Node.GetChildSignatureArguments1Node();
-            if(signatureArguments1Node != null)
+            while(signatureArguments1Node != null)
             {
                 var signatureArgumentNode = signatureArguments1Node.GetChildSignatureArgumentNode();
                 var typeNode = signatureArgumentNode.GetChildTypeNode();
                 var typeName = typeNode.ChildNodes.First().Token.ValueString;
                 var type = TypeHelper.GetTypeByName(typeName);
                 argumentsTypesList.Add(type);
+
+                signatureArguments1Node = signatureArguments1Node.GetChildSignatureArguments1Node();
             }
+            argumentsTypesList.Reverse();
             argumentTypes = argumentsTypesList.ToArray();
 
             var instructionMethodNode = node.GetChildInstructionMethodNode();

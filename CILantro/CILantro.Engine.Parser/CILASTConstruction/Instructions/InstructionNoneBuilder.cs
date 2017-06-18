@@ -104,6 +104,22 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             if (ldci4m1Token != null || ldci4m1AliasToken != null)
                 return new LoadConstantIntMinus1Instruction();
 
+            var ldloc0Token = instructionNoneNode.GetChildLdloc0TokenNode();
+            if (ldloc0Token != null)
+                return new LoadLocalVariable0Instruction();
+
+            var ldloc1Token = instructionNoneNode.GetChildLdloc1TokenNode();
+            if (ldloc1Token != null)
+                return new LoadLocalVariable1Instruction();
+
+            var ldloc2Token = instructionNoneNode.GetChildLdloc2TokenNode();
+            if (ldloc2Token != null)
+                return new LoadLocalVariable2Instruction();
+
+            var ldloc3Token = instructionNoneNode.GetChildLdloc3TokenNode();
+            if (ldloc3Token != null)
+                return new LoadLocalVariable3Instruction();
+
             var mulTokenNode = instructionNoneNode.GetChildMulTokenNode();
             if (mulTokenNode != null)
                 return new MultipleInstruction();
@@ -136,6 +152,14 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             if (popTokenNode != null)
                 return new PopInstruction();
 
+            var remTokenNode = instructionNoneNode.GetChildRemTokenNode();
+            if (remTokenNode != null)
+                return new RemainderInstruction();
+
+            var remunTokenNode = instructionNoneNode.GetChildRemunTokenNode();
+            if (remTokenNode != null)
+                return new RemainderUnsignedInstruction();
+
             var retTokenNode = instructionNoneNode.GetChildRetTokenNode();
             if (retTokenNode != null)
                 return new RetInstruction();
@@ -147,6 +171,22 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             var shrTokenNode = instructionNoneNode.GetChildShrTokenNode();
             if (shrTokenNode != null)
                 return new ShiftRightInstruction();
+
+            var stloc0TokenNode = instructionNoneNode.GetChildStloc0TokenNode();
+            if (stloc0TokenNode != null)
+                return new SetLocalVariable0Instruction();
+
+            var stloc1TokenNode = instructionNoneNode.GetChildStloc1TokenNode();
+            if (stloc1TokenNode != null)
+                return new SetLocalVariable1Instruction();
+
+            var stloc2TokenNode = instructionNoneNode.GetChildStloc2TokenNode();
+            if (stloc2TokenNode != null)
+                return new SetLocalVariable2Instruction();
+
+            var stloc3TokenNode = instructionNoneNode.GetChildStloc3TokenNode();
+            if (stloc3TokenNode != null)
+                return new SetLocalVariable3Instruction();
 
             var subTokenNode = instructionNoneNode.GetChildSubTokenNode();
             if (subTokenNode != null)

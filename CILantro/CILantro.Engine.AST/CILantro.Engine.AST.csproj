@@ -103,6 +103,10 @@
     <Compile Include="ASTNodes\Instructions\LoadConstantIntInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\LoadConstantIntMinus1Instruction.cs" />
     <Compile Include="ASTNodes\Instructions\LoadConstantIntShortInstruction.cs" />
+    <Compile Include="ASTNodes\Instructions\LoadLocalVariable0Instruction.cs" />
+    <Compile Include="ASTNodes\Instructions\LoadLocalVariable1Instruction.cs" />
+    <Compile Include="ASTNodes\Instructions\LoadLocalVariable2Instruction.cs" />
+    <Compile Include="ASTNodes\Instructions\LoadLocalVariable3Instruction.cs" />
     <Compile Include="ASTNodes\Instructions\LoadStringInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\MultipleInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\MultipleOverflowInstruction.cs" />
@@ -111,7 +115,13 @@
     <Compile Include="ASTNodes\Instructions\NoOperationInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\OrInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\PopInstruction.cs" />
+    <Compile Include="ASTNodes\Instructions\RemainderInstruction.cs" />
+    <Compile Include="ASTNodes\Instructions\RemainderUnsignedInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\RetInstruction.cs" />
+    <Compile Include="ASTNodes\Instructions\SetLocalVariable0Instruction.cs" />
+    <Compile Include="ASTNodes\Instructions\SetLocalVariable1Instruction.cs" />
+    <Compile Include="ASTNodes\Instructions\SetLocalVariable2Instruction.cs" />
+    <Compile Include="ASTNodes\Instructions\SetLocalVariable3Instruction.cs" />
     <Compile Include="ASTNodes\Instructions\ShiftLeftInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\ShiftRightInstruction.cs" />
     <Compile Include="ASTNodes\Instructions\SubtractInstruction.cs" />

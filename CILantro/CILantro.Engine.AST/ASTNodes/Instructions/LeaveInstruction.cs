@@ -6,7 +6,7 @@
 
         public override CILInstruction Execute(CILProgram program, CILProgramState state)
         {
-            return Method.GetInstructionByBranchTarget(this, Target);
+            return Method.GetInstructionByBranchTarget(this, Target, TargetLabel);
         }
     }
 }

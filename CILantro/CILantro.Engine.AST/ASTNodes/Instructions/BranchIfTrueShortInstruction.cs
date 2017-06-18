@@ -9,7 +9,7 @@
             var value = (int)state.Stack.Pop();
 
             if (value == 0) return Method.GetNextInstruction(this);
-            return Method.GetInstructionByBranchTarget(this, Target);
+            return Method.GetInstructionByBranchTarget(this, Target, TargetLabel);
         }
     }
 }

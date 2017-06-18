@@ -9,7 +9,7 @@
             var value2 = (int)state.Stack.Pop();
             var value1 = (int)state.Stack.Pop();
 
-            if (value1 >= value2) return Method.GetInstructionByBranchTarget(this, Target);
+            if (value1 >= value2) return Method.GetInstructionByBranchTarget(this, Target, TargetLabel);
             return Method.GetNextInstruction(this);
         }
     }

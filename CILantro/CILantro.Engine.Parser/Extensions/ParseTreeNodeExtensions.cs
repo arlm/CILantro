@@ -52,6 +52,7 @@ namespace CILantro.Engine.Parser.Extensions
         public static bool IsDotEntrypointTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.DotEntrypointToken);
         public static bool IsDupTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.DupToken);
         public static bool IsIdNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.Id);
+        public static bool IsIdentifierNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.Identifier);
         public static bool IsInstructionNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.Instruction);
         public static bool IsInstructionBranchNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.InstructionBranch);
         public static bool IsInstructionIntNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.InstructionInt);
@@ -159,6 +160,7 @@ namespace CILantro.Engine.Parser.Extensions
         public static ParseTreeNode GetChildDotEntrypointTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsDotEntrypointTokenNode());
         public static ParseTreeNode GetChildDupTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsDupTokenNode());
         public static ParseTreeNode GetChildIdNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsIdNode());
+        public static ParseTreeNode GetChildIdentifierNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsIdentifierNode());
         public static ParseTreeNode GetChildInstructionNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionNode());
         public static ParseTreeNode GetChildInstructionBranchNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionBranchNode());
         public static ParseTreeNode GetChildInstructionIntNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionIntNode());

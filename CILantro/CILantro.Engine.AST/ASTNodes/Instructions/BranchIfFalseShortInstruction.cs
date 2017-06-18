@@ -8,7 +8,7 @@
         {
             var value = (int)state.Stack.Pop();
 
-            if (value == 0) return Method.GetInstructionByBranchTarget(this, Target);
+            if (value == 0) return Method.GetInstructionByBranchTarget(this, Target, TargetLabel);
             return Method.GetNextInstruction(this);
         }
     }

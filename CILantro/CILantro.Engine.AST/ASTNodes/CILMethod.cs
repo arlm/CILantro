@@ -21,7 +21,7 @@ namespace CILantro.Engine.AST.ASTNodes
             return Instructions[currentIndex + 1];
         }
 
-        public CILInstruction GetInstructionByBranchTarget(CILInstruction currentInstruction, int branchTarget)
+        public CILInstruction GetInstructionByBranchTarget(CILInstruction currentInstruction, int branchTarget, string branchTargetLabel)
         {
             var bytesPosition = GetBytesPosition(GetNextInstruction(currentInstruction));
             var newBytesPosition = bytesPosition + branchTarget;

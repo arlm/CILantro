@@ -10,9 +10,15 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
         public override InstructionBranch BuildNode(ParseTreeNode node)
         {
             var target = 0;
+            var targetLabel = string.Empty;
+
+            var identifierNode = node.GetChildIdentifierNode();
+            if (identifierNode != null)
+                targetLabel = identifierNode.Token.ValueString;
 
             var integerNode = node.GetChildIntegerNode();
-            target = integerNode.GetIntegerNodeValue();
+            if(integerNode != null)
+                target = integerNode.GetIntegerNodeValue();
 
             var instructionBranchNode = node.GetChildInstructionBranchNode();
 
@@ -21,7 +27,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfEqualInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -30,7 +37,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfEqualShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -39,7 +47,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterOrEqualInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -48,7 +57,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterOrEqualShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -57,7 +67,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterOrEqualUnsignedInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -66,7 +77,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterOrEqualUnsignedShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -75,7 +87,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -84,7 +97,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -93,7 +107,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterUnsignedInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -102,7 +117,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfGreaterUnsignedShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -111,7 +127,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessOrEqualInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -120,7 +137,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessOrEqualShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -129,7 +147,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessOrEqualUnsignedInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -138,7 +157,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessOrEqualUnsignedShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -147,7 +167,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -156,7 +177,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -165,7 +187,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessUnsignedInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -174,7 +197,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfLessUnsignedShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -183,7 +207,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfNotEqualUnsignedInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -192,7 +217,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfNotEqualUnsignedShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -201,7 +227,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -210,7 +237,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -219,7 +247,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfFalseInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -228,7 +257,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfFalseShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -237,7 +267,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfTrueInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -246,7 +277,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new BranchIfTrueShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -255,7 +287,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new LeaveInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 
@@ -264,7 +297,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             {
                 return new LeaveShortInstruction
                 {
-                    Target = target
+                    Target = target,
+                    TargetLabel = targetLabel
                 };
             }
 

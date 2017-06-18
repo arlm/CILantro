@@ -25,6 +25,11 @@ namespace CILantro.Engine.AST.ASTNodes
 
         public CILInstruction GetInstructionByBranchTarget(CILInstruction currentInstruction, int branchTarget, string branchTargetLabel)
         {
+            if(!string.IsNullOrEmpty(branchTargetLabel))
+            {
+                return GetInstructionByLabel(branchTargetLabel);
+            }
+
             var bytesPosition = GetBytesPosition(GetNextInstruction(currentInstruction));
             var newBytesPosition = bytesPosition + branchTarget;
             return GetInstructionByBytesPosition(newBytesPosition);
@@ -47,6 +52,12 @@ namespace CILantro.Engine.AST.ASTNodes
             }
 
             throw new ArgumentException("Cannot find instruction with specified bytesPosition.");
+        }
+
+        private CILInstruction GetInstructionByLabel(string label)
+        {
+            var instruction = Instructions.Single(i => i.Label.Equals(label));
+            return instruction;
         }
     }
 }

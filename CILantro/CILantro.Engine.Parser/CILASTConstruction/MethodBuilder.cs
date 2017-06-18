@@ -25,6 +25,13 @@ namespace CILantro.Engine.Parser.CILASTConstruction
             {
                 var methodDeclarationNode = methodDeclarationsNode.GetChildMethodDeclarationNode();
 
+                var idNode = methodDeclarationNode.GetChildIdNode();
+                if (idNode != null)
+                {
+                    var label = idNode.GetChildIdentifierNode().Token.ValueString;
+                    cilInstructions.Last().Label = label;
+                }
+
                 var instructionNode = methodDeclarationNode.GetChildInstructionNode();
                 if (instructionNode != null)
                 {

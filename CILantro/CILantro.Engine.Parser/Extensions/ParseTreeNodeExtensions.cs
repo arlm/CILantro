@@ -36,6 +36,8 @@ namespace CILantro.Engine.Parser.Extensions
         public static bool IsBrfalsesTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.BrfalsesToken);
         public static bool IsBrtrueTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.BrtrueToken);
         public static bool IsBrtruesTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.BrtruesToken);
+        public static bool IsCallTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.CallToken);
+        public static bool IsCallvirtTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.CallvirtToken);
         public static bool IsCeqTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.CeqToken);
         public static bool IsCgtTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.CgtToken);
         public static bool IsCgtunTokenNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.CgtunToken);
@@ -144,6 +146,8 @@ namespace CILantro.Engine.Parser.Extensions
         public static ParseTreeNode GetChildBrfalsesTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsBrfalsesTokenNode());
         public static ParseTreeNode GetChildBrtrueTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsBrtrueTokenNode());
         public static ParseTreeNode GetChildBrtruesTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsBrtruesTokenNode());
+        public static ParseTreeNode GetChildCallTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsCallTokenNode());
+        public static ParseTreeNode GetChildCallvirtTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsCallvirtTokenNode());
         public static ParseTreeNode GetChildCeqTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsCeqTokenNode());
         public static ParseTreeNode GetChildCgtTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsCgtTokenNode());
         public static ParseTreeNode GetChildCgtunTokenNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsCgtunTokenNode());

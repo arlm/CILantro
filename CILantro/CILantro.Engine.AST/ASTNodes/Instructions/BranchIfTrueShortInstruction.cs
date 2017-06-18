@@ -1,4 +1,6 @@
-﻿namespace CILantro.Engine.AST.ASTNodes.Instructions
+﻿using System;
+
+namespace CILantro.Engine.AST.ASTNodes.Instructions
 {
     public class BranchIfTrueShortInstruction : InstructionBranch
     {
@@ -6,9 +8,9 @@
 
         public override CILInstruction Execute(CILProgram program, CILProgramState state)
         {
-            var value = (int)state.Stack.Pop();
+            var value = Convert.ToBoolean(state.Stack.Pop());
 
-            if (value == 0) return Method.GetNextInstruction(this);
+            if (!value) return Method.GetNextInstruction(this);
             return Method.GetInstructionByBranchTarget(this, Target, TargetLabel);
         }
     }

@@ -8,6 +8,8 @@ namespace CILantro.Engine.AST.ASTNodes
     {
         public List<CILInstruction> Instructions { get; set; }
 
+        public List<object> LocalVariables { get; set; } = new List<object>(new object[10]);
+
         public bool IsEntryPoint { get; set; }
 
         public CILInstruction GetNextInstruction(CILInstruction currentInstruction)

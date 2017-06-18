@@ -49,13 +49,33 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             }
             argumentTypes = argumentsTypesList.ToArray();
 
-            return new CallInstruction
+            var instructionMethodNode = node.GetChildInstructionMethodNode();
+
+            var callTokenNode = instructionMethodNode.GetChildCallTokenNode();
+            if(callTokenNode != null)
             {
-                AssemblyName = assemblyName,
-                ClassName = className,
-                MethodName = methodName,
-                ArgumentsTypes = argumentTypes
-            };
+                return new CallInstruction
+                {
+                    AssemblyName = assemblyName,
+                    ClassName = className,
+                    MethodName = methodName,
+                    ArgumentsTypes = argumentTypes
+                };
+            }
+
+            var callvirtTokenNode = instructionMethodNode.GetChildCallvirtTokenNode();
+            if(callvirtTokenNode != null)
+            {
+                return new CallVirtualInstruction
+                {
+                    AssemblyName = assemblyName,
+                    ClassName = className,
+                    MethodName = methodName,
+                    ArgumentsTypes = argumentTypes
+                };
+            }
+
+            throw new ArgumentException("Cannot recognize instruction method.");
         }
     }
 }

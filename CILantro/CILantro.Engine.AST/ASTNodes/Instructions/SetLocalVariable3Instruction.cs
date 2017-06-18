@@ -1,20 +1,15 @@
-﻿using System;
-
-namespace CILantro.Engine.AST.ASTNodes.Instructions
+﻿namespace CILantro.Engine.AST.ASTNodes.Instructions
 {
     public class SetLocalVariable3Instruction : InstructionNone
     {
-        public override int BytesLength
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override int BytesLength => 1;
 
         public override CILInstruction Execute(CILProgram program, CILProgramState state)
         {
-            throw new NotImplementedException();
+            var value = state.Stack.Pop();
+            Method.LocalVariables[3] = value;
+
+            return Method.GetNextInstruction(this);
         }
     }
 }

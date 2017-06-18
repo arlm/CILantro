@@ -687,4 +687,7 @@
   <data name="Stloc3Token" xml:space="preserve">
     <value>Stloc3Token</value>
   </data>
+  <data name="ObjectToken" xml:space="preserve">
+    <value>ObjectToken</value>
+  </data>
 </root>

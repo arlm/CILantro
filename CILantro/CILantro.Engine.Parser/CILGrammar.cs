@@ -170,6 +170,7 @@ namespace CILantro.Engine.Parser
             var negToken = ToTerm("neg", GrammarNames.NegToken);
             var nopToken = ToTerm("nop", GrammarNames.NopToken);
             var notToken = ToTerm("not", GrammarNames.NotToken);
+            var objectToken = ToTerm("object", GrammarNames.ObjectToken);
             var orToken = ToTerm("or", GrammarNames.OrToken);
             var popToken = ToTerm("pop", GrammarNames.PopToken);
             var privateToken = ToTerm("private", GrammarNames.PrivateToken);
@@ -261,6 +262,7 @@ namespace CILantro.Engine.Parser
 
             var type = new NonTerminal(GrammarNames.Type);
             type.Rule =
+                objectToken |
                 stringToken |
                 valuetypeToken + className |
                 type + leftSquareBracket + rightSquareBracket |

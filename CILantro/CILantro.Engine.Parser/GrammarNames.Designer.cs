@@ -1447,6 +1447,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ObjectToken.
+        /// </summary>
+        internal static string ObjectToken {
+            get {
+                return ResourceManager.GetString("ObjectToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OrToken.
         /// </summary>
         internal static string OrToken {

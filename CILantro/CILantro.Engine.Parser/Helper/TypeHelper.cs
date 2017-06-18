@@ -8,10 +8,12 @@ namespace CILantro.Engine.Parser.Helper
         {
             switch(typeName)
             {
-                case "string":
-                    return typeof(string);
                 case "int32":
                     return typeof(int);
+                case "object":
+                    return typeof(object);
+                case "string":
+                    return typeof(string);
                 default:
                     throw new ArgumentException("Cannot recognize type name.");
             }

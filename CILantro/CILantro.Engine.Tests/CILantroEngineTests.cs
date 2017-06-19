@@ -66,6 +66,7 @@ namespace CILantro.Engine.Tests
         [InlineData("CS_hello_world")]
         [InlineData("CS_calculator")]
         [InlineData("CS_say_hello")]
+        [InlineData("CS_natural_numbers")]
         public void ShouldReturnCorrectResults(string programName)
         {
             var sourceCodeFileName = programName + SourceCodeFileExtension;

@@ -60,6 +60,7 @@ namespace CILantro.Engine.Parser.Tests
         [InlineData("CS_say_hello")]
         [InlineData("CS_natural_numbers")]
         [InlineData("CSF_value_types_bool")]
+        [InlineData("CSF_value_types_byte")]
         public void ShouldParseProgramWithoutErrors(string programName)
         {
             var sourceCodeFileName = programName + SourceCodeFileExtension;

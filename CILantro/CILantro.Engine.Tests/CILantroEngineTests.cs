@@ -74,6 +74,7 @@ namespace CILantro.Engine.Tests
         [InlineData("CSF_value_types_double")]
         [InlineData("CSF_value_types_float")]
         [InlineData("CSF_value_types_int")]
+        [InlineData("CSF_value_types_long")]
         public void ShouldReturnCorrectResults(string programName)
         {
             var sourceCodeFileName = programName + SourceCodeFileExtension;

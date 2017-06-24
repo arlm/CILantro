@@ -70,6 +70,7 @@ namespace CILantro.Engine.Parser.Tests
         [InlineData("CSF_value_types_sbyte")]
         [InlineData("CSF_value_types_short")]
         [InlineData("CSF_value_types_uint")]
+        [InlineData("CSF_value_types_ulong")]
         public void ShouldParseProgramWithoutErrors(string programName)
         {
             var sourceCodeFileName = programName + SourceCodeFileExtension;

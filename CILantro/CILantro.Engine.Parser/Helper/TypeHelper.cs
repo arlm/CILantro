@@ -8,6 +8,8 @@ namespace CILantro.Engine.Parser.Helper
         {
             switch(typeName)
             {
+                case "bool":
+                    return typeof(bool);
                 case "int32":
                     return typeof(int);
                 case "object":

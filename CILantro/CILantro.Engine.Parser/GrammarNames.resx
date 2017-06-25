@@ -720,4 +720,7 @@
   <data name="Uint64Token" xml:space="preserve">
     <value>Uint64Token</value>
   </data>
+  <data name="Uint16Token" xml:space="preserve">
+    <value>Uint16Token</value>
+  </data>
 </root>

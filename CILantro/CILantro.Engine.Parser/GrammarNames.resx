@@ -690,4 +690,7 @@
   <data name="ObjectToken" xml:space="preserve">
     <value>ObjectToken</value>
   </data>
+  <data name="Uint8Token" xml:space="preserve">
+    <value>Uint8Token</value>
+  </data>
 </root>

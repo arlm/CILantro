@@ -198,6 +198,7 @@ namespace CILantro.Engine.Parser
             subovfToken.Rule = ToTerm("sub") + dot + ToTerm("ovf");
             var subovfunToken = new NonTerminal(GrammarNames.SubovfunToken);
             subovfunToken.Rule = ToTerm("sub") + dot + ToTerm("ovf") + dot + ToTerm("un");
+            var uint8Token = ToTerm("uint8", GrammarNames.Uint8Token);
             var valuetypeToken = ToTerm("valuetype", GrammarNames.ValuetypeToken);
             var voidToken = ToTerm("void", GrammarNames.VoidToken);
             var xorToken = ToTerm("xor", GrammarNames.XorToken);
@@ -268,7 +269,8 @@ namespace CILantro.Engine.Parser
                 type + leftSquareBracket + rightSquareBracket |
                 voidToken |
                 boolToken |
-                int32Token;
+                int32Token |
+                uint8Token;
 
             var typeSpecification = new NonTerminal(GrammarNames.TypeSpecification);
             typeSpecification.Rule =

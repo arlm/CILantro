@@ -1096,6 +1096,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Int16Token.
+        /// </summary>
+        internal static string Int16Token {
+            get {
+                return ResourceManager.GetString("Int16Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Int32Token.
         /// </summary>
         internal static string Int32Token {

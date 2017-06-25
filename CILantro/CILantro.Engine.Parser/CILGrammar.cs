@@ -125,6 +125,7 @@ namespace CILantro.Engine.Parser
             var initToken = ToTerm("init", GrammarNames.InitToken);
             var instanceToken = ToTerm("instance", GrammarNames.InstanceToken);
             var int8Token = ToTerm("int8", GrammarNames.Int8Token);
+            var int16Token = ToTerm("int16", GrammarNames.Int16Token);
             var int32Token = ToTerm("int32", GrammarNames.Int32Token);
             var int64Token = ToTerm("int64", GrammarNames.Int64Token);
             var ldarg0Token = new NonTerminal(GrammarNames.Ldarg0Token);
@@ -278,6 +279,7 @@ namespace CILantro.Engine.Parser
                 voidToken |
                 boolToken |
                 int8Token |
+                int16Token |
                 int32Token |
                 int64Token |
                 float32Token |

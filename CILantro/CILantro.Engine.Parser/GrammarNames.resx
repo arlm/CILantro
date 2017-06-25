@@ -711,4 +711,7 @@
   <data name="Int8Token" xml:space="preserve">
     <value>Int8Token</value>
   </data>
+  <data name="Int16Token" xml:space="preserve">
+    <value>Int16Token</value>
+  </data>
 </root>

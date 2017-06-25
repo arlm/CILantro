@@ -97,6 +97,8 @@ namespace CILantro.Engine.Parser
             var divToken = ToTerm("div", GrammarNames.DivToken);
             var divunToken = new NonTerminal(GrammarNames.DivunToken);
             divunToken.Rule = ToTerm("div") + dot + ToTerm("un");
+            var charToken = ToTerm("char", GrammarNames.CharToken);
+            var classToken = ToTerm("class", GrammarNames.ClassToken);
             var dotAssemblyToken = ToTerm(".assembly", GrammarNames.DotAssemblyToken);
             var dotClassToken = ToTerm(".class", GrammarNames.DotClassToken);
             var dotCorflagsToken = ToTerm(".corflags", GrammarNames.DotCorflagsToken);
@@ -263,10 +265,12 @@ namespace CILantro.Engine.Parser
 
             var type = new NonTerminal(GrammarNames.Type);
             type.Rule =
+                classToken + className |
                 objectToken |
                 stringToken |
                 valuetypeToken + className |
                 type + leftSquareBracket + rightSquareBracket |
+                charToken |
                 voidToken |
                 boolToken |
                 int32Token |

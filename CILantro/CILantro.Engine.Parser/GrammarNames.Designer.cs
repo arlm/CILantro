@@ -529,6 +529,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CharToken.
+        /// </summary>
+        internal static string CharToken {
+            get {
+                return ResourceManager.GetString("CharToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CilToken.
         /// </summary>
         internal static string CilToken {
@@ -579,6 +588,15 @@ namespace CILantro.Engine.Parser {
         internal static string ClassName {
             get {
                 return ResourceManager.GetString("ClassName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ClassToken.
+        /// </summary>
+        internal static string ClassToken {
+            get {
+                return ResourceManager.GetString("ClassToken", resourceCulture);
             }
         }
         

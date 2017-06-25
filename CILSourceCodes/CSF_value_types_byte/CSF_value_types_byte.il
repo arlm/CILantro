@@ -49,7 +49,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00020003    //  ILONLY 32BITPREFERRED
-// Image base: 0x003A0000
+// Image base: 0x00B60000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -84,4 +84,4 @@
 // =============================================================
 
 // *********** DISASSEMBLY COMPLETE ***********************
-// WARNING: Created Win32 resource file temp.res
+// WARNING: Created Win32 resource file temp2.res

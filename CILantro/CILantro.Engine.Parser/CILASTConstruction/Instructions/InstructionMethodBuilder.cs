@@ -20,13 +20,8 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
             var typeSpecificationNode = node.GetChildTypeSpecificationNode();
             var classNameNode = typeSpecificationNode.GetChildClassNameNode();
 
-            var classNameNameNode = classNameNode.GetChildNameNode();
-            var classNameIdNode = classNameNameNode.GetChildIdNode();
-            assemblyName = classNameIdNode.ChildNodes.First().Token.ValueString;
-
-            var slashedNameNode = classNameNode.GetChildSlashedNameNode();
-            var slashedNameNameNode = slashedNameNode.GetChildNameNode();
-            className = string.Join(".", slashedNameNameNode.GetAllChildNameNodes().Select(n => n.GetChildIdNode().ChildNodes.First().Token.ValueString));
+            assemblyName = ClassNameHelper.GetAssemblyName(classNameNode);
+            className = ClassNameHelper.GetClassName(classNameNode);
 
             var methodNameNode = node.GetChildMethodNameNode();
             var methodNameNameNode = methodNameNode.GetChildNameNode();
@@ -44,7 +39,12 @@ namespace CILantro.Engine.Parser.CILASTConstruction.Instructions
                 var signatureArgumentNode = signatureArguments1Node.GetChildSignatureArgumentNode();
                 var typeNode = signatureArgumentNode.GetChildTypeNode();
                 var typeName = typeNode.ChildNodes.First().Token.ValueString;
-                var type = TypeHelper.GetTypeByName(typeName);
+
+                var typeClassNameNode = typeNode.GetChildClassNameNode();
+                var typeAssemblyName = typeClassNameNode != null ? ClassNameHelper.GetAssemblyName(typeClassNameNode) : null;
+                var typeClassName = typeClassNameNode != null ? ClassNameHelper.GetClassName(typeClassNameNode) : null;
+
+                var type = TypeHelper.GetTypeByName(typeName, typeAssemblyName, typeClassName);
                 argumentsTypesList.Add(type);
 
                 signatureArguments1Node = signatureArguments1Node.GetChildSignatureArguments1Node();

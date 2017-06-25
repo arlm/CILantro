@@ -43,13 +43,13 @@
   .ver 1:0:0:0
 }
 .module CSF_ValueTypes_char.exe
-// MVID: {EDCC65F3-C040-4CD5-B2FA-06B5CAE91258}
+// MVID: {26B47598-A578-4B6E-8096-C7C117BD4216}
 .imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00020003    //  ILONLY 32BITPREFERRED
-// Image base: 0x01420000
+// Image base: 0x005E0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -60,16 +60,12 @@
   .method private hidebysig static void  Main(string[] args) cil managed
   {
     .entrypoint
-    // Code size       36 (0x24)
+    // Code size       16 (0x10)
     .maxstack  8
-    IL_0000:  call       class [mscorlib]System.Text.Encoding [mscorlib]System.Text.Encoding::get_UTF8()
-    IL_0005:  call       void [mscorlib]System.Console::set_InputEncoding(class [mscorlib]System.Text.Encoding)
-    IL_000a:  call       class [mscorlib]System.Text.Encoding [mscorlib]System.Text.Encoding::get_UTF8()
-    IL_000f:  call       void [mscorlib]System.Console::set_OutputEncoding(class [mscorlib]System.Text.Encoding)
-    IL_0014:  call       string [mscorlib]System.Console::ReadLine()
-    IL_0019:  call       char [mscorlib]System.Char::Parse(string)
-    IL_001e:  call       void [mscorlib]System.Console::WriteLine(char)
-    IL_0023:  ret
+    IL_0000:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0005:  call       char [mscorlib]System.Char::Parse(string)
+    IL_000a:  call       void [mscorlib]System.Console::WriteLine(char)
+    IL_000f:  ret
   } // end of method Program::Main
 
   .method public hidebysig specialname rtspecialname 
@@ -88,4 +84,4 @@
 // =============================================================
 
 // *********** DISASSEMBLY COMPLETE ***********************
-// WARNING: Created Win32 resource file temp.res
+// WARNING: Created Win32 resource file temp2.res

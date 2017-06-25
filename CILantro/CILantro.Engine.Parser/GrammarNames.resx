@@ -693,4 +693,10 @@
   <data name="Uint8Token" xml:space="preserve">
     <value>Uint8Token</value>
   </data>
+  <data name="CharToken" xml:space="preserve">
+    <value>CharToken</value>
+  </data>
+  <data name="ClassToken" xml:space="preserve">
+    <value>ClassToken</value>
+  </data>
 </root>

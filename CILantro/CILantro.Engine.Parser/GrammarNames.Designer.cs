@@ -1825,6 +1825,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uint64Token.
+        /// </summary>
+        internal static string Uint64Token {
+            get {
+                return ResourceManager.GetString("Uint64Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uint8Token.
         /// </summary>
         internal static string Uint8Token {

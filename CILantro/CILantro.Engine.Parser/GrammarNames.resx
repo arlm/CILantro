@@ -708,4 +708,7 @@
   <data name="Int64Token" xml:space="preserve">
     <value>Int64Token</value>
   </data>
+  <data name="Int8Token" xml:space="preserve">
+    <value>Int8Token</value>
+  </data>
 </root>

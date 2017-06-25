@@ -119,6 +119,7 @@ namespace CILantro.Engine.Parser
             var dupToken = ToTerm("dup", GrammarNames.DupToken);
             var extendsToken = ToTerm("extends", GrammarNames.ExtendsToken);
             var externToken = ToTerm("extern", GrammarNames.ExternToken);
+            var float32Token = ToTerm("float32", GrammarNames.Float32Token);
             var float64Token = ToTerm("float64", GrammarNames.Float64Token);
             var hidebysigToken = ToTerm("hidebysig", GrammarNames.HidebysigToken);
             var initToken = ToTerm("init", GrammarNames.InitToken);
@@ -275,6 +276,7 @@ namespace CILantro.Engine.Parser
                 voidToken |
                 boolToken |
                 int32Token |
+                float32Token |
                 float64Token |
                 uint8Token;
 

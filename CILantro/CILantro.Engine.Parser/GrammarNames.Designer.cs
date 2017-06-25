@@ -934,6 +934,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Float32Token.
+        /// </summary>
+        internal static string Float32Token {
+            get {
+                return ResourceManager.GetString("Float32Token", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Float64Token.
         /// </summary>
         internal static string Float64Token {

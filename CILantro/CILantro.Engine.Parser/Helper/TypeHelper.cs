@@ -21,6 +21,8 @@ namespace CILantro.Engine.Parser.Helper
                     return typeof(double);
                 case "int32":
                     return typeof(int);
+                case "int64":
+                    return typeof(long);
                 case "object":
                     return typeof(object);
                 case "string":

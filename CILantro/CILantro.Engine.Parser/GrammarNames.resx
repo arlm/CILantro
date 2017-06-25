@@ -705,4 +705,7 @@
   <data name="Float32Token" xml:space="preserve">
     <value>Float32Token</value>
   </data>
+  <data name="Int64Token" xml:space="preserve">
+    <value>Int64Token</value>
+  </data>
 </root>

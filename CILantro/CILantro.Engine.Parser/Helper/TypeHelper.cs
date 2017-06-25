@@ -15,6 +15,8 @@ namespace CILantro.Engine.Parser.Helper
                     return typeof(char);
                 case "class":
                     return GetTypeByAssemblyNameAndClassName(assemblyName, className);
+                case "float64":
+                    return typeof(double);
                 case "int32":
                     return typeof(int);
                 case "object":

@@ -699,4 +699,7 @@
   <data name="ClassToken" xml:space="preserve">
     <value>ClassToken</value>
   </data>
+  <data name="Float64Token" xml:space="preserve">
+    <value>Float64Token</value>
+  </data>
 </root>

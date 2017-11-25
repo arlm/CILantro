@@ -85,6 +85,7 @@ namespace CILantro.Engine.Tests
         [InlineData("CSF_decision_making_if_else_if_else_statement")]
         [InlineData("CSF_decision_making_if_else_if_else_if_else_statement")]
         [InlineData("CSF_decision_making_nested_if_statement")]
+        [InlineData("CSF_decision_making_switch_statement")]
         public void ShouldReturnCorrectResults(string programName)
         {
             var sourceCodeFileName = programName + SourceCodeFileExtension;

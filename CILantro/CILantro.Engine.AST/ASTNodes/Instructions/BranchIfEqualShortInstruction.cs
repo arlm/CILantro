@@ -1,4 +1,6 @@
-﻿namespace CILantro.Engine.AST.ASTNodes.Instructions
+﻿using CILantro.Helpers;
+
+namespace CILantro.Engine.AST.ASTNodes.Instructions
 {
     public class BranchIfEqualShortInstruction : InstructionBranch
     {
@@ -9,7 +11,7 @@
             var value1 = state.Stack.Pop();
             var value2 = state.Stack.Pop();
 
-            if (value1.Equals(value2)) return Method.GetInstructionByBranchTarget(this, Target, TargetLabel);
+            if (value1.EqualsWithoutTypeChecking(value2)) return Method.GetInstructionByBranchTarget(this, Target, TargetLabel);
             return Method.GetNextInstruction(this);
         }
     }

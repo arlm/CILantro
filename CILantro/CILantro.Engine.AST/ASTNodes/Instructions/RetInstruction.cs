@@ -6,7 +6,7 @@
 
         public override CILInstruction Execute(CILProgram program, CILProgramState state)
         {
-            return Method.GetNextInstruction(this);
+            return null;
         }
     }
 }

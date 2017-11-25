@@ -75,7 +75,7 @@ namespace CILantro.Engine.Parser.Tests
         [InlineData("CSF_decision_making_if_statement")]
         [InlineData("CSF_decision_making_if_else_statement")]
         [InlineData("CSF_decision_making_if_else_if_else_statement")]
-        [InlineData("CSF_decision_making_if_else_if_else_if_statement")]
+        [InlineData("CSF_decision_making_if_else_if_else_if_else_statement")]
         public void ShouldParseProgramWithoutErrors(string programName)
         {
             var sourceCodeFileName = programName + SourceCodeFileExtension;

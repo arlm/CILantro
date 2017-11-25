@@ -723,4 +723,13 @@
   <data name="Uint16Token" xml:space="preserve">
     <value>Uint16Token</value>
   </data>
+  <data name="InstructionSwitch" xml:space="preserve">
+    <value>InstructionSwitch</value>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>Labels</value>
+  </data>
+  <data name="SwitchToken" xml:space="preserve">
+    <value>SwitchToken</value>
+  </data>
 </root>

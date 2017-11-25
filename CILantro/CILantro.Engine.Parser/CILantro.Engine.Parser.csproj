@@ -52,6 +52,7 @@
     <Compile Include="CILASTConstruction\Instructions\InstructionMethodBuilder.cs" />
     <Compile Include="CILASTConstruction\Instructions\InstructionNoneBuilder.cs" />
     <Compile Include="CILASTConstruction\Instructions\InstructionStringBuilder.cs" />
+    <Compile Include="CILASTConstruction\Instructions\InstructionSwitchBuilder.cs" />
     <Compile Include="CILASTConstruction\MethodBuilder.cs" />
     <Compile Include="CILASTConstruction\ProgramBuilder.cs" />
     <Compile Include="CILGrammar.cs" />

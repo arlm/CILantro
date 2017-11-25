@@ -60,6 +60,7 @@ namespace CILantro.Engine.Parser.Extensions
         public static bool IsInstructionIntNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.InstructionInt);
         public static bool IsInstructionMethodNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.InstructionMethod);
         public static bool IsInstructionStringNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.InstructionString);
+        public static bool IsInstructionSwitchNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.InstructionSwitch);
         public static bool IsInstructionNoneNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.InstructionNone);
         public static bool IsDecIntegerNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.DecInteger);
         public static bool IsIntegerNode(this ParseTreeNode node) => node.Term.Name.Equals(GrammarNames.Integer);
@@ -170,6 +171,7 @@ namespace CILantro.Engine.Parser.Extensions
         public static ParseTreeNode GetChildInstructionIntNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionIntNode());
         public static ParseTreeNode GetChildInstructionMethodNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionMethodNode());
         public static ParseTreeNode GetChildInstructionStringNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionStringNode());
+        public static ParseTreeNode GetChildInstructionSwitchNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionSwitchNode());
         public static ParseTreeNode GetChildInstructionNoneNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsInstructionNoneNode());
         public static ParseTreeNode GetChildDecIntegerNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsDecIntegerNode());
         public static ParseTreeNode GetChildIntegerNode(this ParseTreeNode node) => node.ChildNodes.FirstOrDefault(cn => cn.IsIntegerNode());

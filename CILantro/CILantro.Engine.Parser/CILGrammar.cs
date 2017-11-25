@@ -205,6 +205,7 @@ namespace CILantro.Engine.Parser
             subovfToken.Rule = ToTerm("sub") + dot + ToTerm("ovf");
             var subovfunToken = new NonTerminal(GrammarNames.SubovfunToken);
             subovfunToken.Rule = ToTerm("sub") + dot + ToTerm("ovf") + dot + ToTerm("un");
+            var switchToken = ToTerm("switch", GrammarNames.SwitchToken);
             var uint8Token = ToTerm("uint8", GrammarNames.Uint8Token);
             var uint16Token = ToTerm("uint16", GrammarNames.Uint16Token);
             var uint32Token = ToTerm("uint32", GrammarNames.Uint32Token);
@@ -339,6 +340,11 @@ namespace CILantro.Engine.Parser
                 dotCustomToken + customType + equalsSign + complexQuotedString |
                 customHead + bytes + rightParenthesis;
 
+            var labels = new NonTerminal(GrammarNames.Labels);
+            labels.Rule =
+                id + comma + labels |
+                id;
+
             var instructionNone = new NonTerminal(GrammarNames.InstructionNone);
             instructionNone.Rule =
                 addToken |
@@ -435,6 +441,9 @@ namespace CILantro.Engine.Parser
             var instructionString = new NonTerminal(GrammarNames.InstructionString);
             instructionString.Rule = ldstrToken;
 
+            var instructionSwitch = new NonTerminal(GrammarNames.InstructionSwitch);
+            instructionSwitch.Rule = switchToken;
+
             var instruction = new NonTerminal(GrammarNames.Instruction);
             instruction.Rule =
                 instructionBranch + integer |
@@ -443,7 +452,8 @@ namespace CILantro.Engine.Parser
                 instructionNone |
                 instructionMethod + callConventions + type + typeSpecification + colon + colon + methodName + leftParenthesis + sigArgs0 + rightParenthesis |
                 instructionMethod + callConventions + type + methodName + leftParenthesis + sigArgs0 + rightParenthesis |
-                instructionString + complexQuotedString;
+                instructionString + complexQuotedString |
+                instructionSwitch + leftParenthesis + labels + rightParenthesis;
 
             var implementationAttributes = new NonTerminal(GrammarNames.ImplementationAttributes);
             implementationAttributes.Rule =

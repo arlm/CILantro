@@ -1096,6 +1096,15 @@ namespace CILantro.Engine.Parser {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to InstructionSwitch.
+        /// </summary>
+        internal static string InstructionSwitch {
+            get {
+                return ResourceManager.GetString("InstructionSwitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Int16Token.
         /// </summary>
         internal static string Int16Token {
@@ -1137,6 +1146,15 @@ namespace CILantro.Engine.Parser {
         internal static string Integer {
             get {
                 return ResourceManager.GetString("Integer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Labels.
+        /// </summary>
+        internal static string Labels {
+            get {
+                return ResourceManager.GetString("Labels", resourceCulture);
             }
         }
         
@@ -1794,6 +1812,15 @@ namespace CILantro.Engine.Parser {
         internal static string SubToken {
             get {
                 return ResourceManager.GetString("SubToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SwitchToken.
+        /// </summary>
+        internal static string SwitchToken {
+            get {
+                return ResourceManager.GetString("SwitchToken", resourceCulture);
             }
         }
         

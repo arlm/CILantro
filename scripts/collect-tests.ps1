@@ -6,6 +6,8 @@ New-Item "../tests" -type directory | Out-Null
 
 $testGroups = Invoke-Expression -Command ./get-test-groups.ps1
 
+$testsCollected = 0
+
 foreach($testGroup in $testGroups)
 {
 	$exeFileRegExp = "^TP_" + $testGroup + "_.*\.exe$"
@@ -33,5 +35,10 @@ foreach($testGroup in $testGroups)
 			
 			Remove-Item $additionalFile.FullName
 		}
+		
+		$testsCollected++
 	}
 }
+
+$testsCollectedMessage = $testsCollected.ToString() + " tests have been collected successfully."
+Write-Host $testsCollectedMessage -foreground "green"

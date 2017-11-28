@@ -19,6 +19,9 @@ cls
 Write-Host "Generating input data..." -foreground "yellow"
 Write-Host
 
+$testsAfterGeneratingInputData = @()
+$errors = @()
+
 foreach($test in $allTests)
 {	
 	$testNameInfo = $test.Name + " "
@@ -26,14 +29,37 @@ foreach($test in $allTests)
 
 	$generateInputDataCommand = "& ./generate-input-data.ps1 " + $test.Name + " " + '"' + $test.FullName + "\in" + '"' + " `$false"
 	$generateInputDataResult = Invoke-Expression $generateInputDataCommand
+	
+	if($generateInputDataResult -match "^SUCCESS.*")
+	{
+		$testsAfterGeneratingInputData = $testsAfterGeneratingInputData += $test
+	}
+	else
+	{
+		$errorMessage = $test.Name + " - cannot generate input data"
+		$errors += $errorMessage
+	}
 }
 
 # summary
 
 cls
 
-$allTestsCountInfo = $allTestsCount.ToString() + " tests have been processed."
+$allTestsCountInfo = $allTestsCount.ToString() + " test(s) have been processed."
 Write-Host $allTestsCountInfo -foreground "yellow"
+
+$testsAfterGeneratingInputDataCount = $testsAfterGeneratingInputData.Length
+$testsAfterGeneratingPercent = $testsAfterGeneratingInputDataCount / $allTestsCount * 100
+$generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " test(s) have passed input data generation phase."
+Write-Host
+Write-Host $generateInputDataCountInfo -foreground "yellow"
+
+Write-Host
+Write-Host "List of errors:" -foreground "red"
+foreach($error in $errors)
+{
+	Write-Host $error -foreground "red"
+}
 
 Write-Host
 Write-Host "Press any key to continue..." -foreground "yellow"

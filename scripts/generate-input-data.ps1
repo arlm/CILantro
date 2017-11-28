@@ -29,6 +29,7 @@ if($generateResult -match "^ERROR")
 	{
 		$errorMessage = "ERROR"
 		Write-Host $errorMessage -foreground "red"
+		return $errorMessage
 	}
 }
 else
@@ -42,5 +43,6 @@ else
 	{
 		$successMessage = "SUCCESS"
 		Write-Host $successMessage -foreground "green"
+		return $successMessage
 	}
 }

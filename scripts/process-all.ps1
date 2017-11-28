@@ -208,7 +208,7 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 
 # summary
 
-#cls
+cls
 
 $allTestsCountInfo = $allTestsCount.ToString() + " tests have been processed."
 Write-Host $allTestsCountInfo -foreground "yellow"
@@ -246,6 +246,16 @@ if($testsAfterGeneratingOutputDataCheckersCount -eq $allTestsCount)
 	$generateOutputDataCheckersCountInfoColor = "green"
 }
 Write-Host $generateOutputDataCheckersCountInfo -foreground $generateOutputDataCheckersCountInfoColor
+
+$testsAfterCheckingOutputCount = $testsAfterCheckingOutput.Length
+$testsAfterCheckingOutputPercent = $testsAfterCheckingOutputCount / $allTestsCount * 100
+$checkOutputCountInfo = $testsAfterCheckingOutputCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterCheckingOutputPercent + " %)" + " tests have had correct output."
+$checkOutputCountInfoColor = "red"
+if($testsAfterCheckingOutputCount -eq $allTestsCount)
+{
+	$checkOutputCountInfoColor = "green"
+}
+Write-Host $checkOutputCountInfo -foreground $checkOutputCountInfoColor
 
 if($errors.length -gt 0)
 {

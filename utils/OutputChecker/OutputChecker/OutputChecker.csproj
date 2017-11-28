@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="IOutputDataChecker.cs" />
     <Compile Include="OutputDataCheckerFactory.cs" />
+    <Compile Include="OutputDataCheckers\SameOutputsOutputDataChecker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

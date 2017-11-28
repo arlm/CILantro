@@ -11,6 +11,12 @@ namespace InputDataGenerator
                 case "TP_CSF_Basics_HelloWorld":
                     return new EmptyInputDataCreator();
 
+                case "TP_FSF_Basics_HelloWorld":
+                    return new EmptyInputDataCreator();
+
+                case "TP_VBF_Basics_HelloWorld":
+                    return new EmptyInputDataCreator();
+
                 default:
                     return null;
             }

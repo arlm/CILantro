@@ -51,14 +51,22 @@ Write-Host $allTestsCountInfo -foreground "yellow"
 $testsAfterGeneratingInputDataCount = $testsAfterGeneratingInputData.Length
 $testsAfterGeneratingPercent = $testsAfterGeneratingInputDataCount / $allTestsCount * 100
 $generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " test(s) have passed input data generation phase."
-Write-Host
-Write-Host $generateInputDataCountInfo -foreground "yellow"
-
-Write-Host
-Write-Host "List of errors:" -foreground "red"
-foreach($error in $errors)
+$generateInputDataCountInfoColor = "red"
+if($testsAfterGeneratingInputDataCount -eq $allTestsCount)
 {
-	Write-Host $error -foreground "red"
+	$generateInputDataCountInfoColor = "green"
+}
+Write-Host
+Write-Host $generateInputDataCountInfo -foreground $generateInputDataCountInfoColor
+
+if($errors.length -gt 0)
+{
+	Write-Host
+	Write-Host "List of errors:" -foreground "red"
+	foreach($error in $errors)
+	{
+		Write-Host $error -foreground "red"
+	}
 }
 
 Write-Host

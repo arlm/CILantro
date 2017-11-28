@@ -41,6 +41,14 @@ foreach($test in $allTests)
 	}
 }
 
+# generate execs
+
+foreach($test in $testsAfterGeneratingInputData)
+{
+	$ilasmCommand = "& ilasm " + '"' + $test.FullName + "\src\program.il" + '"'
+	Invoke-Expression $ilasmCommand | Out-Null
+}
+
 # summary
 
 cls

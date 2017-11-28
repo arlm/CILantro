@@ -40,5 +40,5 @@ foreach($testGroup in $testGroups)
 	}
 }
 
-$testsCollectedMessage = $testsCollected.ToString() + " tests have been collected successfully."
+$testsCollectedMessage = $testsCollected.ToString() + " tests have been collected."
 Write-Host $testsCollectedMessage -foreground "green"

@@ -154,9 +154,61 @@ foreach($test in $testsAfterCilantroEngine)
 	}
 }
 
-# summary
+# check outputs
 
 cls
+
+Write-Host "Checking output data..." -foreground "yellow"
+Write-Host
+
+$testsAfterCheckingOutput = @()
+
+foreach($test in $testsAfterGeneratingOutputDataCheckers)
+{
+	$inDataPath = $test.FullName + "\in"
+	$inDataFiles = Get-ChildItem $inDataPath
+	
+	$outExeDataPath = $test.FullName + "\out-exe"
+	$outCilantroDataPath = $test.FullName + "\out-cilantro"
+	
+	$checkOutputSuccess = $true
+	
+	foreach($inDataFile in $inDataFiles)
+	{
+		$inDataFilePath = $inDataFile.FullName
+		$outExeFilePath = $outExeDataPath + "\" + $inDataFile.BaseName + ".out"
+		$outCilantroFilePath = $outCilantroDataPath + "\" + $inDataFile.BaseName + ".out"
+		
+		$testNameInfo = $test.Name + " - " + $inDataFile.Name + " "
+		Write-Host -NoNewLine $testnameInfo
+		
+		$checkOutputCommand = "& ./check-output.ps1 " + $test.Name + " " + '"' + $inDataFilePath + '"' + " " + '"' + $outExeFilePath + '"' + " " + '"' + $outCilantroFilePath + '"' + " `$false"
+		$checkOutputResult = Invoke-Expression $checkOutputCommand
+		
+		if($checkOutputResult -match "^SUCCESS.*")
+		{
+		}
+		else
+		{
+			$checkOutputSuccess = $false
+			
+			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - incorrect output"
+			$errors += $errorMessage
+		}
+	}
+	
+	if($checkOutputSuccess)
+	{
+		$testsAfterCheckingOutput = $testsAfterCheckingOutput += $test
+	}
+	else
+	{
+	}
+}
+
+# summary
+
+#cls
 
 $allTestsCountInfo = $allTestsCount.ToString() + " tests have been processed."
 Write-Host $allTestsCountInfo -foreground "yellow"
@@ -177,7 +229,7 @@ Write-Host $generateInputDataCountInfo -foreground $generateInputDataCountInfoCo
 
 $testsAfterCilantroEngineCount = $testsAfterCilantroEngine.Length
 $testsAfterCilantroEnginePercent = $testsAfterCilantroEngineCount / $allTestsCount * 100
-$cilantroEngineCountInfo = $testsAfterCilantroEngineCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterCilantroEnginePercent + " %)" + " tests have been processed by CILantro engine successfully."
+$cilantroEngineCountInfo = $testsAfterCilantroEngineCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterCilantroEnginePercent + " %)" + " tests have been processed by CILantro engine."
 $cilantroEngineCountInfoColor = "red"
 if($testsAfterCilantroEngineCount -eq $allTestsCount)
 {

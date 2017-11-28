@@ -86,6 +86,46 @@ foreach($test in $testsAfterGeneratingInputData)
 	}
 }
 
+# process tests by cilantro engine
+
+cls
+
+Write-Host "Processing tests by CILantro engine..." -foreground "yellow"
+Write-Host
+
+$testsAfterCilantroEngine = @()
+
+foreach($test in $testsAfterGeneratingInputData)
+{
+	$inDataPath = $test.FullName + "\in"
+	$inDataFiles = Get-ChildItem $inDataPath
+	
+	$outDataPath = $test.FullName + "\out-cilantro"
+	New-Item $outDataPath -type directory | Out-Null
+	
+	foreach($inDataFile in $inDataFiles)
+	{
+		$testNameInfo = $test.Name + " - " + $inDataFile.Name + " "
+		Write-Host -NoNewLine $testNameInfo
+	
+		$outDataFilePath = $outDataPath + "\" + $inDataFile.BaseName + ".out"
+		New-Item $outDataFilePath | Out-Null
+		
+		$cilantroEngineCommand = "& ./cilantro-engine.ps1 " + $test.Name + " " + '"' + $inDataFile.FullName + '"' + " " + '"' + $outDataFilePath + '"' + " " + "`$false"
+		$cilantroEngineResult = Invoke-Expression $cilantroEngineCommand
+		
+		if($cilantroEngineResult -match "^SUCCESS.*")
+		{
+			$testsAfterCilantroEngine = $testsAfterCilantroEngine += $test
+		}
+		else
+		{
+			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - cannot process by CILantro engine"
+			$errors += $errorMessage
+		}
+	}
+}
+
 # summary
 
 cls
@@ -98,7 +138,7 @@ Write-Host $allInDataFilesCountInfo -foreground "yellow"
 
 $testsAfterGeneratingInputDataCount = $testsAfterGeneratingInputData.Length
 $testsAfterGeneratingPercent = $testsAfterGeneratingInputDataCount / $allTestsCount * 100
-$generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " tests have passed input data generation phase."
+$generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " tests have passed input data generation phase successfully."
 $generateInputDataCountInfoColor = "red"
 if($testsAfterGeneratingInputDataCount -eq $allTestsCount)
 {
@@ -106,6 +146,16 @@ if($testsAfterGeneratingInputDataCount -eq $allTestsCount)
 }
 Write-Host
 Write-Host $generateInputDataCountInfo -foreground $generateInputDataCountInfoColor
+
+$testsAfterCilantroEngineCount = $testsAfterCilantroEngine.Length
+$testsAfterCilantroEnginePercent = $testsAfterCilantroEngineCount / $allTestsCount * 100
+$cilantroEngineCountInfo = $testsAfterCilantroEngineCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterCilantroEnginePercent + " %)" + " tests have been processed by CILantro engine successfully."
+$cilantroEngineCountInfoColor = "red"
+if($testsAfterCilantroEngineCount -eq $allTestsCount)
+{
+	$cilantroEngineCountInfoColor = "green"
+}
+Write-Host $cilantroEngineCountInfo -foreground $cilantroEngineCountInfoColor
 
 if($errors.length -gt 0)
 {

@@ -43,22 +43,62 @@ foreach($test in $allTests)
 
 # generate execs
 
+cls
+
+Write-Host "Generating execs..." -foreground "yellow"
+Write-Host
+
 foreach($test in $testsAfterGeneratingInputData)
 {
 	$ilasmCommand = "& ilasm " + '"' + $test.FullName + "\src\program.il" + '"'
 	Invoke-Expression $ilasmCommand | Out-Null
 }
 
+# generate out from execs
+
+cls
+
+Write-Host "Generating output data from execs..." -foreground "yellow"
+Write-Host
+
+$allInDataFilesCount = 0
+
+foreach($test in $testsAfterGeneratingInputData)
+{
+	$inDataPath = $test.FullName + "\in"
+	$inDataFiles = Get-ChildItem $inDataPath
+	
+	$outDataPath = $test.FullName + "\out-exe"
+	New-Item $outDataPath -type directory | Out-Null
+	
+	$allInDataFilesCount += $inDataFiles.Count
+	
+	foreach($inDataFile in $inDataFiles)
+	{
+		$outDataFilePath = $outDataPath + "\" + $inDataFile.BaseName + ".out"
+		New-Item $outDataFilePath | Out-Null
+	
+		$exeCommand = '"' + $test.FullName + "\src\program.exe" + '"'
+		Start-Process $exeCommand -RedirectStandardInput $inDataFile.FullName -RedirectStandardOutput $outDataFilePath
+		
+		echo $outDataFilePath
+		echo $result
+	}
+}
+
 # summary
 
 cls
 
-$allTestsCountInfo = $allTestsCount.ToString() + " test(s) have been processed."
+$allTestsCountInfo = $allTestsCount.ToString() + " tests have been processed."
 Write-Host $allTestsCountInfo -foreground "yellow"
+
+$allInDataFilesCountInfo = $allInDataFilesCount.ToString() + " input data files have been processed."
+Write-Host $allInDataFilesCountInfo -foreground "yellow"
 
 $testsAfterGeneratingInputDataCount = $testsAfterGeneratingInputData.Length
 $testsAfterGeneratingPercent = $testsAfterGeneratingInputDataCount / $allTestsCount * 100
-$generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " test(s) have passed input data generation phase."
+$generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " tests have passed input data generation phase."
 $generateInputDataCountInfoColor = "red"
 if($testsAfterGeneratingInputDataCount -eq $allTestsCount)
 {

@@ -9,8 +9,6 @@ namespace InputDataGenerator.InputDataCreators
             var emptyInputFilePath = Path.Combine(folderPath, "empty.in");
             var emptyInputFileWriter = new StreamWriter(emptyInputFilePath);
 
-            emptyInputFileWriter.WriteLine();
-
             emptyInputFileWriter.Close();
         }
     }

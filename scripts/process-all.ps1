@@ -79,7 +79,7 @@ foreach($test in $testsAfterGeneratingInputData)
 		New-Item $outDataFilePath | Out-Null
 	
 		$exeCommand = '"' + $test.FullName + "\src\program.exe" + '"'
-		Start-Process $exeCommand -RedirectStandardInput $inDataFile.FullName -RedirectStandardOutput $outDataFilePath
+		Start-Process $exeCommand -RedirectStandardInput $inDataFile.FullName -RedirectStandardOutput $outDataFilePath -NoNewWindow
 		
 		echo $outDataFilePath
 		echo $result

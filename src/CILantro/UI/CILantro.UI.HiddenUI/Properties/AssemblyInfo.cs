@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CILantro.ConsoleUI")]
+[assembly: AssemblyTitle("CILantro.UI.HiddenUI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CILantro.ConsoleUI")]
+[assembly: AssemblyProduct("CILantro.UI.HiddenUI")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6bdcaf4b-329c-4579-b427-65e7291fbab5")]
+[assembly: Guid("53e0f931-d5af-4008-a4a5-99f0d1d6915e")]
 
 // Version information for an assembly consists of the following four values:
 //

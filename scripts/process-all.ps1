@@ -126,6 +126,34 @@ foreach($test in $testsAfterGeneratingInputData)
 	}
 }
 
+# generate output checker
+
+cls
+
+Write-Host "Generating output data checkers..." -foreground "yellow"
+Write-Host
+
+$testsAfterGeneratingOutputDataCheckers = @()
+
+foreach($test in $testsAfterCilantroEngine)
+{
+	$testNameInfo = $test.Name + " "
+	Write-Host -NoNewLine $testNameInfo
+	
+	$generateOutputDataCheckerCommand = "& ./generate-output-data-checker.ps1 " + $test.Name + " `$false"
+	$generateOutputDataCheckerResult = Invoke-Expression $generateOutputDataCheckerCommand
+	
+	if($generateOutputDataCheckerResult -match "^SUCCESS.*")
+	{
+		$testsAfterGeneratingOutputDataCheckers = $testsAfterGeneratingOutputDataCheckers += $test
+	}
+	else
+	{
+		$errorMessage = $test.Name + " - cannot generate output data checker"
+		$errors += $errorMessage
+	}
+}
+
 # summary
 
 cls
@@ -138,7 +166,7 @@ Write-Host $allInDataFilesCountInfo -foreground "yellow"
 
 $testsAfterGeneratingInputDataCount = $testsAfterGeneratingInputData.Length
 $testsAfterGeneratingPercent = $testsAfterGeneratingInputDataCount / $allTestsCount * 100
-$generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " tests have passed input data generation phase successfully."
+$generateInputDataCountInfo  = $testsAfterGeneratingInputDataCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingPercent + " %)" + " tests have had input data generated."
 $generateInputDataCountInfoColor = "red"
 if($testsAfterGeneratingInputDataCount -eq $allTestsCount)
 {
@@ -156,6 +184,16 @@ if($testsAfterCilantroEngineCount -eq $allTestsCount)
 	$cilantroEngineCountInfoColor = "green"
 }
 Write-Host $cilantroEngineCountInfo -foreground $cilantroEngineCountInfoColor
+
+$testsAfterGeneratingOutputDataCheckersCount = $testsAfterGeneratingOutputDataCheckers.Length
+$testsAfterGeneratingOutputDataCheckersPercent = $testsAfterGeneratingOutputDataCheckersCount / $allTestsCount * 100
+$generateOutputDataCheckersCountInfo = $testsAfterGeneratingOutputDataCheckersCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterGeneratingOutputDataCheckersPercent + " %)" + " tests have had output data checkers generated."
+$generateOutputDataCheckersCountInfoColor = "red"
+if($testsAfterGeneratingOutputDataCheckersCount -eq $allTestsCount)
+{
+	$generateOutputDataCheckersCountInfoColor = "green"
+}
+Write-Host $generateOutputDataCheckersCountInfo -foreground $generateOutputDataCheckersCountInfoColor
 
 if($errors.length -gt 0)
 {

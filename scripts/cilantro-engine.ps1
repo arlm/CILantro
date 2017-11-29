@@ -1,6 +1,6 @@
 param
 (
-	[string]$programName,
+	[string]$programSrcPath,
 	[string]$inDataFilePath,
 	[string]$outDataFilePath,
 	[bool]$showMessages = $true
@@ -16,7 +16,8 @@ if(Test-Path($errorTempFile))
 	Remove-Item $errorTempFile -force -recurse
 }
 
-Start-Process $cilantroConsoleExe -RedirectStandardError $errorTempFile -RedirectStandardInput $inDataFilePath -RedirectStandardOutput $outDataFilePath -NoNewWindow -Wait 
+$cilantroConsoleArgs = '"' + $programSrcPath + '"'
+Start-Process $cilantroConsoleExe -RedirectStandardError $errorTempFile -RedirectStandardInput $inDataFilePath -RedirectStandardOutput $outDataFilePath -NoNewWindow -Wait -ArgumentList $cilantroConsoleArgs
 
 $result = $true
 if(-not ((Get-Content $errorTempFile) -eq $Null))

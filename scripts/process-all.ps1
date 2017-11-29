@@ -103,6 +103,8 @@ foreach($test in $testsAfterGeneratingInputData)
 	$outDataPath = $test.FullName + "\out-cilantro"
 	New-Item $outDataPath -type directory | Out-Null
 	
+	$testSrcPath = $test.FullName
+	
 	foreach($inDataFile in $inDataFiles)
 	{
 		$testNameInfo = $test.Name + " - " + $inDataFile.Name + " "
@@ -111,7 +113,7 @@ foreach($test in $testsAfterGeneratingInputData)
 		$outDataFilePath = $outDataPath + "\" + $inDataFile.BaseName + ".out"
 		New-Item $outDataFilePath | Out-Null
 		
-		$cilantroEngineCommand = "& ./cilantro-engine.ps1 " + $test.Name + " " + '"' + $inDataFile.FullName + '"' + " " + '"' + $outDataFilePath + '"' + " " + "`$false"
+		$cilantroEngineCommand = "& ./cilantro-engine.ps1 " + '"' + $testSrcPath + '"' + " " + '"' + $inDataFile.FullName + '"' + " " + '"' + $outDataFilePath + '"' + " " + "`$false"
 		$cilantroEngineResult = Invoke-Expression $cilantroEngineCommand
 		
 		if($cilantroEngineResult -match "^SUCCESS.*")

@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{325FE713-9065-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CILantro.UI.HiddenUI", "UI\CILantro.UI.HiddenUI\CILantro.UI.HiddenUI.csproj", "{53E0F931-D5AF-4008-A4A5-99F0D1D6915E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{34DC4D01-319D-4952-B7AB-07BC08879282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CILantro.Engine", "Engine\CILantro.Engine\CILantro.Engine.csproj", "{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{53E0F931-D5AF-4008-A4A5-99F0D1D6915E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53E0F931-D5AF-4008-A4A5-99F0D1D6915E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53E0F931-D5AF-4008-A4A5-99F0D1D6915E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{53E0F931-D5AF-4008-A4A5-99F0D1D6915E} = {325FE713-9065-4EFA-A7D9-A98686D13F50}
+		{DA8AF066-464A-4832-9F2C-EF5AB805A6F1} = {34DC4D01-319D-4952-B7AB-07BC08879282}
 	EndGlobalSection
 EndGlobal

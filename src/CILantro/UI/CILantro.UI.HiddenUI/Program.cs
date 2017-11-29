@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CILantro.Engine;
+using System;
+using System.IO;
 
 namespace CILantro.UI.HiddenUI
 {
@@ -6,7 +8,13 @@ namespace CILantro.UI.HiddenUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("abcde");
+            var cilantroEngine = new CILantroEngine(string.Empty);
+
+            var consoleReader = new StreamReader(Console.OpenStandardInput());
+            var consoleWriter = new StreamWriter(Console.OpenStandardOutput());
+            consoleWriter.AutoFlush = true;
+
+            cilantroEngine.Process(consoleReader, consoleWriter);
         }
     }
 }

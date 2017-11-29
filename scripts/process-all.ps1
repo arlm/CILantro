@@ -270,8 +270,12 @@ if($errors.length -gt 0)
 }
 
 Write-Host
-Write-Host "Press any key to continue..." -foreground "yellow"
+Write-Host "Press ENTER to continue..." -foreground "yellow"
 
-$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+$key = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+while(-not($key.VirtualKeyCode -eq 13))
+{
+	$key = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+}
 
 cls

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleUIMode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AST\CILantro.AST\CILantro.AST.csproj">
+      <Project>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</Project>
+      <Name>CILantro.AST</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Engine\CILantro.Engine\CILantro.Engine.csproj">
       <Project>{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}</Project>
       <Name>CILantro.Engine</Name>

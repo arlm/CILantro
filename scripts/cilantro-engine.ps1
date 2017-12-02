@@ -3,7 +3,8 @@ param
 	[string]$programSrcPath,
 	[string]$inDataFilePath,
 	[string]$outDataFilePath,
-	[bool]$showMessages = $true
+	[bool]$showMessages = $true,
+	[string]$mode = "normal"
 )
 
 $ErrorActionPreference = 'SilentlyContinue'
@@ -16,8 +17,16 @@ if(Test-Path($errorTempFile))
 	Remove-Item $errorTempFile -force -recurse
 }
 
-$cilantroConsoleArgs = '"' + $programSrcPath + '"'
-Start-Process $cilantroConsoleExe -RedirectStandardError $errorTempFile -RedirectStandardInput $inDataFilePath -RedirectStandardOutput $outDataFilePath -NoNewWindow -Wait -ArgumentList $cilantroConsoleArgs
+if($mode -eq "normal")
+{
+	$cilantroConsoleArgs = '"' + $programSrcPath + '"'
+	Start-Process $cilantroConsoleExe -RedirectStandardError $errorTempFile -RedirectStandardInput $inDataFilePath -RedirectStandardOutput $outDataFilePath -NoNewWindow -Wait -ArgumentList $cilantroConsoleArgs
+}
+else
+{
+	$cilantroConsoleArgs = '"' + $programSrcPath + '"' + " " + '"parse-only"'
+	Start-Process $cilantroConsoleExe -RedirectStandardError $errorTempFile -NoNewWindow -Wait -ArgumentList $cilantroConsoleArgs
+}
 
 $result = $true
 if(-not ((Get-Content $errorTempFile) -eq $Null))

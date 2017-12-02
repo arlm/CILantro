@@ -1,4 +1,5 @@
-﻿using CILantro.Interpreter;
+﻿using CILantro.AST;
+using CILantro.Interpreter;
 using CILantro.Parser;
 using System.IO;
 
@@ -23,6 +24,11 @@ namespace CILantro.Engine
         {
             var programTree = _cilParser.Parse(SourceCode);
             _cilInterpreter.Interpret(programTree, inputStream, outputStream);
+        }
+
+        public CILProgramTree Parse()
+        {
+            return _cilParser.Parse(SourceCode);
         }
     }
 }

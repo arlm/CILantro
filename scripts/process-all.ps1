@@ -86,6 +86,36 @@ foreach($test in $testsAfterGeneratingInputData)
 	}
 }
 
+# parse tests by cilantro parser
+
+cls
+
+Write-Host "Parsing tests by CILantro parser..." -foreground "yellow"
+Write-Host
+
+$testsAfterCilantroParser = @()
+
+foreach($test in $testsAfterGeneratingInputData)
+{
+	$testNameInfo = $test.Name + " "
+	Write-Host -NoNewLine $testNameInfo
+
+	$testSrcPath = $test.FullName
+	
+	$cilantroParserCommand = "& ./cilantro-engine.ps1 " + '"' + $testSrcPath + '"' + " " + '"null"' + " " + '"null"' + " " + "`$false" + " " + '"parse-only"'
+	$cilantroParserResult = Invoke-Expression $cilantroParserCommand
+	
+	if($cilantroParserResult -match "^SUCCESS.*")
+	{
+		$testsAfterCilantroParser = $testsAfterCilantroParser += $test
+	}
+	else
+	{
+		$errorMessage = $test.Name + " - cannot parse by CILantro parser"
+		$errors += $errorMessage
+	}
+}
+
 # process tests by cilantro engine
 
 cls
@@ -95,7 +125,7 @@ Write-Host
 
 $testsAfterCilantroEngine = @()
 
-foreach($test in $testsAfterGeneratingInputData)
+foreach($test in $testsAfterCilantroParser)
 {
 	$inDataPath = $test.FullName + "\in"
 	$inDataFiles = Get-ChildItem $inDataPath
@@ -228,6 +258,16 @@ if($testsAfterGeneratingInputDataCount -eq $allTestsCount)
 }
 Write-Host
 Write-Host $generateInputDataCountInfo -foreground $generateInputDataCountInfoColor
+
+$testsAfterCilantroParserCount = $testsAfterCilantroParser.Length
+$testsAfterCilantroParserPercent = $testsAfterCilantroParserCount / $allTestsCount * 100
+$cilantroParserCountInfo = $testsAfterCilantroParserCount.ToString() + " / " + $alltestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterCilantroParserPercent + " %)" + " tests have been parsed by CILantro parser."
+$cilantroParserCountInfoColor = "red"
+if($testsAfterCilantroParserCount -eq $allTestsCount)
+{
+	$cilantroParserCountInfoColor = "green"
+}
+Write-Host $cilantroParserCountInfo -foreground $cilantroParserCountInfoColor
 
 $testsAfterCilantroEngineCount = $testsAfterCilantroEngine.Length
 $testsAfterCilantroEnginePercent = $testsAfterCilantroEngineCount / $allTestsCount * 100

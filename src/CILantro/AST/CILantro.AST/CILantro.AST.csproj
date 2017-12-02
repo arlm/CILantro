@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}</ProjectGuid>
+    <ProjectGuid>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CILantro.Engine</RootNamespace>
-    <AssemblyName>CILantro.Engine</AssemblyName>
+    <RootNamespace>CILantro.AST</RootNamespace>
+    <AssemblyName>CILantro.AST</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,22 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CILantroEngine.cs" />
+    <Compile Include="CILProgramTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\AST\CILantro.AST\CILantro.AST.csproj">
-      <Project>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</Project>
-      <Name>CILantro.AST</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Interpreter\CILantro.Interpreter\CILantro.Interpreter.csproj">
-      <Project>{E0DCB7F3-2A13-4402-A0FF-E8D900BDD9C9}</Project>
-      <Name>CILantro.Interpreter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Parser\CILantro.Parser\CILantro.Parser.csproj">
-      <Project>{A06EC1E5-1EFC-46E9-8826-C77D97DE35CB}</Project>
-      <Name>CILantro.Parser</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

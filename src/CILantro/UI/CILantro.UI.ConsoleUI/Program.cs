@@ -33,7 +33,7 @@ namespace CILantro.UI.ConsoleUI
 
                 cilantroEngine.Process(consoleReader, consoleWriter);
             }
-            else if(mode == ConsoleUIMode.ParseOnly)
+            else if (mode == ConsoleUIMode.ParseOnly)
             {
                 var programTree = cilantroEngine.Parse();
                 if (programTree == null)

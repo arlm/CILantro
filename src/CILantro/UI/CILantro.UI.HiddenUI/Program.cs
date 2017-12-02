@@ -9,6 +9,7 @@ namespace CILantro.UI.HiddenUI
         static void Main(string[] args)
         {
             var sourceCodePath = args[0];
+            var sourceCode = File.ReadAllText(sourceCodePath);
 
             var mode = HiddenUIMode.Normal;
             if (args.Length > 1)
@@ -22,7 +23,7 @@ namespace CILantro.UI.HiddenUI
                 }
             }
 
-            var cilantroEngine = new CILantroEngine(string.Empty);
+            var cilantroEngine = new CILantroEngine(sourceCode);
 
             if (mode == HiddenUIMode.Normal)
             {

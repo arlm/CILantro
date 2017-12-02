@@ -36,7 +36,7 @@ foreach($test in $allTests)
 	}
 	else
 	{
-		$errorMessage = $test.Name + " - cannot generate input data"
+		$errorMessage = $test.Name + " - input data could not have been generated"
 		$errors += $errorMessage
 	}
 }
@@ -111,7 +111,7 @@ foreach($test in $testsAfterGeneratingInputData)
 	}
 	else
 	{
-		$errorMessage = $test.Name + " - cannot parse by CILantro parser"
+		$errorMessage = $test.Name + " - could not have been parsed by CILantro parser"
 		$errors += $errorMessage
 	}
 }
@@ -152,7 +152,7 @@ foreach($test in $testsAfterCilantroParser)
 		}
 		else
 		{
-			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - cannot process by CILantro engine"
+			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - could not have been processed by CILantro engine"
 			$errors += $errorMessage
 		}
 	}
@@ -181,7 +181,7 @@ foreach($test in $testsAfterCilantroEngine)
 	}
 	else
 	{
-		$errorMessage = $test.Name + " - cannot generate output data checker"
+		$errorMessage = $test.Name + " - output data checker could not have been generated"
 		$errors += $errorMessage
 	}
 }
@@ -224,7 +224,7 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 		{
 			$checkOutputSuccess = $false
 			
-			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - incorrect output"
+			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - output has been incorrect"
 			$errors += $errorMessage
 		}
 	}

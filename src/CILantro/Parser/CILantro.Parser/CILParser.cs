@@ -1,4 +1,5 @@
 ﻿using CILantro.AST;
+using CILantro.Extensions.Irony;
 using CILantro.Grammar;
 using System;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace CILantro.Parser
                 return new CILProgramTree();
             }
 
-            throw new ArgumentException(parseTree.ParserMessages.First().Message);
+            throw new ArgumentException(parseTree.ParserMessages.First().UserFriendlyMessage());
         }
     }
 }

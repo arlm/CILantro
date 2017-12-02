@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Grammar", "Grammar", "{6D67
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CILantro.Grammar", "Grammar\CILantro.Grammar\CILantro.Grammar.csproj", "{F54FCA78-7B13-4380-B2DA-BE289388144A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{DC4FC8E0-E5F2-447F-ADE3-2C6FA7B508CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CILantro.Extensions", "Extensions\CILantro.Extensions\CILantro.Extensions.csproj", "{5FB262C0-01C3-48B0-9680-60132B4D388D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{F54FCA78-7B13-4380-B2DA-BE289388144A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F54FCA78-7B13-4380-B2DA-BE289388144A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F54FCA78-7B13-4380-B2DA-BE289388144A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB262C0-01C3-48B0-9680-60132B4D388D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB262C0-01C3-48B0-9680-60132B4D388D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB262C0-01C3-48B0-9680-60132B4D388D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB262C0-01C3-48B0-9680-60132B4D388D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,5 +83,6 @@ Global
 		{E0DCB7F3-2A13-4402-A0FF-E8D900BDD9C9} = {B30EB183-7BEF-478E-8B3A-C50086EC0BF8}
 		{91605117-BC19-4C50-B5ED-C7E2ABE97946} = {325FE713-9065-4EFA-A7D9-A98686D13F50}
 		{F54FCA78-7B13-4380-B2DA-BE289388144A} = {6D676E7A-8487-470B-A327-FB80417A9116}
+		{5FB262C0-01C3-48B0-9680-60132B4D388D} = {DC4FC8E0-E5F2-447F-ADE3-2C6FA7B508CE}
 	EndGlobalSection
 EndGlobal

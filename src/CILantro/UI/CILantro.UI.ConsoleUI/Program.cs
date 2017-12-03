@@ -32,6 +32,8 @@ namespace CILantro.UI.ConsoleUI
                 consoleWriter.AutoFlush = true;
 
                 cilantroEngine.Process(consoleReader, consoleWriter);
+
+                Console.ReadKey();
             }
             else if (mode == ConsoleUIMode.ParseOnly)
             {

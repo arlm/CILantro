@@ -200,12 +200,19 @@ namespace CILantro.Grammar
                 Empty |
                 assemblyDecls + assemblyDecl;
 
+            // moduleHead
+
+            var moduleHead = new NonTerminal(GrammarNames.moduleHead);
+            moduleHead.Rule =
+                ToTerm(".module") + name1;
+
             // decl
 
             var decl = new NonTerminal(GrammarNames.decl);
             decl.Rule =
                 assemblyHead + ToTerm("{") + assemblyDecls + ToTerm("}") |
-                assemblyRefHead + ToTerm("{") + assemblyRefDecls + ToTerm("}");
+                assemblyRefHead + ToTerm("{") + assemblyRefDecls + ToTerm("}") |
+                moduleHead;
 
             // decls
 

@@ -195,6 +195,9 @@
   <data name="LEXICALS_INT32_HEX" xml:space="preserve">
     <value>LEXICALS_INT32_HEX</value>
   </data>
+  <data name="moduleHead" xml:space="preserve">
+    <value>moduleHead</value>
+  </data>
   <data name="name1" xml:space="preserve">
     <value>name1</value>
   </data>

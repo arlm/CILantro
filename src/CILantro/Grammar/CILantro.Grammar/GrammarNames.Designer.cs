@@ -295,6 +295,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to moduleHead.
+        /// </summary>
+        public static string moduleHead {
+            get {
+                return ResourceManager.GetString("moduleHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to name1.
         /// </summary>
         public static string name1 {

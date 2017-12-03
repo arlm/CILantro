@@ -23,6 +23,11 @@ namespace CILantro.Grammar
             var INT32 = new NonTerminal(GrammarNames.LEXICALS_INT32);
             INT32.Rule = INT32_DEC | INT32_HEX;
 
+            var INT64_DEC = new NumberLiteral(GrammarNames.LEXICALS_INT64_DEC, NumberOptions.IntOnly | NumberOptions.AllowSign);
+            var INT64_HEX = new RegexBasedTerminal(GrammarNames.LEXICALS_INT64_HEX, "0x[A-F0-9]{1,}");
+            var INT64 = new NonTerminal(GrammarNames.LEXICALS_INT64);
+            INT64.Rule = INT64_DEC | INT64_HEX;
+
             // id
 
             var id = new NonTerminal(GrammarNames.id);
@@ -55,6 +60,12 @@ namespace CILantro.Grammar
             var int32 = new NonTerminal(GrammarNames.int32);
             int32.Rule =
                 INT32;
+
+            // int64
+
+            var int64 = new NonTerminal(GrammarNames.int64);
+            int64.Rule =
+                INT64;
 
             // type
 
@@ -212,7 +223,8 @@ namespace CILantro.Grammar
             decl.Rule =
                 assemblyHead + ToTerm("{") + assemblyDecls + ToTerm("}") |
                 assemblyRefHead + ToTerm("{") + assemblyRefDecls + ToTerm("}") |
-                moduleHead;
+                moduleHead |
+                ToTerm(".imagebase") + int64;
 
             // decls
 

@@ -250,6 +250,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to int64.
+        /// </summary>
+        public static string int64 {
+            get {
+                return ResourceManager.GetString("int64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LEXICALS_HEXBYTE.
         /// </summary>
         public static string LEXICALS_HEXBYTE {
@@ -291,6 +300,33 @@ namespace CILantro.Grammar {
         public static string LEXICALS_INT32_HEX {
             get {
                 return ResourceManager.GetString("LEXICALS_INT32_HEX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_INT64.
+        /// </summary>
+        public static string LEXICALS_INT64 {
+            get {
+                return ResourceManager.GetString("LEXICALS_INT64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_INT64_DEC.
+        /// </summary>
+        public static string LEXICALS_INT64_DEC {
+            get {
+                return ResourceManager.GetString("LEXICALS_INT64_DEC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_INT64_HEX.
+        /// </summary>
+        public static string LEXICALS_INT64_HEX {
+            get {
+                return ResourceManager.GetString("LEXICALS_INT64_HEX", resourceCulture);
             }
         }
         

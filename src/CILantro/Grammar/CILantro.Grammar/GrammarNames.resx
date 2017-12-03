@@ -180,6 +180,9 @@
   <data name="int32" xml:space="preserve">
     <value>int32</value>
   </data>
+  <data name="int64" xml:space="preserve">
+    <value>int64</value>
+  </data>
   <data name="LEXICALS_HEXBYTE" xml:space="preserve">
     <value>LEXICALS_HEXBYTE</value>
   </data>
@@ -194,6 +197,15 @@
   </data>
   <data name="LEXICALS_INT32_HEX" xml:space="preserve">
     <value>LEXICALS_INT32_HEX</value>
+  </data>
+  <data name="LEXICALS_INT64" xml:space="preserve">
+    <value>LEXICALS_INT64</value>
+  </data>
+  <data name="LEXICALS_INT64_DEC" xml:space="preserve">
+    <value>LEXICALS_INT64_DEC</value>
+  </data>
+  <data name="LEXICALS_INT64_HEX" xml:space="preserve">
+    <value>LEXICALS_INT64_HEX</value>
   </data>
   <data name="moduleHead" xml:space="preserve">
     <value>moduleHead</value>

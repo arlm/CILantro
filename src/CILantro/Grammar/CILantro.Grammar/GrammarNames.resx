@@ -249,6 +249,21 @@
   <data name="LEXICALS_SQSTRING" xml:space="preserve">
     <value>LEXICALS_SQSTRING</value>
   </data>
+  <data name="localsHead" xml:space="preserve">
+    <value>localsHead</value>
+  </data>
+  <data name="manifestResDecl" xml:space="preserve">
+    <value>manifestResDecl</value>
+  </data>
+  <data name="manifestResDecls" xml:space="preserve">
+    <value>manifestResDecls</value>
+  </data>
+  <data name="manifestResHead" xml:space="preserve">
+    <value>manifestResHead</value>
+  </data>
+  <data name="manresAttr" xml:space="preserve">
+    <value>manresAttr</value>
+  </data>
   <data name="methAttr" xml:space="preserve">
     <value>methAttr</value>
   </data>

@@ -26,6 +26,7 @@ namespace CILantro.Grammar
                 "=",
                 ":",
                 "::",
+                ",",
                 ".assembly",
                 ".class",
                 ".corflags",
@@ -35,13 +36,16 @@ namespace CILantro.Grammar
                 ".file",
                 ".hash",
                 ".imagebase",
+                ".locals",
                 ".maxstack",
                 ".method",
                 ".module",
+                ".mresource",
                 ".publickeytoken",
                 ".stackreserve",
                 ".subsystem",
                 ".ver",
+                "abstract",
                 "alignment",
                 "algorithm",
                 "ansi",
@@ -50,9 +54,11 @@ namespace CILantro.Grammar
                 "bool",
                 "call",
                 "cil",
+                "class",
                 "extends",
                 "extern",
                 "hidebysig",
+                "init",
                 "instance",
                 "int32",
                 "ldarg.0",
@@ -62,9 +68,11 @@ namespace CILantro.Grammar
                 "public",
                 "ret",
                 "rtspecialname",
+                "sealed",
                 "specialname",
                 "static",
                 "string",
+                "valuetype",
                 "void"
             };
 
@@ -122,6 +130,11 @@ namespace CILantro.Grammar
             var instr = new NonTerminal(GrammarNames.instr);
             var int32 = new NonTerminal(GrammarNames.int32);
             var int64 = new NonTerminal(GrammarNames.int64);
+            var localsHead = new NonTerminal(GrammarNames.localsHead);
+            var manifestResDecl = new NonTerminal(GrammarNames.manifestResDecl);
+            var manifestResDecls = new NonTerminal(GrammarNames.manifestResDecls);
+            var manifestResHead = new NonTerminal(GrammarNames.manifestResHead);
+            var manresAttr = new NonTerminal(GrammarNames.manresAttr);
             var methAttr = new NonTerminal(GrammarNames.methAttr);
             var methodDecl = new NonTerminal(GrammarNames.methodDecl);
             var methodDecls = new NonTerminal(GrammarNames.methodDecls);
@@ -170,6 +183,7 @@ namespace CILantro.Grammar
                 classHead + ToTerm("{") + classDecls + ToTerm("}") |
                 assemblyHead + ToTerm("{") + assemblyDecls + ToTerm("}") |
                 assemblyRefHead + ToTerm("{") + assemblyRefDecls + ToTerm("}") |
+                manifestResHead + ToTerm("{") + manifestResDecls + ToTerm("}") |
                 moduleHead |
                 ToTerm(".subsystem") + int32 |
                 ToTerm(".corflags") + int32 |
@@ -191,7 +205,10 @@ namespace CILantro.Grammar
 
             classAttr.Rule =
                 Empty |
+                classAttr + ToTerm("public") |
                 classAttr + ToTerm("private") |
+                classAttr + ToTerm("sealed") |
+                classAttr + ToTerm("abstract") |
                 classAttr + ToTerm("auto") |
                 classAttr + ToTerm("ansi") |
                 classAttr + ToTerm("beforefieldinit");
@@ -208,7 +225,8 @@ namespace CILantro.Grammar
                 classDecls + classDecl;
 
             classDecl.Rule =
-                methodHead + methodDecls + ToTerm("}");
+                methodHead + methodDecls + ToTerm("}") |
+                customAttrDecl;
 
             customHead.Rule =
                 ToTerm(".custom") + customType + ToTerm("=") + ToTerm("(");
@@ -237,18 +255,24 @@ namespace CILantro.Grammar
                 name1;
 
             paramAttr.Rule =
-                Empty;
+                Empty |
+                paramAttr + ToTerm("[") + int32 + ToTerm("]");
 
             implAttr.Rule =
                 Empty |
                 implAttr + ToTerm("cil") |
                 implAttr + ToTerm("managed");
 
+            localsHead.Rule =
+                ToTerm(".locals");
+
             methodDecl.Rule =
                 ToTerm(".maxstack") + int32 |
+                localsHead + ToTerm("init") + ToTerm("(") + sigArgs0 + ToTerm(")") |
                 ToTerm(".entrypoint") |
                 instr |
-                id + ToTerm(":");
+                id + ToTerm(":") |
+                customAttrDecl;
 
             methodDecls.Rule =
                 Empty |
@@ -272,7 +296,8 @@ namespace CILantro.Grammar
                 sigArgs1;
 
             sigArgs1.Rule =
-                sigArg;
+                sigArg |
+                sigArgs1 + ToTerm(",") + sigArg;
 
             sigArg.Rule =
                 paramAttr + type |
@@ -300,7 +325,9 @@ namespace CILantro.Grammar
                 Empty;
 
             type.Rule =
+                ToTerm("class") + className |
                 ToTerm("string") |
+                ToTerm("valuetype") + className |
                 type + ToTerm("[") + ToTerm("]") |
                 ToTerm("void") |
                 ToTerm("bool") |
@@ -347,6 +374,20 @@ namespace CILantro.Grammar
             assemblyRefDecl.Rule =
                 asmOrRefDecl |
                 publicKeyTokenHead + bytes + ToTerm(")");
+
+            manifestResHead.Rule =
+                ToTerm(".mresource") + manresAttr + name1;
+
+            manresAttr.Rule =
+                Empty |
+                manresAttr + ToTerm("public");
+
+            manifestResDecls.Rule =
+                Empty |
+                manifestResDecls + manifestResDecl;
+
+            manifestResDecl.Rule =
+                customAttrDecl;
         }
     }
 }

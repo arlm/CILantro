@@ -457,6 +457,51 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to localsHead.
+        /// </summary>
+        public static string localsHead {
+            get {
+                return ResourceManager.GetString("localsHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to manifestResDecl.
+        /// </summary>
+        public static string manifestResDecl {
+            get {
+                return ResourceManager.GetString("manifestResDecl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to manifestResDecls.
+        /// </summary>
+        public static string manifestResDecls {
+            get {
+                return ResourceManager.GetString("manifestResDecls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to manifestResHead.
+        /// </summary>
+        public static string manifestResHead {
+            get {
+                return ResourceManager.GetString("manifestResHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to manresAttr.
+        /// </summary>
+        public static string manresAttr {
+            get {
+                return ResourceManager.GetString("manresAttr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to methAttr.
         /// </summary>
         public static string methAttr {

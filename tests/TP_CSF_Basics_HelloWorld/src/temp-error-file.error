@@ -1,4 +1,0 @@
-
-Unhandled Exception: System.ArgumentException: Cannot parse the source code. (54:1): Syntax error, expected: .class, .assembly, .module, .subsystem, .corflags, .file, .imagebase, .stackreserve
-   at CILantro.Parser.CILParser.Parse(String sourceCode) in D:\UWr\mgr\semestr IV\CILantro\src\CILantro\Parser\CILantro.Parser\CILParser.cs:line 26
-   at CILantro.UI.HiddenUI.Program.Main(String[] args) in D:\UWr\mgr\semestr IV\CILantro\src\CILantro\UI\CILantro.UI.HiddenUI\Program.cs:line 38

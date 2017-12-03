@@ -141,6 +141,9 @@
   <data name="assemblyRefHead" xml:space="preserve">
     <value>assemblyRefHead</value>
   </data>
+  <data name="atOpt" xml:space="preserve">
+    <value>atOpt</value>
+  </data>
   <data name="bytes" xml:space="preserve">
     <value>bytes</value>
   </data>
@@ -189,6 +192,12 @@
   <data name="extendsClause" xml:space="preserve">
     <value>extendsClause</value>
   </data>
+  <data name="fieldAttr" xml:space="preserve">
+    <value>fieldAttr</value>
+  </data>
+  <data name="fieldDecl" xml:space="preserve">
+    <value>fieldDecl</value>
+  </data>
   <data name="genericClassName" xml:space="preserve">
     <value>genericClassName</value>
   </data>
@@ -207,8 +216,17 @@
   <data name="implClause" xml:space="preserve">
     <value>implClause</value>
   </data>
+  <data name="initOpt" xml:space="preserve">
+    <value>initOpt</value>
+  </data>
   <data name="instr" xml:space="preserve">
     <value>instr</value>
+  </data>
+  <data name="INSTR_BRTARGET" xml:space="preserve">
+    <value>INSTR_BRTARGET</value>
+  </data>
+  <data name="INSTR_FIELD" xml:space="preserve">
+    <value>INSTR_FIELD</value>
   </data>
   <data name="INSTR_METHOD" xml:space="preserve">
     <value>INSTR_METHOD</value>
@@ -218,6 +236,15 @@
   </data>
   <data name="INSTR_STRING" xml:space="preserve">
     <value>INSTR_STRING</value>
+  </data>
+  <data name="INSTR_TOK" xml:space="preserve">
+    <value>INSTR_TOK</value>
+  </data>
+  <data name="instr_tok_head" xml:space="preserve">
+    <value>instr_tok_head</value>
+  </data>
+  <data name="INSTR_TYPE" xml:space="preserve">
+    <value>INSTR_TYPE</value>
   </data>
   <data name="int32" xml:space="preserve">
     <value>int32</value>
@@ -270,6 +297,9 @@
   <data name="manresAttr" xml:space="preserve">
     <value>manresAttr</value>
   </data>
+  <data name="memberRef" xml:space="preserve">
+    <value>memberRef</value>
+  </data>
   <data name="methAttr" xml:space="preserve">
     <value>methAttr</value>
   </data>
@@ -294,11 +324,29 @@
   <data name="name1" xml:space="preserve">
     <value>name1</value>
   </data>
+  <data name="ownerType" xml:space="preserve">
+    <value>ownerType</value>
+  </data>
   <data name="paramAttr" xml:space="preserve">
     <value>paramAttr</value>
   </data>
+  <data name="propAttr" xml:space="preserve">
+    <value>propAttr</value>
+  </data>
+  <data name="propDecl" xml:space="preserve">
+    <value>propDecl</value>
+  </data>
+  <data name="propDecls" xml:space="preserve">
+    <value>propDecls</value>
+  </data>
+  <data name="propHead" xml:space="preserve">
+    <value>propHead</value>
+  </data>
   <data name="publicKeyTokenHead" xml:space="preserve">
     <value>publicKeyTokenHead</value>
+  </data>
+  <data name="repeatOpt" xml:space="preserve">
+    <value>repeatOpt</value>
   </data>
   <data name="sigArg" xml:space="preserve">
     <value>sigArg</value>

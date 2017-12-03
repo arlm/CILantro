@@ -133,6 +133,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to atOpt.
+        /// </summary>
+        public static string atOpt {
+            get {
+                return ResourceManager.GetString("atOpt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bytes.
         /// </summary>
         public static string bytes {
@@ -277,6 +286,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fieldAttr.
+        /// </summary>
+        public static string fieldAttr {
+            get {
+                return ResourceManager.GetString("fieldAttr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fieldDecl.
+        /// </summary>
+        public static string fieldDecl {
+            get {
+                return ResourceManager.GetString("fieldDecl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to genericClassName.
         /// </summary>
         public static string genericClassName {
@@ -331,11 +358,38 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to initOpt.
+        /// </summary>
+        public static string initOpt {
+            get {
+                return ResourceManager.GetString("initOpt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to instr.
         /// </summary>
         public static string instr {
             get {
                 return ResourceManager.GetString("instr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSTR_BRTARGET.
+        /// </summary>
+        public static string INSTR_BRTARGET {
+            get {
+                return ResourceManager.GetString("INSTR_BRTARGET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSTR_FIELD.
+        /// </summary>
+        public static string INSTR_FIELD {
+            get {
+                return ResourceManager.GetString("INSTR_FIELD", resourceCulture);
             }
         }
         
@@ -363,6 +417,33 @@ namespace CILantro.Grammar {
         public static string INSTR_STRING {
             get {
                 return ResourceManager.GetString("INSTR_STRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSTR_TOK.
+        /// </summary>
+        public static string INSTR_TOK {
+            get {
+                return ResourceManager.GetString("INSTR_TOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to instr_tok_head.
+        /// </summary>
+        public static string instr_tok_head {
+            get {
+                return ResourceManager.GetString("instr_tok_head", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSTR_TYPE.
+        /// </summary>
+        public static string INSTR_TYPE {
+            get {
+                return ResourceManager.GetString("INSTR_TYPE", resourceCulture);
             }
         }
         
@@ -520,6 +601,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to memberRef.
+        /// </summary>
+        public static string memberRef {
+            get {
+                return ResourceManager.GetString("memberRef", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to methAttr.
         /// </summary>
         public static string methAttr {
@@ -592,6 +682,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ownerType.
+        /// </summary>
+        public static string ownerType {
+            get {
+                return ResourceManager.GetString("ownerType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to paramAttr.
         /// </summary>
         public static string paramAttr {
@@ -601,11 +700,56 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to propAttr.
+        /// </summary>
+        public static string propAttr {
+            get {
+                return ResourceManager.GetString("propAttr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to propDecl.
+        /// </summary>
+        public static string propDecl {
+            get {
+                return ResourceManager.GetString("propDecl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to propDecls.
+        /// </summary>
+        public static string propDecls {
+            get {
+                return ResourceManager.GetString("propDecls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to propHead.
+        /// </summary>
+        public static string propHead {
+            get {
+                return ResourceManager.GetString("propHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to publicKeyTokenHead.
         /// </summary>
         public static string publicKeyTokenHead {
             get {
                 return ResourceManager.GetString("publicKeyTokenHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to repeatOpt.
+        /// </summary>
+        public static string repeatOpt {
+            get {
+                return ResourceManager.GetString("repeatOpt", resourceCulture);
             }
         }
         

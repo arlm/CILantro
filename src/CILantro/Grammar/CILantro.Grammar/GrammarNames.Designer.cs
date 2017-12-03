@@ -277,6 +277,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to genericClassName.
+        /// </summary>
+        public static string genericClassName {
+            get {
+                return ResourceManager.GetString("genericClassName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to genericMethodName.
+        /// </summary>
+        public static string genericMethodName {
+            get {
+                return ResourceManager.GetString("genericMethodName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to hexbytes.
         /// </summary>
         public static string hexbytes {

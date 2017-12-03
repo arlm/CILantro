@@ -22,11 +22,17 @@ namespace CILantro.Grammar
                 "}",
                 "[",
                 "]",
+                "<",
+                ">",
                 "/",
                 "=",
                 ":",
                 "::",
                 ",",
+                "`",
+                "!",
+                "!!",
+                "$",
                 ".assembly",
                 ".class",
                 ".corflags",
@@ -62,8 +68,13 @@ namespace CILantro.Grammar
                 "instance",
                 "int32",
                 "ldarg.0",
+                "ldc.i4.0",
+                "ldloc.0",
                 "ldstr",
                 "managed",
+                "newobj",
+                "nop",
+                "pop",
                 "private",
                 "public",
                 "ret",
@@ -71,6 +82,7 @@ namespace CILantro.Grammar
                 "sealed",
                 "specialname",
                 "static",
+                "stloc.0",
                 "string",
                 "valuetype",
                 "void"
@@ -123,6 +135,8 @@ namespace CILantro.Grammar
             var decl = new NonTerminal(GrammarNames.decl);
             var decls = new NonTerminal(GrammarNames.decls);
             var extendsClause = new NonTerminal(GrammarNames.extendsClause);
+            var genericClassName = new NonTerminal(GrammarNames.genericClassName);
+            var genericMethodName = new NonTerminal(GrammarNames.genericMethodName);
             var hexbytes = new NonTerminal(GrammarNames.hexbytes);
             var id = new NonTerminal(GrammarNames.id);
             var implAttr = new NonTerminal(GrammarNames.implAttr);
@@ -157,12 +171,18 @@ namespace CILantro.Grammar
 
             var INSTR_METHOD = new NonTerminal(GrammarNames.INSTR_METHOD);
             INSTR_METHOD.Rule =
-                ToTerm("call");
+                ToTerm("call") |
+                ToTerm("newobj");
 
             var INSTR_NONE = new NonTerminal(GrammarNames.INSTR_NONE);
             INSTR_NONE.Rule =
                 ToTerm("ldarg.0") |
-                ToTerm("ret");
+                ToTerm("ldc.i4.0") |
+                ToTerm("ldloc.0") |
+                ToTerm("nop") |
+                ToTerm("pop") |
+                ToTerm("ret") |
+                ToTerm("stloc.0");
 
             var INSTR_STRING = new NonTerminal(GrammarNames.INSTR_STRING);
             INSTR_STRING.Rule =
@@ -252,7 +272,11 @@ namespace CILantro.Grammar
 
             methodName.Rule =
                 ToTerm(".ctor") |
-                name1;
+                name1 |
+                genericMethodName;
+
+            genericMethodName.Rule =
+                name1 + ToTerm("<") + sigArgs0 + ToTerm(">");
 
             paramAttr.Rule =
                 Empty |
@@ -289,6 +313,7 @@ namespace CILantro.Grammar
             instr.Rule =
                 INSTR_NONE |
                 INSTR_METHOD + callConv + type + typeSpec + ToTerm("::") + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
+                INSTR_METHOD + callConv + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
                 INSTR_STRING + compQstring;
 
             sigArgs0.Rule =
@@ -308,14 +333,19 @@ namespace CILantro.Grammar
                 name1 + ToTerm(".") + name1;
 
             className.Rule =
-                ToTerm("[") + name1 + ToTerm("]") + slashedName;
+                ToTerm("[") + name1 + ToTerm("]") + slashedName |
+                genericClassName;
+
+            genericClassName.Rule =
+                className + ToTerm("`") + int32 + ToTerm("<") + sigArgs0 + ToTerm(">");
 
             slashedName.Rule =
                 name1 |
                 slashedName + ToTerm("/") + name1;
 
             typeSpec.Rule =
-                className;
+                className |
+                type;
 
             callConv.Rule =
                 ToTerm("instance") + callConv |
@@ -329,12 +359,15 @@ namespace CILantro.Grammar
                 ToTerm("string") |
                 ToTerm("valuetype") + className |
                 type + ToTerm("[") + ToTerm("]") |
+                ToTerm("!") + int32 |
+                ToTerm("!!") + int32 |
                 ToTerm("void") |
                 ToTerm("bool") |
                 ToTerm("int32");
 
             id.Rule =
                 ID |
+                ToTerm("$") + ID |
                 SQSTRING;
 
             int32.Rule =

@@ -189,6 +189,12 @@
   <data name="extendsClause" xml:space="preserve">
     <value>extendsClause</value>
   </data>
+  <data name="genericClassName" xml:space="preserve">
+    <value>genericClassName</value>
+  </data>
+  <data name="genericMethodName" xml:space="preserve">
+    <value>genericMethodName</value>
+  </data>
   <data name="hexbytes" xml:space="preserve">
     <value>hexbytes</value>
   </data>

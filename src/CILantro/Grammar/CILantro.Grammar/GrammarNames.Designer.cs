@@ -61,11 +61,155 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LineComment.
+        ///   Looks up a localized string similar to asmOrRefDecl.
         /// </summary>
-        public static string LineComment {
+        public static string asmOrRefDecl {
             get {
-                return ResourceManager.GetString("LineComment", resourceCulture);
+                return ResourceManager.GetString("asmOrRefDecl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to assemblyRefDecl.
+        /// </summary>
+        public static string assemblyRefDecl {
+            get {
+                return ResourceManager.GetString("assemblyRefDecl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to assemblyRefDecls.
+        /// </summary>
+        public static string assemblyRefDecls {
+            get {
+                return ResourceManager.GetString("assemblyRefDecls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to assemblyRefHead.
+        /// </summary>
+        public static string assemblyRefHead {
+            get {
+                return ResourceManager.GetString("assemblyRefHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bytes.
+        /// </summary>
+        public static string bytes {
+            get {
+                return ResourceManager.GetString("bytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to COMMENTS_LINECOMMENT.
+        /// </summary>
+        public static string COMMENTS_LINECOMMENT {
+            get {
+                return ResourceManager.GetString("COMMENTS_LINECOMMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to decl.
+        /// </summary>
+        public static string decl {
+            get {
+                return ResourceManager.GetString("decl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to decls.
+        /// </summary>
+        public static string decls {
+            get {
+                return ResourceManager.GetString("decls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hexbytes.
+        /// </summary>
+        public static string hexbytes {
+            get {
+                return ResourceManager.GetString("hexbytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to id.
+        /// </summary>
+        public static string id {
+            get {
+                return ResourceManager.GetString("id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to int32.
+        /// </summary>
+        public static string int32 {
+            get {
+                return ResourceManager.GetString("int32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_HEXBYTE.
+        /// </summary>
+        public static string LEXICALS_HEXBYTE {
+            get {
+                return ResourceManager.GetString("LEXICALS_HEXBYTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_ID.
+        /// </summary>
+        public static string LEXICALS_ID {
+            get {
+                return ResourceManager.GetString("LEXICALS_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_INT32.
+        /// </summary>
+        public static string LEXICALS_INT32 {
+            get {
+                return ResourceManager.GetString("LEXICALS_INT32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to name1.
+        /// </summary>
+        public static string name1 {
+            get {
+                return ResourceManager.GetString("name1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to publicKeyTokenHead.
+        /// </summary>
+        public static string publicKeyTokenHead {
+            get {
+                return ResourceManager.GetString("publicKeyTokenHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to start.
+        /// </summary>
+        public static string start {
+            get {
+                return ResourceManager.GetString("start", resourceCulture);
             }
         }
     }

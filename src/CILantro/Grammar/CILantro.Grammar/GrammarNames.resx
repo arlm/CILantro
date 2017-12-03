@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LineComment" xml:space="preserve">
-    <value>LineComment</value>
+  <data name="asmOrRefDecl" xml:space="preserve">
+    <value>asmOrRefDecl</value>
+  </data>
+  <data name="assemblyRefDecl" xml:space="preserve">
+    <value>assemblyRefDecl</value>
+  </data>
+  <data name="assemblyRefDecls" xml:space="preserve">
+    <value>assemblyRefDecls</value>
+  </data>
+  <data name="assemblyRefHead" xml:space="preserve">
+    <value>assemblyRefHead</value>
+  </data>
+  <data name="bytes" xml:space="preserve">
+    <value>bytes</value>
+  </data>
+  <data name="COMMENTS_LINECOMMENT" xml:space="preserve">
+    <value>COMMENTS_LINECOMMENT</value>
+  </data>
+  <data name="decl" xml:space="preserve">
+    <value>decl</value>
+  </data>
+  <data name="decls" xml:space="preserve">
+    <value>decls</value>
+  </data>
+  <data name="hexbytes" xml:space="preserve">
+    <value>hexbytes</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="int32" xml:space="preserve">
+    <value>int32</value>
+  </data>
+  <data name="LEXICALS_HEXBYTE" xml:space="preserve">
+    <value>LEXICALS_HEXBYTE</value>
+  </data>
+  <data name="LEXICALS_ID" xml:space="preserve">
+    <value>LEXICALS_ID</value>
+  </data>
+  <data name="LEXICALS_INT32" xml:space="preserve">
+    <value>LEXICALS_INT32</value>
+  </data>
+  <data name="name1" xml:space="preserve">
+    <value>name1</value>
+  </data>
+  <data name="publicKeyTokenHead" xml:space="preserve">
+    <value>publicKeyTokenHead</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>start</value>
   </data>
 </root>

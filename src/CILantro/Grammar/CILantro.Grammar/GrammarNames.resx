@@ -150,6 +150,18 @@
   <data name="callKind" xml:space="preserve">
     <value>callKind</value>
   </data>
+  <data name="classAttr" xml:space="preserve">
+    <value>classAttr</value>
+  </data>
+  <data name="classDecl" xml:space="preserve">
+    <value>classDecl</value>
+  </data>
+  <data name="classDecls" xml:space="preserve">
+    <value>classDecls</value>
+  </data>
+  <data name="classHead" xml:space="preserve">
+    <value>classHead</value>
+  </data>
   <data name="className" xml:space="preserve">
     <value>className</value>
   </data>
@@ -171,11 +183,20 @@
   <data name="decls" xml:space="preserve">
     <value>decls</value>
   </data>
+  <data name="extendsClause" xml:space="preserve">
+    <value>extendsClause</value>
+  </data>
   <data name="hexbytes" xml:space="preserve">
     <value>hexbytes</value>
   </data>
   <data name="id" xml:space="preserve">
     <value>id</value>
+  </data>
+  <data name="implAttr" xml:space="preserve">
+    <value>implAttr</value>
+  </data>
+  <data name="implClause" xml:space="preserve">
+    <value>implClause</value>
   </data>
   <data name="int32" xml:space="preserve">
     <value>int32</value>
@@ -206,6 +227,27 @@
   </data>
   <data name="LEXICALS_INT64_HEX" xml:space="preserve">
     <value>LEXICALS_INT64_HEX</value>
+  </data>
+  <data name="LEXICALS_SQSTRING" xml:space="preserve">
+    <value>LEXICALS_SQSTRING</value>
+  </data>
+  <data name="methAttr" xml:space="preserve">
+    <value>methAttr</value>
+  </data>
+  <data name="methodDecl" xml:space="preserve">
+    <value>methodDecl</value>
+  </data>
+  <data name="methodDecls" xml:space="preserve">
+    <value>methodDecls</value>
+  </data>
+  <data name="methodHead" xml:space="preserve">
+    <value>methodHead</value>
+  </data>
+  <data name="methodHeadPart1" xml:space="preserve">
+    <value>methodHeadPart1</value>
+  </data>
+  <data name="methodName" xml:space="preserve">
+    <value>methodName</value>
   </data>
   <data name="moduleHead" xml:space="preserve">
     <value>moduleHead</value>

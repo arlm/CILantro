@@ -28,11 +28,14 @@ namespace CILantro.Grammar
             var INT64 = new NonTerminal(GrammarNames.LEXICALS_INT64);
             INT64.Rule = INT64_DEC | INT64_HEX;
 
+            var SQSTRING = new StringLiteral(GrammarNames.LEXICALS_SQSTRING, "'");
+
             // id
 
             var id = new NonTerminal(GrammarNames.id);
             id.Rule =
-                ID;
+                ID |
+                SQSTRING;
 
             // name1
 
@@ -72,6 +75,7 @@ namespace CILantro.Grammar
             var type = new NonTerminal(GrammarNames.type);
             type.Rule =
                 ToTerm("string") |
+                type + ToTerm("[") + ToTerm("]") |
                 ToTerm("void") |
                 ToTerm("bool") |
                 ToTerm("int32");
@@ -86,7 +90,8 @@ namespace CILantro.Grammar
 
             var sigArg = new NonTerminal(GrammarNames.sigArg);
             sigArg.Rule =
-                paramAttr + type;
+                paramAttr + type |
+                paramAttr + type + id;
 
             // sigArgs1
 
@@ -217,10 +222,101 @@ namespace CILantro.Grammar
             moduleHead.Rule =
                 ToTerm(".module") + name1;
 
+            // extendsClause
+
+            var extendsClause = new NonTerminal(GrammarNames.extendsClause);
+            extendsClause.Rule =
+                Empty |
+                ToTerm("extends") + className;
+
+            // implClause
+
+            var implClause = new NonTerminal(GrammarNames.implClause);
+            implClause.Rule =
+                Empty;
+
+            // implAttr
+
+            var implAttr = new NonTerminal(GrammarNames.implAttr);
+            implAttr.Rule =
+                Empty |
+                implAttr + ToTerm("cil") |
+                implAttr + ToTerm("managed");
+
+            // methAttr
+
+            var methAttr = new NonTerminal(GrammarNames.methAttr);
+            methAttr.Rule =
+                Empty |
+                methAttr + ToTerm("static") |
+                methAttr + ToTerm("private") |
+                methAttr + ToTerm("hidebysig");
+
+            // methodName
+
+            var methodName = new NonTerminal(GrammarNames.methodName);
+            methodName.Rule =
+                name1;
+
+            // methodHeadPart1
+
+            var methodHeadPart1 = new NonTerminal(GrammarNames.methodHeadPart1);
+            methodHeadPart1.Rule =
+                ToTerm(".method");
+
+            // methodHead
+
+            var methodHead = new NonTerminal(GrammarNames.methodHead);
+            methodHead.Rule =
+                methodHeadPart1 + methAttr + callConv + paramAttr + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") + implAttr + ToTerm("{");
+
+            // methodDecl
+
+            var methodDecl = new NonTerminal(GrammarNames.methodDecl);
+            methodDecl.Rule =
+                ToTerm(".entrypoint");
+
+            // methodDecls
+
+            var methodDecls = new NonTerminal(GrammarNames.methodDecls);
+            methodDecls.Rule =
+                Empty |
+                methodDecls + methodDecl;
+
+            // classAttr
+
+            var classAttr = new NonTerminal(GrammarNames.classAttr);
+            classAttr.Rule =
+                Empty |
+                classAttr + ToTerm("private") |
+                classAttr + ToTerm("auto") |
+                classAttr + ToTerm("ansi") |
+                classAttr + ToTerm("beforefieldinit");
+
+            // classDecl
+
+            var classDecl = new NonTerminal(GrammarNames.classDecl);
+            classDecl.Rule =
+                methodHead + methodDecls + ToTerm("}");
+
+            // classDecls
+
+            var classDecls = new NonTerminal(GrammarNames.classDecls);
+            classDecls.Rule =
+                Empty |
+                classDecls + classDecl;
+
+            // classHead
+
+            var classHead = new NonTerminal(GrammarNames.classHead);
+            classHead.Rule =
+                ToTerm(".class") + classAttr + name1 + extendsClause + implClause;
+
             // decl
 
             var decl = new NonTerminal(GrammarNames.decl);
             decl.Rule =
+                classHead + ToTerm("{") + classDecls + ToTerm("}") |
                 assemblyHead + ToTerm("{") + assemblyDecls + ToTerm("}") |
                 assemblyRefHead + ToTerm("{") + assemblyRefDecls + ToTerm("}") |
                 moduleHead |

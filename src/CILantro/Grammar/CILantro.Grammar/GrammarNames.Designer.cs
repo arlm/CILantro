@@ -160,6 +160,42 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to classAttr.
+        /// </summary>
+        public static string classAttr {
+            get {
+                return ResourceManager.GetString("classAttr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to classDecl.
+        /// </summary>
+        public static string classDecl {
+            get {
+                return ResourceManager.GetString("classDecl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to classDecls.
+        /// </summary>
+        public static string classDecls {
+            get {
+                return ResourceManager.GetString("classDecls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to classHead.
+        /// </summary>
+        public static string classHead {
+            get {
+                return ResourceManager.GetString("classHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to className.
         /// </summary>
         public static string className {
@@ -223,6 +259,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to extendsClause.
+        /// </summary>
+        public static string extendsClause {
+            get {
+                return ResourceManager.GetString("extendsClause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to hexbytes.
         /// </summary>
         public static string hexbytes {
@@ -237,6 +282,24 @@ namespace CILantro.Grammar {
         public static string id {
             get {
                 return ResourceManager.GetString("id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to implAttr.
+        /// </summary>
+        public static string implAttr {
+            get {
+                return ResourceManager.GetString("implAttr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to implClause.
+        /// </summary>
+        public static string implClause {
+            get {
+                return ResourceManager.GetString("implClause", resourceCulture);
             }
         }
         
@@ -327,6 +390,69 @@ namespace CILantro.Grammar {
         public static string LEXICALS_INT64_HEX {
             get {
                 return ResourceManager.GetString("LEXICALS_INT64_HEX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_SQSTRING.
+        /// </summary>
+        public static string LEXICALS_SQSTRING {
+            get {
+                return ResourceManager.GetString("LEXICALS_SQSTRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to methAttr.
+        /// </summary>
+        public static string methAttr {
+            get {
+                return ResourceManager.GetString("methAttr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to methodDecl.
+        /// </summary>
+        public static string methodDecl {
+            get {
+                return ResourceManager.GetString("methodDecl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to methodDecls.
+        /// </summary>
+        public static string methodDecls {
+            get {
+                return ResourceManager.GetString("methodDecls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to methodHead.
+        /// </summary>
+        public static string methodHead {
+            get {
+                return ResourceManager.GetString("methodHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to methodHeadPart1.
+        /// </summary>
+        public static string methodHeadPart1 {
+            get {
+                return ResourceManager.GetString("methodHeadPart1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to methodName.
+        /// </summary>
+        public static string methodName {
+            get {
+                return ResourceManager.GetString("methodName", resourceCulture);
             }
         }
         

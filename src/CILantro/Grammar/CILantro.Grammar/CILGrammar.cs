@@ -30,6 +30,8 @@ namespace CILantro.Grammar
 
             var SQSTRING = new StringLiteral(GrammarNames.LEXICALS_SQSTRING, "'");
 
+            var QSTRING = new StringLiteral(GrammarNames.LEXICALS_QSTRING, "\"");
+
             // id
 
             var id = new NonTerminal(GrammarNames.id);
@@ -70,6 +72,12 @@ namespace CILantro.Grammar
             int64.Rule =
                 INT64;
 
+            // compQstring
+
+            var compQstring = new NonTerminal(GrammarNames.compQstring);
+            compQstring.Rule =
+                QSTRING;
+
             // type
 
             var type = new NonTerminal(GrammarNames.type);
@@ -79,6 +87,18 @@ namespace CILantro.Grammar
                 ToTerm("void") |
                 ToTerm("bool") |
                 ToTerm("int32");
+
+            // INSTR_STRING
+
+            var INSTR_STRING = new NonTerminal(GrammarNames.INSTR_STRING);
+            INSTR_STRING.Rule =
+                ToTerm("ldstr");
+
+            // instr
+
+            var instr = new NonTerminal(GrammarNames.instr);
+            instr.Rule =
+                INSTR_STRING + compQstring;
 
             // paramAttr
 
@@ -274,7 +294,10 @@ namespace CILantro.Grammar
 
             var methodDecl = new NonTerminal(GrammarNames.methodDecl);
             methodDecl.Rule =
-                ToTerm(".entrypoint");
+                ToTerm(".maxstack") + int32 |
+                ToTerm(".entrypoint") |
+                instr |
+                id + ToTerm(":");
 
             // methodDecls
 

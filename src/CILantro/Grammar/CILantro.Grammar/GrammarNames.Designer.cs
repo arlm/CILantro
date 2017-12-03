@@ -214,6 +214,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to compQstring.
+        /// </summary>
+        public static string compQstring {
+            get {
+                return ResourceManager.GetString("compQstring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to customAttrDecl.
         /// </summary>
         public static string customAttrDecl {
@@ -304,6 +313,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to instr.
+        /// </summary>
+        public static string instr {
+            get {
+                return ResourceManager.GetString("instr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSTR_STRING.
+        /// </summary>
+        public static string INSTR_STRING {
+            get {
+                return ResourceManager.GetString("INSTR_STRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to int32.
         /// </summary>
         public static string int32 {
@@ -390,6 +417,15 @@ namespace CILantro.Grammar {
         public static string LEXICALS_INT64_HEX {
             get {
                 return ResourceManager.GetString("LEXICALS_INT64_HEX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_QSTRING.
+        /// </summary>
+        public static string LEXICALS_QSTRING {
+            get {
+                return ResourceManager.GetString("LEXICALS_QSTRING", resourceCulture);
             }
         }
         

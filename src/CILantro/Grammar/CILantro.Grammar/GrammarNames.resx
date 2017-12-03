@@ -168,6 +168,9 @@
   <data name="COMMENTS_LINECOMMENT" xml:space="preserve">
     <value>COMMENTS_LINECOMMENT</value>
   </data>
+  <data name="compQstring" xml:space="preserve">
+    <value>compQstring</value>
+  </data>
   <data name="customAttrDecl" xml:space="preserve">
     <value>customAttrDecl</value>
   </data>
@@ -198,6 +201,12 @@
   <data name="implClause" xml:space="preserve">
     <value>implClause</value>
   </data>
+  <data name="instr" xml:space="preserve">
+    <value>instr</value>
+  </data>
+  <data name="INSTR_STRING" xml:space="preserve">
+    <value>INSTR_STRING</value>
+  </data>
   <data name="int32" xml:space="preserve">
     <value>int32</value>
   </data>
@@ -227,6 +236,9 @@
   </data>
   <data name="LEXICALS_INT64_HEX" xml:space="preserve">
     <value>LEXICALS_INT64_HEX</value>
+  </data>
+  <data name="LEXICALS_QSTRING" xml:space="preserve">
+    <value>LEXICALS_QSTRING</value>
   </data>
   <data name="LEXICALS_SQSTRING" xml:space="preserve">
     <value>LEXICALS_SQSTRING</value>

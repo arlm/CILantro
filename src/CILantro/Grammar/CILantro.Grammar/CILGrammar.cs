@@ -12,6 +12,64 @@ namespace CILantro.Grammar
 
             NonGrammarTerminals.Add(lineComment);
 
+            // reserved words
+
+            var reservedWords = new string[]
+            {
+                "(",
+                ")",
+                "{",
+                "}",
+                "[",
+                "]",
+                "/",
+                "=",
+                ":",
+                "::",
+                ".assembly",
+                ".class",
+                ".corflags",
+                ".ctor",
+                ".custom",
+                ".entrypoint",
+                ".file",
+                ".hash",
+                ".imagebase",
+                ".maxstack",
+                ".method",
+                ".module",
+                ".publickeytoken",
+                ".stackreserve",
+                ".subsystem",
+                ".ver",
+                "alignment",
+                "algorithm",
+                "ansi",
+                "auto",
+                "beforefieldinit",
+                "bool",
+                "call",
+                "cil",
+                "extends",
+                "extern",
+                "hidebysig",
+                "instance",
+                "int32",
+                "ldarg.0",
+                "ldstr",
+                "managed",
+                "private",
+                "public",
+                "ret",
+                "rtspecialname",
+                "specialname",
+                "static",
+                "string",
+                "void"
+            };
+
+            MarkReservedWords(reservedWords);
+
             // lexical tokens
 
             var HEXBYTE = new RegexBasedTerminal(GrammarNames.LEXICALS_HEXBYTE, "[A-F0-9]{2}");
@@ -32,312 +90,82 @@ namespace CILantro.Grammar
 
             var QSTRING = new StringLiteral(GrammarNames.LEXICALS_QSTRING, "\"");
 
-            // id
+            // non-terminals
 
-            var id = new NonTerminal(GrammarNames.id);
-            id.Rule =
-                ID |
-                SQSTRING;
-
-            // name1
-
-            var name1 = new NonTerminal(GrammarNames.name1);
-            name1.Rule =
-                id |
-                name1 + ToTerm(".") + name1;
-
-            // hexbytes
-
-            var hexbytes = new NonTerminal(GrammarNames.hexbytes);
-            hexbytes.Rule =
-                HEXBYTE |
-                hexbytes + HEXBYTE;
-
-            // bytes
-
+            var asmAttr = new NonTerminal(GrammarNames.asmAttr);
+            var asmOrRefDecl = new NonTerminal(GrammarNames.asmOrRefDecl);
+            var assemblyDecl = new NonTerminal(GrammarNames.assemblyDecl);
+            var assemblyDecls = new NonTerminal(GrammarNames.assemblyDecls);
+            var assemblyHead = new NonTerminal(GrammarNames.assemblyHead);
+            var assemblyRefDecl = new NonTerminal(GrammarNames.assemblyRefDecl);
+            var assemblyRefDecls = new NonTerminal(GrammarNames.assemblyRefDecls);
+            var assemblyRefHead = new NonTerminal(GrammarNames.assemblyRefHead);
             var bytes = new NonTerminal(GrammarNames.bytes);
-            bytes.Rule =
-                Empty |
-                hexbytes;
-
-            // int32
-
-            var int32 = new NonTerminal(GrammarNames.int32);
-            int32.Rule =
-                INT32;
-
-            // int64
-
-            var int64 = new NonTerminal(GrammarNames.int64);
-            int64.Rule =
-                INT64;
-
-            // compQstring
-
+            var callConv = new NonTerminal(GrammarNames.callConv);
+            var callKind = new NonTerminal(GrammarNames.callKind);
+            var classAttr = new NonTerminal(GrammarNames.classAttr);
+            var classDecl = new NonTerminal(GrammarNames.classDecl);
+            var classDecls = new NonTerminal(GrammarNames.classDecls);
+            var classHead = new NonTerminal(GrammarNames.classHead);
+            var className = new NonTerminal(GrammarNames.className);
             var compQstring = new NonTerminal(GrammarNames.compQstring);
-            compQstring.Rule =
-                QSTRING;
-
-            // type
-
+            var customAttrDecl = new NonTerminal(GrammarNames.customAttrDecl);
+            var customHead = new NonTerminal(GrammarNames.customHead);
+            var customType = new NonTerminal(GrammarNames.customType);
+            var decl = new NonTerminal(GrammarNames.decl);
+            var decls = new NonTerminal(GrammarNames.decls);
+            var extendsClause = new NonTerminal(GrammarNames.extendsClause);
+            var hexbytes = new NonTerminal(GrammarNames.hexbytes);
+            var id = new NonTerminal(GrammarNames.id);
+            var implAttr = new NonTerminal(GrammarNames.implAttr);
+            var implClause = new NonTerminal(GrammarNames.implClause);
+            var instr = new NonTerminal(GrammarNames.instr);
+            var int32 = new NonTerminal(GrammarNames.int32);
+            var int64 = new NonTerminal(GrammarNames.int64);
+            var methAttr = new NonTerminal(GrammarNames.methAttr);
+            var methodDecl = new NonTerminal(GrammarNames.methodDecl);
+            var methodDecls = new NonTerminal(GrammarNames.methodDecls);
+            var methodHead = new NonTerminal(GrammarNames.methodHead);
+            var methodHeadPart1 = new NonTerminal(GrammarNames.methodHeadPart1);
+            var methodName = new NonTerminal(GrammarNames.methodName);
+            var moduleHead = new NonTerminal(GrammarNames.moduleHead);
+            var name1 = new NonTerminal(GrammarNames.name1);
+            var paramAttr = new NonTerminal(GrammarNames.paramAttr);
+            var publicKeyTokenHead = new NonTerminal(GrammarNames.publicKeyTokenHead);
+            var sigArg = new NonTerminal(GrammarNames.sigArg);
+            var sigArgs0 = new NonTerminal(GrammarNames.sigArgs0);
+            var sigArgs1 = new NonTerminal(GrammarNames.sigArgs1);
+            var slashedName = new NonTerminal(GrammarNames.slashedName);
+            var start = new NonTerminal(GrammarNames.start);
             var type = new NonTerminal(GrammarNames.type);
-            type.Rule =
-                ToTerm("string") |
-                type + ToTerm("[") + ToTerm("]") |
-                ToTerm("void") |
-                ToTerm("bool") |
-                ToTerm("int32");
+            var typeSpec = new NonTerminal(GrammarNames.typeSpec);
 
-            // INSTR_STRING
+            // instructions
+
+            var INSTR_METHOD = new NonTerminal(GrammarNames.INSTR_METHOD);
+            INSTR_METHOD.Rule =
+                ToTerm("call");
+
+            var INSTR_NONE = new NonTerminal(GrammarNames.INSTR_NONE);
+            INSTR_NONE.Rule =
+                ToTerm("ldarg.0") |
+                ToTerm("ret");
 
             var INSTR_STRING = new NonTerminal(GrammarNames.INSTR_STRING);
             INSTR_STRING.Rule =
                 ToTerm("ldstr");
 
-            // instr
+            // rules
 
-            var instr = new NonTerminal(GrammarNames.instr);
-            instr.Rule =
-                INSTR_STRING + compQstring;
+            Root = start;
 
-            // paramAttr
+            start.Rule =
+                decls;
 
-            var paramAttr = new NonTerminal(GrammarNames.paramAttr);
-            paramAttr.Rule =
-                Empty;
-
-            // sigArg
-
-            var sigArg = new NonTerminal(GrammarNames.sigArg);
-            sigArg.Rule =
-                paramAttr + type |
-                paramAttr + type + id;
-
-            // sigArgs1
-
-            var sigArgs1 = new NonTerminal(GrammarNames.sigArgs1);
-            sigArgs1.Rule =
-                sigArg;
-
-            // sigArgs0
-
-            var sigArgs0 = new NonTerminal(GrammarNames.sigArgs0);
-            sigArgs0.Rule =
+            decls.Rule =
                 Empty |
-                sigArgs1;
+                decls + decl;
 
-            // slashedName
-
-            var slashedName = new NonTerminal(GrammarNames.slashedName);
-            slashedName.Rule =
-                name1 |
-                slashedName + ToTerm("/") + name1;
-
-            // className
-
-            var className = new NonTerminal(GrammarNames.className);
-            className.Rule =
-                ToTerm("[") + name1 + ToTerm("]") + slashedName;
-
-            // typeSpec
-
-            var typeSpec = new NonTerminal(GrammarNames.typeSpec);
-            typeSpec.Rule =
-                className;
-
-            // callKind
-
-            var callKind = new NonTerminal(GrammarNames.callKind);
-            callKind.Rule =
-                Empty;
-
-            // callConv
-
-            var callConv = new NonTerminal(GrammarNames.callConv);
-            callConv.Rule =
-                ToTerm("instance") + callConv |
-                callKind;
-
-            // customType
-
-            var customType = new NonTerminal(GrammarNames.customType);
-            customType.Rule =
-                callConv + type + typeSpec + ToTerm("::") + ToTerm(".ctor") + ToTerm("(") + sigArgs0 + ToTerm(")") |
-                callConv + type + ToTerm(".ctor") + ToTerm("(") + sigArgs0 + ToTerm(")");
-
-            // customHead
-
-            var customHead = new NonTerminal(GrammarNames.customHead);
-            customHead.Rule =
-                ToTerm(".custom") + customType + ToTerm("=") + ToTerm("(");
-
-            // customAttrDecl
-
-            var customAttrDecl = new NonTerminal(GrammarNames.customAttrDecl);
-            customAttrDecl.Rule =
-                customHead + bytes + ToTerm(")");
-
-            // asmAttr
-
-            var asmAttr = new NonTerminal(GrammarNames.asmAttr);
-            asmAttr.Rule =
-                Empty;
-
-            // assemblyRefHead
-
-            var assemblyRefHead = new NonTerminal(GrammarNames.assemblyRefHead);
-            assemblyRefHead.Rule =
-                ToTerm(".assembly") + ToTerm("extern") + name1;
-
-            // publicKeyTokenHead
-
-            var publicKeyTokenHead = new NonTerminal(GrammarNames.publicKeyTokenHead);
-            publicKeyTokenHead.Rule =
-                ToTerm(".publickeytoken") + ToTerm("=") + ToTerm("(");
-
-            // asmOrRefDecl
-
-            var asmOrRefDecl = new NonTerminal(GrammarNames.asmOrRefDecl);
-            asmOrRefDecl.Rule =
-                ToTerm(".ver") + int32 + ToTerm(":") + int32 + ToTerm(":") + int32 + ToTerm(":") + int32 |
-                customAttrDecl;
-
-            // assemblyRefDecl
-
-            var assemblyRefDecl = new NonTerminal(GrammarNames.assemblyRefDecl);
-            assemblyRefDecl.Rule =
-                asmOrRefDecl |
-                publicKeyTokenHead + bytes + ToTerm(")");
-
-            // assemblyRefDecls
-
-            var assemblyRefDecls = new NonTerminal(GrammarNames.assemblyRefDecls);
-            assemblyRefDecls.Rule =
-                Empty |
-                assemblyRefDecls + assemblyRefDecl;
-
-            // assemblyHead
-
-            var assemblyHead = new NonTerminal(GrammarNames.assemblyHead);
-            assemblyHead.Rule =
-                ToTerm(".assembly") + asmAttr + name1;
-
-            // assemblyDecl
-
-            var assemblyDecl = new NonTerminal(GrammarNames.assemblyDecl);
-            assemblyDecl.Rule =
-                ToTerm(".hash") + ToTerm("algorithm") + int32 |
-                asmOrRefDecl;
-
-            // assemblyDecls
-
-            var assemblyDecls = new NonTerminal(GrammarNames.assemblyDecls);
-            assemblyDecls.Rule =
-                Empty |
-                assemblyDecls + assemblyDecl;
-
-            // moduleHead
-
-            var moduleHead = new NonTerminal(GrammarNames.moduleHead);
-            moduleHead.Rule =
-                ToTerm(".module") + name1;
-
-            // extendsClause
-
-            var extendsClause = new NonTerminal(GrammarNames.extendsClause);
-            extendsClause.Rule =
-                Empty |
-                ToTerm("extends") + className;
-
-            // implClause
-
-            var implClause = new NonTerminal(GrammarNames.implClause);
-            implClause.Rule =
-                Empty;
-
-            // implAttr
-
-            var implAttr = new NonTerminal(GrammarNames.implAttr);
-            implAttr.Rule =
-                Empty |
-                implAttr + ToTerm("cil") |
-                implAttr + ToTerm("managed");
-
-            // methAttr
-
-            var methAttr = new NonTerminal(GrammarNames.methAttr);
-            methAttr.Rule =
-                Empty |
-                methAttr + ToTerm("static") |
-                methAttr + ToTerm("private") |
-                methAttr + ToTerm("hidebysig");
-
-            // methodName
-
-            var methodName = new NonTerminal(GrammarNames.methodName);
-            methodName.Rule =
-                name1;
-
-            // methodHeadPart1
-
-            var methodHeadPart1 = new NonTerminal(GrammarNames.methodHeadPart1);
-            methodHeadPart1.Rule =
-                ToTerm(".method");
-
-            // methodHead
-
-            var methodHead = new NonTerminal(GrammarNames.methodHead);
-            methodHead.Rule =
-                methodHeadPart1 + methAttr + callConv + paramAttr + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") + implAttr + ToTerm("{");
-
-            // methodDecl
-
-            var methodDecl = new NonTerminal(GrammarNames.methodDecl);
-            methodDecl.Rule =
-                ToTerm(".maxstack") + int32 |
-                ToTerm(".entrypoint") |
-                instr |
-                id + ToTerm(":");
-
-            // methodDecls
-
-            var methodDecls = new NonTerminal(GrammarNames.methodDecls);
-            methodDecls.Rule =
-                Empty |
-                methodDecls + methodDecl;
-
-            // classAttr
-
-            var classAttr = new NonTerminal(GrammarNames.classAttr);
-            classAttr.Rule =
-                Empty |
-                classAttr + ToTerm("private") |
-                classAttr + ToTerm("auto") |
-                classAttr + ToTerm("ansi") |
-                classAttr + ToTerm("beforefieldinit");
-
-            // classDecl
-
-            var classDecl = new NonTerminal(GrammarNames.classDecl);
-            classDecl.Rule =
-                methodHead + methodDecls + ToTerm("}");
-
-            // classDecls
-
-            var classDecls = new NonTerminal(GrammarNames.classDecls);
-            classDecls.Rule =
-                Empty |
-                classDecls + classDecl;
-
-            // classHead
-
-            var classHead = new NonTerminal(GrammarNames.classHead);
-            classHead.Rule =
-                ToTerm(".class") + classAttr + name1 + extendsClause + implClause;
-
-            // decl
-
-            var decl = new NonTerminal(GrammarNames.decl);
             decl.Rule =
                 classHead + ToTerm("{") + classDecls + ToTerm("}") |
                 assemblyHead + ToTerm("{") + assemblyDecls + ToTerm("}") |
@@ -349,22 +177,176 @@ namespace CILantro.Grammar
                 ToTerm(".imagebase") + int64 |
                 ToTerm(".stackreserve") + int64;
 
-            // decls
+            compQstring.Rule =
+                QSTRING;
 
-            var decls = new NonTerminal(GrammarNames.decls);
-            decls.Rule =
+            customAttrDecl.Rule =
+                customHead + bytes + ToTerm(")");
+
+            moduleHead.Rule =
+                ToTerm(".module") + name1;
+
+            classHead.Rule =
+                ToTerm(".class") + classAttr + name1 + extendsClause + implClause;
+
+            classAttr.Rule =
                 Empty |
-                decls + decl;
+                classAttr + ToTerm("private") |
+                classAttr + ToTerm("auto") |
+                classAttr + ToTerm("ansi") |
+                classAttr + ToTerm("beforefieldinit");
 
-            // start
+            extendsClause.Rule =
+                Empty |
+                ToTerm("extends") + className;
 
-            var start = new NonTerminal(GrammarNames.start);
-            start.Rule =
-                decls;
+            implClause.Rule =
+                Empty;
 
-            // root
+            classDecls.Rule =
+                Empty |
+                classDecls + classDecl;
 
-            Root = start;
+            classDecl.Rule =
+                methodHead + methodDecls + ToTerm("}");
+
+            customHead.Rule =
+                ToTerm(".custom") + customType + ToTerm("=") + ToTerm("(");
+
+            customType.Rule =
+                callConv + type + typeSpec + ToTerm("::") + ToTerm(".ctor") + ToTerm("(") + sigArgs0 + ToTerm(")") |
+                callConv + type + ToTerm(".ctor") + ToTerm("(") + sigArgs0 + ToTerm(")");
+
+            methodHeadPart1.Rule =
+                ToTerm(".method");
+
+            methodHead.Rule =
+                methodHeadPart1 + methAttr + callConv + paramAttr + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") + implAttr + ToTerm("{");
+
+            methAttr.Rule =
+                Empty |
+                methAttr + ToTerm("static") |
+                methAttr + ToTerm("public") |
+                methAttr + ToTerm("private") |
+                methAttr + ToTerm("specialname") |
+                methAttr + ToTerm("hidebysig") |
+                methAttr + ToTerm("rtspecialname");
+
+            methodName.Rule =
+                ToTerm(".ctor") |
+                name1;
+
+            paramAttr.Rule =
+                Empty;
+
+            implAttr.Rule =
+                Empty |
+                implAttr + ToTerm("cil") |
+                implAttr + ToTerm("managed");
+
+            methodDecl.Rule =
+                ToTerm(".maxstack") + int32 |
+                ToTerm(".entrypoint") |
+                instr |
+                id + ToTerm(":");
+
+            methodDecls.Rule =
+                Empty |
+                methodDecls + methodDecl;
+
+            bytes.Rule =
+                Empty |
+                hexbytes;
+
+            hexbytes.Rule =
+                HEXBYTE |
+                hexbytes + HEXBYTE;
+
+            instr.Rule =
+                INSTR_NONE |
+                INSTR_METHOD + callConv + type + typeSpec + ToTerm("::") + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
+                INSTR_STRING + compQstring;
+
+            sigArgs0.Rule =
+                Empty |
+                sigArgs1;
+
+            sigArgs1.Rule =
+                sigArg;
+
+            sigArg.Rule =
+                paramAttr + type |
+                paramAttr + type + id;
+
+            name1.Rule =
+                id |
+                name1 + ToTerm(".") + name1;
+
+            className.Rule =
+                ToTerm("[") + name1 + ToTerm("]") + slashedName;
+
+            slashedName.Rule =
+                name1 |
+                slashedName + ToTerm("/") + name1;
+
+            typeSpec.Rule =
+                className;
+
+            callConv.Rule =
+                ToTerm("instance") + callConv |
+                callKind;
+
+            callKind.Rule =
+                Empty;
+
+            type.Rule =
+                ToTerm("string") |
+                type + ToTerm("[") + ToTerm("]") |
+                ToTerm("void") |
+                ToTerm("bool") |
+                ToTerm("int32");
+
+            id.Rule =
+                ID |
+                SQSTRING;
+
+            int32.Rule =
+                INT32;
+
+            int64.Rule =
+                INT64;
+
+            assemblyHead.Rule =
+                ToTerm(".assembly") + asmAttr + name1;
+
+            asmAttr.Rule =
+                Empty;
+
+            assemblyDecls.Rule =
+                Empty |
+                assemblyDecls + assemblyDecl;
+
+            assemblyDecl.Rule =
+                ToTerm(".hash") + ToTerm("algorithm") + int32 |
+                asmOrRefDecl;
+
+            asmOrRefDecl.Rule =
+                ToTerm(".ver") + int32 + ToTerm(":") + int32 + ToTerm(":") + int32 + ToTerm(":") + int32 |
+                customAttrDecl;
+
+            publicKeyTokenHead.Rule =
+                ToTerm(".publickeytoken") + ToTerm("=") + ToTerm("(");
+
+            assemblyRefHead.Rule =
+                ToTerm(".assembly") + ToTerm("extern") + name1;
+
+            assemblyRefDecls.Rule =
+                Empty |
+                assemblyRefDecls + assemblyRefDecl;
+
+            assemblyRefDecl.Rule =
+                asmOrRefDecl |
+                publicKeyTokenHead + bytes + ToTerm(")");
         }
     }
 }

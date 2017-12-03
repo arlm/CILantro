@@ -100,7 +100,7 @@ foreach($test in $testsAfterGeneratingInputData)
 	$testNameInfo = $test.Name + " "
 	Write-Host -NoNewLine $testNameInfo
 
-	$testSrcPath = $test.FullName
+	$testSrcPath = $test.FullName + "\src\program.il"
 	
 	$cilantroParserCommand = "& ./cilantro-engine.ps1 " + '"' + $testSrcPath + '"' + " " + '"null"' + " " + '"null"' + " " + "`$false" + " " + '"parse-only"'
 	$cilantroParserResult = Invoke-Expression $cilantroParserCommand
@@ -133,7 +133,7 @@ foreach($test in $testsAfterCilantroParser)
 	$outDataPath = $test.FullName + "\out-cilantro"
 	New-Item $outDataPath -type directory | Out-Null
 	
-	$testSrcPath = $test.FullName
+	$testSrcPath = $test.FullName + "\src\program.il"
 	
 	foreach($inDataFile in $inDataFiles)
 	{

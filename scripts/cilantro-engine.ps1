@@ -7,8 +7,6 @@ param
 	[string]$mode = "normal"
 )
 
-$ErrorActionPreference = 'SilentlyContinue'
-
 $cilantroConsoleExe = "../src/CILantro/UI/CILantro.UI.HiddenUI/bin/Release/CILantro.UI.HiddenUI.exe"
 $errorTempFile = ".\temp-error-file.error"
 

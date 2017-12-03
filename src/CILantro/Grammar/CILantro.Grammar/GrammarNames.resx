@@ -204,6 +204,12 @@
   <data name="instr" xml:space="preserve">
     <value>instr</value>
   </data>
+  <data name="INSTR_METHOD" xml:space="preserve">
+    <value>INSTR_METHOD</value>
+  </data>
+  <data name="INSTR_NONE" xml:space="preserve">
+    <value>INSTR_NONE</value>
+  </data>
   <data name="INSTR_STRING" xml:space="preserve">
     <value>INSTR_STRING</value>
   </data>

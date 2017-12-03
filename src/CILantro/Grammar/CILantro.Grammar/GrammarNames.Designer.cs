@@ -322,6 +322,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSTR_METHOD.
+        /// </summary>
+        public static string INSTR_METHOD {
+            get {
+                return ResourceManager.GetString("INSTR_METHOD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSTR_NONE.
+        /// </summary>
+        public static string INSTR_NONE {
+            get {
+                return ResourceManager.GetString("INSTR_NONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSTR_STRING.
         /// </summary>
         public static string INSTR_STRING {

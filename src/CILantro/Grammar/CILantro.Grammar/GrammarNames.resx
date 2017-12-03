@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="asmAttr" xml:space="preserve">
+    <value>asmAttr</value>
+  </data>
   <data name="asmOrRefDecl" xml:space="preserve">
     <value>asmOrRefDecl</value>
+  </data>
+  <data name="assemblyDecl" xml:space="preserve">
+    <value>assemblyDecl</value>
+  </data>
+  <data name="assemblyDecls" xml:space="preserve">
+    <value>assemblyDecls</value>
+  </data>
+  <data name="assemblyHead" xml:space="preserve">
+    <value>assemblyHead</value>
   </data>
   <data name="assemblyRefDecl" xml:space="preserve">
     <value>assemblyRefDecl</value>
@@ -132,8 +144,26 @@
   <data name="bytes" xml:space="preserve">
     <value>bytes</value>
   </data>
+  <data name="callConv" xml:space="preserve">
+    <value>callConv</value>
+  </data>
+  <data name="callKind" xml:space="preserve">
+    <value>callKind</value>
+  </data>
+  <data name="className" xml:space="preserve">
+    <value>className</value>
+  </data>
   <data name="COMMENTS_LINECOMMENT" xml:space="preserve">
     <value>COMMENTS_LINECOMMENT</value>
+  </data>
+  <data name="customAttrDecl" xml:space="preserve">
+    <value>customAttrDecl</value>
+  </data>
+  <data name="customHead" xml:space="preserve">
+    <value>customHead</value>
+  </data>
+  <data name="customType" xml:space="preserve">
+    <value>customType</value>
   </data>
   <data name="decl" xml:space="preserve">
     <value>decl</value>
@@ -159,13 +189,40 @@
   <data name="LEXICALS_INT32" xml:space="preserve">
     <value>LEXICALS_INT32</value>
   </data>
+  <data name="LEXICALS_INT32_DEC" xml:space="preserve">
+    <value>LEXICALS_INT32_DEC</value>
+  </data>
+  <data name="LEXICALS_INT32_HEX" xml:space="preserve">
+    <value>LEXICALS_INT32_HEX</value>
+  </data>
   <data name="name1" xml:space="preserve">
     <value>name1</value>
+  </data>
+  <data name="paramAttr" xml:space="preserve">
+    <value>paramAttr</value>
   </data>
   <data name="publicKeyTokenHead" xml:space="preserve">
     <value>publicKeyTokenHead</value>
   </data>
+  <data name="sigArg" xml:space="preserve">
+    <value>sigArg</value>
+  </data>
+  <data name="sigArgs0" xml:space="preserve">
+    <value>sigArgs0</value>
+  </data>
+  <data name="sigArgs1" xml:space="preserve">
+    <value>sigArgs1</value>
+  </data>
+  <data name="slashedName" xml:space="preserve">
+    <value>slashedName</value>
+  </data>
   <data name="start" xml:space="preserve">
     <value>start</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>type</value>
+  </data>
+  <data name="typeSpec" xml:space="preserve">
+    <value>typeSpec</value>
   </data>
 </root>

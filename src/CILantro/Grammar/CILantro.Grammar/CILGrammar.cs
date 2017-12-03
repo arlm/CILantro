@@ -224,7 +224,11 @@ namespace CILantro.Grammar
                 assemblyHead + ToTerm("{") + assemblyDecls + ToTerm("}") |
                 assemblyRefHead + ToTerm("{") + assemblyRefDecls + ToTerm("}") |
                 moduleHead |
-                ToTerm(".imagebase") + int64;
+                ToTerm(".subsystem") + int32 |
+                ToTerm(".corflags") + int32 |
+                ToTerm(".file") + ToTerm("alignment") + int32 |
+                ToTerm(".imagebase") + int64 |
+                ToTerm(".stackreserve") + int64;
 
             // decls
 

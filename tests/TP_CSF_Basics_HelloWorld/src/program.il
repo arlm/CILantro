@@ -49,7 +49,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00020003    //  ILONLY 32BITPREFERRED
-// Image base: 0x01CE0000
+// Image base: 0x01B80000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================

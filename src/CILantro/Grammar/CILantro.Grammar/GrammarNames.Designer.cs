@@ -151,6 +151,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to call.
+        /// </summary>
+        public static string call {
+            get {
+                return ResourceManager.GetString("call", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to callConv.
         /// </summary>
         public static string callConv {
@@ -475,6 +484,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldarg.0.
+        /// </summary>
+        public static string ldarg0 {
+            get {
+                return ResourceManager.GetString("ldarg0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldstr.
+        /// </summary>
+        public static string ldstr {
+            get {
+                return ResourceManager.GetString("ldstr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LEXICALS_HEXBYTE.
         /// </summary>
         public static string LEXICALS_HEXBYTE {
@@ -759,6 +786,15 @@ namespace CILantro.Grammar {
         public static string repeatOpt {
             get {
                 return ResourceManager.GetString("repeatOpt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ret.
+        /// </summary>
+        public static string ret {
+            get {
+                return ResourceManager.GetString("ret", resourceCulture);
             }
         }
         

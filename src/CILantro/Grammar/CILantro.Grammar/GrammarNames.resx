@@ -372,4 +372,16 @@
   <data name="dotEntrypoint" xml:space="preserve">
     <value>.entrypoint</value>
   </data>
+  <data name="ret" xml:space="preserve">
+    <value>ret</value>
+  </data>
+  <data name="call" xml:space="preserve">
+    <value>call</value>
+  </data>
+  <data name="ldarg0" xml:space="preserve">
+    <value>ldarg.0</value>
+  </data>
+  <data name="ldstr" xml:space="preserve">
+    <value>ldstr</value>
+  </data>
 </root>

@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\RandomExtensions.cs" />
     <Compile Include="Helpers\FileNameHelper.cs" />
     <Compile Include="IInputDataCreator.cs" />
     <Compile Include="InputDataCreatorFactory.cs" />
     <Compile Include="InputDataCreators\EmptyInputDataCreator.cs" />
     <Compile Include="InputDataCreators\IntInputDataCreator.cs" />
+    <Compile Include="InputDataCreators\UIntInputDataCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

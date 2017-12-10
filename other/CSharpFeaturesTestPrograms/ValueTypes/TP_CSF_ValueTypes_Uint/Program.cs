@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TP_CSF_ValueTypes_Uint
+namespace TP_CSF_ValueTypes_UInt
 {
     class Program
     {

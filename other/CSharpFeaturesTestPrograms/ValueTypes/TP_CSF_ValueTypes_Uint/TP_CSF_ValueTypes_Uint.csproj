@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ACBE22B3-F88E-4664-87C4-1D5784A63B9B}</ProjectGuid>
+    <ProjectGuid>{0C6603D7-C22F-4637-912E-DA7D441F6B36}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TP_CSF_ValueTypes_Uint</RootNamespace>
-    <AssemblyName>TP_CSF_ValueTypes_Uint</AssemblyName>
+    <RootNamespace>TP_CSF_ValueTypes_UInt</RootNamespace>
+    <AssemblyName>TP_CSF_ValueTypes_UInt</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -16,6 +16,9 @@ namespace InputDataGenerator
                 case "TP_CSF_ValueTypes_Int":
                     return new IntInputDataCreator(NUMBER_OF_FILES);
 
+                case "TP_CSF_ValueTypes_UInt":
+                    return new UIntInputDataCreator(NUMBER_OF_FILES);
+
                 default:
                     return null;
             }

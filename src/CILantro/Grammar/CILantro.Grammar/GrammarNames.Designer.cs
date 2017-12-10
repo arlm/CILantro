@@ -502,11 +502,29 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.0.
+        /// </summary>
+        public static string keyword_ldci40 {
+            get {
+                return ResourceManager.GetString("keyword_ldci40", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldstr.
         /// </summary>
         public static string keyword_ldstr {
             get {
                 return ResourceManager.GetString("keyword_ldstr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pop.
+        /// </summary>
+        public static string keyword_pop {
+            get {
+                return ResourceManager.GetString("keyword_pop", resourceCulture);
             }
         }
         

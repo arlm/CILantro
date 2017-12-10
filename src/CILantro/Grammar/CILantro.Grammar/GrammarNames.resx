@@ -390,4 +390,10 @@
   <data name="keyword_string" xml:space="preserve">
     <value>string</value>
   </data>
+  <data name="keyword_ldci40" xml:space="preserve">
+    <value>ldc.i4.0</value>
+  </data>
+  <data name="keyword_pop" xml:space="preserve">
+    <value>pop</value>
+  </data>
 </root>

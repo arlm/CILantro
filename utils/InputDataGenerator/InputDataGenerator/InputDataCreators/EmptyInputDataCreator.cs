@@ -7,8 +7,8 @@ namespace InputDataGenerator.InputDataCreators
         public void CreateInputData(string folderPath)
         {
             var emptyInputFilePath = Path.Combine(folderPath, "empty.in");
-            var emptyInputFileWriter = new StreamWriter(emptyInputFilePath);
 
+            var emptyInputFileWriter = new StreamWriter(emptyInputFilePath);
             emptyInputFileWriter.Close();
         }
     }

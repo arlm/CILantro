@@ -43,13 +43,13 @@
   .ver 1:0:0:0
 }
 .module TP_CSF_Basics_HelloWorld.exe
-// MVID: {14908311-D0CA-4D66-93BD-72C2E73D65CC}
+// MVID: {47901D18-62AE-4705-B7AB-668BF78C3B8E}
 .imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00020003    //  ILONLY 32BITPREFERRED
-// Image base: 0x00470000
+// Image base: 0x016D0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================

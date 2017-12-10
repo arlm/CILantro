@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{351C60C1-4BE0-4F8D-BE9C-7A2EC228DE91}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basics", "Basics", "{351C60C1-4BE0-4F8D-BE9C-7A2EC228DE91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Basics_HelloWorld", "Basics\TP_CSF_Basics_HelloWorld\TP_CSF_Basics_HelloWorld.csproj", "{C726A1FE-0B4E-4948-A50E-B5AA0A47090C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ValueTypes", "ValueTypes", "{D2E94D46-6D75-4791-A8FE-3B85075BB575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_ValueTypes_Int", "ValueTypes\TP_CSF_ValueTypes_Int\TP_CSF_ValueTypes_Int.csproj", "{F49F4CA8-7E66-4C67-BC02-551A931A5287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,11 +21,16 @@ Global
 		{C726A1FE-0B4E-4948-A50E-B5AA0A47090C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C726A1FE-0B4E-4948-A50E-B5AA0A47090C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C726A1FE-0B4E-4948-A50E-B5AA0A47090C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49F4CA8-7E66-4C67-BC02-551A931A5287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49F4CA8-7E66-4C67-BC02-551A931A5287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49F4CA8-7E66-4C67-BC02-551A931A5287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49F4CA8-7E66-4C67-BC02-551A931A5287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C726A1FE-0B4E-4948-A50E-B5AA0A47090C} = {351C60C1-4BE0-4F8D-BE9C-7A2EC228DE91}
+		{F49F4CA8-7E66-4C67-BC02-551A931A5287} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 	EndGlobalSection
 EndGlobal

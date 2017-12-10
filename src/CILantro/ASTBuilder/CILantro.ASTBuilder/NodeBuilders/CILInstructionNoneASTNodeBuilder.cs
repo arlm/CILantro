@@ -13,14 +13,14 @@ namespace CILantro.ASTBuilder.NodeBuilders
         {
             var instrNoneParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_NONE);
 
-            var ldarg0ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.ldarg0);
+            var ldarg0ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldarg0);
             if(ldarg0ParseTreeNode != null)
             {
                 var loadArgument0Instruction = new LoadArgument0Instruction();
                 return loadArgument0Instruction;
             }
 
-            var retParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.ret);
+            var retParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ret);
             if(retParseTreeNode != null)
             {
                 var returnInstruction = new ReturnInstruction();

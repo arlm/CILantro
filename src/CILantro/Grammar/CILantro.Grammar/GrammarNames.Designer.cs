@@ -286,11 +286,11 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .entrypoint.
+        ///   Looks up a localized string similar to .ctor.
         /// </summary>
-        public static string dotEntrypoint {
+        public static string dotCtor {
             get {
-                return ResourceManager.GetString("dotEntrypoint", resourceCulture);
+                return ResourceManager.GetString("dotCtor", resourceCulture);
             }
         }
         
@@ -484,20 +484,47 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .entrypoint.
+        /// </summary>
+        public static string keyword_dotEntrypoint {
+            get {
+                return ResourceManager.GetString("keyword_dotEntrypoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldarg.0.
         /// </summary>
-        public static string ldarg0 {
+        public static string keyword_ldarg0 {
             get {
-                return ResourceManager.GetString("ldarg0", resourceCulture);
+                return ResourceManager.GetString("keyword_ldarg0", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ldstr.
         /// </summary>
-        public static string ldstr {
+        public static string keyword_ldstr {
             get {
-                return ResourceManager.GetString("ldstr", resourceCulture);
+                return ResourceManager.GetString("keyword_ldstr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ret.
+        /// </summary>
+        public static string keyword_ret {
+            get {
+                return ResourceManager.GetString("keyword_ret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to string.
+        /// </summary>
+        public static string keyword_string {
+            get {
+                return ResourceManager.GetString("keyword_string", resourceCulture);
             }
         }
         
@@ -786,15 +813,6 @@ namespace CILantro.Grammar {
         public static string repeatOpt {
             get {
                 return ResourceManager.GetString("repeatOpt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ret.
-        /// </summary>
-        public static string ret {
-            get {
-                return ResourceManager.GetString("ret", resourceCulture);
             }
         }
         

@@ -369,19 +369,25 @@
   <data name="typeSpec" xml:space="preserve">
     <value>typeSpec</value>
   </data>
-  <data name="dotEntrypoint" xml:space="preserve">
+  <data name="keyword_dotEntrypoint" xml:space="preserve">
     <value>.entrypoint</value>
   </data>
-  <data name="ret" xml:space="preserve">
+  <data name="keyword_ret" xml:space="preserve">
     <value>ret</value>
   </data>
   <data name="call" xml:space="preserve">
     <value>call</value>
   </data>
-  <data name="ldarg0" xml:space="preserve">
+  <data name="keyword_ldarg0" xml:space="preserve">
     <value>ldarg.0</value>
   </data>
-  <data name="ldstr" xml:space="preserve">
+  <data name="keyword_ldstr" xml:space="preserve">
     <value>ldstr</value>
+  </data>
+  <data name="dotCtor" xml:space="preserve">
+    <value>.ctor</value>
+  </data>
+  <data name="keyword_string" xml:space="preserve">
+    <value>string</value>
   </data>
 </root>

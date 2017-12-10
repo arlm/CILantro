@@ -11,13 +11,28 @@ namespace CILantro.ASTBuilder.NodeBuilders
     {
         public override CILInstructionMethod BuildNode(ParseTreeNode node)
         {
+            CILInstructionMethod result = null;
+
             var instrMethodParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_METHOD);
 
             var callParseTreeNode = instrMethodParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.call);
             if(callParseTreeNode != null)
             {
-                var callInstruction = new CallInstruction();
-                return callInstruction;
+                result = new CallInstruction();
+            }
+
+            if(result != null)
+            {
+                var typeSpecParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.typeSpec);
+                result.TypeSpecification = typeSpecParseTreeNode.GetTypeSpecificationValue();
+
+                var methodNameParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodName);
+                result.MethodName = methodNameParseTreeNode.GetMethodNameValue();
+
+                var sigArgs0ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs0);
+                result.MethodArgumentTypes = sigArgs0ParseTreeNode.GetSigArgs0Types();
+
+                return result;
             }
 
             throw new ArgumentException("Cannot recognize CIL instruction method.");

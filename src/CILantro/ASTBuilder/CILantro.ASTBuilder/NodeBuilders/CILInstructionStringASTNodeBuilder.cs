@@ -15,7 +15,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             var instrStringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_STRING);
 
-            var ldstrParseTreeNode = instrStringParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.ldstr);
+            var ldstrParseTreeNode = instrStringParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldstr);
             if(ldstrParseTreeNode != null)
             {
                 result = new LoadStringInstruction();

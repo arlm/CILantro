@@ -32,7 +32,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
                     instructions.Add(instruction);
                 }
 
-                var dotEntrypointParseTreeNode = methodDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.dotEntrypoint);
+                var dotEntrypointParseTreeNode = methodDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_dotEntrypoint);
                 if(dotEntrypointParseTreeNode != null)
                 {
                     isEntryPoint = true;

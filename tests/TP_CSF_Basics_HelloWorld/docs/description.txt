@@ -1,2 +1,0 @@
-The first program.
-It writes out the "Hello, world!" text.

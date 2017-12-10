@@ -489,7 +489,8 @@ namespace CILantro.Grammar
                 ToTerm("!!") + id |
                 ToTerm("void") |
                 ToTerm("bool") |
-                ToTerm("int32");
+                ToTerm("int32") |
+                ToTerm("uint32");
 
             id.Rule =
                 ID |

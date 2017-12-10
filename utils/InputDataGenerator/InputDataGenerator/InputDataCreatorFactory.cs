@@ -4,7 +4,7 @@ namespace InputDataGenerator
 {
     public static class InputDataCreatorFactory
     {
-        private const int NUMBER_OF_FILES = 10;
+        private const int NUMBER_OF_FILES = 100;
 
         public static IInputDataCreator CreateInputDataCreator(string programName)
         {

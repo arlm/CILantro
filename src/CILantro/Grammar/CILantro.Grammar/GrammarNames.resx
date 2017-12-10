@@ -402,4 +402,7 @@
   <data name="keyword_void" xml:space="preserve">
     <value>void</value>
   </data>
+  <data name="keyword_uint32" xml:space="preserve">
+    <value>uint32</value>
+  </data>
 </root>

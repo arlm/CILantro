@@ -1,6 +1,7 @@
 param
 (
-	[bool]$StopOnError = $false
+	[bool]$StopOnError = $false,
+	[bool]$CheckAllInputs = $true
 )
 
 # collect tests
@@ -141,6 +142,7 @@ Write-Host "Processing tests by CILantro engine..." -foreground "yellow"
 Write-Host
 
 $testsAfterCilantroEngine = @()
+$processedInputDataFiles = 0
 
 foreach($test in $testsAfterCilantroParser)
 {
@@ -179,6 +181,13 @@ foreach($test in $testsAfterCilantroParser)
 			{
 				break
 			}
+		}
+		
+		$processedInputDataFiles = $processedInputDataFiles + 1
+		
+		if(-not ($CheckAllInputs))
+		{
+			break;
 		}
 	}
 	
@@ -276,6 +285,11 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 				break
 			}
 		}
+		
+		if(-not ($CheckAllInputs))
+		{
+			break
+		}
 	}
 	
 	if($checkOutputSuccess)
@@ -335,8 +349,8 @@ cls
 $allTestsCountInfo = $allTestsCount.ToString() + " tests have been processed."
 Write-Host $allTestsCountInfo -foreground "yellow"
 
-$allInDataFilesCountInfo = $allInDataFilesCount.ToString() + " input data files have been processed."
-Write-Host $allInDataFilesCountInfo -foreground "yellow"
+$processedInputDataFilesCountInfo = $processedInputDataFiles.ToString() + " input data files have been processed."
+Write-Host $processedInputDataFilesCountInfo -foreground "yellow"
 
 $testsAfterGeneratingInputDataCount = $testsAfterGeneratingInputData.Length
 $testsAfterGeneratingPercent = $testsAfterGeneratingInputDataCount / $allTestsCount * 100

@@ -101,6 +101,9 @@ namespace CILantro.Extensions.Irony
             var stringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_string);
             if (stringParseTreeNode != null) return typeof(string);
 
+            var uint32ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_uint32);
+            if (uint32ParseTreeNode != null) return typeof(uint);
+
             var voidParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_void);
             if (voidParseTreeNode != null) return typeof(void);
 

@@ -34,7 +34,10 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 classDeclsParseTreeNode = classDeclsParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.classDecls);
             }
 
-            var result = new CILClass(methods);
+            var result = new CILClass
+            {
+                Methods = methods
+            };
             return result;
         }
     }

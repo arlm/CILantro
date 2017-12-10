@@ -43,7 +43,17 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             instructions.Reverse();
 
-            var result = new CILMethod(instructions, isEntryPoint);
+            var result = new CILMethod
+            {
+                Instructions = instructions,
+                IsEntryPoint = isEntryPoint
+            };
+
+            foreach (var instruction in instructions)
+            {
+                instruction.ParentMethod = result;
+            }
+
             return result;
         }
     }

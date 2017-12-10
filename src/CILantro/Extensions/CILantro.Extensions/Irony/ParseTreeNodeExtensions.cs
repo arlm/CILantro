@@ -1,4 +1,5 @@
-﻿using Irony.Parsing;
+﻿using CILantro.Grammar;
+using Irony.Parsing;
 using System.Linq;
 
 namespace CILantro.Extensions.Irony
@@ -13,6 +14,12 @@ namespace CILantro.Extensions.Irony
         public static ParseTreeNode GetFirstChildWithGrammarName(this ParseTreeNode node, string grammarName)
         {
             return node.ChildNodes.FirstOrDefault(cn => cn.HasGrammarName(grammarName));
+        }
+
+        public static string GetCompQstringValue(this ParseTreeNode node)
+        {
+            var lexicalsQstringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.LEXICALS_QSTRING);
+            return lexicalsQstringParseTreeNode.Token.ValueString;
         }
     }
 }

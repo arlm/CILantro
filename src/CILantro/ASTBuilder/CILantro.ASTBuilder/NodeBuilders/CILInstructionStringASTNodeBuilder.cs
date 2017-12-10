@@ -11,13 +11,23 @@ namespace CILantro.ASTBuilder.NodeBuilders
     {
         public override CILInstructionString BuildNode(ParseTreeNode node)
         {
+            CILInstructionString result = null;
+
             var instrStringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_STRING);
 
             var ldstrParseTreeNode = instrStringParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.ldstr);
             if(ldstrParseTreeNode != null)
             {
-                var loadStringInstruction = new LoadStringInstruction();
-                return loadStringInstruction;
+                result = new LoadStringInstruction();
+            }
+
+            if (result != null)
+            {
+                var compQstringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.compQstring);
+
+                result.StringValue = compQstringParseTreeNode.GetCompQstringValue();
+
+                return result;
             }
 
             throw new ArgumentException("Cannot recognize CIL instruction string.");

@@ -6,6 +6,8 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
     {
         public override CILInstruction Execute(CILProgramState state)
         {
+            state.Stack.Push(StringValue);
+
             return ParentMethod.GetNextInstruction(this);
         }
     }

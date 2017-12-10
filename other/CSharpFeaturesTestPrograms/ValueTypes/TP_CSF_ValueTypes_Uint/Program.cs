@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace TP_CSF_ValueTypes_Int
+namespace TP_CSF_ValueTypes_Uint
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
+            uint n = uint.Parse(Console.ReadLine());
             Console.WriteLine(n);
         }
     }

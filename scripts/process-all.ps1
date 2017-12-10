@@ -1,3 +1,8 @@
+param
+(
+	[bool]$StopOnError = $false
+)
+
 # collect tests
 
 cls
@@ -38,6 +43,12 @@ foreach($test in $allTests)
 	{
 		$errorMessage = $test.Name + " - input data could not have been generated"
 		$errors += $errorMessage
+		
+		if($StopOnError)
+		{
+			$testsAfterGeneratingInputData = @()
+			break
+		}
 	}
 }
 
@@ -113,6 +124,12 @@ foreach($test in $testsAfterGeneratingInputData)
 	{
 		$errorMessage = $test.Name + " - could not have been parsed by CILantro parser"
 		$errors += $errorMessage
+		
+		if($StopOnError)
+		{
+			$testsAfterCilantroParser = @()
+			break
+		}
 	}
 }
 
@@ -157,6 +174,11 @@ foreach($test in $testsAfterCilantroParser)
 			
 			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - could not have been processed by CILantro engine"
 			$errors += $errorMessage
+			
+			if($StopOnError)
+			{
+				break
+			}
 		}
 	}
 	
@@ -166,6 +188,11 @@ foreach($test in $testsAfterCilantroParser)
 	}
 	else
 	{
+		if($StopOnError)
+		{
+			$testsAfterCilantroEngine = @()
+			break
+		}
 	}
 }
 
@@ -194,6 +221,12 @@ foreach($test in $testsAfterCilantroEngine)
 	{
 		$errorMessage = $test.Name + " - output data checker could not have been generated"
 		$errors += $errorMessage
+		
+		if($StopOnError)
+		{
+			$testsAfterGeneratingOutputDataCheckers = @()
+			break
+		}
 	}
 }
 
@@ -237,6 +270,11 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 			
 			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - output has been incorrect"
 			$errors += $errorMessage
+			
+			if($StopOnError)
+			{
+				break
+			}
 		}
 	}
 	
@@ -246,6 +284,11 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 	}
 	else
 	{
+		if($StopOnError)
+		{
+			$testsAfterCheckingOutput = @()
+			break
+		}
 	}
 }
 
@@ -276,6 +319,12 @@ foreach($test in $testsAfterCheckingOutput)
 	{
 		$errorMessage = $test.Name + " - documentation could not be found"
 		$errors += $errorMessage
+		
+		if($StopOnError)
+		{
+			$testsAfterCheckingDocs = @()
+			break
+		}
 	}
 }
 

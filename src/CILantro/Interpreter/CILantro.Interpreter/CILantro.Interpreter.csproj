@@ -48,6 +48,10 @@
       <Project>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</Project>
       <Name>CILantro.AST</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\State\CILantro.State\CILantro.State.csproj">
+      <Project>{D0D15302-773B-4BB9-B02F-05357C060362}</Project>
+      <Name>CILantro.State</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

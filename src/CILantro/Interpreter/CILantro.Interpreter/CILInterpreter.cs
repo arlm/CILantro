@@ -1,5 +1,7 @@
 ﻿using CILantro.AST.CILASTNodes;
+using CILantro.State;
 using System.IO;
+using System.Linq;
 
 namespace CILantro.Interpreter
 {
@@ -7,7 +9,13 @@ namespace CILantro.Interpreter
     {
         public void Interpret(CILProgram program, StreamReader inputStream, StreamWriter outputStrem)
         {
-            outputStrem.WriteLine("TEST");
+            var state = new CILProgramState();
+
+            var instruction = program.EntryPoint.Instructions.First();
+            while(instruction != null)
+            {
+                instruction = instruction.Execute(state);
+            }
         }
     }
 }

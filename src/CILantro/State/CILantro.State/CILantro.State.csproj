@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</ProjectGuid>
+    <ProjectGuid>{D0D15302-773B-4BB9-B02F-05357C060362}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CILantro.AST</RootNamespace>
-    <AssemblyName>CILantro.AST</AssemblyName>
+    <RootNamespace>CILantro.State</RootNamespace>
+    <AssemblyName>CILantro.State</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,25 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CILASTNode.cs" />
-    <Compile Include="CILASTNodes\CILClass.cs" />
-    <Compile Include="CILASTNodes\CILInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
-    <Compile Include="CILASTNodes\CILInstructionNone.cs" />
-    <Compile Include="CILASTNodes\CILInstructionString.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\CallInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\LoadStringInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\ReturnInstruction.cs" />
-    <Compile Include="CILASTNodes\CILMethod.cs" />
-    <Compile Include="CILASTNodes\CILProgram.cs" />
+    <Compile Include="CILProgramState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\State\CILantro.State\CILantro.State.csproj">
-      <Project>{D0D15302-773B-4BB9-B02F-05357C060362}</Project>
-      <Name>CILantro.State</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

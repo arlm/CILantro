@@ -2,11 +2,11 @@
 {
     public class CILMethod : CILASTNode
     {
-        public bool IsEntrypoint { get; private set; }
+        public bool IsEntryPoint { get; private set; }
 
-        public CILMethod(bool isEntrypoint)
+        public CILMethod(bool isEntryPoint)
         {
-            IsEntrypoint = isEntrypoint;
+            IsEntryPoint = isEntryPoint;
         }
     }
 }

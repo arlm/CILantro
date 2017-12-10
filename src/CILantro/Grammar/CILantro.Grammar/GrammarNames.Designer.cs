@@ -277,6 +277,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .entrypoint.
+        /// </summary>
+        public static string dotEntrypoint {
+            get {
+                return ResourceManager.GetString("dotEntrypoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to extendsClause.
         /// </summary>
         public static string extendsClause {

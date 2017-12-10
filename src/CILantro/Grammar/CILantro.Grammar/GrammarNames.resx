@@ -369,4 +369,7 @@
   <data name="typeSpec" xml:space="preserve">
     <value>typeSpec</value>
   </data>
+  <data name="dotEntrypoint" xml:space="preserve">
+    <value>.entrypoint</value>
+  </data>
 </root>

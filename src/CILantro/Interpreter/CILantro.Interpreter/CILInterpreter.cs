@@ -5,7 +5,7 @@ namespace CILantro.Interpreter
 {
     public class CILInterpreter
     {
-        public void Interpret(CILProgram programTree, StreamReader inputStream, StreamWriter outputStrem)
+        public void Interpret(CILProgram program, StreamReader inputStream, StreamWriter outputStrem)
         {
             outputStrem.WriteLine("TEST");
         }

@@ -1,5 +1,6 @@
 If(Test-Path("../tests"))
 {
+	Copy-Item "../tests" "../tests-temp" -force -recurse | Out-Null
 	Remove-Item "../tests" -force -recurse | Out-Null
 }
 New-Item "../tests" -type directory | Out-Null
@@ -36,8 +37,39 @@ foreach($testGroup in $testGroups)
 			Remove-Item $additionalFile.FullName
 		}
 		
+		$tempDocsFolderPath = "../tests-temp/" + $testName + "/docs"
+		$docsFolderPath = $testPath + "/docs"
+	
+		if(-not (Test-Path($docsFolderPath)))
+		{
+			New-Item $docsFolderPath -type directory | Out-Null
+		}
+		
+		$tempInDocsFilePath = $tempDocsFolderPath + "/in.txt"
+		if(Test-Path($tempInDocsFilePath))
+		{
+			Copy-Item $tempInDocsFilePath $docsFolderPath | Out-Null
+		}
+		
+		$tempOutDocsFilePath = $tempDocsFolderPath + "/out.txt"
+		if(Test-Path($tempOutDocsFilePath))
+		{
+			Copy-Item $tempOutDocsFilePath $docsFolderPath | Out-Null
+		}
+		
+		$tempDescDocsFilePath = $tempDocsFolderPath + "/description.txt"
+		if(Test-Path($tempDescDocsFilePath))
+		{
+			Copy-Item $tempDescDocsFilePath $docsFolderPath | Out-Null
+		}
+		
 		$testsCollected++
 	}
+}
+
+if(Test-Path("../tests-temp"))
+{
+	Remove-Item "../tests-temp" -force -recurse | Out-Null
 }
 
 $testsCollectedMessage = $testsCollected.ToString() + " tests have been collected."

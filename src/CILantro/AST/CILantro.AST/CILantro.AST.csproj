@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CILASTNode.cs" />
     <Compile Include="CILASTNodes\CILClass.cs" />
+    <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

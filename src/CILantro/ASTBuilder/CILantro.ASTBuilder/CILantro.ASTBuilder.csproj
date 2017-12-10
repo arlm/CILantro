@@ -45,12 +45,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CILASTBuilder.cs" />
+    <Compile Include="CILASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILClassASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILRootASTNodeBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\AST\CILantro.AST\CILantro.AST.csproj">
       <Project>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</Project>
       <Name>CILantro.AST</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Extensions\CILantro.Extensions\CILantro.Extensions.csproj">
+      <Project>{5FB262C0-01C3-48B0-9680-60132B4D388D}</Project>
+      <Name>CILantro.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Grammar\CILantro.Grammar\CILantro.Grammar.csproj">
+      <Project>{F54FCA78-7B13-4380-B2DA-BE289388144A}</Project>
+      <Name>CILantro.Grammar</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

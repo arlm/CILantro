@@ -1,4 +1,4 @@
-﻿using CILantro.AST;
+﻿using CILantro.AST.CILASTNodes;
 using CILantro.ASTBuilder;
 using CILantro.Extensions.Irony;
 using CILantro.Grammar;
@@ -18,7 +18,7 @@ namespace CILantro.Parser
             _astBuilder = new CILASTBuilder();
         }
 
-        public CILProgramTree Parse(string sourceCode)
+        public CILProgram Parse(string sourceCode)
         {
             var parseTree = _ironyParser.Parse(sourceCode);
             if(parseTree.Status == Irony.Parsing.ParseTreeStatus.Parsed)

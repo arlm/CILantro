@@ -1,11 +1,11 @@
-﻿using CILantro.AST;
+﻿using CILantro.AST.CILASTNodes;
 using System.IO;
 
 namespace CILantro.Interpreter
 {
     public class CILInterpreter
     {
-        public void Interpret(CILProgramTree programTree, StreamReader inputStream, StreamWriter outputStrem)
+        public void Interpret(CILProgram programTree, StreamReader inputStream, StreamWriter outputStrem)
         {
             outputStrem.WriteLine("TEST");
         }

@@ -1,6 +1,6 @@
 ﻿namespace CILantro.AST
 {
-    public class CILProgramTree
+    public abstract class CILASTNode
     {
     }
 }

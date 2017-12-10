@@ -1,13 +1,22 @@
-﻿using CILantro.AST;
+﻿using CILantro.AST.CILASTNodes;
+using CILantro.ASTBuilder.NodeBuilders;
 using Irony.Parsing;
 
 namespace CILantro.ASTBuilder
 {
     public class CILASTBuilder
     {
-        public CILProgramTree BuildAST(ParseTree parseTree)
+        private readonly CILRootASTNodeBuilder _rootBuilder;
+
+        public CILASTBuilder()
         {
-            return new CILProgramTree();
+            _rootBuilder = new CILRootASTNodeBuilder();
+        }
+
+        public CILProgram BuildAST(ParseTree parseTree)
+        {
+            var programTree = _rootBuilder.BuildNode(parseTree.Root);
+            return programTree;
         }
     }
 }

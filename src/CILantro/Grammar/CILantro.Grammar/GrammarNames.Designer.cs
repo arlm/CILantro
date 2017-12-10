@@ -466,7 +466,7 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to int32.
+        ///   Looks up a localized string similar to node_int32.
         /// </summary>
         public static string int32 {
             get {
@@ -475,7 +475,7 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to int64.
+        ///   Looks up a localized string similar to node_int64.
         /// </summary>
         public static string int64 {
             get {
@@ -489,6 +489,15 @@ namespace CILantro.Grammar {
         public static string keyword_dotEntrypoint {
             get {
                 return ResourceManager.GetString("keyword_dotEntrypoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to int32.
+        /// </summary>
+        public static string keyword_int32 {
+            get {
+                return ResourceManager.GetString("keyword_int32", resourceCulture);
             }
         }
         
@@ -543,6 +552,15 @@ namespace CILantro.Grammar {
         public static string keyword_string {
             get {
                 return ResourceManager.GetString("keyword_string", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to void.
+        /// </summary>
+        public static string keyword_void {
+            get {
+                return ResourceManager.GetString("keyword_void", resourceCulture);
             }
         }
         

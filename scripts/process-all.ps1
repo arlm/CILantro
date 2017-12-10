@@ -135,6 +135,8 @@ foreach($test in $testsAfterCilantroParser)
 	
 	$testSrcPath = $test.FullName + "\src\program.il"
 	
+	$cilantroEngineSuccess = $true
+	
 	foreach($inDataFile in $inDataFiles)
 	{
 		$testNameInfo = $test.Name + " - " + $inDataFile.Name + " "
@@ -148,13 +150,22 @@ foreach($test in $testsAfterCilantroParser)
 		
 		if($cilantroEngineResult -match "^SUCCESS.*")
 		{
-			$testsAfterCilantroEngine = $testsAfterCilantroEngine += $test
 		}
 		else
 		{
+			$cilantroEngineSuccess = $false
+			
 			$errorMessage = $test.Name + " - " + $inDataFile.Name + " - could not have been processed by CILantro engine"
 			$errors += $errorMessage
 		}
+	}
+	
+	if($cilantroEngineSuccess)
+	{
+		$testsAfterCilantroEngine = $testsAfterCilantroEngine += $test
+	}
+	else
+	{
 	}
 }
 

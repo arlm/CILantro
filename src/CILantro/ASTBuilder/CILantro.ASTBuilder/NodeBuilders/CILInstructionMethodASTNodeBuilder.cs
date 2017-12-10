@@ -23,6 +23,9 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             if(result != null)
             {
+                var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);
+                result.MethodReturnType = typeParseTreeNode.GetTypeType();
+
                 var typeSpecParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.typeSpec);
                 result.TypeSpecification = typeSpecParseTreeNode.GetTypeSpecificationValue();
 

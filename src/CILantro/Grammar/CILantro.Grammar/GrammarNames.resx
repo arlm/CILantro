@@ -247,10 +247,10 @@
     <value>INSTR_TYPE</value>
   </data>
   <data name="int32" xml:space="preserve">
-    <value>int32</value>
+    <value>node_int32</value>
   </data>
   <data name="int64" xml:space="preserve">
-    <value>int64</value>
+    <value>node_int64</value>
   </data>
   <data name="LEXICALS_HEXBYTE" xml:space="preserve">
     <value>LEXICALS_HEXBYTE</value>
@@ -395,5 +395,11 @@
   </data>
   <data name="keyword_pop" xml:space="preserve">
     <value>pop</value>
+  </data>
+  <data name="keyword_int32" xml:space="preserve">
+    <value>int32</value>
+  </data>
+  <data name="keyword_void" xml:space="preserve">
+    <value>void</value>
   </data>
 </root>

@@ -21,6 +21,10 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             methodArguments.Reverse();
 
             var methodResult = reflectedMethod.Invoke(null, methodArguments.ToArray());
+            if(MethodReturnType != typeof(void))
+            {
+                state.Stack.Push(methodResult);
+            }
 
             return ParentMethod.GetNextInstruction(this);
         }

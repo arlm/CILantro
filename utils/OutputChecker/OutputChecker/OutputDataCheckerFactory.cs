@@ -11,10 +11,7 @@ namespace OutputChecker
                 case "TP_CSF_Basics_HelloWorld":
                     return new SameOutputsOutputDataChecker();
 
-                case "TP_FSF_Basics_HelloWorld":
-                    return new SameOutputsOutputDataChecker();
-
-                case "TP_VBF_Basics_HelloWorld":
+                case "TP_CSF_ValueTypes_Int":
                     return new SameOutputsOutputDataChecker();
 
                 default:

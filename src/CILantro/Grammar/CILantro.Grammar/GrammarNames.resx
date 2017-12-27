@@ -417,4 +417,7 @@
   <data name="keyword_uint16" xml:space="preserve">
     <value>uint16</value>
   </data>
+  <data name="keyword_uint8" xml:space="preserve">
+    <value>uint8</value>
+  </data>
 </root>

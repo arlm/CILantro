@@ -601,6 +601,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to uint8.
+        /// </summary>
+        public static string keyword_uint8 {
+            get {
+                return ResourceManager.GetString("keyword_uint8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to void.
         /// </summary>
         public static string keyword_void {

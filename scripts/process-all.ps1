@@ -306,42 +306,6 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 	}
 }
 
-# check documentation
-
-cls
-
-Write-Host "Checking documentation..." -foreground "yellow"
-Write-Host
-
-$testsAfterCheckingDocs = @()
-
-foreach($test in $testsAfterCheckingOutput)
-{
-	$testNameInfo = $test.Name + " "
-	Write-Host -NoNewLine $testNameInfo
-
-	$docsPath = $test.FullName + "\docs"
-	
-	$checkDocsCommand = "& ./check-docs.ps1 " + $test.Name + " " + '"' + $docsPath + '"' + " `$false"
-	$checkDocsResult = Invoke-Expression $checkDocsCommand
-	
-	if($checkDocsResult -match "^SUCCESS.*")
-	{
-		$testsAfterCheckingDocs = $testsAfterCheckingDocs += $test
-	}
-	else
-	{
-		$errorMessage = $test.Name + " - documentation could not be found"
-		$errors += $errorMessage
-		
-		if($StopOnError)
-		{
-			$testsAfterCheckingDocs = @()
-			break
-		}
-	}
-}
-
 # summary
 
 cls
@@ -402,16 +366,6 @@ if($testsAfterCheckingOutputCount -eq $allTestsCount)
 	$checkOutputCountInfoColor = "green"
 }
 Write-Host $checkOutputCountInfo -foreground $checkOutputCountInfoColor
-
-$testsAfterCheckingDocsCount = $testsAfterCheckingDocs.Length
-$testsAfterCheckingDocsPercent = $testsAfterCheckingDocsCount / $allTestsCount * 100
-$checkDocsCountInfo = $testsAfterCheckingDocsCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterCheckingDocsPercent + " %)" + " tests have had documentation found."
-$checkDocsCountInfoColor = "red"
-if($testsAfterCheckingDocsCount -eq $allTestsCount)
-{
-	$checkDocsCountInfoColor = "green"
-}
-Write-Host $checkDocsCountInfo -foreground $checkDocsCountInfoColor
 
 if($errors.length -gt 0)
 {

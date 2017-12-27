@@ -414,4 +414,7 @@
   <data name="keyword_int16" xml:space="preserve">
     <value>int16</value>
   </data>
+  <data name="keyword_uint16" xml:space="preserve">
+    <value>uint16</value>
+  </data>
 </root>

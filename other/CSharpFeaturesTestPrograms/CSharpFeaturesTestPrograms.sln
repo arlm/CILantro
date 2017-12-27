@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_ValueTypes_ULong", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_ValueTypes_Short", "ValueTypes\TP_CSF_ValueTypes_Short\TP_CSF_ValueTypes_Short.csproj", "{ED1E6FBE-FAEE-439B-A041-0D4092A687FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_ValueTypes_UShort", "ValueTypes\TP_CSF_ValueTypes_UShort\TP_CSF_ValueTypes_UShort.csproj", "{D954A0D2-50E2-472F-AB43-24DD50546B54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{ED1E6FBE-FAEE-439B-A041-0D4092A687FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED1E6FBE-FAEE-439B-A041-0D4092A687FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED1E6FBE-FAEE-439B-A041-0D4092A687FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D954A0D2-50E2-472F-AB43-24DD50546B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D954A0D2-50E2-472F-AB43-24DD50546B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D954A0D2-50E2-472F-AB43-24DD50546B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D954A0D2-50E2-472F-AB43-24DD50546B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +66,6 @@ Global
 		{9358D214-C8F9-430F-A726-1A619D6A3FCE} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 		{5E9FEA6C-33DE-44F6-8756-848CA4C87EC5} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 		{ED1E6FBE-FAEE-439B-A041-0D4092A687FE} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
+		{D954A0D2-50E2-472F-AB43-24DD50546B54} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 	EndGlobalSection
 EndGlobal

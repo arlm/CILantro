@@ -28,6 +28,9 @@ namespace InputDataGenerator
                 case "TP_CSF_ValueTypes_ULong":
                     return new ULongInputDataCreator(NUMBER_OF_FILES);
 
+                case "TP_CSF_ValueTypes_UShort":
+                    return new UShortInputDataCreator(NUMBER_OF_FILES);
+
                 default:
                     return null;
             }

@@ -574,6 +574,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to uint16.
+        /// </summary>
+        public static string keyword_uint16 {
+            get {
+                return ResourceManager.GetString("keyword_uint16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to uint32.
         /// </summary>
         public static string keyword_uint32 {

@@ -26,6 +26,9 @@ namespace OutputChecker
                 case "TP_CSF_ValueTypes_ULong":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_ValueTypes_UShort":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

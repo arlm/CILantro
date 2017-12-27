@@ -420,4 +420,7 @@
   <data name="keyword_uint8" xml:space="preserve">
     <value>uint8</value>
   </data>
+  <data name="keyword_int8" xml:space="preserve">
+    <value>int8</value>
+  </data>
 </root>

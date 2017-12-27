@@ -23,6 +23,12 @@ namespace InputDataGenerator.Extensions
             return BitConverter.ToInt64(longBytes, 0);
         }
 
+        public static sbyte NextSByte(this Random random)
+        {
+            var sByteValue = random.Next(sbyte.MinValue, sbyte.MaxValue + 1);
+            return (sbyte)sByteValue;
+        }
+
         public static short NextShort(this Random random)
         {
             var shortBytes = new byte[2];
@@ -56,6 +62,7 @@ namespace InputDataGenerator.Extensions
             if (type == typeof(byte)) return random.NextByte();
             if (type == typeof(int)) return random.NextInt();
             if (type == typeof(long)) return random.NextLong();
+            if (type == typeof(sbyte)) return random.NextSByte();
             if (type == typeof(short)) return random.NextShort();
             if (type == typeof(uint)) return random.NextUInt();
             if (type == typeof(ulong)) return random.NextULong();

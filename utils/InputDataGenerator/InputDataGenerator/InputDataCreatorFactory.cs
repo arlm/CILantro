@@ -41,6 +41,11 @@ namespace InputDataGenerator
                         BuildTypesLine(typeof(long))
                     ));
 
+                case "TP_CSF_ValueTypes_SByte":
+                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
+                        BuildTypesLine(typeof(sbyte))
+                    ));
+
                 case "TP_CSF_ValueTypes_Short":
                     return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
                         BuildTypesLine(typeof(short))

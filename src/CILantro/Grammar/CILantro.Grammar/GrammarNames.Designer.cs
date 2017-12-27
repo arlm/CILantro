@@ -520,6 +520,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to int8.
+        /// </summary>
+        public static string keyword_int8 {
+            get {
+                return ResourceManager.GetString("keyword_int8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldarg.0.
         /// </summary>
         public static string keyword_ldarg0 {

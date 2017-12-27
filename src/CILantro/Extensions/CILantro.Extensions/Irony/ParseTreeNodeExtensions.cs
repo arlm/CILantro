@@ -95,6 +95,9 @@ namespace CILantro.Extensions.Irony
 
         public static Type GetTypeType(this ParseTreeNode node)
         {
+            var int16ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_int16);
+            if (int16ParseTreeNode != null) return typeof(short);
+
             var int32ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_int32);
             if (int32ParseTreeNode != null) return typeof(int);
 

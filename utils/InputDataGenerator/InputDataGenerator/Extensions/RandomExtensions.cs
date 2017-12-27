@@ -16,6 +16,13 @@ namespace InputDataGenerator.Extensions
             return BitConverter.ToInt64(longBytes, 0);
         }
 
+        public static short NextShort(this Random random)
+        {
+            var shortBytes = new byte[2];
+            random.NextBytes(shortBytes);
+            return BitConverter.ToInt16(shortBytes, 0);
+        }
+
         public static uint NextUInt(this Random random)
         {
             var uIntBytes = new byte[4];

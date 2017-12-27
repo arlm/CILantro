@@ -5,13 +5,13 @@ using System.IO;
 
 namespace InputDataGenerator.InputDataCreators
 {
-    public class ULongInputDataCreator : IInputDataCreator
+    public class ShortInputDataCreator : IInputDataCreator
     {
         private readonly Random _random;
 
         private readonly int _numberOfFiles;
 
-        public ULongInputDataCreator(int numberOfFiles)
+        public ShortInputDataCreator(int numberOfFiles)
         {
             _random = new Random();
 
@@ -22,11 +22,11 @@ namespace InputDataGenerator.InputDataCreators
         {
             for (int i = 1; i <= _numberOfFiles; i++)
             {
-                var inputFileName = FileNameHelper.GenerateFileName("uLong_", ".in", i, _numberOfFiles);
+                var inputFileName = FileNameHelper.GenerateFileName("short_", ".in", i, _numberOfFiles);
                 var inputFilePath = Path.Combine(folderPath, inputFileName);
 
                 var inputFileWriter = new StreamWriter(inputFilePath);
-                inputFileWriter.WriteLine(_random.NextULong());
+                inputFileWriter.WriteLine(_random.NextShort());
                 inputFileWriter.Close();
             }
         }

@@ -489,6 +489,7 @@ namespace CILantro.Grammar
                 ToTerm("!!") + id |
                 ToTerm("void") |
                 ToTerm("bool") |
+                ToTerm("int16") |
                 ToTerm("int32") |
                 ToTerm("int64") |
                 ToTerm("uint32") |

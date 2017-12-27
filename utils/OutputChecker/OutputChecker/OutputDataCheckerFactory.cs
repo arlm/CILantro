@@ -17,6 +17,9 @@ namespace OutputChecker
                 case "TP_CSF_ValueTypes_Long":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_ValueTypes_Short":
+                    return new SameOutputsOutputDataChecker();
+
                 case "TP_CSF_ValueTypes_UInt":
                     return new SameOutputsOutputDataChecker();
 

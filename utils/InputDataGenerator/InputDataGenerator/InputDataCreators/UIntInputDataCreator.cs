@@ -22,7 +22,7 @@ namespace InputDataGenerator.InputDataCreators
         {
             for (int i = 1; i <= _numberOfFiles; i++)
             {
-                var inputFileName = FileNameHelper.GenerateFileName("uint_", ".in", i, _numberOfFiles);
+                var inputFileName = FileNameHelper.GenerateFileName("uInt_", ".in", i, _numberOfFiles);
                 var inputFilePath = Path.Combine(folderPath, inputFileName);
 
                 var inputFileWriter = new StreamWriter(inputFilePath);

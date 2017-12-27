@@ -31,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +50,7 @@
     <Compile Include="InputDataCreatorFactory.cs" />
     <Compile Include="InputDataCreators\EmptyInputDataCreator.cs" />
     <Compile Include="InputDataCreators\IntInputDataCreator.cs" />
+    <Compile Include="InputDataCreators\LongInputDataCreator.cs" />
     <Compile Include="InputDataCreators\UIntInputDataCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -502,6 +502,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to int64.
+        /// </summary>
+        public static string keyword_int64 {
+            get {
+                return ResourceManager.GetString("keyword_int64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldarg.0.
         /// </summary>
         public static string keyword_ldarg0 {

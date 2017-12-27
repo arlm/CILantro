@@ -405,4 +405,7 @@
   <data name="keyword_uint32" xml:space="preserve">
     <value>uint32</value>
   </data>
+  <data name="keyword_int64" xml:space="preserve">
+    <value>int64</value>
+  </data>
 </root>

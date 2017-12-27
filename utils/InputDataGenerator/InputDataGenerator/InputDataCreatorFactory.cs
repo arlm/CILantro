@@ -22,6 +22,9 @@ namespace InputDataGenerator
                 case "TP_CSF_ValueTypes_UInt":
                     return new UIntInputDataCreator(NUMBER_OF_FILES);
 
+                case "TP_CSF_ValueTypes_ULong":
+                    return new ULongInputDataCreator(NUMBER_OF_FILES);
+
                 default:
                     return null;
             }

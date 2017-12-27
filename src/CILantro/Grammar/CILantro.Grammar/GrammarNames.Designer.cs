@@ -574,6 +574,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to uint64.
+        /// </summary>
+        public static string keyword_uint64 {
+            get {
+                return ResourceManager.GetString("keyword_uint64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to void.
         /// </summary>
         public static string keyword_void {

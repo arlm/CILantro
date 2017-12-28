@@ -1,23 +1,12 @@
 ﻿using InputDataGenerator.InputDataCreators;
+using InputDataGenerator.Specifications;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace InputDataGenerator
 {
     public static class InputDataCreatorFactory
     {
-        private const int NUMBER_OF_FILES = 100;
-
-        private static List<Type> BuildTypesLine(params Type[] types)
-        {
-            return types.ToList();
-        }
-
-        private static List<List<Type>> BuildTypesList(params List<Type>[] typeLines)
-        {
-            return typeLines.ToList();
-        }
+        private const int MAX_NUMBER_OF_FILES = 100;
 
         public static IInputDataCreator CreateInputDataCreator(string programName)
         {
@@ -26,64 +15,89 @@ namespace InputDataGenerator
                 case "TP_CSF_Basics_HelloWorld":
                     return new EmptyInputDataCreator();
 
+                case "TP_CSF_ValueTypes_Bool":
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(AllValues(typeof(bool)))
+                    ));
+
                 case "TP_CSF_ValueTypes_Byte":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(byte))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(byte)))
                     ));
 
                 case "TP_CSF_ValueTypes_Decimal":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(decimal))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(decimal)))
                     ));
 
                 case "TP_CSF_ValueTypes_Double":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(double))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(double)))
                     ));
 
                 case "TP_CSF_ValueTypes_Float":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(float))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(float)))
                     ));
 
                 case "TP_CSF_ValueTypes_Int":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(int))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(int)))
                     ));
 
                 case "TP_CSF_ValueTypes_Long":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(long))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(long)))
                     ));
 
                 case "TP_CSF_ValueTypes_SByte":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(sbyte))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(sbyte)))
                     ));
 
                 case "TP_CSF_ValueTypes_Short":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(short))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(short)))
                     ));
 
                 case "TP_CSF_ValueTypes_UInt":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(uint))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(uint)))
                     ));
 
                 case "TP_CSF_ValueTypes_ULong":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(ulong))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(ulong)))
                     ));
 
                 case "TP_CSF_ValueTypes_UShort":
-                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
-                        BuildTypesLine(typeof(ushort))
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue(typeof(ushort)))
                     ));
 
                 default:
                     return null;
             }
+        }
+
+        private static InputDataSpec InputDataSpec(params InputLineSpec[] inputLineSpecs)
+        {
+            return new InputDataSpec(MAX_NUMBER_OF_FILES, inputLineSpecs);
+        }
+
+        private static InputLine InputLine(params InputItemSpec[] inputItemSpecs)
+        {
+            return new InputLine(inputItemSpecs);
+        }
+
+        private static AllValuesInputItem AllValues(Type itemType)
+        {
+            return new AllValuesInputItem(itemType);
+        }
+
+        private static RandomValueInputItem RandomValue(Type itemType)
+        {
+            return new RandomValueInputItem(itemType);
         }
     }
 }

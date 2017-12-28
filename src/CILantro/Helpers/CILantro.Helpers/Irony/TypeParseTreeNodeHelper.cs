@@ -45,7 +45,15 @@ namespace CILantro.Helpers.Irony
             var voidParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_void);
             if (voidParseTreeNode != null) return typeof(void);
 
-            throw new ArgumentException("Cannot get type for node.");
+            var valuetypeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_valuetype);
+            if (valuetypeParseTreeNode != null) return GetValueType(node);
+
+            throw new ArgumentException("Cannot recognize type.");
+        }
+
+        public static Type GetValueType(ParseTreeNode node)
+        {
+            throw new ArgumentException("Cannot recognize value type.");
         }
     }
 }

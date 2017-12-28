@@ -637,6 +637,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to valuetype.
+        /// </summary>
+        public static string keyword_valuetype {
+            get {
+                return ResourceManager.GetString("keyword_valuetype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to void.
         /// </summary>
         public static string keyword_void {

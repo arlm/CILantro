@@ -429,4 +429,7 @@
   <data name="keyword_float64" xml:space="preserve">
     <value>float64</value>
   </data>
+  <data name="keyword_valuetype" xml:space="preserve">
+    <value>valuetype</value>
+  </data>
 </root>

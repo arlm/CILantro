@@ -28,10 +28,10 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 result.MethodReturnType = TypeParseTreeNodeHelper.GetType(typeParseTreeNode);
 
                 var typeSpecParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.typeSpec);
-                result.TypeSpecification = typeSpecParseTreeNode.GetTypeSpecificationValue();
+                result.TypeSpecification = TypeSpecParseTreeNodeHelper.GetValue(typeSpecParseTreeNode);
 
                 var methodNameParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodName);
-                result.MethodName = methodNameParseTreeNode.GetMethodNameValue();
+                result.MethodName = MethodNameParseTreeNodeHelper.GetMethodName(methodNameParseTreeNode);
 
                 var sigArgs0ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs0);
                 result.MethodArgumentTypes = SigArgs0ParseTreeNodeHelper.GetTypes(sigArgs0ParseTreeNode);

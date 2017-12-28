@@ -54,6 +54,7 @@
     <Compile Include="CILASTNodes\CILInstructions\ReturnInstruction.cs" />
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
+    <Compile Include="HelperClasses\CILClassName.cs" />
     <Compile Include="HelperClasses\CILTypeSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

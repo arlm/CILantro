@@ -2,6 +2,7 @@
 using CILantro.AST.CILASTNodes.CILInstructions;
 using CILantro.Extensions.Irony;
 using CILantro.Grammar;
+using CILantro.Helpers.Irony;
 using Irony.Parsing;
 using System;
 
@@ -25,7 +26,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var compQstringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.compQstring);
 
-                result.StringValue = compQstringParseTreeNode.GetCompQstringValue();
+                result.StringValue = CompQstringParseTreeNodeHelper.GetValue(compQstringParseTreeNode);
 
                 return result;
             }

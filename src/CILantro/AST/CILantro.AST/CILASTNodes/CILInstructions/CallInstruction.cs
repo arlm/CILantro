@@ -8,8 +8,8 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
     {
         public override CILInstruction Execute(CILProgramState state)
         {
-            var reflectedAssembly = Assembly.Load(TypeSpecification.AssemblyName);
-            var reflectedClass = reflectedAssembly.GetType(TypeSpecification.ClassName);
+            var reflectedAssembly = Assembly.Load(TypeSpecification.ClassName.AssemblyName);
+            var reflectedClass = reflectedAssembly.GetType(TypeSpecification.ClassName.ClassName);
             var reflectedMethod = reflectedClass.GetMethod(MethodName, MethodArgumentTypes.ToArray());
 
             var methodArguments = new List<object>();

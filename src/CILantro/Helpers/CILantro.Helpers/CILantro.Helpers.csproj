@@ -44,13 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Irony\ClassNameParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\CompQstringParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\IdParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\MethodNameParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\Name1ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\SigArgParseTreeNodeHelper.cs" />
     <Compile Include="Irony\SigArgs0ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\SigArgs1ParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\SlashedNameParseTreeNodeHelper.cs" />
     <Compile Include="Irony\TypeParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\TypeSpecParseTreeNodeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AST\CILantro.AST\CILantro.AST.csproj">
+      <Project>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</Project>
+      <Name>CILantro.AST</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Extensions\CILantro.Extensions\CILantro.Extensions.csproj">
       <Project>{5FB262C0-01C3-48B0-9680-60132B4D388D}</Project>
       <Name>CILantro.Extensions</Name>

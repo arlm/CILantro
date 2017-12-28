@@ -4,11 +4,15 @@ namespace InputDataGenerator.Specifications
 {
     public abstract class InputLineSpec
     {
-        private readonly IEnumerable<InputItemSpec> _inputItemSpecs;
+        protected readonly IEnumerable<InputItemSpec> _inputItemSpecs;
 
         public InputLineSpec(IEnumerable<InputItemSpec> inputItemSpecs)
         {
             _inputItemSpecs = inputItemSpecs;
         }
+
+        public abstract IEnumerable<InputFileLine> NextInputFileLines();
+
+        public abstract void Reset();
     }
 }

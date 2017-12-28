@@ -1,13 +1,10 @@
 ﻿using InputDataGenerator.InputDataCreators;
 using InputDataGenerator.Specifications;
-using System;
 
 namespace InputDataGenerator
 {
     public static class InputDataCreatorFactory
     {
-        private const int MAX_NUMBER_OF_FILES = 100;
-
         public static IInputDataCreator CreateInputDataCreator(string programName)
         {
             switch(programName)
@@ -17,62 +14,62 @@ namespace InputDataGenerator
 
                 case "TP_CSF_ValueTypes_Bool":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(AllValues(typeof(bool)))
+                        InputLine(AllValues<bool>())
                     ));
 
                 case "TP_CSF_ValueTypes_Byte":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(byte)))
+                        InputLine(RandomValue<byte>())
                     ));
 
                 case "TP_CSF_ValueTypes_Decimal":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(decimal)))
+                        InputLine(RandomValue<decimal>())
                     ));
 
                 case "TP_CSF_ValueTypes_Double":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(double)))
+                        InputLine(RandomValue<double>())
                     ));
 
                 case "TP_CSF_ValueTypes_Float":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(float)))
+                        InputLine(RandomValue<float>())
                     ));
 
                 case "TP_CSF_ValueTypes_Int":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(int)))
+                        InputLine(RandomValue<int>())
                     ));
 
                 case "TP_CSF_ValueTypes_Long":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(long)))
+                        InputLine(RandomValue<long>())
                     ));
 
                 case "TP_CSF_ValueTypes_SByte":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(sbyte)))
+                        InputLine(RandomValue<sbyte>())
                     ));
 
                 case "TP_CSF_ValueTypes_Short":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(short)))
+                        InputLine(RandomValue<short>())
                     ));
 
                 case "TP_CSF_ValueTypes_UInt":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(uint)))
+                        InputLine(RandomValue<uint>())
                     ));
 
                 case "TP_CSF_ValueTypes_ULong":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(ulong)))
+                        InputLine(RandomValue<ulong>())
                     ));
 
                 case "TP_CSF_ValueTypes_UShort":
                     return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue(typeof(ushort)))
+                        InputLine(RandomValue<ushort>())
                     ));
 
                 default:
@@ -82,7 +79,7 @@ namespace InputDataGenerator
 
         private static InputDataSpec InputDataSpec(params InputLineSpec[] inputLineSpecs)
         {
-            return new InputDataSpec(MAX_NUMBER_OF_FILES, inputLineSpecs);
+            return new InputDataSpec(inputLineSpecs);
         }
 
         private static InputLine InputLine(params InputItemSpec[] inputItemSpecs)
@@ -90,14 +87,14 @@ namespace InputDataGenerator
             return new InputLine(inputItemSpecs);
         }
 
-        private static AllValuesInputItem AllValues(Type itemType)
+        private static AllValuesInputItem<T> AllValues<T>()
         {
-            return new AllValuesInputItem(itemType);
+            return new AllValuesInputItem<T>();
         }
 
-        private static RandomValueInputItem RandomValue(Type itemType)
+        private static RandomValueInputItem<T> RandomValue<T>()
         {
-            return new RandomValueInputItem(itemType);
+            return new RandomValueInputItem<T>(100);
         }
     }
 }

@@ -1,21 +1,38 @@
-﻿using System.Collections.Generic;
+﻿using InputDataGenerator.Helpers;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace InputDataGenerator.Specifications
 {
     public class InputDataSpec
     {
-        private readonly int _maxNumberOfFiles;
+        private const int MAX_FILE_NUMBER = 1000000;
+
         private readonly IEnumerable<InputLineSpec> _inputLineSpecs;
 
-        public InputDataSpec(int maxNumberOfFiles, IEnumerable<InputLineSpec> inputLineSpecs)
+        private int _currentFileNumber;
+
+        public InputDataSpec(IEnumerable<InputLineSpec> inputLineSpecs)
         {
-            _maxNumberOfFiles = maxNumberOfFiles;
             _inputLineSpecs = inputLineSpecs;
+
+            _currentFileNumber = 1;
         }
 
-        public List<InputFileSpec> GenerateInputFiles()
+        public InputFileSpec NextInputFile()
         {
-            return new List<InputFileSpec>();
+            var nextInputFileLines = _inputLineSpecs.SelectMany(ils => ils.NextInputFileLines()).ToList();
+            if (!nextInputFileLines.Any() || nextInputFileLines.Contains(null)) return null;
+
+            var result = new InputFileSpec
+            {
+                FileName = FileNameHelper.GenerateFileName("generic_", ".in", _currentFileNumber, MAX_FILE_NUMBER),
+                FileLines = nextInputFileLines
+            };
+
+            _currentFileNumber++;
+
+            return result;
         }
     }
 }

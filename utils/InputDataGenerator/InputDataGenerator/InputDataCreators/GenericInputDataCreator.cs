@@ -14,15 +14,24 @@ namespace InputDataGenerator.InputDataCreators
 
         public void CreateInputData(string folderPath)
         {
-            var inputFiles = _inputDataSpec.GenerateInputFiles();
-
-            foreach(var inputFile in inputFiles)
+            var inputFile = _inputDataSpec.NextInputFile();
+            while(inputFile != null)
             {
                 var inputFilePath = Path.Combine(folderPath, inputFile.FileName);
 
                 var inputFileWriter = new StreamWriter(inputFilePath);
+                foreach(var fileLine in inputFile.FileLines)
+                {
+                    foreach(var item in fileLine.Items)
+                    {
+                        inputFileWriter.Write(item);
+                    }
 
+                    inputFileWriter.WriteLine();
+                }
                 inputFileWriter.Close();
+
+                inputFile = _inputDataSpec.NextInputFile();
             }
         }
     }

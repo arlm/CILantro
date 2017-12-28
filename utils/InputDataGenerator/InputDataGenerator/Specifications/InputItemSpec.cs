@@ -1,14 +1,9 @@
-﻿using System;
-
-namespace InputDataGenerator.Specifications
+﻿namespace InputDataGenerator.Specifications
 {
     public abstract class InputItemSpec
     {
-        private readonly Type _itemType;
+        public abstract object NextValue();
 
-        public InputItemSpec(Type itemType)
-        {
-            _itemType = itemType;
-        }
+        public abstract void Reset();
     }
 }

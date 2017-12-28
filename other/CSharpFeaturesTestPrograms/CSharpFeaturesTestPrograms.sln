@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_ValueTypes_SByte", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_ValueTypes_Float", "ValueTypes\TP_CSF_ValueTypes_Float\TP_CSF_ValueTypes_Float.csproj", "{90960B17-4E23-4F57-B51F-1F68181BA0FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_ValueTypes_Double", "ValueTypes\TP_CSF_ValueTypes_Double\TP_CSF_ValueTypes_Double.csproj", "{00BC6C31-B0DA-46EC-A9D4-73A9E7260956}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{90960B17-4E23-4F57-B51F-1F68181BA0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90960B17-4E23-4F57-B51F-1F68181BA0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90960B17-4E23-4F57-B51F-1F68181BA0FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00BC6C31-B0DA-46EC-A9D4-73A9E7260956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00BC6C31-B0DA-46EC-A9D4-73A9E7260956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BC6C31-B0DA-46EC-A9D4-73A9E7260956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00BC6C31-B0DA-46EC-A9D4-73A9E7260956}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +94,6 @@ Global
 		{5CC2F253-BA93-4A42-951F-C36A1A675AC3} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 		{3BDD2DEA-B198-4C10-9363-47D5E1BE3445} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 		{90960B17-4E23-4F57-B51F-1F68181BA0FB} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
+		{00BC6C31-B0DA-46EC-A9D4-73A9E7260956} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 	EndGlobalSection
 EndGlobal

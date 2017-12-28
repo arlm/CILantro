@@ -11,6 +11,13 @@ namespace InputDataGenerator.Extensions
             return byteBytes[0];
         }
 
+        public static double NextDouble(this Random random)
+        {
+            var doubleBytes = new byte[8];
+            random.NextBytes(doubleBytes);
+            return BitConverter.ToDouble(doubleBytes, 0);
+        }
+
         public static float NextFloat(this Random random)
         {
             var floatBytes = new byte[4];
@@ -67,6 +74,7 @@ namespace InputDataGenerator.Extensions
         public static object NextOfType(this Random random, Type type)
         {
             if (type == typeof(byte)) return random.NextByte();
+            if (type == typeof(double)) return random.NextDouble();
             if (type == typeof(float)) return random.NextFloat();
             if (type == typeof(int)) return random.NextInt();
             if (type == typeof(long)) return random.NextLong();

@@ -426,4 +426,7 @@
   <data name="keyword_float32" xml:space="preserve">
     <value>float32</value>
   </data>
+  <data name="keyword_float64" xml:space="preserve">
+    <value>float64</value>
+  </data>
 </root>

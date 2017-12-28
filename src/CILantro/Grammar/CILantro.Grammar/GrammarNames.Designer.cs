@@ -493,6 +493,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to float32.
+        /// </summary>
+        public static string keyword_float32 {
+            get {
+                return ResourceManager.GetString("keyword_float32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to int16.
         /// </summary>
         public static string keyword_int16 {

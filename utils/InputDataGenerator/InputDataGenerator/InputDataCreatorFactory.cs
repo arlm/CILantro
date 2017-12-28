@@ -31,6 +31,11 @@ namespace InputDataGenerator
                         BuildTypesLine(typeof(byte))
                     ));
 
+                case "TP_CSF_ValueTypes_Float":
+                    return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
+                        BuildTypesLine(typeof(float))
+                    ));
+
                 case "TP_CSF_ValueTypes_Int":
                     return new RandomInputDataCreator(NUMBER_OF_FILES, BuildTypesList(
                         BuildTypesLine(typeof(int))

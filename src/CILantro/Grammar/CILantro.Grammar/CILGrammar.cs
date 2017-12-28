@@ -493,6 +493,7 @@ namespace CILantro.Grammar
                 ToTerm("int16") |
                 ToTerm("int32") |
                 ToTerm("int64") |
+                ToTerm("float32") |
                 ToTerm("uint8") |
                 ToTerm("uint16") |
                 ToTerm("uint32") |

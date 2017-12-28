@@ -2,6 +2,7 @@
 using CILantro.AST.CILASTNodes.CILInstructions;
 using CILantro.Extensions.Irony;
 using CILantro.Grammar;
+using CILantro.Helpers.Irony;
 using Irony.Parsing;
 using System;
 
@@ -24,7 +25,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
             if(result != null)
             {
                 var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);
-                result.MethodReturnType = typeParseTreeNode.GetTypeType();
+                result.MethodReturnType = TypeParseTreeNodeHelper.GetType(typeParseTreeNode);
 
                 var typeSpecParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.typeSpec);
                 result.TypeSpecification = typeSpecParseTreeNode.GetTypeSpecificationValue();
@@ -33,7 +34,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 result.MethodName = methodNameParseTreeNode.GetMethodNameValue();
 
                 var sigArgs0ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs0);
-                result.MethodArgumentTypes = sigArgs0ParseTreeNode.GetSigArgs0Types();
+                result.MethodArgumentTypes = SigArgs0ParseTreeNodeHelper.GetTypes(sigArgs0ParseTreeNode);
 
                 return result;
             }

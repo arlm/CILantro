@@ -4,11 +4,23 @@ namespace InputDataGenerator.Extensions
 {
     public static class RandomExtensions
     {
+        public static bool NextBool(this Random random)
+        {
+            return random.Next(2) == 1;
+        }
+
         public static byte NextByte(this Random random)
         {
             var byteBytes = new byte[1];
             random.NextBytes(byteBytes);
             return byteBytes[0];
+        }
+
+        public static decimal NextDecimal(this Random random)
+        {
+            var scale = (byte)random.Next(29);
+            var sign = random.NextBool();
+            return new decimal(random.NextInt(), random.NextInt(), random.NextInt(), sign, scale);
         }
 
         public static double NextDouble(this Random random)
@@ -27,7 +39,9 @@ namespace InputDataGenerator.Extensions
 
         public static int NextInt(this Random random)
         {
-            return random.Next(int.MinValue, int.MaxValue);
+            var firstBits = random.Next(0, 1 << 4) << 28;
+            var lastBits = random.Next(0, 1 << 28);
+            return firstBits | lastBits;
         }
 
         public static long NextLong(this Random random)
@@ -74,6 +88,7 @@ namespace InputDataGenerator.Extensions
         public static object NextOfType(this Random random, Type type)
         {
             if (type == typeof(byte)) return random.NextByte();
+            if (type == typeof(decimal)) return random.NextDecimal();
             if (type == typeof(double)) return random.NextDouble();
             if (type == typeof(float)) return random.NextFloat();
             if (type == typeof(int)) return random.NextInt();

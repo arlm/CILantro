@@ -10,6 +10,9 @@ namespace CILantro.Helpers.Irony
     {
         public static Type GetType(ParseTreeNode node)
         {
+            var boolParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_bool);
+            if (boolParseTreeNode != null) return typeof(bool);
+
             var float32ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_float32);
             if (float32ParseTreeNode != null) return typeof(float);
 

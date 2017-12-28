@@ -11,6 +11,9 @@ namespace OutputChecker
                 case "TP_CSF_Basics_HelloWorld":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_ValueTypes_Bool":
+                    return new SameOutputsOutputDataChecker();
+
                 case "TP_CSF_ValueTypes_Byte":
                     return new SameOutputsOutputDataChecker();
 

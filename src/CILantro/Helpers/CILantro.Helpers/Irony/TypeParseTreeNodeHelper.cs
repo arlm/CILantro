@@ -2,6 +2,7 @@
 using CILantro.Grammar;
 using Irony.Parsing;
 using System;
+using System.Reflection;
 
 namespace CILantro.Helpers.Irony
 {
@@ -53,6 +54,13 @@ namespace CILantro.Helpers.Irony
 
         public static Type GetValueType(ParseTreeNode node)
         {
+            var classNameParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.className);
+            var className = ClassNameParseTreeNodeHelper.GetClassName(classNameParseTreeNode);
+
+            var assembly = Assembly.Load(className.AssemblyName);
+            var type = assembly.GetType(className.ClassName);
+            if (type != null) return type;
+
             throw new ArgumentException("Cannot recognize value type.");
         }
     }

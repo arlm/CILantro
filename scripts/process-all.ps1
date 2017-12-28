@@ -95,6 +95,11 @@ foreach($test in $testsAfterGeneratingInputData)
 		
 		echo $outDataFilePath
 		echo $result
+		
+		if(-not ($CheckAllInputs))
+		{
+			break;
+		}
 	}
 }
 

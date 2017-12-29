@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InputDataGenerator.Extensions;
+using System;
 
 namespace InputDataGenerator.Specifications
 {
@@ -7,9 +8,12 @@ namespace InputDataGenerator.Specifications
         private readonly int _maxValues;
 
         private int _valueCounter;
+        private Random _random;
 
         public RandomValueInputItem(int maxValues)
         {
+            _random = new Random();
+
             _maxValues = maxValues;
 
             _valueCounter = 0;
@@ -17,12 +21,15 @@ namespace InputDataGenerator.Specifications
 
         public override object NextValue()
         {
-            throw new NotImplementedException();
+            if (_valueCounter == _maxValues) return null;
+            _valueCounter++;
+            return _random.NextOfType(typeof(T));
         }
 
         public override void Reset()
         {
-            throw new NotImplementedException();
+            _random = new Random();
+            _valueCounter = 0;
         }
     }
 }

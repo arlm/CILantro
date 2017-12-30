@@ -22,6 +22,11 @@ namespace InputDataGenerator
                         InputLine(RandomValue<byte>())
                     ));
 
+                case "TP_CSF_ValueTypes_Char":
+                    return new GenericInputDataCreator(InputDataSpec(
+                        InputLine(RandomValue<char>())
+                    ));
+
                 case "TP_CSF_ValueTypes_Decimal":
                     return new GenericInputDataCreator(InputDataSpec(
                         InputLine(RandomValue<decimal>())

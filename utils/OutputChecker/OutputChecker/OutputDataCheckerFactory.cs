@@ -17,6 +17,9 @@ namespace OutputChecker
                 case "TP_CSF_ValueTypes_Byte":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_ValueTypes_Char":
+                    return new SameOutputsOutputDataChecker();
+
                 case "TP_CSF_ValueTypes_Decimal":
                     return new SameOutputsOutputDataChecker();
 

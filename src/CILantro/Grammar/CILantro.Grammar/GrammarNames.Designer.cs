@@ -493,6 +493,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to char.
+        /// </summary>
+        public static string keyword_char {
+            get {
+                return ResourceManager.GetString("keyword_char", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .entrypoint.
         /// </summary>
         public static string keyword_dotEntrypoint {

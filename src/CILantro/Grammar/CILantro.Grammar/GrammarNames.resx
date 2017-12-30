@@ -435,4 +435,7 @@
   <data name="keyword_bool" xml:space="preserve">
     <value>bool</value>
   </data>
+  <data name="keyword_char" xml:space="preserve">
+    <value>char</value>
+  </data>
 </root>

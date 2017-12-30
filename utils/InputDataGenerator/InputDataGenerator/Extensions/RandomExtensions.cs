@@ -64,6 +64,12 @@ namespace InputDataGenerator.Extensions
             return BitConverter.ToInt16(shortBytes, 0);
         }
 
+        public static char NextStandardChar(this Random random)
+        {
+            var charNumber = random.Next(20, 127);
+            return (char)charNumber;
+        }
+
         public static uint NextUInt(this Random random)
         {
             var uIntBytes = new byte[4];
@@ -88,6 +94,7 @@ namespace InputDataGenerator.Extensions
         public static object NextOfType(this Random random, Type type)
         {
             if (type == typeof(byte)) return random.NextByte();
+            if (type == typeof(char)) return random.NextStandardChar();
             if (type == typeof(decimal)) return random.NextDecimal();
             if (type == typeof(double)) return random.NextDouble();
             if (type == typeof(float)) return random.NextFloat();

@@ -13,6 +13,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
         {
             var instrNoneParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_NONE);
 
+            var addParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_add);
+            if(addParseTreeNode != null)
+            {
+                var addInstruction = new AddInstruction();
+                return addInstruction;
+            }
+
             var ldarg0ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldarg0);
             if(ldarg0ParseTreeNode != null)
             {
@@ -27,6 +34,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return loadConstantInt0Instruction;
             }
 
+            var ldloc0ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldloc0);
+            if(ldloc0ParseTreeNode != null)
+            {
+                var loadLocalVariable0Instruction = new LoadLocalVariable0Instruction();
+                return loadLocalVariable0Instruction;
+            }
+
             var popParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_pop);
             if(popParseTreeNode != null)
             {
@@ -39,6 +53,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var returnInstruction = new ReturnInstruction();
                 return returnInstruction;
+            }
+
+            var stloc0ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_stloc0);
+            if(stloc0ParseTreeNode != null)
+            {
+                var setLocalVariable0Instruction = new SetLocalVariable0Instruction();
+                return setLocalVariable0Instruction;
             }
 
             throw new ArgumentException("Cannot recognize CIL instruction none.");

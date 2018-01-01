@@ -50,6 +50,9 @@ namespace OutputChecker
                 case "TP_CSF_ValueTypes_UShort":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_ArithmeticOperators_Add":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

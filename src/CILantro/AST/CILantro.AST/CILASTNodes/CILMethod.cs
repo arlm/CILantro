@@ -8,6 +8,8 @@ namespace CILantro.AST.CILASTNodes
 
         public bool IsEntryPoint { get; set; }
 
+        public object[] Locals { get; set; } = new object[10];
+
         public CILInstruction GetNextInstruction(CILInstruction currentInstruction)
         {
             var currentIndex = Instructions.IndexOf(currentInstruction);

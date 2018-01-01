@@ -214,6 +214,7 @@ namespace CILantro.Grammar
 
             var INSTR_NONE = new NonTerminal(GrammarNames.INSTR_NONE);
             INSTR_NONE.Rule =
+                ToTerm("add") |
                 ToTerm("ldarg.0") |
                 ToTerm("ldarg.1") |
                 ToTerm("ldc.i4.0") |

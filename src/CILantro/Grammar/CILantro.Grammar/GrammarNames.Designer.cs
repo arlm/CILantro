@@ -484,6 +484,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to add.
+        /// </summary>
+        public static string keyword_add {
+            get {
+                return ResourceManager.GetString("keyword_add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bool.
         /// </summary>
         public static string keyword_bool {
@@ -583,6 +592,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldloc.0.
+        /// </summary>
+        public static string keyword_ldloc0 {
+            get {
+                return ResourceManager.GetString("keyword_ldloc0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldstr.
         /// </summary>
         public static string keyword_ldstr {
@@ -606,6 +624,15 @@ namespace CILantro.Grammar {
         public static string keyword_ret {
             get {
                 return ResourceManager.GetString("keyword_ret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stloc.0.
+        /// </summary>
+        public static string keyword_stloc0 {
+            get {
+                return ResourceManager.GetString("keyword_stloc0", resourceCulture);
             }
         }
         

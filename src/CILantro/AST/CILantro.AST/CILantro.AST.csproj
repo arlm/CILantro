@@ -46,12 +46,15 @@
     <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
     <Compile Include="CILASTNodes\CILInstructionNone.cs" />
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CallInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt0Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadStringInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\PopInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ReturnInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
     <Compile Include="HelperClasses\CILClassName.cs" />

@@ -438,4 +438,13 @@
   <data name="keyword_char" xml:space="preserve">
     <value>char</value>
   </data>
+  <data name="keyword_add" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="keyword_ldloc0" xml:space="preserve">
+    <value>ldloc.0</value>
+  </data>
+  <data name="keyword_stloc0" xml:space="preserve">
+    <value>stloc.0</value>
+  </data>
 </root>

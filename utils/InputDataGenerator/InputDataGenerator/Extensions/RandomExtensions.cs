@@ -90,23 +90,5 @@ namespace InputDataGenerator.Extensions
             random.NextBytes(uShortBytes);
             return BitConverter.ToUInt16(uShortBytes, 0);
         }
-
-        public static object NextOfType(this Random random, Type type)
-        {
-            if (type == typeof(byte)) return random.NextByte();
-            if (type == typeof(char)) return random.NextStandardChar();
-            if (type == typeof(decimal)) return random.NextDecimal();
-            if (type == typeof(double)) return random.NextDouble();
-            if (type == typeof(float)) return random.NextFloat();
-            if (type == typeof(int)) return random.NextInt();
-            if (type == typeof(long)) return random.NextLong();
-            if (type == typeof(sbyte)) return random.NextSByte();
-            if (type == typeof(short)) return random.NextShort();
-            if (type == typeof(uint)) return random.NextUInt();
-            if (type == typeof(ulong)) return random.NextULong();
-            if (type == typeof(ushort)) return random.NextUShort();
-
-            throw new ArgumentException($"Cannot generate next random value for type {type}.");
-        }
     }
 }

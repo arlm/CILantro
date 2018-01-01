@@ -1,5 +1,7 @@
-﻿using InputDataGenerator.InputDataCreators;
-using InputDataGenerator.Specifications;
+﻿using InputDataGenerator.Extensions;
+using InputDataGenerator.Helpers;
+using InputDataGenerator.InputDataCreators;
+using System;
 
 namespace InputDataGenerator
 {
@@ -13,93 +15,93 @@ namespace InputDataGenerator
                     return new EmptyInputDataCreator();
 
                 case "TP_CSF_ValueTypes_Bool":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(AllValues<bool>())
-                    ));
+                    return new EnumerableInputDataCreator(BoolHelper.GetAllValues().SelectCreateInputActions(b => writer =>
+                    {
+                        writer.WriteLine(b);
+                    }));
 
                 case "TP_CSF_ValueTypes_Byte":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<byte>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextByte());
+                    });
 
                 case "TP_CSF_ValueTypes_Char":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<char>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardChar());
+                    });
 
                 case "TP_CSF_ValueTypes_Decimal":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<decimal>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextDecimal());
+                    });
 
                 case "TP_CSF_ValueTypes_Double":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<double>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextDouble());
+                    });
 
                 case "TP_CSF_ValueTypes_Float":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<float>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextFloat());
+                    });
 
                 case "TP_CSF_ValueTypes_Int":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<int>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
 
                 case "TP_CSF_ValueTypes_Long":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<long>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextLong());
+                    });
 
                 case "TP_CSF_ValueTypes_SByte":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<sbyte>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextSByte());
+                    });
 
                 case "TP_CSF_ValueTypes_Short":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<short>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextShort());
+                    });
 
                 case "TP_CSF_ValueTypes_UInt":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<uint>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextUInt());
+                    });
 
                 case "TP_CSF_ValueTypes_ULong":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<ulong>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextULong());
+                    });
 
                 case "TP_CSF_ValueTypes_UShort":
-                    return new GenericInputDataCreator(InputDataSpec(
-                        InputLine(RandomValue<ushort>())
-                    ));
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextUShort());
+                    });
+
+                case "TP_CSF_Operators_ArithmeticOperators_Add":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
 
                 default:
-                    return null;
+                    throw new ArgumentException("Cannot recognize program name.");
             }
-        }
-
-        private static InputDataSpec InputDataSpec(params InputLineSpec[] inputLineSpecs)
-        {
-            return new InputDataSpec(inputLineSpecs);
-        }
-
-        private static InputLine InputLine(params InputItemSpec[] inputItemSpecs)
-        {
-            return new InputLine(inputItemSpecs);
-        }
-
-        private static AllValuesInputItem<T> AllValues<T>()
-        {
-            return new AllValuesInputItem<T>();
-        }
-
-        private static RandomValueInputItem<T> RandomValue<T>()
-        {
-            return new RandomValueInputItem<T>(100);
         }
     }
 }

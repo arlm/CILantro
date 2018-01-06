@@ -2,11 +2,11 @@
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
-    public class LoadConstantInt0Instruction : CILInstructionNone
+    public class LoadConstantInt1Instruction : CILInstructionNone
     {
         public override CILInstruction Execute(CILProgramState state)
         {
-            int value = 0;
+            int value = 1;
             state.Stack.Push(value);
 
             return ParentMethod.GetNextInstruction(this);

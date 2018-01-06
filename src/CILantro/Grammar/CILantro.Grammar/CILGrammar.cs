@@ -86,6 +86,7 @@ namespace CILantro.Grammar
                 "ldarg.0",
                 "ldarg.1",
                 "ldc.i4.0",
+                "ldc.i4.1",
                 "ldloc.0",
                 "ldnull",
                 "ldsfld",
@@ -216,9 +217,11 @@ namespace CILantro.Grammar
             INSTR_NONE.Rule =
                 ToTerm("add") |
                 ToTerm("div") |
+                ToTerm("dup") |
                 ToTerm("ldarg.0") |
                 ToTerm("ldarg.1") |
                 ToTerm("ldc.i4.0") |
+                ToTerm("ldc.i4.1") |
                 ToTerm("ldloc.0") |
                 ToTerm("ldnull") |
                 ToTerm("mul") |

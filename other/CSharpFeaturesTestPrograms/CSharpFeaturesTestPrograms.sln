@@ -47,6 +47,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_Arithmetic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_ArithmeticOperators_Modulo", "Operators\TP_CSF_Operators_ArithmeticOperators_Modulo\TP_CSF_Operators_ArithmeticOperators_Modulo.csproj", "{F68CE910-4288-4546-A7F3-B5CDFECEFC12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_ArithmeticOperators_Increment", "Operators\TP_CSF_Operators_ArithmeticOperators_Increment\TP_CSF_Operators_ArithmeticOperators_Increment.csproj", "{502D3236-0F0F-4A94-B43F-519F89F02AB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_ArithmeticOperators_Decrement", "Operators\TP_CSF_Operators_ArithmeticOperators_Decrement\TP_CSF_Operators_ArithmeticOperators_Decrement.csproj", "{CDA7795A-FE7E-4FEE-AE1B-2FE5964610C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +133,14 @@ Global
 		{F68CE910-4288-4546-A7F3-B5CDFECEFC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F68CE910-4288-4546-A7F3-B5CDFECEFC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F68CE910-4288-4546-A7F3-B5CDFECEFC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502D3236-0F0F-4A94-B43F-519F89F02AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502D3236-0F0F-4A94-B43F-519F89F02AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502D3236-0F0F-4A94-B43F-519F89F02AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502D3236-0F0F-4A94-B43F-519F89F02AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA7795A-FE7E-4FEE-AE1B-2FE5964610C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA7795A-FE7E-4FEE-AE1B-2FE5964610C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA7795A-FE7E-4FEE-AE1B-2FE5964610C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA7795A-FE7E-4FEE-AE1B-2FE5964610C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,5 +165,7 @@ Global
 		{23CA2443-CA27-464C-BA67-D32EE353F431} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
 		{38055EFE-1D1A-4301-B0F5-752EA6C420C1} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
 		{F68CE910-4288-4546-A7F3-B5CDFECEFC12} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
+		{502D3236-0F0F-4A94-B43F-519F89F02AB2} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
+		{CDA7795A-FE7E-4FEE-AE1B-2FE5964610C4} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
 	EndGlobalSection
 EndGlobal

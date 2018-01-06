@@ -529,6 +529,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to dup.
+        /// </summary>
+        public static string keyword_dup {
+            get {
+                return ResourceManager.GetString("keyword_dup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to float32.
         /// </summary>
         public static string keyword_float32 {
@@ -597,6 +606,15 @@ namespace CILantro.Grammar {
         public static string keyword_ldci40 {
             get {
                 return ResourceManager.GetString("keyword_ldci40", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.1.
+        /// </summary>
+        public static string keyword_ldci41 {
+            get {
+                return ResourceManager.GetString("keyword_ldci41", resourceCulture);
             }
         }
         

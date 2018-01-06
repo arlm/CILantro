@@ -459,4 +459,10 @@
   <data name="keyword_rem" xml:space="preserve">
     <value>rem</value>
   </data>
+  <data name="keyword_dup" xml:space="preserve">
+    <value>dup</value>
+  </data>
+  <data name="keyword_ldci41" xml:space="preserve">
+    <value>ldc.i4.1</value>
+  </data>
 </root>

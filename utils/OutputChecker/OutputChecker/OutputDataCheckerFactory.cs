@@ -65,6 +65,12 @@ namespace OutputChecker
                 case "TP_CSF_Operators_ArithmeticOperators_Modulo":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_ArithmeticOperators_Increment":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_ArithmeticOperators_Decrement":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

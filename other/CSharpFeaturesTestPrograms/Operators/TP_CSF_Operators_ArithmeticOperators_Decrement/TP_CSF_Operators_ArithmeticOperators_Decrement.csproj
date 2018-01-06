@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{CDA7795A-FE7E-4FEE-AE1B-2FE5964610C4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CILantro.AST</RootNamespace>
-    <AssemblyName>CILantro.AST</AssemblyName>
+    <RootNamespace>TP_CSF_Operators_ArithmeticOperators_Decrement</RootNamespace>
+    <AssemblyName>TP_CSF_Operators_ArithmeticOperators_Decrement</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,38 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CILASTNode.cs" />
-    <Compile Include="CILASTNodes\CILClass.cs" />
-    <Compile Include="CILASTNodes\CILInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
-    <Compile Include="CILASTNodes\CILInstructionNone.cs" />
-    <Compile Include="CILASTNodes\CILInstructionString.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\CallInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\DivideInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\DuplicateInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt0Instruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt1Instruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\LoadStringInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\MultiplyInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\PopInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\RemainderInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\ReturnInstruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable0Instruction.cs" />
-    <Compile Include="CILASTNodes\CILInstructions\SubtractInstruction.cs" />
-    <Compile Include="CILASTNodes\CILMethod.cs" />
-    <Compile Include="CILASTNodes\CILProgram.cs" />
-    <Compile Include="HelperClasses\CILClassName.cs" />
-    <Compile Include="HelperClasses\CILTypeSpecification.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\State\CILantro.State\CILantro.State.csproj">
-      <Project>{D0D15302-773B-4BB9-B02F-05357C060362}</Project>
-      <Name>CILantro.State</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

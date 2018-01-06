@@ -20,6 +20,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return addInstruction;
             }
 
+            var divParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_div);
+            if(divParseTreeNode != null)
+            {
+                var divideInstruction = new DivideInstruction();
+                return divideInstruction;
+            }
+
             var ldarg0ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldarg0);
             if(ldarg0ParseTreeNode != null)
             {
@@ -41,11 +48,25 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return loadLocalVariable0Instruction;
             }
 
+            var mulParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_mul);
+            if(mulParseTreeNode != null)
+            {
+                var multiplyInstruction = new MultiplyInstruction();
+                return multiplyInstruction;
+            }
+
             var popParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_pop);
             if(popParseTreeNode != null)
             {
                 var popInstruction = new PopInstruction();
                 return popInstruction;
+            }
+
+            var remParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_rem);
+            if(remParseTreeNode != null)
+            {
+                var remainderInstruction = new RemainderInstruction();
+                return remainderInstruction;
             }
 
             var retParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ret);

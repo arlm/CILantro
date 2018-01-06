@@ -37,11 +37,19 @@ namespace InputDataGenerator.Extensions
             return BitConverter.ToSingle(floatBytes, 0);
         }
 
-        public static int NextInt(this Random random)
+        public static int NextInt(this Random random, bool excludeZero = false)
         {
-            var firstBits = random.Next(0, 1 << 4) << 28;
-            var lastBits = random.Next(0, 1 << 28);
-            return firstBits | lastBits;
+            while(true)
+            {
+                var firstBits = random.Next(0, 1 << 4) << 28;
+                var lastBits = random.Next(0, 1 << 28);
+                var result = firstBits | lastBits;
+
+                if (result == 0 && excludeZero)
+                    continue;
+
+                return result;
+            }
         }
 
         public static long NextLong(this Random random)

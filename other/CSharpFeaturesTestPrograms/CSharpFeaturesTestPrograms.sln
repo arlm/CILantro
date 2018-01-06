@@ -41,6 +41,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_Arithmetic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_ArithmeticOperators_Subtract", "Operators\TP_CSF_Operators_ArithmeticOperators_Subtract\TP_CSF_Operators_ArithmeticOperators_Subtract.csproj", "{AFA1519B-14C0-4B82-8157-A09755B39464}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_ArithmeticOperators_Multiply", "Operators\TP_CSF_Operators_ArithmeticOperators_Multiply\TP_CSF_Operators_ArithmeticOperators_Multiply.csproj", "{23CA2443-CA27-464C-BA67-D32EE353F431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_ArithmeticOperators_Divide", "Operators\TP_CSF_Operators_ArithmeticOperators_Divide\TP_CSF_Operators_ArithmeticOperators_Divide.csproj", "{38055EFE-1D1A-4301-B0F5-752EA6C420C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Operators_ArithmeticOperators_Modulo", "Operators\TP_CSF_Operators_ArithmeticOperators_Modulo\TP_CSF_Operators_ArithmeticOperators_Modulo.csproj", "{F68CE910-4288-4546-A7F3-B5CDFECEFC12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +117,18 @@ Global
 		{AFA1519B-14C0-4B82-8157-A09755B39464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA1519B-14C0-4B82-8157-A09755B39464}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA1519B-14C0-4B82-8157-A09755B39464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23CA2443-CA27-464C-BA67-D32EE353F431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CA2443-CA27-464C-BA67-D32EE353F431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CA2443-CA27-464C-BA67-D32EE353F431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CA2443-CA27-464C-BA67-D32EE353F431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38055EFE-1D1A-4301-B0F5-752EA6C420C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38055EFE-1D1A-4301-B0F5-752EA6C420C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38055EFE-1D1A-4301-B0F5-752EA6C420C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38055EFE-1D1A-4301-B0F5-752EA6C420C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68CE910-4288-4546-A7F3-B5CDFECEFC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68CE910-4288-4546-A7F3-B5CDFECEFC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68CE910-4288-4546-A7F3-B5CDFECEFC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68CE910-4288-4546-A7F3-B5CDFECEFC12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,5 +150,8 @@ Global
 		{A7B09214-8BC5-4AA8-94C4-6BFFED1E1E8D} = {D2E94D46-6D75-4791-A8FE-3B85075BB575}
 		{D189B6FB-3915-4E57-82E0-1897F7A82742} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
 		{AFA1519B-14C0-4B82-8157-A09755B39464} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
+		{23CA2443-CA27-464C-BA67-D32EE353F431} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
+		{38055EFE-1D1A-4301-B0F5-752EA6C420C1} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
+		{F68CE910-4288-4546-A7F3-B5CDFECEFC12} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
 	EndGlobalSection
 EndGlobal

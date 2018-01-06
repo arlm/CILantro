@@ -215,13 +215,16 @@ namespace CILantro.Grammar
             var INSTR_NONE = new NonTerminal(GrammarNames.INSTR_NONE);
             INSTR_NONE.Rule =
                 ToTerm("add") |
+                ToTerm("div") |
                 ToTerm("ldarg.0") |
                 ToTerm("ldarg.1") |
                 ToTerm("ldc.i4.0") |
                 ToTerm("ldloc.0") |
                 ToTerm("ldnull") |
+                ToTerm("mul") |
                 ToTerm("nop") |
                 ToTerm("pop") |
+                ToTerm("rem") |
                 ToTerm("ret") |
                 ToTerm("stloc.0") |
                 ToTerm("sub");

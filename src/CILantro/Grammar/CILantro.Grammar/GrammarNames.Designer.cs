@@ -511,6 +511,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to div.
+        /// </summary>
+        public static string keyword_div {
+            get {
+                return ResourceManager.GetString("keyword_div", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .entrypoint.
         /// </summary>
         public static string keyword_dotEntrypoint {
@@ -610,11 +619,29 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to mul.
+        /// </summary>
+        public static string keyword_mul {
+            get {
+                return ResourceManager.GetString("keyword_mul", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to pop.
         /// </summary>
         public static string keyword_pop {
             get {
                 return ResourceManager.GetString("keyword_pop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rem.
+        /// </summary>
+        public static string keyword_rem {
+            get {
+                return ResourceManager.GetString("keyword_rem", resourceCulture);
             }
         }
         

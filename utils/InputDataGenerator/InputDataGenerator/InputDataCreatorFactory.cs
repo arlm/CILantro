@@ -106,6 +106,27 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Operators_ArithmeticOperators_Multiply":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Operators_ArithmeticOperators_Divide":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt(true));
+                    });
+
+                case "TP_CSF_Operators_ArithmeticOperators_Modulo":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt(true));
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

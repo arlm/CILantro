@@ -450,4 +450,13 @@
   <data name="keyword_sub" xml:space="preserve">
     <value>sub</value>
   </data>
+  <data name="keyword_div" xml:space="preserve">
+    <value>div</value>
+  </data>
+  <data name="keyword_mul" xml:space="preserve">
+    <value>mul</value>
+  </data>
+  <data name="keyword_rem" xml:space="preserve">
+    <value>rem</value>
+  </data>
 </root>

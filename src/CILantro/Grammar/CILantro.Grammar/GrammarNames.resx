@@ -447,4 +447,7 @@
   <data name="keyword_stloc0" xml:space="preserve">
     <value>stloc.0</value>
   </data>
+  <data name="keyword_sub" xml:space="preserve">
+    <value>sub</value>
+  </data>
 </root>

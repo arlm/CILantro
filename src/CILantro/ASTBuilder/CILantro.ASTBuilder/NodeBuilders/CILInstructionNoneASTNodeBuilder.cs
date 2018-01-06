@@ -62,6 +62,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return setLocalVariable0Instruction;
             }
 
+            var subParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_sub);
+            if(subParseTreeNode != null)
+            {
+                var subtractInstruction = new SubtractInstruction();
+                return subtractInstruction;
+            }
+
             throw new ArgumentException("Cannot recognize CIL instruction none.");
         }
     }

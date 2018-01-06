@@ -53,6 +53,9 @@ namespace OutputChecker
                 case "TP_CSF_Operators_ArithmeticOperators_Add":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_ArithmeticOperators_Subtract":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

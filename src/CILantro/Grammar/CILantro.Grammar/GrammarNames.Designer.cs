@@ -646,6 +646,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to sub.
+        /// </summary>
+        public static string keyword_sub {
+            get {
+                return ResourceManager.GetString("keyword_sub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to uint16.
         /// </summary>
         public static string keyword_uint16 {

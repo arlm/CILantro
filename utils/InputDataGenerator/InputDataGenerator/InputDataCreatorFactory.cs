@@ -99,6 +99,13 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Operators_ArithmeticOperators_Subtract":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

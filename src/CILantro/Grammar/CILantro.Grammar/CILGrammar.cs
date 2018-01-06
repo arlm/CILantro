@@ -223,7 +223,8 @@ namespace CILantro.Grammar
                 ToTerm("nop") |
                 ToTerm("pop") |
                 ToTerm("ret") |
-                ToTerm("stloc.0");
+                ToTerm("stloc.0") |
+                ToTerm("sub");
 
             var INSTR_BRTARGET = new NonTerminal(GrammarNames.INSTR_BRTARGET);
             INSTR_BRTARGET.Rule =

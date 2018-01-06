@@ -12,5 +12,11 @@ namespace CILantro.Helpers.Irony
             var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);
             return TypeParseTreeNodeHelper.GetType(typeParseTreeNode);
         }
+
+        public static string GetId(ParseTreeNode node)
+        {
+            var idParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.id);
+            return IdParseTreeNodeHelper.GetValue(idParseTreeNode);
+        }
     }
 }

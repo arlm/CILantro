@@ -47,8 +47,10 @@
     <Compile Include="Irony\ClassNameParseTreeNodeHelper.cs" />
     <Compile Include="Irony\CompQstringParseTreeNodeHelper.cs" />
     <Compile Include="Irony\IdParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\Int32ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\MethodNameParseTreeNodeHelper.cs" />
     <Compile Include="Irony\Name1ParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\ParamAttrParseTreeNodeHelper.cs" />
     <Compile Include="Irony\SigArgParseTreeNodeHelper.cs" />
     <Compile Include="Irony\SigArgs0ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\SigArgs1ParseTreeNodeHelper.cs" />

@@ -1,8 +1,11 @@
 ﻿using CILantro.AST.CILASTNodes;
 using CILantro.Extensions.Irony;
 using CILantro.Grammar;
+using CILantro.Helpers.Irony;
 using Irony.Parsing;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace CILantro.ASTBuilder.NodeBuilders
 {
@@ -19,6 +22,8 @@ namespace CILantro.ASTBuilder.NodeBuilders
         {
             var instructions = new List<CILInstruction>();
             var isEntryPoint = false;
+            var localsTypes = new List<Type>();
+            var locals = new OrderedDictionary();
 
             var methodDeclsParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodDecls);
             while(methodDeclsParseTreeNode != null)
@@ -38,6 +43,15 @@ namespace CILantro.ASTBuilder.NodeBuilders
                     isEntryPoint = true;
                 }
 
+                var localsHeadParseTreeNode = methodDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.localsHead);
+                if(localsHeadParseTreeNode != null)
+                {
+                    var sigArgs0ParseTreeNode = methodDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.sigArgs0);
+
+                    localsTypes = SigArgs0ParseTreeNodeHelper.GetTypes(sigArgs0ParseTreeNode);
+                    locals = SigArgs0ParseTreeNodeHelper.GetLocalsDictionary(sigArgs0ParseTreeNode);
+                }
+
                 methodDeclsParseTreeNode = methodDeclsParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.methodDecls);
             }
 
@@ -46,7 +60,9 @@ namespace CILantro.ASTBuilder.NodeBuilders
             var result = new CILMethod
             {
                 Instructions = instructions,
-                IsEntryPoint = isEntryPoint
+                IsEntryPoint = isEntryPoint,
+                LocalsTypes = localsTypes,
+                Locals = locals
             };
 
             foreach (var instruction in instructions)

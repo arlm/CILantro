@@ -62,6 +62,27 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return loadLocalVariable0Instruction;
             }
 
+            var ldloc1ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldloc1);
+            if(ldloc1ParseTreeNode != null)
+            {
+                var loadLocalVariable1Instruction = new LoadLocalVariable1Instruction();
+                return loadLocalVariable1Instruction;
+            }
+
+            var ldloc2ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldloc2);
+            if(ldloc2ParseTreeNode != null)
+            {
+                var loadLocalVariable2Instruction = new LoadLocalVariable2Instruction();
+                return loadLocalVariable2Instruction;
+            }
+
+            var ldloc3ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldloc3);
+            if(ldloc3ParseTreeNode != null)
+            {
+                var loadLocalVariable3Instruction = new LoadLocalVariable3Instruction();
+                return loadLocalVariable3Instruction;
+            }
+
             var mulParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_mul);
             if(mulParseTreeNode != null)
             {
@@ -95,6 +116,27 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var setLocalVariable0Instruction = new SetLocalVariable0Instruction();
                 return setLocalVariable0Instruction;
+            }
+
+            var stloc1ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_stloc1);
+            if(stloc1ParseTreeNode != null)
+            {
+                var setLocalVariable1Instruction = new SetLocalVariable1Instruction();
+                return setLocalVariable1Instruction;
+            }
+
+            var stloc2ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_stloc2);
+            if(stloc2ParseTreeNode != null)
+            {
+                var setLocalVariable2Instruction = new SetLocalVariable2Instruction();
+                return setLocalVariable2Instruction;
+            }
+
+            var stloc3ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_stloc3);
+            if(stloc3ParseTreeNode != null)
+            {
+                var setLocalVariable3Instruction = new SetLocalVariable3Instruction();
+                return setLocalVariable3Instruction;
             }
 
             var subParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_sub);

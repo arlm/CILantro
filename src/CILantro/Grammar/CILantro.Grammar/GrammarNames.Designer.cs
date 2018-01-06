@@ -466,6 +466,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSTR_VAR.
+        /// </summary>
+        public static string INSTR_VAR {
+            get {
+                return ResourceManager.GetString("INSTR_VAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to node_int32.
         /// </summary>
         public static string int32 {
@@ -529,6 +538,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .locals.
+        /// </summary>
+        public static string keyword_dotLocals {
+            get {
+                return ResourceManager.GetString("keyword_dotLocals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to dup.
         /// </summary>
         public static string keyword_dup {
@@ -552,6 +570,15 @@ namespace CILantro.Grammar {
         public static string keyword_float64 {
             get {
                 return ResourceManager.GetString("keyword_float64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to init.
+        /// </summary>
+        public static string keyword_init {
+            get {
+                return ResourceManager.GetString("keyword_init", resourceCulture);
             }
         }
         
@@ -628,6 +655,42 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldloc.1.
+        /// </summary>
+        public static string keyword_ldloc1 {
+            get {
+                return ResourceManager.GetString("keyword_ldloc1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldloc.2.
+        /// </summary>
+        public static string keyword_ldloc2 {
+            get {
+                return ResourceManager.GetString("keyword_ldloc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldloc.3.
+        /// </summary>
+        public static string keyword_ldloc3 {
+            get {
+                return ResourceManager.GetString("keyword_ldloc3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldloc.s.
+        /// </summary>
+        public static string keyword_ldlocs {
+            get {
+                return ResourceManager.GetString("keyword_ldlocs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldstr.
         /// </summary>
         public static string keyword_ldstr {
@@ -678,6 +741,42 @@ namespace CILantro.Grammar {
         public static string keyword_stloc0 {
             get {
                 return ResourceManager.GetString("keyword_stloc0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stloc.1.
+        /// </summary>
+        public static string keyword_stloc1 {
+            get {
+                return ResourceManager.GetString("keyword_stloc1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stloc.2.
+        /// </summary>
+        public static string keyword_stloc2 {
+            get {
+                return ResourceManager.GetString("keyword_stloc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stloc.3.
+        /// </summary>
+        public static string keyword_stloc3 {
+            get {
+                return ResourceManager.GetString("keyword_stloc3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stloc.s.
+        /// </summary>
+        public static string keyword_stlocs {
+            get {
+                return ResourceManager.GetString("keyword_stlocs", resourceCulture);
             }
         }
         

@@ -465,4 +465,37 @@
   <data name="keyword_ldci41" xml:space="preserve">
     <value>ldc.i4.1</value>
   </data>
+  <data name="keyword_stloc1" xml:space="preserve">
+    <value>stloc.1</value>
+  </data>
+  <data name="keyword_stloc2" xml:space="preserve">
+    <value>stloc.2</value>
+  </data>
+  <data name="keyword_stloc3" xml:space="preserve">
+    <value>stloc.3</value>
+  </data>
+  <data name="INSTR_VAR" xml:space="preserve">
+    <value>INSTR_VAR</value>
+  </data>
+  <data name="keyword_ldloc1" xml:space="preserve">
+    <value>ldloc.1</value>
+  </data>
+  <data name="keyword_ldloc2" xml:space="preserve">
+    <value>ldloc.2</value>
+  </data>
+  <data name="keyword_ldloc3" xml:space="preserve">
+    <value>ldloc.3</value>
+  </data>
+  <data name="keyword_ldlocs" xml:space="preserve">
+    <value>ldloc.s</value>
+  </data>
+  <data name="keyword_stlocs" xml:space="preserve">
+    <value>stloc.s</value>
+  </data>
+  <data name="keyword_dotLocals" xml:space="preserve">
+    <value>.locals</value>
+  </data>
+  <data name="keyword_init" xml:space="preserve">
+    <value>init</value>
+  </data>
 </root>

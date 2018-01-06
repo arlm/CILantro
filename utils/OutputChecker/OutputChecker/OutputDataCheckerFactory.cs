@@ -71,6 +71,36 @@ namespace OutputChecker
                 case "TP_CSF_Operators_ArithmeticOperators_Decrement":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Variables_1Variable":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_2Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_3Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_4Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_5Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_6Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_7Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_8Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_9Variables":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Variables_10Variables":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

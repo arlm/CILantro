@@ -25,7 +25,6 @@ namespace CILantro.ASTBuilder.NodeBuilders
             if (result != null)
             {
                 var compQstringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.compQstring);
-
                 result.StringValue = CompQstringParseTreeNodeHelper.GetValue(compQstringParseTreeNode);
 
                 return result;

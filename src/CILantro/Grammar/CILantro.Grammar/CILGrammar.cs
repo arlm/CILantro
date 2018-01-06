@@ -88,6 +88,10 @@ namespace CILantro.Grammar
                 "ldc.i4.0",
                 "ldc.i4.1",
                 "ldloc.0",
+                "ldloc.1",
+                "ldloc.2",
+                "ldloc.3",
+                "ldloc.s",
                 "ldnull",
                 "ldsfld",
                 "ldstr",
@@ -106,6 +110,10 @@ namespace CILantro.Grammar
                 "specialname",
                 "static",
                 "stloc.0",
+                "stloc.1",
+                "stloc.2",
+                "stloc.3",
+                "stloc.s",
                 "strict",
                 "string",
                 "stsfld",
@@ -223,6 +231,9 @@ namespace CILantro.Grammar
                 ToTerm("ldc.i4.0") |
                 ToTerm("ldc.i4.1") |
                 ToTerm("ldloc.0") |
+                ToTerm("ldloc.1") |
+                ToTerm("ldloc.2") |
+                ToTerm("ldloc.3") |
                 ToTerm("ldnull") |
                 ToTerm("mul") |
                 ToTerm("nop") |
@@ -230,7 +241,15 @@ namespace CILantro.Grammar
                 ToTerm("rem") |
                 ToTerm("ret") |
                 ToTerm("stloc.0") |
+                ToTerm("stloc.1") |
+                ToTerm("stloc.2") |
+                ToTerm("stloc.3") |
                 ToTerm("sub");
+
+            var INSTR_VAR = new NonTerminal(GrammarNames.INSTR_VAR);
+            INSTR_VAR.Rule =
+                ToTerm("ldloc.s") |
+                ToTerm("stloc.s");
 
             var INSTR_BRTARGET = new NonTerminal(GrammarNames.INSTR_BRTARGET);
             INSTR_BRTARGET.Rule =
@@ -435,6 +454,7 @@ namespace CILantro.Grammar
 
             instr.Rule =
                 INSTR_NONE |
+                INSTR_VAR + id |
                 INSTR_BRTARGET + id |
                 INSTR_METHOD + callConv + type + typeSpec + ToTerm("::") + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
                 INSTR_METHOD + callConv + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |

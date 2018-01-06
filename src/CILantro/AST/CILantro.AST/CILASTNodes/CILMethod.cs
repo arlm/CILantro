@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace CILantro.AST.CILASTNodes
 {
@@ -8,7 +10,9 @@ namespace CILantro.AST.CILASTNodes
 
         public bool IsEntryPoint { get; set; }
 
-        public object[] Locals { get; set; } = new object[10];
+        public List<Type> LocalsTypes { get; set; }
+
+        public OrderedDictionary Locals { get; set; }
 
         public CILInstruction GetNextInstruction(CILInstruction currentInstruction)
         {

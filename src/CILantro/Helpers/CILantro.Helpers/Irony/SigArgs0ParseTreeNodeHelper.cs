@@ -3,6 +3,7 @@ using CILantro.Grammar;
 using Irony.Parsing;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace CILantro.Helpers.Irony
 {
@@ -18,6 +19,18 @@ namespace CILantro.Helpers.Irony
             }
 
             return new List<Type>();
+        }
+
+        public static OrderedDictionary GetLocalsDictionary(this ParseTreeNode node)
+        {
+            var sigArgs1ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs1);
+            if(sigArgs1ParseTreeNode != null)
+            {
+                var result = SigArgs1ParseTreeNodeHelper.GetLocalsDictionary(sigArgs1ParseTreeNode);
+                return result;
+            }
+
+            return new OrderedDictionary();
         }
     }
 }

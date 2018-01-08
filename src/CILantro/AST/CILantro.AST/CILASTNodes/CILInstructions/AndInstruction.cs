@@ -1,4 +1,5 @@
 ﻿using CILantro.State;
+using System;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
@@ -9,10 +10,10 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             var value2 = state.Stack.Pop();
             var value1 = state.Stack.Pop();
 
-            object result = null;
-            if (value1 is bool && value2 is bool) result = (bool)value1 & (bool)value2;
-            if (value1 is int && value2 is int) result = (int)value1 & (int)value2;
+            var intValue1 = Convert.ToInt32(value1);
+            var intValue2 = Convert.ToInt32(value2);
 
+            var result = intValue1 & intValue2;
             state.Stack.Push(result);
 
             return ParentMethod.GetNextInstruction(this);

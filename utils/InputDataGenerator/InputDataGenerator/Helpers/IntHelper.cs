@@ -6,6 +6,11 @@ namespace InputDataGenerator.Helpers
 {
     public static class IntHelper
     {
+        public static IEnumerable<int> GetRange(int min, int max)
+        {
+            return Enumerable.Range(min, max - min + 1);
+        }
+
         public static IEnumerable<Tuple<int, int>> GetPairs(int firstMin, int firstMax, int secondMin, int secondMax)
         {
             var firstCount = firstMax - firstMin + 1;

@@ -20,6 +20,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return addInstruction;
             }
 
+            var andParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_and);
+            if(andParseTreeNode != null)
+            {
+                var andInstruction = new AndInstruction();
+                return andInstruction;
+            }
+
             var ceqParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ceq);
             if(ceqParseTreeNode != null)
             {
@@ -111,6 +118,20 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return multiplyInstruction;
             }
 
+            var notParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_not);
+            if(notParseTreeNode != null)
+            {
+                var notInstruction = new NotInstruction();
+                return notInstruction;
+            }
+
+            var orParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_or);
+            if(orParseTreeNode != null)
+            {
+                var orInstruction = new OrInstruction();
+                return orInstruction;
+            }
+
             var popParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_pop);
             if(popParseTreeNode != null)
             {
@@ -130,6 +151,20 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var returnInstruction = new ReturnInstruction();
                 return returnInstruction;
+            }
+
+            var shlParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_shl);
+            if(shlParseTreeNode != null)
+            {
+                var shiftLeftInstruction = new ShiftLeftInstruction();
+                return shiftLeftInstruction;
+            }
+
+            var shrParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_shr);
+            if(shrParseTreeNode != null)
+            {
+                var shiftRightInstruction = new ShiftRightInstruction();
+                return shiftRightInstruction;
             }
 
             var stloc0ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_stloc0);
@@ -165,6 +200,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var subtractInstruction = new SubtractInstruction();
                 return subtractInstruction;
+            }
+
+            var xorParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_xor);
+            if(xorParseTreeNode != null)
+            {
+                var xorInstruction = new XorInstruction();
+                return xorInstruction;
             }
 
             throw new ArgumentException("Cannot recognize CIL instruction none.");

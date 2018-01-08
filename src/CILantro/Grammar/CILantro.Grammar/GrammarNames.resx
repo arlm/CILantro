@@ -507,4 +507,28 @@
   <data name="keyword_clt" xml:space="preserve">
     <value>clt</value>
   </data>
+  <data name="keyword_and" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="keyword_or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="INSTR_I" xml:space="preserve">
+    <value>INSTR_I</value>
+  </data>
+  <data name="keyword_shl" xml:space="preserve">
+    <value>shl</value>
+  </data>
+  <data name="keyword_ldci4s" xml:space="preserve">
+    <value>ldc.i4.s</value>
+  </data>
+  <data name="keyword_not" xml:space="preserve">
+    <value>not</value>
+  </data>
+  <data name="keyword_shr" xml:space="preserve">
+    <value>shr</value>
+  </data>
+  <data name="keyword_xor" xml:space="preserve">
+    <value>xor</value>
+  </data>
 </root>

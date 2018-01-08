@@ -43,10 +43,12 @@
     <Compile Include="CILASTNode.cs" />
     <Compile Include="CILASTNodes\CILClass.cs" />
     <Compile Include="CILASTNodes\CILInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructionI.cs" />
     <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
     <Compile Include="CILASTNodes\CILInstructionNone.cs" />
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\AndInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CallInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfEqualInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfGreaterInstruction.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt1Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantIntShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable2Instruction.cs" />
@@ -63,6 +66,8 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariableShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadStringInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\MultiplyInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\NotInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\OrInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\PopInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\RemainderInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ReturnInstruction.cs" />
@@ -71,7 +76,10 @@
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable2Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable3Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariableShortInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ShiftLeftInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ShiftRightInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SubtractInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\XorInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructionVar.cs" />
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />

@@ -87,6 +87,7 @@ namespace CILantro.Grammar
                 "ldarg.1",
                 "ldc.i4.0",
                 "ldc.i4.1",
+                "ldc.i4.s",
                 "ldloc.0",
                 "ldloc.1",
                 "ldloc.2",
@@ -224,6 +225,7 @@ namespace CILantro.Grammar
             var INSTR_NONE = new NonTerminal(GrammarNames.INSTR_NONE);
             INSTR_NONE.Rule =
                 ToTerm("add") |
+                ToTerm("and") |
                 ToTerm("ceq") |
                 ToTerm("cgt") |
                 ToTerm("clt") |
@@ -240,19 +242,28 @@ namespace CILantro.Grammar
                 ToTerm("ldnull") |
                 ToTerm("mul") |
                 ToTerm("nop") |
+                ToTerm("not") |
+                ToTerm("or") |
                 ToTerm("pop") |
                 ToTerm("rem") |
                 ToTerm("ret") |
+                ToTerm("shl") |
+                ToTerm("shr") |
                 ToTerm("stloc.0") |
                 ToTerm("stloc.1") |
                 ToTerm("stloc.2") |
                 ToTerm("stloc.3") |
-                ToTerm("sub");
+                ToTerm("sub") |
+                ToTerm("xor");
 
             var INSTR_VAR = new NonTerminal(GrammarNames.INSTR_VAR);
             INSTR_VAR.Rule =
                 ToTerm("ldloc.s") |
                 ToTerm("stloc.s");
+
+            var INSTR_I = new NonTerminal(GrammarNames.INSTR_I);
+            INSTR_I.Rule =
+                ToTerm("ldc.i4.s");
 
             var INSTR_BRTARGET = new NonTerminal(GrammarNames.INSTR_BRTARGET);
             INSTR_BRTARGET.Rule =
@@ -458,6 +469,7 @@ namespace CILantro.Grammar
             instr.Rule =
                 INSTR_NONE |
                 INSTR_VAR + id |
+                INSTR_I + int32 |
                 INSTR_BRTARGET + id |
                 INSTR_METHOD + callConv + type + typeSpec + ToTerm("::") + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
                 INSTR_METHOD + callConv + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |

@@ -16,12 +16,15 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
         private readonly CILInstructionVarASTNodeBuilder _instructionVarBuilder;
 
+        private readonly CILInstructionIASTNodeBuilder _instructionIBuilder;
+
         public CILInstructionASTNodeBuilder()
         {
             _instructionMethodBuilder = new CILInstructionMethodASTNodeBuilder();
             _instructionNoneBuilder = new CILInstructionNoneASTNodeBuilder();
             _instructionStringBuilder = new CILInstructionStringASTNodeBuilder();
             _instructionVarBuilder = new CILInstructionVarASTNodeBuilder();
+            _instructionIBuilder = new CILInstructionIASTNodeBuilder();
         }
 
         public override CILInstruction BuildNode(ParseTreeNode node)
@@ -52,6 +55,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var instructionVar = _instructionVarBuilder.BuildNode(node);
                 return instructionVar;
+            }
+
+            var instrIParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_I);
+            if(instrIParseTreeNode != null)
+            {
+                var instructionI = _instructionIBuilder.BuildNode(node);
+                return instructionI;
             }
 
             throw new ArgumentException("Cannot recognize CIL instruction.");

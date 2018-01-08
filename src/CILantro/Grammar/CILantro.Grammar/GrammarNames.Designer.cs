@@ -412,6 +412,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSTR_I.
+        /// </summary>
+        public static string INSTR_I {
+            get {
+                return ResourceManager.GetString("INSTR_I", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSTR_METHOD.
         /// </summary>
         public static string INSTR_METHOD {
@@ -498,6 +507,15 @@ namespace CILantro.Grammar {
         public static string keyword_add {
             get {
                 return ResourceManager.GetString("keyword_add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to and.
+        /// </summary>
+        public static string keyword_and {
+            get {
+                return ResourceManager.GetString("keyword_and", resourceCulture);
             }
         }
         
@@ -673,6 +691,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.s.
+        /// </summary>
+        public static string keyword_ldci4s {
+            get {
+                return ResourceManager.GetString("keyword_ldci4s", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldloc.0.
         /// </summary>
         public static string keyword_ldloc0 {
@@ -736,6 +763,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to not.
+        /// </summary>
+        public static string keyword_not {
+            get {
+                return ResourceManager.GetString("keyword_not", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or.
+        /// </summary>
+        public static string keyword_or {
+            get {
+                return ResourceManager.GetString("keyword_or", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to pop.
         /// </summary>
         public static string keyword_pop {
@@ -759,6 +804,24 @@ namespace CILantro.Grammar {
         public static string keyword_ret {
             get {
                 return ResourceManager.GetString("keyword_ret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to shl.
+        /// </summary>
+        public static string keyword_shl {
+            get {
+                return ResourceManager.GetString("keyword_shl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to shr.
+        /// </summary>
+        public static string keyword_shr {
+            get {
+                return ResourceManager.GetString("keyword_shr", resourceCulture);
             }
         }
         
@@ -876,6 +939,15 @@ namespace CILantro.Grammar {
         public static string keyword_void {
             get {
                 return ResourceManager.GetString("keyword_void", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to xor.
+        /// </summary>
+        public static string keyword_xor {
+            get {
+                return ResourceManager.GetString("keyword_xor", resourceCulture);
             }
         }
         

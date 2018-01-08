@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace InputDataGenerator.Helpers
 {
@@ -11,6 +12,24 @@ namespace InputDataGenerator.Helpers
                 true,
                 false
             };
+        }
+
+        public static IEnumerable<Tuple<bool, bool>> GetAllPairs()
+        {
+            var first = GetAllValues();
+            var second = GetAllValues();
+
+            var result = new List<Tuple<bool, bool>>();
+
+            foreach(var f in first)
+            {
+                foreach(var s in second)
+                {
+                    result.Add(new Tuple<bool, bool>(f, s));
+                }
+            }
+
+            return result;
         }
     }
 }

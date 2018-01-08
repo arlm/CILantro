@@ -119,6 +119,33 @@ namespace OutputChecker
                 case "TP_CSF_Operators_RelationalOperators_LessOrEqual":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_LogicalOperators_And":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_LogicalOperators_Or":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_LogicalOperators_Not":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_BitwiseOperators_And":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_BitwiseOperators_Or":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_BitwiseOperators_Xor":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_BitwiseOperators_Not":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_BitwiseOperators_LeftShift":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_BitwiseOperators_RightShift":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

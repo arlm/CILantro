@@ -286,6 +286,67 @@ namespace InputDataGenerator
                         writer.WriteLine(pair.Item2);
                     }));
 
+                case "TP_CSF_Operators_LogicalOperators_And":
+                    return new EnumerableInputDataCreator(BoolHelper.GetAllPairs().SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Operators_LogicalOperators_Or":
+                    return new EnumerableInputDataCreator(BoolHelper.GetAllPairs().SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Operators_LogicalOperators_Not":
+                    return new EnumerableInputDataCreator(BoolHelper.GetAllValues().SelectCreateInputActions(b => writer =>
+                    {
+                        writer.WriteLine(b);
+                    }));
+
+                case "TP_CSF_Operators_BitwiseOperators_And":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(1, 10, 1, 10).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Operators_BitwiseOperators_Or":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(1, 10, 1, 10).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Operators_BitwiseOperators_Xor":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(1, 10, 1, 10).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Operators_BitwiseOperators_Not":
+                    return new EnumerableInputDataCreator(IntHelper.GetRange(1, 100).SelectCreateInputActions(n => writer =>
+                    {
+                        writer.WriteLine(n);
+                    }));
+
+                case "TP_CSF_Operators_BitwiseOperators_LeftShift":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(1, 10, 1, 10).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Operators_BitwiseOperators_RightShift":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(1, 10, 1, 10).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

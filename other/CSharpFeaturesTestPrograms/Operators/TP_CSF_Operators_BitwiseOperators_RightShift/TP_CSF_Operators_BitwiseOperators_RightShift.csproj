@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E7FDEB0-2460-4A2F-8624-341CD4C37E28}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{E6C463FA-BA36-41AC-B6C0-FC438DCDA6D5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CILantro.ASTBuilder</RootNamespace>
-    <AssemblyName>CILantro.ASTBuilder</AssemblyName>
+    <RootNamespace>TP_CSF_Operators_BitwiseOperators_RightShift</RootNamespace>
+    <AssemblyName>TP_CSF_Operators_BitwiseOperators_RightShift</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Irony, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Irony.0.9.1\lib\net40\Irony.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,39 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CILASTBuilder.cs" />
-    <Compile Include="CILASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILClassASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILInstructionASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILInstructionIASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILInstructionMethodASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILInstructionNoneASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILInstructionStringASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILInstructionVarASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILMethodASTNodeBuilder.cs" />
-    <Compile Include="NodeBuilders\CILRootASTNodeBuilder.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AST\CILantro.AST\CILantro.AST.csproj">
-      <Project>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</Project>
-      <Name>CILantro.AST</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Extensions\CILantro.Extensions\CILantro.Extensions.csproj">
-      <Project>{5FB262C0-01C3-48B0-9680-60132B4D388D}</Project>
-      <Name>CILantro.Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Grammar\CILantro.Grammar\CILantro.Grammar.csproj">
-      <Project>{F54FCA78-7B13-4380-B2DA-BE289388144A}</Project>
-      <Name>CILantro.Grammar</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Helpers\CILantro.Helpers\CILantro.Helpers.csproj">
-      <Project>{0773A94C-E887-4195-B23E-14610016DAE4}</Project>
-      <Name>CILantro.Helpers</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

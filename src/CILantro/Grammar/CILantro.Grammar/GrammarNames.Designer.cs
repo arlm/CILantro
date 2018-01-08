@@ -511,11 +511,38 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ceq.
+        /// </summary>
+        public static string keyword_ceq {
+            get {
+                return ResourceManager.GetString("keyword_ceq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cgt.
+        /// </summary>
+        public static string keyword_cgt {
+            get {
+                return ResourceManager.GetString("keyword_cgt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to char.
         /// </summary>
         public static string keyword_char {
             get {
                 return ResourceManager.GetString("keyword_char", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to clt.
+        /// </summary>
+        public static string keyword_clt {
+            get {
+                return ResourceManager.GetString("keyword_clt", resourceCulture);
             }
         }
         

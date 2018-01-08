@@ -101,6 +101,24 @@ namespace OutputChecker
                 case "TP_CSF_Variables_10Variables":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_RelationalOperators_Equal":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_RelationalOperators_NotEqual":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_RelationalOperators_Greater":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_RelationalOperators_Less":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_RelationalOperators_GreaterOrEqual":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_RelationalOperators_LessOrEqual":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

@@ -48,6 +48,9 @@
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CallInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\CheckIfEqualInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\CheckIfGreaterInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\CheckIfLessInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DivideInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DuplicateInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />

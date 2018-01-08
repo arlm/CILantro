@@ -498,4 +498,13 @@
   <data name="keyword_init" xml:space="preserve">
     <value>init</value>
   </data>
+  <data name="keyword_ceq" xml:space="preserve">
+    <value>ceq</value>
+  </data>
+  <data name="keyword_cgt" xml:space="preserve">
+    <value>cgt</value>
+  </data>
+  <data name="keyword_clt" xml:space="preserve">
+    <value>clt</value>
+  </data>
 </root>

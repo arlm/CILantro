@@ -20,6 +20,27 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return addInstruction;
             }
 
+            var ceqParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ceq);
+            if(ceqParseTreeNode != null)
+            {
+                var checkIfEqualInstruction = new CheckIfEqualInstruction();
+                return checkIfEqualInstruction;
+            }
+
+            var cgtParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_cgt);
+            if(cgtParseTreeNode != null)
+            {
+                var checkIfGreaterInstruction = new CheckIfGreaterInstruction();
+                return checkIfGreaterInstruction;
+            }
+
+            var cltParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_clt);
+            if(cltParseTreeNode != null)
+            {
+                var checkIfLessInstruction = new CheckIfLessInstruction();
+                return checkIfLessInstruction;
+            }
+
             var divParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_div);
             if(divParseTreeNode != null)
             {

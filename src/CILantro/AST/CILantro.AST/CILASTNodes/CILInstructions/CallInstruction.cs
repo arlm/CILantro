@@ -1,4 +1,5 @@
 ﻿using CILantro.State;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -16,7 +17,8 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             for(int i = 0; i < MethodArgumentTypes.Count; i++)
             {
                 var argument = state.Stack.Pop();
-                methodArguments.Add(argument);
+                var methodArgument = Convert.ChangeType(argument, MethodArgumentTypes[i]);
+                methodArguments.Add(methodArgument);
             }
             methodArguments.Reverse();
 

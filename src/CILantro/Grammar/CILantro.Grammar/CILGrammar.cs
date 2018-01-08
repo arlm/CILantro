@@ -224,6 +224,9 @@ namespace CILantro.Grammar
             var INSTR_NONE = new NonTerminal(GrammarNames.INSTR_NONE);
             INSTR_NONE.Rule =
                 ToTerm("add") |
+                ToTerm("ceq") |
+                ToTerm("cgt") |
+                ToTerm("clt") |
                 ToTerm("div") |
                 ToTerm("dup") |
                 ToTerm("ldarg.0") |

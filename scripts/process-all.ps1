@@ -4,10 +4,13 @@ param
 	[bool]$CheckAllInputs = $true
 )
 
+$allSteps = 8
+
 # collect tests
 
 cls
 
+Write-Host ("STEP 1 / " + $allSteps.ToString()) -foreground "yellow"
 Write-Host "Collecting tests..." -foreground "yellow"
 Write-Host
 
@@ -20,16 +23,26 @@ $allTestsCount = $allTests.Length
 
 # generate input for tests
 
-cls
-
-Write-Host "Generating input data..." -foreground "yellow"
-Write-Host
-
 $testsAfterGeneratingInputData = @()
 $errors = @()
 
 foreach($test in $allTests)
-{	
+{
+	cls
+
+	Write-Host ("STEP 2 / " + $allSteps.ToString()) -foreground "yellow"
+	Write-Host "Generating input data..." -foreground "yellow"
+	Write-Host
+	
+	$testIndex = $allTests.IndexOf($test) + 1
+	Write-Host -NoNewLine "Test: " -foreground "yellow"
+	Write-Host -NoNewLine $testIndex -foreground "yellow"
+	Write-Host -NoNewLine " / " -foreground "yellow"
+	Write-Host -NoNewLine $allTests.Length -foreground "yellow"
+	$testIndexPercent = $testIndex / $allTests.Length * 100.0
+	Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+	Write-Host
+
 	$testNameInfo = $test.Name + " "
 	Write-Host -NoNewLine $testNameInfo
 
@@ -55,30 +68,39 @@ foreach($test in $allTests)
 
 # generate execs
 
-cls
-
-Write-Host "Generating execs..." -foreground "yellow"
-Write-Host
-
 foreach($test in $testsAfterGeneratingInputData)
 {
+	cls
+
+	Write-Host ("STEP 3 / " + $allSteps.ToString()) -foreground "yellow"
+	Write-Host "Generating execs..." -foreground "yellow"
+	Write-Host
+	
+	$testIndex = $testsAfterGeneratingInputData.IndexOf($test) + 1
+	Write-Host -NoNewLine "Test: " -foreground "yellow"
+	Write-Host -NoNewLine $testIndex -foreground "yellow"
+	Write-Host -NoNewLine " / " -foreground "yellow"
+	Write-Host -NoNewLine $testsAfterGeneratingInputData.Length -foreground "yellow"
+	$testIndexPercent = $testIndex / $testsAfterGeneratingInputData.Length * 100.0
+	Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+	Write-Host
+
 	$ilasmCommand = "& ilasm " + '"' + $test.FullName + "\src\program.il" + '"'
 	Invoke-Expression $ilasmCommand | Out-Null
 }
 
 # generate out from execs
 
-cls
-
-Write-Host "Generating output data from execs..." -foreground "yellow"
-Write-Host
-
 $allInDataFilesCount = 0
 
 foreach($test in $testsAfterGeneratingInputData)
 {
 	$inDataPath = $test.FullName + "\in"
-	$inDataFiles = Get-ChildItem $inDataPath
+	$inDataFiles = @(Get-ChildItem $inDataPath)
+	if(-not ($CheckAllInputs))
+	{
+		$inDataFiles = @($inDataFiles[0])
+	}
 	
 	$outDataPath = $test.FullName + "\out-exe"
 	New-Item $outDataPath -type directory | Out-Null
@@ -87,6 +109,29 @@ foreach($test in $testsAfterGeneratingInputData)
 	
 	foreach($inDataFile in $inDataFiles)
 	{
+		cls
+
+		Write-Host ("STEP 4 / " + $allSteps.ToString()) -foreground "yellow"
+		Write-Host "Generating output data from execs..." -foreground "yellow"
+		Write-Host
+		
+		$testIndex = $testsAfterGeneratingInputData.IndexOf($test) + 1
+		Write-Host -NoNewLine "Test: " -foreground "yellow"
+		Write-Host -NoNewLine $testIndex -foreground "yellow"
+		Write-Host -NoNewLine " / " -foreground "yellow"
+		Write-Host -NoNewLine $testsAfterGeneratingInputData.Length -foreground "yellow"
+		$testIndexPercent = $testIndex / $testsAfterGeneratingInputData.Length * 100.0
+		Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+		
+		$inDataFileIndex = $inDataFiles.IndexOf($inDataFile) + 1
+		Write-Host -NoNewLine "Data: " -foreground "yellow"
+		Write-Host -NoNewLine $inDataFileIndex -foreground "yellow"
+		Write-Host -NoNewLine " / " -foreground "yellow"
+		Write-Host -NoNewLine $inDataFiles.Count -foreground "yellow"
+		$inDataFileIndexPercent = $inDataFileIndex / $inDataFiles.Count * 100.0
+		Write-Host (" (" + "{0:N2}" -f $inDataFileIndexPercent + "%)") -foreground "yellow"
+		Write-Host
+	
 		$outDataFilePath = $outDataPath + "\" + $inDataFile.BaseName + ".out"
 		New-Item $outDataFilePath | Out-Null
 	
@@ -105,15 +150,25 @@ foreach($test in $testsAfterGeneratingInputData)
 
 # parse tests by cilantro parser
 
-cls
-
-Write-Host "Parsing tests by CILantro parser..." -foreground "yellow"
-Write-Host
-
 $testsAfterCilantroParser = @()
 
 foreach($test in $testsAfterGeneratingInputData)
 {
+	cls
+
+	Write-Host ("STEP 5 / " + $allSteps.ToString()) -foreground "yellow"
+	Write-Host "Parsing tests by CILantro parser..." -foreground "yellow"
+	Write-Host
+	
+	$testIndex = $testsAfterGeneratingInputData.IndexOf($test) + 1
+	Write-Host -NoNewLine "Test: " -foreground "yellow"
+	Write-Host -NoNewLine $testIndex -foreground "yellow"
+	Write-Host -NoNewLine " / " -foreground "yellow"
+	Write-Host -NoNewLine $testsAfterGeneratingInputData.Length -foreground "yellow"
+	$testIndexPercent = $testIndex / $testsAfterGeneratingInputData.Length * 100.0
+	Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+	Write-Host
+
 	$testNameInfo = $test.Name + " "
 	Write-Host -NoNewLine $testNameInfo
 
@@ -141,18 +196,17 @@ foreach($test in $testsAfterGeneratingInputData)
 
 # process tests by cilantro engine
 
-cls
-
-Write-Host "Processing tests by CILantro engine..." -foreground "yellow"
-Write-Host
-
 $testsAfterCilantroEngine = @()
 $processedInputDataFiles = 0
 
 foreach($test in $testsAfterCilantroParser)
 {
 	$inDataPath = $test.FullName + "\in"
-	$inDataFiles = Get-ChildItem $inDataPath
+	$inDataFiles = @(Get-ChildItem $inDataPath)
+	if(-not ($CheckAllInputs))
+	{
+		$inDataFiles = @($inDataFiles[0])
+	}
 	
 	$outDataPath = $test.FullName + "\out-cilantro"
 	New-Item $outDataPath -type directory | Out-Null
@@ -163,6 +217,29 @@ foreach($test in $testsAfterCilantroParser)
 	
 	foreach($inDataFile in $inDataFiles)
 	{
+		cls
+
+		Write-Host ("STEP 6 / " + $allSteps.ToString()) -foreground "yellow"
+		Write-Host "Processing tests by CILantro engine..." -foreground "yellow"
+		Write-Host
+		
+		$testIndex = $testsAfterCilantroParser.IndexOf($test) + 1
+		Write-Host -NoNewLine "Test: " -foreground "yellow"
+		Write-Host -NoNewLine $testIndex -foreground "yellow"
+		Write-Host -NoNewLine " / " -foreground "yellow"
+		Write-Host -NoNewLine $testsAfterCilantroParser.Length -foreground "yellow"
+		$testIndexPercent = $testIndex / $testsAfterCilantroParser.Length * 100.0
+		Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+		
+		$inDataFileIndex = $inDataFiles.IndexOf($inDataFile) + 1
+		Write-Host -NoNewLine "Data: " -foreground "yellow"
+		Write-Host -NoNewLine $inDataFileIndex -foreground "yellow"
+		Write-Host -NoNewLine " / " -foreground "yellow"
+		Write-Host -NoNewLine $inDataFiles.Count -foreground "yellow"
+		$inDataFileIndexPercent = $inDataFileIndex / $inDataFiles.Count * 100.0
+		Write-Host (" (" + "{0:N2}" -f $inDataFileIndexPercent + "%)") -foreground "yellow"
+		Write-Host
+	
 		$testNameInfo = $test.Name + " - " + $inDataFile.Name + " "
 		Write-Host -NoNewLine $testNameInfo
 	
@@ -221,6 +298,21 @@ $testsAfterGeneratingOutputDataCheckers = @()
 
 foreach($test in $testsAfterCilantroEngine)
 {
+	cls
+
+	Write-Host ("STEP 7 / " + $allSteps.ToString()) -foreground "yellow"
+	Write-Host "Generating output data checkers..." -foreground "yellow"
+	Write-Host
+	
+	$testIndex = $testsAfterCilantroEngine.IndexOf($test) + 1
+	Write-Host -NoNewLine "Test: " -foreground "yellow"
+	Write-Host -NoNewLine $testIndex -foreground "yellow"
+	Write-Host -NoNewLine " / " -foreground "yellow"
+	Write-Host -NoNewLine $testsAfterCilantroEngine.Length -foreground "yellow"
+	$testIndexPercent = $testIndex / $testsAfterCilantroEngine.Length * 100.0
+	Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+	Write-Host
+
 	$testNameInfo = $test.Name + " "
 	Write-Host -NoNewLine $testNameInfo
 	
@@ -246,17 +338,16 @@ foreach($test in $testsAfterCilantroEngine)
 
 # check outputs
 
-cls
-
-Write-Host "Checking output data..." -foreground "yellow"
-Write-Host
-
 $testsAfterCheckingOutput = @()
 
 foreach($test in $testsAfterGeneratingOutputDataCheckers)
 {
 	$inDataPath = $test.FullName + "\in"
 	$inDataFiles = Get-ChildItem $inDataPath
+	if(-not ($CheckAllInputs))
+	{
+		$inDataFiles = @($inDataFiles[0])
+	}
 	
 	$outExeDataPath = $test.FullName + "\out-exe"
 	$outCilantroDataPath = $test.FullName + "\out-cilantro"
@@ -265,6 +356,29 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 	
 	foreach($inDataFile in $inDataFiles)
 	{
+		cls
+
+		Write-Host ("STEP 8 / " + $allSteps.ToString()) -foreground "yellow"
+		Write-Host "Checking output data..." -foreground "yellow"
+		Write-Host
+		
+		$testIndex = $testsAfterGeneratingOutputDataCheckers.IndexOf($test) + 1
+		Write-Host -NoNewLine "Test: " -foreground "yellow"
+		Write-Host -NoNewLine $testIndex -foreground "yellow"
+		Write-Host -NoNewLine " / " -foreground "yellow"
+		Write-Host -NoNewLine $testsAfterGeneratingOutputDataCheckers.Length -foreground "yellow"
+		$testIndexPercent = $testIndex / $testsAfterGeneratingOutputDataCheckers.Length * 100.0
+		Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+		
+		$inDataFileIndex = $inDataFiles.IndexOf($inDataFile) + 1
+		Write-Host -NoNewLine "Data: " -foreground "yellow"
+		Write-Host -NoNewLine $inDataFileIndex -foreground "yellow"
+		Write-Host -NoNewLine " / " -foreground "yellow"
+		Write-Host -NoNewLine $inDataFiles.Count -foreground "yellow"
+		$inDataFileIndexPercent = $inDataFileIndex / $inDataFiles.Count * 100.0
+		Write-Host (" (" + "{0:N2}" -f $inDataFileIndexPercent + "%)") -foreground "yellow"
+		Write-Host
+	
 		$inDataFilePath = $inDataFile.FullName
 		$outExeFilePath = $outExeDataPath + "\" + $inDataFile.BaseName + ".out"
 		$outCilantroFilePath = $outCilantroDataPath + "\" + $inDataFile.BaseName + ".out"

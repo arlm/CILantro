@@ -146,6 +146,39 @@ namespace OutputChecker
                 case "TP_CSF_Operators_BitwiseOperators_RightShift":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_AssignOperators_Assign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_AddAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_SubtractAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_MultiplyAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_DivideAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_ModuloAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_LShiftAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_RShiftAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_AndAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_XorAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Operators_AssignOperators_OrAndAssign":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

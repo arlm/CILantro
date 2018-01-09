@@ -151,15 +151,6 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to call.
-        /// </summary>
-        public static string call {
-            get {
-                return ResourceManager.GetString("call", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to callConv.
         /// </summary>
         public static string callConv {
@@ -601,6 +592,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to call.
+        /// </summary>
+        public static string keyword_call {
+            get {
+                return ResourceManager.GetString("keyword_call", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to callvirt.
+        /// </summary>
+        public static string keyword_callvirt {
+            get {
+                return ResourceManager.GetString("keyword_callvirt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ceq.
         /// </summary>
         public static string keyword_ceq {
@@ -624,6 +633,15 @@ namespace CILantro.Grammar {
         public static string keyword_char {
             get {
                 return ResourceManager.GetString("keyword_char", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        public static string keyword_class {
+            get {
+                return ResourceManager.GetString("keyword_class", resourceCulture);
             }
         }
         
@@ -903,6 +921,15 @@ namespace CILantro.Grammar {
         public static string keyword_ldstr {
             get {
                 return ResourceManager.GetString("keyword_ldstr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldtoken.
+        /// </summary>
+        public static string keyword_ldtoken {
+            get {
+                return ResourceManager.GetString("keyword_ldtoken", resourceCulture);
             }
         }
         

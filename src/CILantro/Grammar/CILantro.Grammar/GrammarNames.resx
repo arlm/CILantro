@@ -375,7 +375,7 @@
   <data name="keyword_ret" xml:space="preserve">
     <value>ret</value>
   </data>
-  <data name="call" xml:space="preserve">
+  <data name="keyword_call" xml:space="preserve">
     <value>call</value>
   </data>
   <data name="keyword_ldarg0" xml:space="preserve">
@@ -587,5 +587,14 @@
   </data>
   <data name="keyword_ldci48" xml:space="preserve">
     <value>ldc.i4.8</value>
+  </data>
+  <data name="keyword_callvirt" xml:space="preserve">
+    <value>callvirt</value>
+  </data>
+  <data name="keyword_class" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="keyword_ldtoken" xml:space="preserve">
+    <value>ldtoken</value>
   </data>
 </root>

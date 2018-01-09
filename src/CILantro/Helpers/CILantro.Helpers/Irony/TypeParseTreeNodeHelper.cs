@@ -55,6 +55,9 @@ namespace CILantro.Helpers.Irony
             var valuetypeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_valuetype);
             if (valuetypeParseTreeNode != null) return GetValueType(node);
 
+            var classParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_class);
+            if (classParseTreeNode != null) return GetClassType(node);
+
             throw new ArgumentException("Cannot recognize type.");
         }
 
@@ -68,6 +71,18 @@ namespace CILantro.Helpers.Irony
             if (type != null) return type;
 
             throw new ArgumentException("Cannot recognize value type.");
+        }
+
+        public static Type GetClassType(ParseTreeNode node)
+        {
+            var classNameParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.className);
+            var className = ClassNameParseTreeNodeHelper.GetClassName(classNameParseTreeNode);
+
+            var assembly = Assembly.Load(className.AssemblyName);
+            var type = assembly.GetType(className.ClassName);
+            if (type != null) return type;
+
+            throw new ArgumentException("Cannot recognize class type.");
         }
     }
 }

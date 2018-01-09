@@ -490,6 +490,9 @@ namespace InputDataGenerator
                         writer.WriteLine(s);
                     }));
 
+                case "TP_CSF_Operators_MiscOperators_TypeOf":
+                    return new EmptyInputDataCreator();
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

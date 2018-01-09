@@ -16,10 +16,16 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             var instrMethodParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_METHOD);
 
-            var callParseTreeNode = instrMethodParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.call);
+            var callParseTreeNode = instrMethodParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_call);
             if(callParseTreeNode != null)
             {
                 result = new CallInstruction();
+            }
+
+            var callvirtParseTreeNode = instrMethodParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_callvirt);
+            if(callvirtParseTreeNode != null)
+            {
+                result = new CallVirtualInstruction();
             }
 
             if(result != null)

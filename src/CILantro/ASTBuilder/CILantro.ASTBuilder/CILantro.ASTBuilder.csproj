@@ -54,6 +54,7 @@
     <Compile Include="NodeBuilders\CILInstructionNoneASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionStringASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionSwitchASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILInstructionTokASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionVarASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILMethodASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILRootASTNodeBuilder.cs" />

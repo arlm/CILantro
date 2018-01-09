@@ -22,6 +22,8 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
         private readonly CILInstructionSwitchASTNodeBuilder _instructionSwitchBuilder;
 
+        private readonly CILInstructionTokASTNodeBuilder _instructionTokBuilder;
+
         public CILInstructionASTNodeBuilder()
         {
             _instructionMethodBuilder = new CILInstructionMethodASTNodeBuilder();
@@ -31,6 +33,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
             _instructionIBuilder = new CILInstructionIASTNodeBuilder();
             _instructionBranchTargetBuilder = new CILInstructionBranchTargetASTNodeBuilder();
             _instructionSwitchBuilder = new CILInstructionSwitchASTNodeBuilder();
+            _instructionTokBuilder = new CILInstructionTokASTNodeBuilder();
         }
 
         public override CILInstruction BuildNode(ParseTreeNode node)
@@ -82,6 +85,14 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var instructionSwitch = _instructionSwitchBuilder.BuildNode(node);
                 return instructionSwitch;
+            }
+
+            var instrTokHeadParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.instr_tok_head);
+            var instrTokParseTreeNode = instrTokHeadParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.INSTR_TOK);
+            if(instrTokParseTreeNode != null)
+            {
+                var instructionTok = _instructionTokBuilder.BuildNode(node);
+                return instructionTok;
             }
 
             throw new ArgumentException("Cannot recognize CIL instruction.");

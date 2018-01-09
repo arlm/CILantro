@@ -212,6 +212,9 @@ namespace OutputChecker
                 case "TP_CSF_Decisions_ShortSwitch":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_MiscOperators_TypeOf":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

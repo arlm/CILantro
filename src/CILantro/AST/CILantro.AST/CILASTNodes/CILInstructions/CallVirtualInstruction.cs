@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
-    public class CallInstruction : CILInstructionMethod
+    public class CallVirtualInstruction : CILInstructionMethod
     {
         public override CILInstruction Execute(CILProgramState state)
         {
@@ -14,7 +14,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             var reflectedMethod = reflectedClass.GetMethod(MethodName, MethodArgumentTypes.ToArray());
 
             var methodArguments = new List<object>();
-            for(int i = 0; i < MethodArgumentTypes.Count; i++)
+            for (int i = 0; i < MethodArgumentTypes.Count; i++)
             {
                 var argument = state.Stack.Pop();
                 var methodArgument = Convert.ChangeType(argument, MethodArgumentTypes[i]);
@@ -35,7 +35,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             }
 
             var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
-            if(MethodReturnType != typeof(void))
+            if (MethodReturnType != typeof(void))
             {
                 state.Stack.Push(methodResult);
             }

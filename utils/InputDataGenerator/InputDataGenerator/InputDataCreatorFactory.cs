@@ -459,6 +459,13 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Decisions_NestedIf":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(-5, 4, -5, 4).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

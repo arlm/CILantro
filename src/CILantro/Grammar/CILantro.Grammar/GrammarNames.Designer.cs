@@ -538,11 +538,47 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to bne.un.s.
+        /// </summary>
+        public static string keyword_bneuns {
+            get {
+                return ResourceManager.GetString("keyword_bneuns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bool.
         /// </summary>
         public static string keyword_bool {
             get {
                 return ResourceManager.GetString("keyword_bool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to brfalse.s.
+        /// </summary>
+        public static string keyword_brfalses {
+            get {
+                return ResourceManager.GetString("keyword_brfalses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to br.s.
+        /// </summary>
+        public static string keyword_brs {
+            get {
+                return ResourceManager.GetString("keyword_brs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to brtrue.s.
+        /// </summary>
+        public static string keyword_brtrues {
+            get {
+                return ResourceManager.GetString("keyword_brtrues", resourceCulture);
             }
         }
         
@@ -714,6 +750,33 @@ namespace CILantro.Grammar {
         public static string keyword_ldci41 {
             get {
                 return ResourceManager.GetString("keyword_ldci41", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.2.
+        /// </summary>
+        public static string keyword_ldci42 {
+            get {
+                return ResourceManager.GetString("keyword_ldci42", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.3.
+        /// </summary>
+        public static string keyword_ldci43 {
+            get {
+                return ResourceManager.GetString("keyword_ldci43", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.4.
+        /// </summary>
+        public static string keyword_ldci44 {
+            get {
+                return ResourceManager.GetString("keyword_ldci44", resourceCulture);
             }
         }
         

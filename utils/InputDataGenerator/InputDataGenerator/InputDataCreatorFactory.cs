@@ -435,6 +435,30 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt(true));
                     });
 
+                case "TP_CSF_Decisions_IfElseIf":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardChar());
+                    });
+
+                case "TP_CSF_Decisions_IfElseIfElse":
+                    return new EnumerableInputDataCreator(IntHelper.GetRange(-50, 49).SelectCreateInputActions(n => writer =>
+                    {
+                        writer.WriteLine(n);
+                    }));
+
+                case "TP_CSF_Decisions_IfElseIfElseIf":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Decisions_IfElseIfElseIfElse":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

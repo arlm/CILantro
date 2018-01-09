@@ -543,4 +543,25 @@
   <data name="keyword_bges" xml:space="preserve">
     <value>bge.s</value>
   </data>
+  <data name="keyword_brfalses" xml:space="preserve">
+    <value>brfalse.s</value>
+  </data>
+  <data name="keyword_brs" xml:space="preserve">
+    <value>br.s</value>
+  </data>
+  <data name="keyword_brtrues" xml:space="preserve">
+    <value>brtrue.s</value>
+  </data>
+  <data name="keyword_ldci42" xml:space="preserve">
+    <value>ldc.i4.2</value>
+  </data>
+  <data name="keyword_ldci43" xml:space="preserve">
+    <value>ldc.i4.3</value>
+  </data>
+  <data name="keyword_bneuns" xml:space="preserve">
+    <value>bne.un.s</value>
+  </data>
+  <data name="keyword_ldci44" xml:space="preserve">
+    <value>ldc.i4.4</value>
+  </data>
 </root>

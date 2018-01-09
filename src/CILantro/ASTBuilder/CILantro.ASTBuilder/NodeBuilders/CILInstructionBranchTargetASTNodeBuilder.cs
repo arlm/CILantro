@@ -28,6 +28,30 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 result = new BranchOnLessOrEqualShortInstruction();
             }
 
+            var bneunsParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_bneuns);
+            if(bneunsParseTreeNode != null)
+            {
+                result = new BranchOnNotEqualOrUnorderedShortInstruction();
+            }
+
+            var brfalsesParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_brfalses);
+            if(brfalsesParseTreeNode != null)
+            {
+                result = new BranchOnFalseShortInstruction();
+            }
+
+            var brsParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_brs);
+            if(brsParseTreeNode != null)
+            {
+                result = new BranchShortInstruction();
+            }
+
+            var brtruesParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_brtrues);
+            if(brtruesParseTreeNode != null)
+            {
+                result = new BranchOnTrueShortInstruction();
+            }
+
             if(result != null)
             {
                 var idParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.id);

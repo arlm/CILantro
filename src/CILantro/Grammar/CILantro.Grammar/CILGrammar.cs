@@ -66,6 +66,7 @@ namespace CILantro.Grammar
                 "beforefieldinit",
                 "bge.s",
                 "ble.s",
+                "bne.un.s",
                 "bool",
                 "box",
                 "br.s",
@@ -89,6 +90,9 @@ namespace CILantro.Grammar
                 "ldarg.1",
                 "ldc.i4.0",
                 "ldc.i4.1",
+                "ldc.i4.2",
+                "ldc.i4.3",
+                "ldc.i4.4",
                 "ldc.i4.s",
                 "ldloc.0",
                 "ldloc.1",
@@ -238,6 +242,9 @@ namespace CILantro.Grammar
                 ToTerm("ldarg.1") |
                 ToTerm("ldc.i4.0") |
                 ToTerm("ldc.i4.1") |
+                ToTerm("ldc.i4.2") |
+                ToTerm("ldc.i4.3") |
+                ToTerm("ldc.i4.4") |
                 ToTerm("ldloc.0") |
                 ToTerm("ldloc.1") |
                 ToTerm("ldloc.2") |
@@ -273,6 +280,7 @@ namespace CILantro.Grammar
             INSTR_BRTARGET.Rule =
                 ToTerm("bge.s") |
                 ToTerm("ble.s") |
+                ToTerm("bne.un.s") |
                 ToTerm("br.s") |
                 ToTerm("brfalse.s") |
                 ToTerm("brtrue.s");

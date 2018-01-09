@@ -129,6 +129,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Decisions", "Decisions", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Decisions_If", "Decisions\TP_CSF_Decisions_If\TP_CSF_Decisions_If.csproj", "{B413E3F1-BBEB-46CB-A62F-271A7BAE9C1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Decisions_IfElse", "Decisions\TP_CSF_Decisions_IfElse\TP_CSF_Decisions_IfElse.csproj", "{229875C0-6939-4EE2-B31E-598638E02A0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -367,6 +369,10 @@ Global
 		{B413E3F1-BBEB-46CB-A62F-271A7BAE9C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B413E3F1-BBEB-46CB-A62F-271A7BAE9C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B413E3F1-BBEB-46CB-A62F-271A7BAE9C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229875C0-6939-4EE2-B31E-598638E02A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229875C0-6939-4EE2-B31E-598638E02A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229875C0-6939-4EE2-B31E-598638E02A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229875C0-6939-4EE2-B31E-598638E02A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -430,5 +436,6 @@ Global
 		{64DAF748-B285-4448-BDAF-EF57EA8B0768} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
 		{83574373-6D41-49C4-A44B-1A990689539C} = {C5606315-07D8-44A4-9C59-1E598106F6B5}
 		{B413E3F1-BBEB-46CB-A62F-271A7BAE9C1B} = {D8B353EE-FD13-454A-99CD-F35F9A96E708}
+		{229875C0-6939-4EE2-B31E-598638E02A0E} = {D8B353EE-FD13-454A-99CD-F35F9A96E708}
 	EndGlobalSection
 EndGlobal

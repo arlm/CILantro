@@ -429,6 +429,12 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Decisions_IfElse":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt(true));
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

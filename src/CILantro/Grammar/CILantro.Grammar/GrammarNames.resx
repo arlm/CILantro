@@ -540,4 +540,7 @@
   <data name="keyword_instance" xml:space="preserve">
     <value>instance</value>
   </data>
+  <data name="keyword_bges" xml:space="preserve">
+    <value>bge.s</value>
+  </data>
 </root>

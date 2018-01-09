@@ -16,6 +16,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             CILInstructionBranchTarget result = null;
 
+            var bgesParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_bges);
+            if(bgesParseTreeNode != null)
+            {
+                result = new BranchOnGreaterOrEqualShortInstruction();
+            }
+
             var blesParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_bles);
             if(blesParseTreeNode != null)
             {

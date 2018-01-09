@@ -182,6 +182,9 @@ namespace OutputChecker
                 case "TP_CSF_Decisions_If":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Decisions_IfElse":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

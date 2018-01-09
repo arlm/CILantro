@@ -64,6 +64,7 @@ namespace CILantro.Grammar
                 "assembly",
                 "auto",
                 "beforefieldinit",
+                "bge.s",
                 "ble.s",
                 "bool",
                 "box",
@@ -270,6 +271,7 @@ namespace CILantro.Grammar
 
             var INSTR_BRTARGET = new NonTerminal(GrammarNames.INSTR_BRTARGET);
             INSTR_BRTARGET.Rule =
+                ToTerm("bge.s") |
                 ToTerm("ble.s") |
                 ToTerm("br.s") |
                 ToTerm("brfalse.s") |

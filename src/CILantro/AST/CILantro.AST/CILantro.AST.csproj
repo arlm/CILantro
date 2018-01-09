@@ -51,6 +51,7 @@
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AndInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\BranchOnGreaterOrEqualShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnLessOrEqualShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CallInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfEqualInstruction.cs" />

@@ -799,6 +799,42 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.5.
+        /// </summary>
+        public static string keyword_ldci45 {
+            get {
+                return ResourceManager.GetString("keyword_ldci45", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.6.
+        /// </summary>
+        public static string keyword_ldci46 {
+            get {
+                return ResourceManager.GetString("keyword_ldci46", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.7.
+        /// </summary>
+        public static string keyword_ldci47 {
+            get {
+                return ResourceManager.GetString("keyword_ldci47", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.8.
+        /// </summary>
+        public static string keyword_ldci48 {
+            get {
+                return ResourceManager.GetString("keyword_ldci48", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldc.i4.s.
         /// </summary>
         public static string keyword_ldci4s {

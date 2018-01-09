@@ -71,6 +71,10 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt2Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt3Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt4Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt5Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt6Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt7Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt8Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantIntShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable1Instruction.cs" />

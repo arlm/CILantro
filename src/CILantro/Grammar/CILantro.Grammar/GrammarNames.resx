@@ -576,4 +576,16 @@
   <data name="keyword_switch" xml:space="preserve">
     <value>switch</value>
   </data>
+  <data name="keyword_ldci45" xml:space="preserve">
+    <value>ldc.i4.5</value>
+  </data>
+  <data name="keyword_ldci46" xml:space="preserve">
+    <value>ldc.i4.6</value>
+  </data>
+  <data name="keyword_ldci47" xml:space="preserve">
+    <value>ldc.i4.7</value>
+  </data>
+  <data name="keyword_ldci48" xml:space="preserve">
+    <value>ldc.i4.8</value>
+  </data>
 </root>

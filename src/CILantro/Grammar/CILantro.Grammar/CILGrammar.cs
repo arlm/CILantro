@@ -93,6 +93,10 @@ namespace CILantro.Grammar
                 "ldc.i4.2",
                 "ldc.i4.3",
                 "ldc.i4.4",
+                "ldc.i4.5",
+                "ldc.i4.6",
+                "ldc.i4.7",
+                "ldc.i4.8",
                 "ldc.i4.s",
                 "ldloc.0",
                 "ldloc.1",
@@ -246,6 +250,10 @@ namespace CILantro.Grammar
                 ToTerm("ldc.i4.2") |
                 ToTerm("ldc.i4.3") |
                 ToTerm("ldc.i4.4") |
+                ToTerm("ldc.i4.5") |
+                ToTerm("ldc.i4.6") |
+                ToTerm("ldc.i4.7") |
+                ToTerm("ldc.i4.8") |
                 ToTerm("ldloc.0") |
                 ToTerm("ldloc.1") |
                 ToTerm("ldloc.2") |

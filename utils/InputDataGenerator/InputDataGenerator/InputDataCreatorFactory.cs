@@ -472,6 +472,24 @@ namespace InputDataGenerator
                         writer.Write(rand.NextStandardChar());
                     });
 
+                case "TP_CSF_Decisions_ConditionalAssignOperator":
+                    return new EnumerableInputDataCreator(BoolHelper.GetAllValues().SelectCreateInputActions(b => writer =>
+                    {
+                        writer.WriteLine(b);
+                    }));
+
+                case "TP_CSF_Decisions_BoolSwitch":
+                    return new EnumerableInputDataCreator(BoolHelper.GetAllValues().SelectCreateInputActions(b => writer =>
+                    {
+                        writer.WriteLine(b);
+                    }));
+
+                case "TP_CSF_Decisions_ShortSwitch":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(-50, 49).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

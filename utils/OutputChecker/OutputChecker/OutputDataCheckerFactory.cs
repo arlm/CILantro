@@ -203,6 +203,15 @@ namespace OutputChecker
                 case "TP_CSF_Decisions_CharSwitch":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Decisions_ConditionalAssignOperator":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Decisions_BoolSwitch":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Decisions_ShortSwitch":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

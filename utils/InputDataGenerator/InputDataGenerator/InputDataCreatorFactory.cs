@@ -466,6 +466,12 @@ namespace InputDataGenerator
                         writer.WriteLine(pair.Item2);
                     }));
 
+                case "TP_CSF_Decisions_CharSwitch":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.Write(rand.NextStandardChar());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

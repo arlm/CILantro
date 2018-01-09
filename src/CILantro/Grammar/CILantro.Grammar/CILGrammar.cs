@@ -191,6 +191,7 @@ namespace CILantro.Grammar
             var instr_tok_head = new NonTerminal(GrammarNames.instr_tok_head);
             var int32 = new NonTerminal(GrammarNames.int32);
             var int64 = new NonTerminal(GrammarNames.int64);
+            var labels = new NonTerminal(GrammarNames.labels);
             var localsHead = new NonTerminal(GrammarNames.localsHead);
             var manifestResDecl = new NonTerminal(GrammarNames.manifestResDecl);
             var manifestResDecls = new NonTerminal(GrammarNames.manifestResDecls);
@@ -281,6 +282,7 @@ namespace CILantro.Grammar
                 ToTerm("bge.s") |
                 ToTerm("ble.s") |
                 ToTerm("bne.un.s") |
+                ToTerm("br") |
                 ToTerm("br.s") |
                 ToTerm("brfalse.s") |
                 ToTerm("brtrue.s");
@@ -299,6 +301,10 @@ namespace CILantro.Grammar
             var INSTR_STRING = new NonTerminal(GrammarNames.INSTR_STRING);
             INSTR_STRING.Rule =
                 ToTerm("ldstr");
+
+            var INSTR_SWITCH = new NonTerminal(GrammarNames.INSTR_SWITCH);
+            INSTR_SWITCH.Rule =
+                ToTerm("switch");
 
             var INSTR_TOK = new NonTerminal(GrammarNames.INSTR_TOK);
             INSTR_TOK.Rule =
@@ -490,7 +496,8 @@ namespace CILantro.Grammar
                 INSTR_FIELD + type + typeSpec + ToTerm("::") + id |
                 INSTR_TYPE + typeSpec |
                 INSTR_STRING + compQstring |
-                instr_tok_head + ownerType;
+                instr_tok_head + ownerType |
+                INSTR_SWITCH + ToTerm("(") + labels + ToTerm(")");
 
             sigArgs0.Rule =
                 Empty |
@@ -614,6 +621,10 @@ namespace CILantro.Grammar
 
             manifestResDecl.Rule =
                 customAttrDecl;
+
+            labels.Rule =
+                id + ToTerm(",") + labels |
+                id;
         }
     }
 }

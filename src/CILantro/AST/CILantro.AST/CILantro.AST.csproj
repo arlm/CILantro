@@ -49,8 +49,10 @@
     <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
     <Compile Include="CILASTNodes\CILInstructionNone.cs" />
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
+    <Compile Include="CILASTNodes\CILInstructionSwitch.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AndInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\BranchInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnFalseShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnGreaterOrEqualShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnLessOrEqualShortInstruction.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="CILASTNodes\CILInstructions\ShiftLeftInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ShiftRightInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SubtractInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\SwitchInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\XorInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructionVar.cs" />
     <Compile Include="CILASTNodes\CILMethod.cs" />

@@ -34,6 +34,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 result = new BranchOnNotEqualOrUnorderedShortInstruction();
             }
 
+            var brParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_br);
+            if (brParseTreeNode != null)
+            {
+                result = new BranchInstruction();
+            }
+
             var brfalsesParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_brfalses);
             if(brfalsesParseTreeNode != null)
             {

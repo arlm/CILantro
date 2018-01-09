@@ -141,6 +141,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Decisions_IfElseIfEl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Decisions_NestedIf", "Decisions\TP_CSF_Decisions_NestedIf\TP_CSF_Decisions_NestedIf.csproj", "{9458FD3B-734E-4103-A86D-0783B24F558B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Decisions_CharSwitch", "Decisions\TP_CSF_Decisions_CharSwitch\TP_CSF_Decisions_CharSwitch.csproj", "{007314A1-E3C9-4440-BFCC-4E8AC72A9CA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -403,6 +405,10 @@ Global
 		{9458FD3B-734E-4103-A86D-0783B24F558B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9458FD3B-734E-4103-A86D-0783B24F558B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9458FD3B-734E-4103-A86D-0783B24F558B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007314A1-E3C9-4440-BFCC-4E8AC72A9CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007314A1-E3C9-4440-BFCC-4E8AC72A9CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007314A1-E3C9-4440-BFCC-4E8AC72A9CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007314A1-E3C9-4440-BFCC-4E8AC72A9CA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -472,5 +478,6 @@ Global
 		{EE88AD98-2DC9-4B4D-B657-062A021CC561} = {D8B353EE-FD13-454A-99CD-F35F9A96E708}
 		{831D0056-3D8A-41A9-992D-B043990BA040} = {D8B353EE-FD13-454A-99CD-F35F9A96E708}
 		{9458FD3B-734E-4103-A86D-0783B24F558B} = {D8B353EE-FD13-454A-99CD-F35F9A96E708}
+		{007314A1-E3C9-4440-BFCC-4E8AC72A9CA2} = {D8B353EE-FD13-454A-99CD-F35F9A96E708}
 	EndGlobalSection
 EndGlobal

@@ -564,4 +564,16 @@
   <data name="keyword_ldci44" xml:space="preserve">
     <value>ldc.i4.4</value>
   </data>
+  <data name="INSTR_SWITCH" xml:space="preserve">
+    <value>INSTR_SWITCH</value>
+  </data>
+  <data name="labels" xml:space="preserve">
+    <value>labels</value>
+  </data>
+  <data name="keyword_br" xml:space="preserve">
+    <value>br</value>
+  </data>
+  <data name="keyword_switch" xml:space="preserve">
+    <value>switch</value>
+  </data>
 </root>

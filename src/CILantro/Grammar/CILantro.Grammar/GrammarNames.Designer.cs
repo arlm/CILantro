@@ -448,6 +448,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSTR_SWITCH.
+        /// </summary>
+        public static string INSTR_SWITCH {
+            get {
+                return ResourceManager.GetString("INSTR_SWITCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSTR_TOK.
         /// </summary>
         public static string INSTR_TOK {
@@ -552,6 +561,15 @@ namespace CILantro.Grammar {
         public static string keyword_bool {
             get {
                 return ResourceManager.GetString("keyword_bool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to br.
+        /// </summary>
+        public static string keyword_br {
+            get {
+                return ResourceManager.GetString("keyword_br", resourceCulture);
             }
         }
         
@@ -988,6 +1006,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to switch.
+        /// </summary>
+        public static string keyword_switch {
+            get {
+                return ResourceManager.GetString("keyword_switch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to uint16.
         /// </summary>
         public static string keyword_uint16 {
@@ -1047,6 +1074,15 @@ namespace CILantro.Grammar {
         public static string keyword_xor {
             get {
                 return ResourceManager.GetString("keyword_xor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to labels.
+        /// </summary>
+        public static string labels {
+            get {
+                return ResourceManager.GetString("labels", resourceCulture);
             }
         }
         

@@ -179,6 +179,9 @@ namespace OutputChecker
                 case "TP_CSF_Operators_AssignOperators_OrAndAssign":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Decisions_If":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

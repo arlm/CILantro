@@ -48,6 +48,7 @@
     <Compile Include="CILASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILClassASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILInstructionBranchTargetASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionIASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionMethodASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionNoneASTNodeBuilder.cs" />

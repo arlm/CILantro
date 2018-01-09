@@ -520,6 +520,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ble.s.
+        /// </summary>
+        public static string keyword_bles {
+            get {
+                return ResourceManager.GetString("keyword_bles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bool.
         /// </summary>
         public static string keyword_bool {
@@ -628,6 +637,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to instance.
+        /// </summary>
+        public static string keyword_instance {
+            get {
+                return ResourceManager.GetString("keyword_instance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to int16.
         /// </summary>
         public static string keyword_int16 {
@@ -732,6 +750,15 @@ namespace CILantro.Grammar {
         public static string keyword_ldloc3 {
             get {
                 return ResourceManager.GetString("keyword_ldloc3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldloca.s.
+        /// </summary>
+        public static string keyword_ldlocas {
+            get {
+                return ResourceManager.GetString("keyword_ldlocas", resourceCulture);
             }
         }
         

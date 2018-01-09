@@ -22,7 +22,14 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             }
             methodArguments.Reverse();
 
-            var methodResult = reflectedMethod.Invoke(null, methodArguments.ToArray());
+            object methodObject = null;
+            if(CallConvention.Instance)
+            {
+                var objectAddress = (Guid)state.Stack.Pop();
+                methodObject = ParentMethod.GetLocalByAddress(objectAddress);
+            }
+
+            var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
             if(MethodReturnType != typeof(void))
             {
                 state.Stack.Push(methodResult);

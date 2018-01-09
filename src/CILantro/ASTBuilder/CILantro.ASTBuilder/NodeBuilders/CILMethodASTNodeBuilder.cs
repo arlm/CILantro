@@ -6,6 +6,7 @@ using Irony.Parsing;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
 
 namespace CILantro.ASTBuilder.NodeBuilders
 {
@@ -21,9 +22,11 @@ namespace CILantro.ASTBuilder.NodeBuilders
         public override CILMethod BuildNode(ParseTreeNode node)
         {
             var instructions = new List<CILInstruction>();
+            var instructionsLabels = new List<string>();
             var isEntryPoint = false;
             var localsTypes = new List<Type>();
             var locals = new OrderedDictionary();
+            var localsAddresses = new List<Guid>();
 
             var methodDeclsParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodDecls);
             while(methodDeclsParseTreeNode != null)
@@ -35,6 +38,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 {
                     var instruction = _instructionBuilder.BuildNode(instrParseTreeNode);
                     instructions.Add(instruction);
+                }
+
+                var idParseTreeNode = methodDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.id);
+                if(idParseTreeNode != null)
+                {
+                    var label = IdParseTreeNodeHelper.GetValue(idParseTreeNode);
+                    instructionsLabels.Add(label);
                 }
 
                 var dotEntrypointParseTreeNode = methodDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_dotEntrypoint);
@@ -50,18 +60,22 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
                     localsTypes = SigArgs0ParseTreeNodeHelper.GetTypes(sigArgs0ParseTreeNode);
                     locals = SigArgs0ParseTreeNodeHelper.GetLocalsDictionary(sigArgs0ParseTreeNode);
+                    localsAddresses = localsTypes.Select(x => Guid.NewGuid()).ToList();
                 }
 
                 methodDeclsParseTreeNode = methodDeclsParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.methodDecls);
             }
 
             instructions.Reverse();
+            instructionsLabels.Reverse();
 
             var result = new CILMethod
             {
                 Instructions = instructions,
+                InstructionsLabels = instructionsLabels,
                 IsEntryPoint = isEntryPoint,
                 LocalsTypes = localsTypes,
+                LocalsAddresses = localsAddresses,
                 Locals = locals
             };
 

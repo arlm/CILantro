@@ -64,6 +64,7 @@ namespace CILantro.Grammar
                 "assembly",
                 "auto",
                 "beforefieldinit",
+                "ble.s",
                 "bool",
                 "box",
                 "br.s",
@@ -93,6 +94,7 @@ namespace CILantro.Grammar
                 "ldloc.2",
                 "ldloc.3",
                 "ldloc.s",
+                "ldloca.s",
                 "ldnull",
                 "ldsfld",
                 "ldstr",
@@ -259,6 +261,7 @@ namespace CILantro.Grammar
             var INSTR_VAR = new NonTerminal(GrammarNames.INSTR_VAR);
             INSTR_VAR.Rule =
                 ToTerm("ldloc.s") |
+                ToTerm("ldloca.s") |
                 ToTerm("stloc.s");
 
             var INSTR_I = new NonTerminal(GrammarNames.INSTR_I);
@@ -267,6 +270,7 @@ namespace CILantro.Grammar
 
             var INSTR_BRTARGET = new NonTerminal(GrammarNames.INSTR_BRTARGET);
             INSTR_BRTARGET.Rule =
+                ToTerm("ble.s") |
                 ToTerm("br.s") |
                 ToTerm("brfalse.s") |
                 ToTerm("brtrue.s");

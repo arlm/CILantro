@@ -36,6 +36,9 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 var sigArgs0ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs0);
                 result.MethodArgumentTypes = SigArgs0ParseTreeNodeHelper.GetTypes(sigArgs0ParseTreeNode);
 
+                var callConvParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.callConv);
+                result.CallConvention = CallConvParseTreeNodeHelper.GetValue(callConvParseTreeNode);
+
                 return result;
             }
 

@@ -13,5 +13,7 @@ namespace CILantro.AST.CILASTNodes
         public List<Type> MethodArgumentTypes { get; set; } = new List<Type>();
 
         public Type MethodReturnType { get; set; }
+
+        public CILCallConvention CallConvention { get; set; }
     }
 }

@@ -8,9 +8,13 @@ namespace CILantro.AST.CILASTNodes
     {
         public List<CILInstruction> Instructions { get; set; }
 
+        public List<string> InstructionsLabels { get; set; }
+
         public bool IsEntryPoint { get; set; }
 
         public List<Type> LocalsTypes { get; set; }
+
+        public List<Guid> LocalsAddresses { get; set; }
 
         public OrderedDictionary Locals { get; set; }
 
@@ -21,6 +25,31 @@ namespace CILantro.AST.CILASTNodes
 
             if (nextIndex >= Instructions.Count) return null;
             return Instructions[nextIndex];
+        }
+
+        public CILInstruction GetInstructionByBranchTarget(string label)
+        {
+            var instructionIndex = InstructionsLabels.IndexOf(label);
+            return Instructions[instructionIndex];
+        }
+
+        public Guid GetLocalAddress(string localId)
+        {
+            var localIndex = -1;
+            var i = -1;
+            foreach(var localKey in Locals.Keys)
+            {
+                i++;
+                if (localKey.Equals(localId)) localIndex = i;
+            }
+
+            return LocalsAddresses[localIndex];
+        }
+
+        public object GetLocalByAddress(Guid address)
+        {
+            var localIndex = LocalsAddresses.IndexOf(address);
+            return Locals[localIndex];
         }
     }
 }

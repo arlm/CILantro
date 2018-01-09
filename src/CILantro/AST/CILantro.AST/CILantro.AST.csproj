@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,12 +44,14 @@
     <Compile Include="CILASTNode.cs" />
     <Compile Include="CILASTNodes\CILClass.cs" />
     <Compile Include="CILASTNodes\CILInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructionBranchTarget.cs" />
     <Compile Include="CILASTNodes\CILInstructionI.cs" />
     <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
     <Compile Include="CILASTNodes\CILInstructionNone.cs" />
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AndInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\BranchOnLessOrEqualShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CallInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfEqualInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfGreaterInstruction.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable2Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable3Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariableAddressShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariableShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadStringInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\MultiplyInstruction.cs" />
@@ -83,6 +87,7 @@
     <Compile Include="CILASTNodes\CILInstructionVar.cs" />
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
+    <Compile Include="HelperClasses\CILCallConvention.cs" />
     <Compile Include="HelperClasses\CILClassName.cs" />
     <Compile Include="HelperClasses\CILTypeSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

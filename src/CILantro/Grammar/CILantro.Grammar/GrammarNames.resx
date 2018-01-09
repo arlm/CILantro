@@ -531,4 +531,13 @@
   <data name="keyword_xor" xml:space="preserve">
     <value>xor</value>
   </data>
+  <data name="keyword_ldlocas" xml:space="preserve">
+    <value>ldloca.s</value>
+  </data>
+  <data name="keyword_bles" xml:space="preserve">
+    <value>ble.s</value>
+  </data>
+  <data name="keyword_instance" xml:space="preserve">
+    <value>instance</value>
+  </data>
 </root>

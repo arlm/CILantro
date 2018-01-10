@@ -493,6 +493,9 @@ namespace InputDataGenerator
                 case "TP_CSF_Operators_MiscOperators_TypeOf":
                     return new EmptyInputDataCreator();
 
+                case "TP_CSF_Operators_MiscOperators_SizeOf":
+                    return new EmptyInputDataCreator();
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

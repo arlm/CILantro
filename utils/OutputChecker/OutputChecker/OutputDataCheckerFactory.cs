@@ -215,6 +215,9 @@ namespace OutputChecker
                 case "TP_CSF_Operators_MiscOperators_TypeOf":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Operators_MiscOperators_SizeOf":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

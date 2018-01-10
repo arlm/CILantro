@@ -7,17 +7,22 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class CallInstruction : CILInstructionMethod
     {
-        public override CILInstruction Execute(CILProgramState state)
+        public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
             var reflectedAssembly = Assembly.Load(TypeSpecification.ClassName.AssemblyName);
             var reflectedClass = reflectedAssembly.GetType(TypeSpecification.ClassName.ClassName);
-            var reflectedMethod = reflectedClass.GetMethod(MethodName, MethodArgumentTypes.ToArray());
+            var reflectedMethod = reflectedClass.GetMethod(MethodName, GetMethodArgumentRuntimeTypes().ToArray());
 
             var methodArguments = new List<object>();
             for(int i = 0; i < MethodArgumentTypes.Count; i++)
             {
                 var argument = state.Stack.Pop();
-                var methodArgument = Convert.ChangeType(argument, MethodArgumentTypes[i]);
+                var methodArgument = argument;
+                try
+                {
+                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes()[i]);
+                }
+                catch (Exception) { }
                 methodArguments.Add(methodArgument);
             }
             methodArguments.Reverse();
@@ -35,7 +40,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             }
 
             var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
-            if(MethodReturnType != typeof(void))
+            if(MethodReturnType.GetRuntimeType() != typeof(void))
             {
                 state.Stack.Push(methodResult);
             }

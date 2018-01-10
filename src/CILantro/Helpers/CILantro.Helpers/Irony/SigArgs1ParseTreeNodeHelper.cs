@@ -1,7 +1,7 @@
-﻿using CILantro.Extensions.Irony;
+﻿using CILantro.AST.HelperClasses;
+using CILantro.Extensions.Irony;
 using CILantro.Grammar;
 using Irony.Parsing;
-using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
@@ -9,9 +9,9 @@ namespace CILantro.Helpers.Irony
 {
     public static class SigArgs1ParseTreeNodeHelper
     {
-        public static List<Type> GetTypes(ParseTreeNode node)
+        public static List<CILType> GetTypes(ParseTreeNode node)
         {
-            var result = new List<Type>();
+            var result = new List<CILType>();
 
             var sigArgs1ParseTreeNode = node;
             var sigArgParseTreeNode = sigArgs1ParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.sigArg);
@@ -23,6 +23,8 @@ namespace CILantro.Helpers.Irony
                 sigArgs1ParseTreeNode = sigArgs1ParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.sigArgs1);
                 sigArgParseTreeNode = sigArgs1ParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.sigArg);
             }
+
+            result.Reverse();
 
             return result;
         }

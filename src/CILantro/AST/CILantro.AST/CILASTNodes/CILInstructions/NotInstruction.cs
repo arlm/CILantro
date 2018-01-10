@@ -4,7 +4,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class NotInstruction : CILInstructionNone
     {
-        public override CILInstruction Execute(CILProgramState state)
+        public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
             var value = (int)state.Stack.Pop();
 

@@ -42,7 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CILASTNode.cs" />
+    <Compile Include="CILASTNodes\CILAssembly.cs" />
     <Compile Include="CILASTNodes\CILClass.cs" />
+    <Compile Include="CILASTNodes\CILClassField.cs" />
+    <Compile Include="CILASTNodes\CILExternalAssembly.cs" />
     <Compile Include="CILASTNodes\CILInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructionBranchTarget.cs" />
     <Compile Include="CILASTNodes\CILInstructionI.cs" />
@@ -104,14 +107,21 @@
     <Compile Include="CILASTNodes\CILInstructionTok.cs" />
     <Compile Include="CILASTNodes\CILInstructionVar.cs" />
     <Compile Include="CILASTNodes\CILMethod.cs" />
+    <Compile Include="CILASTNodes\CILModule.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
     <Compile Include="HelperClasses\CILCallConvention.cs" />
     <Compile Include="HelperClasses\CILClassName.cs" />
     <Compile Include="HelperClasses\CILOwnerType.cs" />
+    <Compile Include="HelperClasses\CILType.cs" />
     <Compile Include="HelperClasses\CILTypeSpecification.cs" />
+    <Compile Include="HelperEnums\CILClassFieldAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Reflection\CILantro.Reflection\CILantro.Reflection.csproj">
+      <Project>{ae034387-faf2-470b-a5b6-f5b7fbdcf2c0}</Project>
+      <Name>CILantro.Reflection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\State\CILantro.State\CILantro.State.csproj">
       <Project>{D0D15302-773B-4BB9-B02F-05357C060362}</Project>
       <Name>CILantro.State</Name>

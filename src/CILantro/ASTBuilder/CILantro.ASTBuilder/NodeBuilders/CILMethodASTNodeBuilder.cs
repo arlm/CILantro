@@ -1,4 +1,5 @@
 ﻿using CILantro.AST.CILASTNodes;
+using CILantro.AST.HelperClasses;
 using CILantro.Extensions.Irony;
 using CILantro.Grammar;
 using CILantro.Helpers.Irony;
@@ -24,7 +25,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
             var instructions = new List<CILInstruction>();
             var instructionsLabels = new List<string>();
             var isEntryPoint = false;
-            var localsTypes = new List<Type>();
+            var localsTypes = new List<CILType>();
             var locals = new OrderedDictionary();
             var localsAddresses = new List<Guid>();
 

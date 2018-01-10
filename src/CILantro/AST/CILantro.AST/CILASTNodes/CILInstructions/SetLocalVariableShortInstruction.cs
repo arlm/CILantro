@@ -4,7 +4,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class SetLocalVariableShortInstruction : CILInstructionVar
     {
-        public override CILInstruction Execute(CILProgramState state)
+        public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
             var value = state.Stack.Pop();
             ParentMethod.Locals[VariableId] = value;

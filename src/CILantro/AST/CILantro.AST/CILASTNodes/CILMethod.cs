@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CILantro.AST.HelperClasses;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
@@ -12,7 +13,7 @@ namespace CILantro.AST.CILASTNodes
 
         public bool IsEntryPoint { get; set; }
 
-        public List<Type> LocalsTypes { get; set; }
+        public List<CILType> LocalsTypes { get; set; }
 
         public List<Guid> LocalsAddresses { get; set; }
 

@@ -14,7 +14,7 @@ namespace CILantro.Interpreter
             var instruction = program.EntryPoint.Instructions.First();
             while(instruction != null)
             {
-                instruction = instruction.Execute(state);
+                instruction = instruction.Execute(state, program);
             }
         }
     }

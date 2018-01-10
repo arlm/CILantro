@@ -1,5 +1,5 @@
-﻿using System;
-using System.Reflection;
+﻿using CILantro.Reflection;
+using System;
 
 namespace CILantro.AST.HelperClasses
 {
@@ -9,11 +9,7 @@ namespace CILantro.AST.HelperClasses
 
         public Type GetTypeSpecified()
         {
-            var assembly = Assembly.Load(ClassName.AssemblyName);
-            var type = assembly.GetType(ClassName.ClassName);
-            if (type != null) return type;
-
-            throw new ArgumentException("Cannot recognize type.");
+            return RuntimeTypeManager.GetRuntimeType(ClassName.ClassName, ClassName.AssemblyName);
         }
     }
 }

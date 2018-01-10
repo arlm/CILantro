@@ -1,6 +1,7 @@
 ﻿using CILantro.AST.CILASTNodes;
 using CILantro.Extensions.Irony;
 using CILantro.Grammar;
+using CILantro.Helpers.Irony;
 using Irony.Parsing;
 using System.Collections.Generic;
 
@@ -10,14 +11,26 @@ namespace CILantro.ASTBuilder.NodeBuilders
     {
         private readonly CILMethodASTNodeBuilder _methodBuilder;
 
+        private readonly CILClassFieldASTNodeBuilder _fieldBuilder;
+
         public CILClassASTNodeBuilder()
         {
             _methodBuilder = new CILMethodASTNodeBuilder();
+            _fieldBuilder = new CILClassFieldASTNodeBuilder();
         }
 
         public override CILClass BuildNode(ParseTreeNode node)
         {
             var methods = new List<CILMethod>();
+            var fields = new List<CILClassField>();
+
+            var classHeadParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.classHead);
+            var classNameParseTreeNode = classHeadParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.className);
+            var className = ClassNameParseTreeNodeHelper.GetClassName(classNameParseTreeNode);
+
+            var extendsClauseParseTreeNode = classHeadParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.extendsClause);
+            var extendsClassNameParseTreeNode = extendsClauseParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.className);
+            var extendsClassName = ClassNameParseTreeNodeHelper.GetClassName(extendsClassNameParseTreeNode);
 
             var classDeclsParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.classDecls);
             while(classDeclsParseTreeNode != null)
@@ -31,13 +44,26 @@ namespace CILantro.ASTBuilder.NodeBuilders
                     methods.Add(method);
                 }
 
+                var fieldDeclParseTreeNode = classDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.fieldDecl);
+                if(fieldDeclParseTreeNode != null)
+                {
+                    var field = _fieldBuilder.BuildNode(fieldDeclParseTreeNode);
+                    fields.Add(field);
+                }
+
                 classDeclsParseTreeNode = classDeclsParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.classDecls);
             }
 
+            fields.Reverse();
+
             var result = new CILClass
             {
-                Methods = methods
+                Fields = fields,
+                Methods = methods,
+                ClassName = className,
+                Extends = extendsClassName
             };
+
             return result;
         }
     }

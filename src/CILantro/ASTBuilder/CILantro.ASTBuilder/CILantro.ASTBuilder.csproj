@@ -46,7 +46,10 @@
   <ItemGroup>
     <Compile Include="CILASTBuilder.cs" />
     <Compile Include="CILASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILAssemblyASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILClassASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILClassFieldASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILExternalAssemblyASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionBranchTargetASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionIASTNodeBuilder.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="NodeBuilders\CILInstructionTokASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILInstructionVarASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILMethodASTNodeBuilder.cs" />
+    <Compile Include="NodeBuilders\CILModuleASTNodeBuilder.cs" />
     <Compile Include="NodeBuilders\CILRootASTNodeBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

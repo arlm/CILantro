@@ -313,6 +313,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fieldInit.
+        /// </summary>
+        public static string fieldInit {
+            get {
+                return ResourceManager.GetString("fieldInit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to genericClassName.
         /// </summary>
         public static string genericClassName {
@@ -934,6 +943,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to literal.
+        /// </summary>
+        public static string keyword_literal {
+            get {
+                return ResourceManager.GetString("keyword_literal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to mul.
         /// </summary>
         public static string keyword_mul {
@@ -952,6 +970,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to object.
+        /// </summary>
+        public static string keyword_object {
+            get {
+                return ResourceManager.GetString("keyword_object", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to or.
         /// </summary>
         public static string keyword_or {
@@ -966,6 +993,15 @@ namespace CILantro.Grammar {
         public static string keyword_pop {
             get {
                 return ResourceManager.GetString("keyword_pop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to public.
+        /// </summary>
+        public static string keyword_public {
+            get {
+                return ResourceManager.GetString("keyword_public", resourceCulture);
             }
         }
         
@@ -1002,6 +1038,15 @@ namespace CILantro.Grammar {
         public static string keyword_shr {
             get {
                 return ResourceManager.GetString("keyword_shr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to static.
+        /// </summary>
+        public static string keyword_static {
+            get {
+                return ResourceManager.GetString("keyword_static", resourceCulture);
             }
         }
         

@@ -496,6 +496,18 @@ namespace InputDataGenerator
                 case "TP_CSF_Operators_MiscOperators_SizeOf":
                     return new EmptyInputDataCreator();
 
+                case "TP_CSF_Enums_Enum":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(0, 7).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
+                case "TP_CSF_Enums_ExistingEnum":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(0, 6).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

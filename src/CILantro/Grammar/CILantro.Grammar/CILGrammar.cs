@@ -184,6 +184,7 @@ namespace CILantro.Grammar
             var extendsClause = new NonTerminal(GrammarNames.extendsClause);
             var fieldAttr = new NonTerminal(GrammarNames.fieldAttr);
             var fieldDecl = new NonTerminal(GrammarNames.fieldDecl);
+            var fieldInit = new NonTerminal(GrammarNames.fieldInit);
             var genericClassName = new NonTerminal(GrammarNames.genericClassName);
             var genericMethodName = new NonTerminal(GrammarNames.genericMethodName);
             var hexbytes = new NonTerminal(GrammarNames.hexbytes);
@@ -389,7 +390,8 @@ namespace CILantro.Grammar
                 Empty;
 
             initOpt.Rule =
-                Empty;
+                Empty |
+                ToTerm("=") + fieldInit;
 
             repeatOpt.Rule =
                 Empty;
@@ -460,8 +462,15 @@ namespace CILantro.Grammar
             fieldAttr.Rule =
                 Empty |
                 fieldAttr + ToTerm("static") |
+                fieldAttr + ToTerm("public") |
                 fieldAttr + ToTerm("private") |
-                fieldAttr + ToTerm("initonly");
+                fieldAttr + ToTerm("initonly") |
+                fieldAttr + ToTerm("rtspecialname") |
+                fieldAttr + ToTerm("specialname") |
+                fieldAttr + ToTerm("literal");
+
+            fieldInit.Rule =
+                ToTerm("int32") + ToTerm("(") + int64 + ToTerm(")");
 
             implAttr.Rule =
                 Empty |

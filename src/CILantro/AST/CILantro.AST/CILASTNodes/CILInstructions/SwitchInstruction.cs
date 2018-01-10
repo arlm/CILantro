@@ -5,7 +5,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class SwitchInstruction : CILInstructionSwitch
     {
-        public override CILInstruction Execute(CILProgramState state)
+        public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
             var value = state.Stack.Pop();
 

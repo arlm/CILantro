@@ -6,6 +6,6 @@ namespace CILantro.AST.CILASTNodes
     {
         public CILMethod ParentMethod { get; set; }
 
-        public abstract CILInstruction Execute(CILProgramState state);
+        public abstract CILInstruction Execute(CILProgramState state, CILProgram program);
     }
 }

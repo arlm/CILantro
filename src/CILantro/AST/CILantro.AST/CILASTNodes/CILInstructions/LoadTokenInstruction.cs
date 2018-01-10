@@ -4,7 +4,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class LoadTokenInstruction : CILInstructionTok
     {
-        public override CILInstruction Execute(CILProgramState state)
+        public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
             var typeSpecified = OwnerType.TypeSpecification.GetTypeSpecified();
             var typeHandle = typeSpecified.TypeHandle;

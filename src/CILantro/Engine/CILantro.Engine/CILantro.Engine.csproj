@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CILantroEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuntimeTypeCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\AST\CILantro.AST\CILantro.AST.csproj">
@@ -55,6 +56,10 @@
     <ProjectReference Include="..\..\Parser\CILantro.Parser\CILantro.Parser.csproj">
       <Project>{A06EC1E5-1EFC-46E9-8826-C77D97DE35CB}</Project>
       <Name>CILantro.Parser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reflection\CILantro.Reflection\CILantro.Reflection.csproj">
+      <Project>{AE034387-FAF2-470B-A5B6-F5B7FBDCF2C0}</Project>
+      <Name>CILantro.Reflection</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

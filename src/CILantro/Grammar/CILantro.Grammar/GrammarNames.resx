@@ -597,4 +597,19 @@
   <data name="keyword_ldtoken" xml:space="preserve">
     <value>ldtoken</value>
   </data>
+  <data name="fieldInit" xml:space="preserve">
+    <value>fieldInit</value>
+  </data>
+  <data name="keyword_object" xml:space="preserve">
+    <value>object</value>
+  </data>
+  <data name="keyword_literal" xml:space="preserve">
+    <value>literal</value>
+  </data>
+  <data name="keyword_public" xml:space="preserve">
+    <value>public</value>
+  </data>
+  <data name="keyword_static" xml:space="preserve">
+    <value>static</value>
+  </data>
 </root>

@@ -9,8 +9,9 @@ namespace CILantro.Helpers.Irony
     {
         public static CILClassName GetClassName(ParseTreeNode node)
         {
+            var assemblyName = string.Empty;
             var name1ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.name1);
-            var assemblyName = Name1ParseTreeNodeHelper.GetValue(name1ParseTreeNode);
+            if(name1ParseTreeNode != null) assemblyName = Name1ParseTreeNodeHelper.GetValue(name1ParseTreeNode);
 
             var slashedNameParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.slashedName);
             var className = SlashedNameParseTreeNodeHelper.GetValue(slashedNameParseTreeNode);

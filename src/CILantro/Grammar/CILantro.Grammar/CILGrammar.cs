@@ -470,7 +470,10 @@ namespace CILantro.Grammar
                 fieldAttr + ToTerm("literal");
 
             fieldInit.Rule =
-                ToTerm("int32") + ToTerm("(") + int64 + ToTerm(")");
+                ToTerm("int64") + ToTerm("(") + int64 + ToTerm(")") |
+                ToTerm("int32") + ToTerm("(") + int64 + ToTerm(")") |
+                ToTerm("int16") + ToTerm("(") + int64 + ToTerm(")") |
+                ToTerm("uint8") + ToTerm("(") + int64 + ToTerm(")");
 
             implAttr.Rule =
                 Empty |

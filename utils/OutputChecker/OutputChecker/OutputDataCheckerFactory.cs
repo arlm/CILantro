@@ -224,6 +224,18 @@ namespace OutputChecker
                 case "TP_CSF_Enums_ExistingEnum":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Enums_EnumWithAssignedValues":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Enums_EnumLong":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Enums_EnumByte":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Enums_EnumShort":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

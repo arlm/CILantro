@@ -10,6 +10,8 @@ namespace CILantro.AST.CILASTNodes
 
         public CILType Type { get; set; }
 
+        public object InitValue { get; set; }
+
         public List<CILClassFieldAttribute> Attributes { get; set; } = new List<CILClassFieldAttribute>();
 
         public bool IsLiteral() => Attributes.Contains(CILClassFieldAttribute.Literal);

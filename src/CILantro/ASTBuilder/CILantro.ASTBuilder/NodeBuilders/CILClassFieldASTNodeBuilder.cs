@@ -24,6 +24,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
             result.Attributes = FieldAttrParseTreeNodeHelper.GetAllAttributes(fieldAttrParseTreeNode);
 
             var initOptParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.initOpt);
+            var fieldInitParseTreeNode = initOptParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.fieldInit);
+            if(fieldInitParseTreeNode != null)
+            {
+                var int64ParseTreeNode = fieldInitParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.int64);
+                var fieldInitValue = Int64ParseTreeNodeHelper.GetValue(int64ParseTreeNode);
+                result.InitValue = fieldInitValue;
+            }
 
             return result;
         }

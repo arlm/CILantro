@@ -36,7 +36,10 @@ namespace CILantro.Engine
             foreach (var cilField in cilClass.Fields)
             {
                 if (cilField.Name != "value__")
-                    enumBuilder.DefineLiteral(cilField.Name, cilClass.Fields.IndexOf(cilField) - 1);
+                {
+                    var fieldInitValue = Convert.ToInt32(cilField.InitValue);
+                    enumBuilder.DefineLiteral(cilField.Name, fieldInitValue);
+                }
             }
 
             var newType = enumBuilder.CreateType();

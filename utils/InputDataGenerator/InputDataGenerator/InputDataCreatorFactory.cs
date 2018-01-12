@@ -508,6 +508,30 @@ namespace InputDataGenerator
                         writer.WriteLine(s);
                     }));
 
+                case "TP_CSF_Enums_EnumWithAssignedValues":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(1, 7).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
+                case "TP_CSF_Enums_EnumLong":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(0, 49).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
+                case "TP_CSF_Enums_EnumByte":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(0, 49).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
+                case "TP_CSF_Enums_EnumShort":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(0, 49).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

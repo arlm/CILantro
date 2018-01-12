@@ -50,6 +50,7 @@
     <Compile Include="Irony\FieldAttrParseTreeNodeHelper.cs" />
     <Compile Include="Irony\IdParseTreeNodeHelper.cs" />
     <Compile Include="Irony\Int32ParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\Int64ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\LabelsParseTreeNodeHelper.cs" />
     <Compile Include="Irony\MethodNameParseTreeNodeHelper.cs" />
     <Compile Include="Irony\Name1ParseTreeNodeHelper.cs" />

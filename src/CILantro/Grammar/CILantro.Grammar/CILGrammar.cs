@@ -129,6 +129,7 @@ namespace CILantro.Grammar
                 "strict",
                 "string",
                 "stsfld",
+                "unbox.any",
                 "valuetype",
                 "virtual",
                 "void"
@@ -305,7 +306,8 @@ namespace CILantro.Grammar
             INSTR_TYPE.Rule =
                 ToTerm("box") |
                 ToTerm("castclass") |
-                ToTerm("initobj");
+                ToTerm("initobj") |
+                ToTerm("unbox.any");
 
             var INSTR_STRING = new NonTerminal(GrammarNames.INSTR_STRING);
             INSTR_STRING.Rule =
@@ -473,6 +475,7 @@ namespace CILantro.Grammar
                 ToTerm("int64") + ToTerm("(") + int64 + ToTerm(")") |
                 ToTerm("int32") + ToTerm("(") + int64 + ToTerm(")") |
                 ToTerm("int16") + ToTerm("(") + int64 + ToTerm(")") |
+                ToTerm("int8") + ToTerm("(") + int64 + ToTerm(")") |
                 ToTerm("uint8") + ToTerm("(") + int64 + ToTerm(")");
 
             implAttr.Rule =

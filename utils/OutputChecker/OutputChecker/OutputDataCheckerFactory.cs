@@ -236,6 +236,18 @@ namespace OutputChecker
                 case "TP_CSF_Enums_EnumShort":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Decisions_ByteSwitch":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Decisions_IntSwitch":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Decisions_EnumSwitch":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Decisions_NestedSwitch":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

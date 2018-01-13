@@ -532,6 +532,31 @@ namespace InputDataGenerator
                         writer.WriteLine(s);
                     }));
 
+                case "TP_CSF_Decisions_ByteSwitch":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(0, 99).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
+                case "TP_CSF_Decisions_IntSwitch":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(-50, 49).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
+                case "TP_CSF_Decisions_EnumSwitch":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(-50, 49).SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
+                    }));
+
+                case "TP_CSF_Decisions_NestedSwitch":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(0, 10, 0, 10).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

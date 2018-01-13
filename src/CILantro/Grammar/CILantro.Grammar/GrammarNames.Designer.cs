@@ -1159,6 +1159,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to unbox.any.
+        /// </summary>
+        public static string keyword_unboxany {
+            get {
+                return ResourceManager.GetString("keyword_unboxany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to valuetype.
         /// </summary>
         public static string keyword_valuetype {

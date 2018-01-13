@@ -103,8 +103,10 @@
     <Compile Include="CILASTNodes\CILInstructions\ShiftRightInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SubtractInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SwitchInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\UnboxAnyInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\XorInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructionTok.cs" />
+    <Compile Include="CILASTNodes\CILInstructionType.cs" />
     <Compile Include="CILASTNodes\CILInstructionVar.cs" />
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILModule.cs" />

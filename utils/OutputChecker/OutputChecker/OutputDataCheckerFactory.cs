@@ -248,6 +248,21 @@ namespace OutputChecker
                 case "TP_CSF_Decisions_NestedSwitch":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Strings_String":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Strings_Concatenation":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Strings_Length":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Strings_Chars":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Decisions_StringSwitch":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

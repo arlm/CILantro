@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace InputDataGenerator.Extensions
 {
@@ -74,7 +75,7 @@ namespace InputDataGenerator.Extensions
 
         public static char NextStandardChar(this Random random)
         {
-            var charNumber = random.Next(20, 127);
+            var charNumber = random.Next(32, 127);
             return (char)charNumber;
         }
 
@@ -97,6 +98,20 @@ namespace InputDataGenerator.Extensions
             var uShortBytes = new byte[2];
             random.NextBytes(uShortBytes);
             return BitConverter.ToUInt16(uShortBytes, 0);
+        }
+
+        public static string NextStandardString(this Random random)
+        {
+            var length = random.Next(1, 101);
+
+            var resultBuilder = new StringBuilder();
+            for(int i = 1; i <= length; i++)
+            {
+                var randomChar = random.NextStandardChar();
+                resultBuilder.Append(randomChar);
+            }
+
+            return resultBuilder.ToString();
         }
     }
 }

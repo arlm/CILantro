@@ -2,6 +2,7 @@
 using InputDataGenerator.Helpers;
 using InputDataGenerator.InputDataCreators;
 using System;
+using System.Collections.Generic;
 
 namespace InputDataGenerator
 {
@@ -555,6 +556,43 @@ namespace InputDataGenerator
                     {
                         writer.WriteLine(pair.Item1);
                         writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Strings_String":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
+                case "TP_CSF_Strings_Concatenation":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardString());
+                        writer.WriteLine(rand.NextStandardString());
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
+                case "TP_CSF_Strings_Length":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
+                case "TP_CSF_Strings_Chars":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var randomString = rand.NextStandardString();
+                        writer.WriteLine(randomString);
+
+                        var index = rand.Next(0, randomString.Length);
+                        writer.WriteLine(index);
+                    });
+
+                case "TP_CSF_Decisions_StringSwitch":
+                    var strings = new List<string> { "NORTH", "SOUTH", "EAST", "WEST", "NOTHING" };
+                    return new EnumerableInputDataCreator(strings.SelectCreateInputActions(s => writer =>
+                    {
+                        writer.WriteLine(s);
                     }));
 
                 default:

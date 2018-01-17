@@ -636,6 +636,26 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.Next(0, 31));
                     });
 
+                case "TP_CSF_Loops_BreakStatement":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var count = rand.Next(0, 1001);
+                        for (int i = 0; i < count; i++)
+                        {
+                            writer.WriteLine(rand.Next(1, 1001));
+                        }
+                        writer.WriteLine(0);
+                    });
+
+                case "TP_CSF_Loops_ContinueStatement":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var count = rand.Next(0, 101);
+                        writer.WriteLine(count);
+
+                        for (int i = 0; i < count; i++) writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

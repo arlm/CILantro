@@ -595,6 +595,12 @@ namespace InputDataGenerator
                         writer.WriteLine(s);
                     }));
 
+                case "TP_CSF_Comments_SingleLineComment":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_Comments_MultiLineComment":
+                    return new EmptyInputDataCreator();
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

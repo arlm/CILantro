@@ -263,6 +263,12 @@ namespace OutputChecker
                 case "TP_CSF_Decisions_StringSwitch":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Comments_SingleLineComment":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Comments_MultiLineComment":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

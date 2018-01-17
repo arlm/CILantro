@@ -272,6 +272,9 @@ namespace OutputChecker
                 case "TP_CSF_Loops_While":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Loops_For":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

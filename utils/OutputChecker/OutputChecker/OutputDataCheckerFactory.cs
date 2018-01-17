@@ -299,6 +299,18 @@ namespace OutputChecker
                 case "TP_CSF_Identifiers_LettersDigitsAndUnderscores":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Identifiers_UnderscoresAndLetters":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Identifiers_UnderscoresLettersAndDigits":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Identifiers_UnderscoresAndDigits":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Identifiers_UnderscoresOnly":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

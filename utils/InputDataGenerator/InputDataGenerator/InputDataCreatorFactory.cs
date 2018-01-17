@@ -629,6 +629,13 @@ namespace InputDataGenerator
                         writer.WriteLine(0);
                     });
 
+                case "TP_CSF_Loops_NestedLoops":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.Next(0, 31));
+                        writer.WriteLine(rand.Next(0, 31));
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

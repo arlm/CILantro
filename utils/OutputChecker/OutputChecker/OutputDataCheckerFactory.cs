@@ -311,6 +311,9 @@ namespace OutputChecker
                 case "TP_CSF_Identifiers_UnderscoresOnly":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Arrays_1DArray":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

@@ -889,6 +889,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldelem.i4.
+        /// </summary>
+        public static string keyword_ldelemi4 {
+            get {
+                return ResourceManager.GetString("keyword_ldelemi4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldloc.0.
         /// </summary>
         public static string keyword_ldloc0 {
@@ -979,6 +988,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to newarr.
+        /// </summary>
+        public static string keyword_newarr {
+            get {
+                return ResourceManager.GetString("keyword_newarr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to not.
         /// </summary>
         public static string keyword_not {
@@ -1065,6 +1083,15 @@ namespace CILantro.Grammar {
         public static string keyword_static {
             get {
                 return ResourceManager.GetString("keyword_static", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stelem.i4.
+        /// </summary>
+        public static string keyword_stelemi4 {
+            get {
+                return ResourceManager.GetString("keyword_stelemi4", resourceCulture);
             }
         }
         

@@ -4,9 +4,13 @@ param
 	[bool]$CheckAllInputs = $true
 )
 
+$totalStopWatch = [System.Diagnostics.StopWatch]::StartNew()
+
 $allSteps = 8
 
 # collect tests
+
+$step1StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 cls
 
@@ -16,12 +20,16 @@ Write-Host
 
 Invoke-Expression ./collect-tests.ps1
 
+$step1StopWatch.Stop()
+
 # get all tests
 
 $allTests = Get-ChildItem "..\tests"
 $allTestsCount = $allTests.Length
 
 # generate input for tests
+
+$step2StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 $testsAfterGeneratingInputData = @()
 $errors = @()
@@ -66,7 +74,11 @@ foreach($test in $allTests)
 	}
 }
 
+$step2StopWatch.Stop()
+
 # generate execs
+
+$step3StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 foreach($test in $testsAfterGeneratingInputData)
 {
@@ -89,7 +101,11 @@ foreach($test in $testsAfterGeneratingInputData)
 	Invoke-Expression $ilasmCommand | Out-Null
 }
 
+$step3StopWatch.Stop()
+
 # generate out from execs
+
+$step4StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 $allInDataFilesCount = 0
 
@@ -148,7 +164,11 @@ foreach($test in $testsAfterGeneratingInputData)
 	}
 }
 
+$step4StopWatch.Stop()
+
 # parse tests by cilantro parser
+
+$step5StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 $testsAfterCilantroParser = @()
 
@@ -194,7 +214,11 @@ foreach($test in $testsAfterGeneratingInputData)
 	}
 }
 
+$step5StopWatch.Stop()
+
 # process tests by cilantro engine
+
+$step6StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 $testsAfterCilantroEngine = @()
 $processedInputDataFiles = 0
@@ -287,12 +311,11 @@ foreach($test in $testsAfterCilantroParser)
 	}
 }
 
+$step6StopWatch.Stop()
+
 # generate output checker
 
-cls
-
-Write-Host "Generating output data checkers..." -foreground "yellow"
-Write-Host
+$step7StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 $testsAfterGeneratingOutputDataCheckers = @()
 
@@ -336,7 +359,11 @@ foreach($test in $testsAfterCilantroEngine)
 	}
 }
 
+$step7StopWatch.Stop()
+
 # check outputs
+
+$step8StopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
 $testsAfterCheckingOutput = @()
 
@@ -425,6 +452,9 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 	}
 }
 
+$step8StopWatch.Stop()
+$totalStopWatch.Stop()
+
 # summary
 
 cls
@@ -494,6 +524,116 @@ if($errors.length -gt 0)
 	{
 		Write-Host $error -foreground "red"
 	}
+}
+else
+{	
+	$totalMinutes = $totalStopWatch.Elapsed.TotalMinutes
+	$totalSeconds = $totalStopWatch.Elapsed.TotalSeconds
+	$totalSecondsPerTest = $totalSeconds / $allTestsCount
+	$totalSecondsPerData = $totalSeconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STATISTICS" -foreground "magenta"
+	Write-Host -foreground "magenta" $totalStopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $totalMinutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $totalSeconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $totalSecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $totalSecondsPerData + "s / data")
+
+	$step1Minutes = $step1StopWatch.Elapsed.TotalMinutes
+	$step1Seconds = $step1StopWatch.Elapsed.TotalSeconds
+	$step1SecondsPerTest = $step1Seconds / $allTestsCount
+	$step1SecondsPerData = $step1Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 1 - collecting tests" -foreground "magenta"
+	Write-Host -foreground "magenta" $step1StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step1Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step1Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step1SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step1SecondsPerData + "s / data")
+	
+	$step2Minutes = $step2StopWatch.Elapsed.TotalMinutes
+	$step2Seconds = $step2StopWatch.Elapsed.TotalSeconds
+	$step2SecondsPerTest = $step2Seconds / $allTestsCount
+	$step2SecondsPerData = $step2Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 2 - generating input data" -foreground "magenta"
+	Write-Host -foreground "magenta" $step2StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step2Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step2Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step2SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step2SecondsPerData + "s / data")
+	
+	$step3Minutes = $step3StopWatch.Elapsed.TotalMinutes
+	$step3Seconds = $step3StopWatch.Elapsed.TotalSeconds
+	$step3SecondsPerTest = $step3Seconds / $allTestsCount
+	$step3SecondsPerData = $step3Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 3 - generating execs" -foreground "magenta"
+	Write-Host -foreground "magenta" $step3StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step3Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step3Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step3SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step3SecondsPerData + "s / data")
+	
+	$step4Minutes = $step4StopWatch.Elapsed.TotalMinutes
+	$step4Seconds = $step4StopWatch.Elapsed.TotalSeconds
+	$step4SecondsPerTest = $step4Seconds / $allTestsCount
+	$step4SecondsPerData = $step4Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 4 - generating output data from execs" -foreground "magenta"
+	Write-Host -foreground "magenta" $step4StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step4Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step4Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step4SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step4SecondsPerData + "s / data")
+	
+	$step5Minutes = $step5StopWatch.Elapsed.TotalMinutes
+	$step5Seconds = $step5StopWatch.Elapsed.TotalSeconds
+	$step5SecondsPerTest = $step5Seconds / $allTestsCount
+	$step5SecondsPerData = $step5Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 5 - parsing tests by CILantro parser" -foreground "magenta"
+	Write-Host -foreground "magenta" $step5StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step5Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step5Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step5SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step5SecondsPerData + "s / data")
+	
+	$step6Minutes = $step6StopWatch.Elapsed.TotalMinutes
+	$step6Seconds = $step6StopWatch.Elapsed.TotalSeconds
+	$step6SecondsPerTest = $step6Seconds / $allTestsCount
+	$step6SecondsPerData = $step6Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 6 - processing tests by CILantro engine" -foreground "magenta"
+	Write-Host -foreground "magenta" $step6StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step6Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step6Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step6SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step6SecondsPerData + "s / data")
+	
+	$step7Minutes = $step7StopWatch.Elapsed.TotalMinutes
+	$step7Seconds = $step7StopWatch.Elapsed.TotalSeconds
+	$step7SecondsPerTest = $step7Seconds / $allTestsCount
+	$step7SecondsPerData = $step7Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 7 - generating output data checkers" -foreground "magenta"
+	Write-Host -foreground "magenta" $step7StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step7Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step7Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step7SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step7SecondsPerData + "s / data")
+	
+	$step8Minutes = $step8StopWatch.Elapsed.TotalMinutes
+	$step8Seconds = $step8StopWatch.Elapsed.TotalSeconds
+	$step8SecondsPerTest = $step8Seconds / $allTestsCount
+	$step8SecondsPerData = $step8Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 8 - checking output data" -foreground "magenta"
+	Write-Host -foreground "magenta" $step8StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step8Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step8Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step8SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step8SecondsPerData + "s / data")
 }
 
 Write-Host

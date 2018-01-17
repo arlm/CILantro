@@ -82,6 +82,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt7Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt8Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantIntShortInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadElementIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable2Instruction.cs" />
@@ -91,11 +92,13 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadStringInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadTokenInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\MultiplyInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\NewArrayInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\NotInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\OrInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\PopInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\RemainderInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ReturnInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\SetElementIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable2Instruction.cs" />

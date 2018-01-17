@@ -621,4 +621,13 @@
   <data name="keyword_blts" xml:space="preserve">
     <value>blt.s</value>
   </data>
+  <data name="keyword_newarr" xml:space="preserve">
+    <value>newarr</value>
+  </data>
+  <data name="keyword_stelemi4" xml:space="preserve">
+    <value>stelem.i4</value>
+  </data>
+  <data name="keyword_ldelemi4" xml:space="preserve">
+    <value>ldelem.i4</value>
+  </data>
 </root>

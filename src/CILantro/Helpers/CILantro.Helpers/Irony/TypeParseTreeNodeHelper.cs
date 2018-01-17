@@ -16,6 +16,9 @@ namespace CILantro.Helpers.Irony
             var classParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_class);
             if (classParseTreeNode != null) return GetClassType(node);
 
+            var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);
+            if (typeParseTreeNode != null) return GetArrayType(node);
+
             return GetSimpleType(node);
         }
 
@@ -98,6 +101,19 @@ namespace CILantro.Helpers.Irony
             return new CILType
             {
                 ClassName = className
+            };
+        }
+
+        public static CILType GetArrayType(ParseTreeNode node)
+        {
+            var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);
+            var elementsType = GetSimpleType(typeParseTreeNode);
+
+            var arrayType = elementsType.SimpleType.MakeArrayType();
+
+            return new CILType
+            {
+                SimpleType = arrayType
             };
         }
     }

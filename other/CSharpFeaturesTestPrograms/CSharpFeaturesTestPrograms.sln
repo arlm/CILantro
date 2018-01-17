@@ -225,6 +225,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Identifiers_Undersco
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Identifiers_UnderscoresOnly", "Identifiers\TP_CSF_Identifiers_UnderscoresOnly\TP_CSF_Identifiers_UnderscoresOnly.csproj", "{18E9525F-02FE-40DF-A301-640707A33140}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arrays", "Arrays", "{8B3D1DBD-F565-4BA1-931A-2195466655C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Arrays_1DArray", "Arrays\TP_CSF_Arrays_1DArray\TP_CSF_Arrays_1DArray.csproj", "{E20E8722-0392-4E68-9C11-EEA7EE6211CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -635,6 +639,10 @@ Global
 		{18E9525F-02FE-40DF-A301-640707A33140}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18E9525F-02FE-40DF-A301-640707A33140}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18E9525F-02FE-40DF-A301-640707A33140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E20E8722-0392-4E68-9C11-EEA7EE6211CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E20E8722-0392-4E68-9C11-EEA7EE6211CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E20E8722-0392-4E68-9C11-EEA7EE6211CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E20E8722-0392-4E68-9C11-EEA7EE6211CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -741,5 +749,6 @@ Global
 		{8450E941-7E86-410A-936D-3808703693BF} = {84626566-00BC-4559-9EDA-2A2F36736DC8}
 		{612CA885-9738-43F8-BBF8-A63CB1D01FC7} = {84626566-00BC-4559-9EDA-2A2F36736DC8}
 		{18E9525F-02FE-40DF-A301-640707A33140} = {84626566-00BC-4559-9EDA-2A2F36736DC8}
+		{E20E8722-0392-4E68-9C11-EEA7EE6211CF} = {8B3D1DBD-F565-4BA1-931A-2195466655C6}
 	EndGlobalSection
 EndGlobal

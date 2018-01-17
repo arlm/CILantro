@@ -269,6 +269,9 @@ namespace OutputChecker
                 case "TP_CSF_Comments_MultiLineComment":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Loops_While":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

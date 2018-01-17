@@ -601,6 +601,17 @@ namespace InputDataGenerator
                 case "TP_CSF_Comments_MultiLineComment":
                     return new EmptyInputDataCreator();
 
+                case "TP_CSF_Loops_While":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var count = rand.Next(0, 1001);
+                        for(int i = 0; i < count; i++)
+                        {
+                            writer.WriteLine(rand.Next(1, 1001));
+                        }
+                        writer.WriteLine(0);
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

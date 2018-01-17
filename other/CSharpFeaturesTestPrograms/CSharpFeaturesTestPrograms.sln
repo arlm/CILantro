@@ -215,6 +215,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Identifiers_LettersA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Identifiers_LettersAndUnderscores", "Identifiers\TP_CSF_Identifiers_LettersAndUnderscores\TP_CSF_Identifiers_LettersAndUnderscores.csproj", "{CDF33033-339B-4975-810D-6B1E76EEA361}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Identifiers_LettersDigitsAndUnderscores", "Identifiers\TP_CSF_Identifiers_LettersDigitsAndUnderscores\TP_CSF_Identifiers_LettersDigitsAndUnderscores.csproj", "{BD2F29E9-F2BC-486B-91AF-36E837A2C17C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -605,6 +607,10 @@ Global
 		{CDF33033-339B-4975-810D-6B1E76EEA361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDF33033-339B-4975-810D-6B1E76EEA361}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDF33033-339B-4975-810D-6B1E76EEA361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2F29E9-F2BC-486B-91AF-36E837A2C17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2F29E9-F2BC-486B-91AF-36E837A2C17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2F29E9-F2BC-486B-91AF-36E837A2C17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2F29E9-F2BC-486B-91AF-36E837A2C17C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -706,5 +712,6 @@ Global
 		{4A4FF000-0127-4554-A475-F1ADD6615D9E} = {84626566-00BC-4559-9EDA-2A2F36736DC8}
 		{7B923F3B-E7BF-4705-A96C-9CBAB7D3697E} = {84626566-00BC-4559-9EDA-2A2F36736DC8}
 		{CDF33033-339B-4975-810D-6B1E76EEA361} = {84626566-00BC-4559-9EDA-2A2F36736DC8}
+		{BD2F29E9-F2BC-486B-91AF-36E837A2C17C} = {84626566-00BC-4559-9EDA-2A2F36736DC8}
 	EndGlobalSection
 EndGlobal

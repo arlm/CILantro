@@ -16,6 +16,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             CILInstructionBranchTarget result = null;
 
+            var beqsParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_beqs);
+            if(beqsParseTreeNode != null)
+            {
+                result = new BranchOnEqualShortInstruction();
+            }
+
             var bgesParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_bges);
             if(bgesParseTreeNode != null)
             {
@@ -26,6 +32,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
             if(blesParseTreeNode != null)
             {
                 result = new BranchOnLessOrEqualShortInstruction();
+            }
+
+            var bltsParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_blts);
+            if(bltsParseTreeNode != null)
+            {
+                result = new BranchOnLessShortInstruction();
             }
 
             var bneunsParseTreeNode = instructionBranchTargetParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_bneuns);

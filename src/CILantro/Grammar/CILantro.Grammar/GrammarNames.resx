@@ -615,4 +615,10 @@
   <data name="keyword_unboxany" xml:space="preserve">
     <value>unbox.any</value>
   </data>
+  <data name="keyword_beqs" xml:space="preserve">
+    <value>beq.s</value>
+  </data>
+  <data name="keyword_blts" xml:space="preserve">
+    <value>blt.s</value>
+  </data>
 </root>

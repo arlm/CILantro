@@ -56,9 +56,11 @@
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AndInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\BranchOnEqualShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnFalseShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnGreaterOrEqualShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnLessOrEqualShortInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\BranchOnLessShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnNotEqualOrUnorderedShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnTrueShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchShortInstruction.cs" />

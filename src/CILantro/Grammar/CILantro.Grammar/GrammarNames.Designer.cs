@@ -529,6 +529,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to beq.s.
+        /// </summary>
+        public static string keyword_beqs {
+            get {
+                return ResourceManager.GetString("keyword_beqs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bge.s.
         /// </summary>
         public static string keyword_bges {
@@ -543,6 +552,15 @@ namespace CILantro.Grammar {
         public static string keyword_bles {
             get {
                 return ResourceManager.GetString("keyword_bles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to blt.s.
+        /// </summary>
+        public static string keyword_blts {
+            get {
+                return ResourceManager.GetString("keyword_blts", resourceCulture);
             }
         }
         

@@ -656,6 +656,20 @@ namespace InputDataGenerator
                         for (int i = 0; i < count; i++) writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Identifiers_LettersOnly":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Identifiers_LettersAndDigits":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextShort());
+                        writer.WriteLine(rand.NextShort());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

@@ -670,6 +670,13 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextShort());
                     });
 
+                case "TP_CSF_Identifiers_LettersAndUnderscores":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

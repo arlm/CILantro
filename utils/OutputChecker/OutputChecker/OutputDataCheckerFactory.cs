@@ -314,6 +314,18 @@ namespace OutputChecker
                 case "TP_CSF_Arrays_1DArray":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Arrays_1DArrayInitialization":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Arrays_2DArray":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Arrays_2DArrayInitialization":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Arrays_3DArray":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

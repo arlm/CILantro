@@ -721,6 +721,48 @@ namespace InputDataGenerator
                         for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Arrays_1DArrayInitialization":
+                    return new EnumerableInputDataCreator(ShortHelper.GetRange(0, 10).SelectCreateInputActions(n => writer =>
+                    {
+                        writer.WriteLine(n);
+                    }));
+
+                case "TP_CSF_Arrays_2DArray":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(1, 11);
+                        var m = rand.Next(1, 11);
+                        writer.WriteLine(n);
+                        writer.WriteLine(m);
+
+                        for (int i = 0; i < n; i++)
+                            for (int j = 0; j < m; j++)
+                                writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Arrays_2DArrayInitialization":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(0, 7, 0, 7).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
+                case "TP_CSF_Arrays_3DArray":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var x = rand.Next(1, 6);
+                        var y = rand.Next(1, 6);
+                        var z = rand.Next(1, 6);
+                        writer.WriteLine(x);
+                        writer.WriteLine(y);
+                        writer.WriteLine(z);
+
+                        for (int i = 0; i < x; i++)
+                            for (int j = 0; j < y; j++)
+                                for(int k = 0; k < z; k++)
+                                    writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

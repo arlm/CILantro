@@ -763,6 +763,31 @@ namespace InputDataGenerator
                                     writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Arrays_JaggedArray":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var rows = rand.Next(1, 11);
+                        writer.WriteLine(rows);
+
+                        var cols = new int[rows];
+                        for(int i = 0; i < rows; i++)
+                        {
+                            cols[i] = rand.Next(1, 11);
+                            writer.WriteLine(cols[i]);
+                        }
+
+                        for (int i = 0; i < rows; i++)
+                            for (int j = 0; j < cols[i]; j++)
+                                writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Arrays_JaggedArrayInitialization":
+                    return new EnumerableInputDataCreator(IntHelper.GetPairs(0, 9, 0, 12).SelectCreateInputActions(pair => writer =>
+                    {
+                        writer.WriteLine(pair.Item1);
+                        writer.WriteLine(pair.Item2);
+                    }));
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

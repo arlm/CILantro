@@ -630,4 +630,10 @@
   <data name="keyword_ldelemi4" xml:space="preserve">
     <value>ldelem.i4</value>
   </data>
+  <data name="keyword_stelemref" xml:space="preserve">
+    <value>stelem.ref</value>
+  </data>
+  <data name="keyword_ldelemref" xml:space="preserve">
+    <value>ldelem.ref</value>
+  </data>
 </root>

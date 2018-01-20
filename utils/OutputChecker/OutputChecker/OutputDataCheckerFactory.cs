@@ -326,6 +326,12 @@ namespace OutputChecker
                 case "TP_CSF_Arrays_3DArray":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Arrays_JaggedArray":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Arrays_JaggedArrayInitialization":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

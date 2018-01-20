@@ -101,6 +101,7 @@ namespace CILantro.Grammar
                 "ldc.i4.8",
                 "ldc.i4.s",
                 "ldelem.i4",
+                "ldelem.ref",
                 "ldloc.0",
                 "ldloc.1",
                 "ldloc.2",
@@ -125,6 +126,7 @@ namespace CILantro.Grammar
                 "specialname",
                 "static",
                 "stelem.i4",
+                "stelem.ref",
                 "stloc.0",
                 "stloc.1",
                 "stloc.2",
@@ -261,6 +263,7 @@ namespace CILantro.Grammar
                 ToTerm("ldc.i4.7") |
                 ToTerm("ldc.i4.8") |
                 ToTerm("ldelem.i4") |
+                ToTerm("ldelem.ref") |
                 ToTerm("ldloc.0") |
                 ToTerm("ldloc.1") |
                 ToTerm("ldloc.2") |
@@ -275,6 +278,7 @@ namespace CILantro.Grammar
                 ToTerm("ret") |
                 ToTerm("shl") |
                 ToTerm("stelem.i4") |
+                ToTerm("stelem.ref") |
                 ToTerm("shr") |
                 ToTerm("stloc.0") |
                 ToTerm("stloc.1") |

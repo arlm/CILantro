@@ -107,9 +107,17 @@ namespace CILantro.Helpers.Irony
         public static CILType GetArrayType(ParseTreeNode node)
         {
             var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);
-            var elementsType = GetSimpleType(typeParseTreeNode);
+            var elementsType = GetType(typeParseTreeNode);
 
-            var arrayType = elementsType.SimpleType.MakeArrayType();
+            var dimensions = 1;
+            var bounds1ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.bounds1);
+            if(bounds1ParseTreeNode != null)
+            {
+                var bounds = Bounds1ParseTreeNodeHelper.GetBounds(bounds1ParseTreeNode);
+                dimensions = bounds.Count;
+            }
+
+            var arrayType = elementsType.SimpleType.MakeArrayType(dimensions);
 
             return new CILType
             {

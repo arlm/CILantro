@@ -3,14 +3,13 @@ using System;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
-    public class NewArrayInstruction : CILInstructionType
+    public class LoadLengthInstruction : CILInstructionNone
     {
         public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
-            var elementsCount = Convert.ToInt32(state.Stack.Pop());
+            var array = state.Stack.Pop() as Array;
 
-            var array = Array.CreateInstance(TypeSpecification.GetTypeSpecified(), elementsCount);
-            state.Stack.Push(array);
+            state.Stack.Push(array.Length);
 
             return ParentMethod.GetNextInstruction(this);
         }

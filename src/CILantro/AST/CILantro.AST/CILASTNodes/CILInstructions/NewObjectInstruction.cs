@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
-    public class CallInstruction : CILInstructionMethod
+    public class NewObjectInstruction : CILInstructionMethod
     {
         public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
             var reflectedType = TypeSpecification.GetTypeSpecified();
-            var reflectedMethod = reflectedType.GetMethod(MethodName, GetMethodArgumentRuntimeTypes().ToArray());
+            var reflectedConstructor = reflectedType.GetConstructor(GetMethodArgumentRuntimeTypes().ToArray());
 
             var methodArguments = new List<object>();
-            for(int i = 0; i < MethodArgumentTypes.Count; i++)
+            for (int i = 0; i < MethodArgumentTypes.Count; i++)
             {
                 var argument = state.Stack.Pop();
                 var methodArgument = argument;
@@ -25,23 +25,8 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             }
             methodArguments.Reverse();
 
-            object methodObject = null;
-            if (CallConvention.Instance)
-            {
-                methodObject = state.Stack.Pop();
-
-                if (methodObject is Guid)
-                {
-                    var objectAddress = (Guid)methodObject;
-                    methodObject = ParentMethod.GetLocalByAddress(objectAddress);
-                }
-            }
-
-            var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
-            if(MethodReturnType.GetRuntimeType() != typeof(void))
-            {
-                state.Stack.Push(methodResult);
-            }
+            var methodResult = reflectedConstructor.Invoke(methodArguments.ToArray());
+            state.Stack.Push(methodResult);
 
             return ParentMethod.GetNextInstruction(this);
         }

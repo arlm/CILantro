@@ -636,4 +636,22 @@
   <data name="keyword_ldelemref" xml:space="preserve">
     <value>ldelem.ref</value>
   </data>
+  <data name="bounds1" xml:space="preserve">
+    <value>bounds1</value>
+  </data>
+  <data name="bound" xml:space="preserve">
+    <value>bound</value>
+  </data>
+  <data name="keyword_newobj" xml:space="preserve">
+    <value>newobj</value>
+  </data>
+  <data name="keyword_ldlen" xml:space="preserve">
+    <value>ldlen</value>
+  </data>
+  <data name="keyword_convi4" xml:space="preserve">
+    <value>conv.i4</value>
+  </data>
+  <data name="keyword_box" xml:space="preserve">
+    <value>box</value>
+  </data>
 </root>

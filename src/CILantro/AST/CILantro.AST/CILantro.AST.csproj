@@ -55,6 +55,7 @@
     <Compile Include="CILASTNodes\CILInstructionSwitch.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AndInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\BoxInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnEqualShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\BranchOnFalseShortInstruction.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="CILASTNodes\CILInstructions\CheckIfEqualInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfGreaterInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfLessInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ConvertToIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DivideInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DuplicateInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantIntShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementRefInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadLengthInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable2Instruction.cs" />
@@ -94,6 +97,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadTokenInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\MultiplyInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\NewArrayInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\NewObjectInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\NotInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\OrInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\PopInstruction.cs" />
@@ -118,6 +122,7 @@
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILModule.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
+    <Compile Include="HelperClasses\CILBound.cs" />
     <Compile Include="HelperClasses\CILCallConvention.cs" />
     <Compile Include="HelperClasses\CILClassName.cs" />
     <Compile Include="HelperClasses\CILOwnerType.cs" />

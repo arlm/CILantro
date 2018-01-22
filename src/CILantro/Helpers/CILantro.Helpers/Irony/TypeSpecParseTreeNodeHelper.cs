@@ -9,12 +9,25 @@ namespace CILantro.Helpers.Irony
     {
         public static CILTypeSpecification GetValue(ParseTreeNode node)
         {
+            CILClassName className = null;
+            CILType type = null;
+
             var classNameParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.className);
-            var className = ClassNameParseTreeNodeHelper.GetClassName(classNameParseTreeNode);
+            if(classNameParseTreeNode != null)
+            {
+                className = ClassNameParseTreeNodeHelper.GetClassName(classNameParseTreeNode);
+            }
+
+            var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);
+            if(typeParseTreeNode != null)
+            {
+                type = TypeParseTreeNodeHelper.GetType(typeParseTreeNode);
+            }
 
             return new CILTypeSpecification
             {
-                ClassName = className
+                ClassName = className,
+                Type = type
             };
         }
     }

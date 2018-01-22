@@ -142,6 +142,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to bound.
+        /// </summary>
+        public static string bound {
+            get {
+                return ResourceManager.GetString("bound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bounds1.
+        /// </summary>
+        public static string bounds1 {
+            get {
+                return ResourceManager.GetString("bounds1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bytes.
         /// </summary>
         public static string bytes {
@@ -583,6 +601,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to box.
+        /// </summary>
+        public static string keyword_box {
+            get {
+                return ResourceManager.GetString("keyword_box", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to br.
         /// </summary>
         public static string keyword_br {
@@ -678,6 +705,15 @@ namespace CILantro.Grammar {
         public static string keyword_clt {
             get {
                 return ResourceManager.GetString("keyword_clt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to conv.i4.
+        /// </summary>
+        public static string keyword_convi4 {
+            get {
+                return ResourceManager.GetString("keyword_convi4", resourceCulture);
             }
         }
         
@@ -907,6 +943,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldlen.
+        /// </summary>
+        public static string keyword_ldlen {
+            get {
+                return ResourceManager.GetString("keyword_ldlen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldloc.0.
         /// </summary>
         public static string keyword_ldloc0 {
@@ -1002,6 +1047,15 @@ namespace CILantro.Grammar {
         public static string keyword_newarr {
             get {
                 return ResourceManager.GetString("keyword_newarr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to newobj.
+        /// </summary>
+        public static string keyword_newobj {
+            get {
+                return ResourceManager.GetString("keyword_newobj", resourceCulture);
             }
         }
         

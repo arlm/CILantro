@@ -79,6 +79,7 @@ namespace CILantro.Grammar
                 "castclass",
                 "cil",
                 "class",
+                "conv.i4",
                 "extends",
                 "extern",
                 "field",
@@ -174,6 +175,8 @@ namespace CILantro.Grammar
             var assemblyRefDecls = new NonTerminal(GrammarNames.assemblyRefDecls);
             var assemblyRefHead = new NonTerminal(GrammarNames.assemblyRefHead);
             var atOpt = new NonTerminal(GrammarNames.atOpt);
+            var bound = new NonTerminal(GrammarNames.bound);
+            var bounds1 = new NonTerminal(GrammarNames.bounds1);
             var bytes = new NonTerminal(GrammarNames.bytes);
             var callConv = new NonTerminal(GrammarNames.callConv);
             var callKind = new NonTerminal(GrammarNames.callKind);
@@ -249,6 +252,7 @@ namespace CILantro.Grammar
                 ToTerm("ceq") |
                 ToTerm("cgt") |
                 ToTerm("clt") |
+                ToTerm("conv.i4") |
                 ToTerm("div") |
                 ToTerm("dup") |
                 ToTerm("ldarg.0") |
@@ -264,6 +268,7 @@ namespace CILantro.Grammar
                 ToTerm("ldc.i4.8") |
                 ToTerm("ldelem.i4") |
                 ToTerm("ldelem.ref") |
+                ToTerm("ldlen") |
                 ToTerm("ldloc.0") |
                 ToTerm("ldloc.1") |
                 ToTerm("ldloc.2") |
@@ -582,6 +587,7 @@ namespace CILantro.Grammar
                 ToTerm("string") |
                 ToTerm("valuetype") + className |
                 type + ToTerm("[") + ToTerm("]") |
+                type + ToTerm("[") + bounds1 + ToTerm("]") |
                 type + ToTerm("&") |
                 ToTerm("!") + int32 |
                 ToTerm("!") + id |
@@ -661,6 +667,13 @@ namespace CILantro.Grammar
             labels.Rule =
                 id + ToTerm(",") + labels |
                 id;
+
+            bounds1.Rule =
+                bound |
+                bounds1 + ToTerm(",") + bound;
+
+            bound.Rule =
+                int32 + ToTerm("...");
         }
     }
 }

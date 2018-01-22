@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Irony\Bounds1ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\CallConvParseTreeNodeHelper.cs" />
     <Compile Include="Irony\ClassNameParseTreeNodeHelper.cs" />
     <Compile Include="Irony\CompQstringParseTreeNodeHelper.cs" />

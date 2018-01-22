@@ -28,6 +28,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 result = new CallVirtualInstruction();
             }
 
+            var newobjParseTreeNode = instrMethodParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_newobj);
+            if(newobjParseTreeNode != null)
+            {
+                result = new NewObjectInstruction();
+            }
+
             if(result != null)
             {
                 var typeParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.type);

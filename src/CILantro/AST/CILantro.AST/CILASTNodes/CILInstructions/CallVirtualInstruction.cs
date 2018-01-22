@@ -20,7 +20,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 var methodArgument = argument;
                 try
                 {
-                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes()[i]);
+                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes()[MethodArgumentTypes.Count - i - 1]);
                 }
                 catch (Exception) { }
                 methodArguments.Add(methodArgument);

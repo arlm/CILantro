@@ -1,6 +1,7 @@
 ﻿using CILantro.Extensions.Irony;
 using CILantro.Grammar;
 using Irony.Parsing;
+using System;
 
 namespace CILantro.Helpers.Irony
 {
@@ -9,7 +10,14 @@ namespace CILantro.Helpers.Irony
         public static string GetValue(ParseTreeNode node)
         {
             var lexicalsIdParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.LEXICALS_ID);
-            return lexicalsIdParseTreeNode.Token.ValueString;
+            if(lexicalsIdParseTreeNode != null)
+                return lexicalsIdParseTreeNode.Token.ValueString;
+
+            var lexicalsSqstringParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.LEXICALS_SQSTRING);
+            if (lexicalsSqstringParseTreeNode != null)
+                return lexicalsSqstringParseTreeNode.Token.ValueString;
+
+            throw new ArgumentException("Canno recognize id.");
         }
     }
 }

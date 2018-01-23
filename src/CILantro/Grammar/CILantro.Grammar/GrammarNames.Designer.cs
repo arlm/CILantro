@@ -439,6 +439,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSTR_I8.
+        /// </summary>
+        public static string INSTR_I8 {
+            get {
+                return ResourceManager.GetString("INSTR_I8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSTR_METHOD.
         /// </summary>
         public static string INSTR_METHOD {
@@ -718,6 +727,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to conv.i8.
+        /// </summary>
+        public static string keyword_convi8 {
+            get {
+                return ResourceManager.GetString("keyword_convi8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to conv.u8.
+        /// </summary>
+        public static string keyword_convu8 {
+            get {
+                return ResourceManager.GetString("keyword_convu8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to div.
         /// </summary>
         public static string keyword_div {
@@ -835,6 +862,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.
+        /// </summary>
+        public static string keyword_ldci4 {
+            get {
+                return ResourceManager.GetString("keyword_ldci4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldc.i4.0.
         /// </summary>
         public static string keyword_ldci40 {
@@ -916,11 +952,29 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldc.i4.m1.
+        /// </summary>
+        public static string keyword_ldci4m1 {
+            get {
+                return ResourceManager.GetString("keyword_ldci4m1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldc.i4.s.
         /// </summary>
         public static string keyword_ldci4s {
             get {
                 return ResourceManager.GetString("keyword_ldci4s", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.i8.
+        /// </summary>
+        public static string keyword_ldci8 {
+            get {
+                return ResourceManager.GetString("keyword_ldci8", resourceCulture);
             }
         }
         

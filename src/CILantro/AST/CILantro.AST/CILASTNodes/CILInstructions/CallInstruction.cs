@@ -1,4 +1,5 @@
-﻿using CILantro.State;
+﻿using CILantro.Helpers.Convertions;
+using CILantro.State;
 using System;
 using System.Collections.Generic;
 
@@ -14,13 +15,10 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             var methodArguments = new List<object>();
             for(int i = 0; i < MethodArgumentTypes.Count; i++)
             {
+                var argumentType = GetMethodArgumentRuntimeTypes()[MethodArgumentTypes.Count - i - 1];
+
                 var argument = state.Stack.Pop();
-                var methodArgument = argument;
-                try
-                {
-                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes()[MethodArgumentTypes.Count - i - 1]);
-                }
-                catch (Exception) { }
+                var methodArgument = ConvertHelper.ConvertIfPossible(argument, argumentType);
                 methodArguments.Add(methodArgument);
             }
             methodArguments.Reverse();

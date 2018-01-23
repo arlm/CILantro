@@ -49,6 +49,7 @@
     <Compile Include="CILASTNodes\CILInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructionBranchTarget.cs" />
     <Compile Include="CILASTNodes\CILInstructionI.cs" />
+    <Compile Include="CILASTNodes\CILInstructionI8.cs" />
     <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
     <Compile Include="CILASTNodes\CILInstructionNone.cs" />
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="CILASTNodes\CILInstructions\CheckIfGreaterInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfLessInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ConvertToIntInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ConvertToLongInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ConvertToUnsignedLongInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DivideInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DuplicateInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
@@ -83,7 +86,10 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt6Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt7Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt8Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantIntInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantIntMinus1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantIntShortInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantLongInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementRefInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLengthInstruction.cs" />
@@ -132,6 +138,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Helpers\CILantro.Helpers.Convert\CILantro.Helpers.Convertions.csproj">
+      <Project>{0534119C-0967-44E9-A368-9271D164393F}</Project>
+      <Name>CILantro.Helpers.Convertions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Reflection\CILantro.Reflection\CILantro.Reflection.csproj">
       <Project>{ae034387-faf2-470b-a5b6-f5b7fbdcf2c0}</Project>
       <Name>CILantro.Reflection</Name>

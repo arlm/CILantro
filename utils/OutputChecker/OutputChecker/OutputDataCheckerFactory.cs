@@ -332,6 +332,30 @@ namespace OutputChecker
                 case "TP_CSF_Arrays_JaggedArrayInitialization":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_IntegerLiterals_Decimal":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_IntegerLiterals_UnsignedDecimal":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_IntegerLiterals_LongDecimal":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_IntegerLiterals_UnsignedLongDecimal":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_IntegerLiterals_Hex":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_IntegerLiterals_UnsignedHex":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_IntegerLiterals_LongHex":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_IntegerLiterals_UnsignedLongHex":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

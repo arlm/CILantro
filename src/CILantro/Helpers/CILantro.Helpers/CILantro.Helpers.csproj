@@ -53,6 +53,8 @@
     <Compile Include="Irony\Int32ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\Int64ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\LabelsParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\LexicalsInt32ParseTreeNodeHelper.cs" />
+    <Compile Include="Irony\LexicalsInt64ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\MethodNameParseTreeNodeHelper.cs" />
     <Compile Include="Irony\Name1ParseTreeNodeHelper.cs" />
     <Compile Include="Irony\OwnerTypeParseTreeNodeHelper.cs" />

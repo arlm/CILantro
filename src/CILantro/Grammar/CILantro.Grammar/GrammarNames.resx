@@ -654,4 +654,22 @@
   <data name="keyword_box" xml:space="preserve">
     <value>box</value>
   </data>
+  <data name="keyword_ldci4" xml:space="preserve">
+    <value>ldc.i4</value>
+  </data>
+  <data name="keyword_convi8" xml:space="preserve">
+    <value>conv.i8</value>
+  </data>
+  <data name="keyword_ldci8" xml:space="preserve">
+    <value>ldc.i8</value>
+  </data>
+  <data name="INSTR_I8" xml:space="preserve">
+    <value>INSTR_I8</value>
+  </data>
+  <data name="keyword_ldci4m1" xml:space="preserve">
+    <value>ldc.i4.m1</value>
+  </data>
+  <data name="keyword_convu8" xml:space="preserve">
+    <value>conv.u8</value>
+  </data>
 </root>

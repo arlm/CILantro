@@ -16,6 +16,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             CILInstructionI result = null;
 
+            var ldci4ParseTreeNode = instrIParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldci4);
+            if(ldci4ParseTreeNode != null)
+            {
+                result = new LoadConstantIntInstruction();
+            }
+
             var ldci4sParseTreeNode = instrIParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldci4s);
             if(ldci4sParseTreeNode != null)
             {

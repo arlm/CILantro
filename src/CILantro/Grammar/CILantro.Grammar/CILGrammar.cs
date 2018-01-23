@@ -80,6 +80,8 @@ namespace CILantro.Grammar
                 "cil",
                 "class",
                 "conv.i4",
+                "conv.i8",
+                "conv.u8",
                 "extends",
                 "extern",
                 "field",
@@ -91,6 +93,7 @@ namespace CILantro.Grammar
                 "int32",
                 "ldarg.0",
                 "ldarg.1",
+                "ldc.i4",
                 "ldc.i4.0",
                 "ldc.i4.1",
                 "ldc.i4.2",
@@ -100,7 +103,9 @@ namespace CILantro.Grammar
                 "ldc.i4.6",
                 "ldc.i4.7",
                 "ldc.i4.8",
+                "ldc.i4.m1",
                 "ldc.i4.s",
+                "ldc.i8",
                 "ldelem.i4",
                 "ldelem.ref",
                 "ldloc.0",
@@ -151,12 +156,12 @@ namespace CILantro.Grammar
             var ID = new IdentifierTerminal(GrammarNames.LEXICALS_ID);
 
             var INT32_DEC = new NumberLiteral(GrammarNames.LEXICALS_INT32_DEC, NumberOptions.IntOnly | NumberOptions.AllowSign);
-            var INT32_HEX = new RegexBasedTerminal(GrammarNames.LEXICALS_INT32_HEX, "0x[A-F0-9]{1,}");
+            var INT32_HEX = new RegexBasedTerminal(GrammarNames.LEXICALS_INT32_HEX, "0x[A-Fa-f0-9]{1,}");
             var INT32 = new NonTerminal(GrammarNames.LEXICALS_INT32);
             INT32.Rule = INT32_DEC | INT32_HEX;
 
             var INT64_DEC = new NumberLiteral(GrammarNames.LEXICALS_INT64_DEC, NumberOptions.IntOnly | NumberOptions.AllowSign);
-            var INT64_HEX = new RegexBasedTerminal(GrammarNames.LEXICALS_INT64_HEX, "0x[A-F0-9]{1,}");
+            var INT64_HEX = new RegexBasedTerminal(GrammarNames.LEXICALS_INT64_HEX, "0x[A-Fa-f0-9]{1,}");
             var INT64 = new NonTerminal(GrammarNames.LEXICALS_INT64);
             INT64.Rule = INT64_DEC | INT64_HEX;
 
@@ -253,6 +258,8 @@ namespace CILantro.Grammar
                 ToTerm("cgt") |
                 ToTerm("clt") |
                 ToTerm("conv.i4") |
+                ToTerm("conv.i8") |
+                ToTerm("conv.u8") |
                 ToTerm("div") |
                 ToTerm("dup") |
                 ToTerm("ldarg.0") |
@@ -266,6 +273,7 @@ namespace CILantro.Grammar
                 ToTerm("ldc.i4.6") |
                 ToTerm("ldc.i4.7") |
                 ToTerm("ldc.i4.8") |
+                ToTerm("ldc.i4.m1") |
                 ToTerm("ldelem.i4") |
                 ToTerm("ldelem.ref") |
                 ToTerm("ldlen") |
@@ -300,7 +308,12 @@ namespace CILantro.Grammar
 
             var INSTR_I = new NonTerminal(GrammarNames.INSTR_I);
             INSTR_I.Rule =
+                ToTerm("ldc.i4") |
                 ToTerm("ldc.i4.s");
+
+            var INSTR_I8 = new NonTerminal(GrammarNames.INSTR_I8);
+            INSTR_I8.Rule =
+                ToTerm("ldc.i8");
 
             var INSTR_BRTARGET = new NonTerminal(GrammarNames.INSTR_BRTARGET);
             INSTR_BRTARGET.Rule =
@@ -531,6 +544,7 @@ namespace CILantro.Grammar
                 INSTR_NONE |
                 INSTR_VAR + id |
                 INSTR_I + int32 |
+                INSTR_I8 + int64 |
                 INSTR_BRTARGET + id |
                 INSTR_METHOD + callConv + type + typeSpec + ToTerm("::") + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
                 INSTR_METHOD + callConv + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |

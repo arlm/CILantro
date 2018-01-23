@@ -55,6 +55,20 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return convertToIntInstruction;
             }
 
+            var convi8ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_convi8);
+            if(convi8ParseTreeNode != null)
+            {
+                var convertToLongInstruction = new ConvertToLongInstruction();
+                return convertToLongInstruction;
+            }
+
+            var convu8ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_convu8);
+            if(convu8ParseTreeNode != null)
+            {
+                var convertToUnsignedLongInstruction = new ConvertToUnsignedLongInstruction();
+                return convertToUnsignedLongInstruction;
+            }
+
             var divParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_div);
             if(divParseTreeNode != null)
             {
@@ -137,6 +151,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var loadConstantInt8Instruction = new LoadConstantInt8Instruction();
                 return loadConstantInt8Instruction;
+            }
+
+            var ldci4m1ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldci4m1);
+            if(ldci4m1ParseTreeNode != null)
+            {
+                var loadConstantIntMinus1Instruction = new LoadConstantIntMinus1Instruction();
+                return loadConstantIntMinus1Instruction;
             }
 
             var ldelemi4ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldelemi4);

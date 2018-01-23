@@ -1,5 +1,6 @@
-﻿using Irony.Parsing;
-using System.Linq;
+﻿using CILantro.Extensions.Irony;
+using CILantro.Grammar;
+using Irony.Parsing;
 
 namespace CILantro.Helpers.Irony
 {
@@ -7,7 +8,8 @@ namespace CILantro.Helpers.Irony
     {
         public static int GetValue(ParseTreeNode node)
         {
-            return (int)node.ChildNodes.First().ChildNodes.First().Token.Value;
+            var lexicalsInt32ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.LEXICALS_INT32);
+            return LexicalsInt32ParseTreeNodeHelper.GetValue(lexicalsInt32ParseTreeNode);
         }
     }
 }

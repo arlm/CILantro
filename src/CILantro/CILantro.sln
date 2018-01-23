@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reflection", "Reflection", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CILantro.Reflection", "Reflection\CILantro.Reflection\CILantro.Reflection.csproj", "{AE034387-FAF2-470B-A5B6-F5B7FBDCF2C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CILantro.Helpers.Convertions", "Helpers\CILantro.Helpers.Convert\CILantro.Helpers.Convertions.csproj", "{0534119C-0967-44E9-A368-9271D164393F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{AE034387-FAF2-470B-A5B6-F5B7FBDCF2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE034387-FAF2-470B-A5B6-F5B7FBDCF2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE034387-FAF2-470B-A5B6-F5B7FBDCF2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0534119C-0967-44E9-A368-9271D164393F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0534119C-0967-44E9-A368-9271D164393F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0534119C-0967-44E9-A368-9271D164393F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0534119C-0967-44E9-A368-9271D164393F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,5 +126,6 @@ Global
 		{D0D15302-773B-4BB9-B02F-05357C060362} = {B4D85AAF-2537-42E0-8757-6842EC97C920}
 		{0773A94C-E887-4195-B23E-14610016DAE4} = {46EE6A1E-90A3-440B-AFFD-D151B57B3835}
 		{AE034387-FAF2-470B-A5B6-F5B7FBDCF2C0} = {8F2189D4-3FCF-4CC0-9959-33F97B8C1BB4}
+		{0534119C-0967-44E9-A368-9271D164393F} = {46EE6A1E-90A3-440B-AFFD-D151B57B3835}
 	EndGlobalSection
 EndGlobal

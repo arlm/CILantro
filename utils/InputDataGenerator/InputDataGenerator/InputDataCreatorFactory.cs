@@ -788,6 +788,30 @@ namespace InputDataGenerator
                         writer.WriteLine(pair.Item2);
                     }));
 
+                case "TP_CSF_IntegerLiterals_Decimal":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_IntegerLiterals_UnsignedDecimal":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_IntegerLiterals_LongDecimal":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_IntegerLiterals_UnsignedLongDecimal":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_IntegerLiterals_Hex":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_IntegerLiterals_UnsignedHex":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_IntegerLiterals_LongHex":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_IntegerLiterals_UnsignedLongHex":
+                    return new EmptyInputDataCreator();
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

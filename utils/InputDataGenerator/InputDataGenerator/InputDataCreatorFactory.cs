@@ -812,6 +812,15 @@ namespace InputDataGenerator
                 case "TP_CSF_IntegerLiterals_UnsignedLongHex":
                     return new EmptyInputDataCreator();
 
+                case "TP_CSF_Loops_ForEach":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(1, 101);
+                        writer.WriteLine(n);
+
+                        for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

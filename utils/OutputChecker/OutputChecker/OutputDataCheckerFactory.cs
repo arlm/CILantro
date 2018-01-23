@@ -356,6 +356,9 @@ namespace OutputChecker
                 case "TP_CSF_IntegerLiterals_UnsignedLongHex":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Loops_ForEach":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

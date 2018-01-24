@@ -32,6 +32,7 @@ namespace CILantro.Grammar
                 "`",
                 "!",
                 "!!",
+                "...",
                 "$",
                 "&",
                 ".assembly",
@@ -106,6 +107,8 @@ namespace CILantro.Grammar
                 "ldc.i4.m1",
                 "ldc.i4.s",
                 "ldc.i8",
+                "ldc.r4",
+                "ldc.r8",
                 "ldelem.i4",
                 "ldelem.ref",
                 "ldloc.0",
@@ -165,6 +168,8 @@ namespace CILantro.Grammar
             var INT64 = new NonTerminal(GrammarNames.LEXICALS_INT64);
             INT64.Rule = INT64_DEC | INT64_HEX;
 
+            var FLOAT64 = new NumberLiteral(GrammarNames.LEXICALS_FLOAT64, NumberOptions.AllowSign | NumberOptions.AllowStartEndDot);
+
             var SQSTRING = new StringLiteral(GrammarNames.LEXICALS_SQSTRING, "'");
 
             var QSTRING = new StringLiteral(GrammarNames.LEXICALS_QSTRING, "\"");
@@ -200,6 +205,7 @@ namespace CILantro.Grammar
             var fieldAttr = new NonTerminal(GrammarNames.fieldAttr);
             var fieldDecl = new NonTerminal(GrammarNames.fieldDecl);
             var fieldInit = new NonTerminal(GrammarNames.fieldInit);
+            var float64 = new NonTerminal(GrammarNames.float64);
             var genericClassName = new NonTerminal(GrammarNames.genericClassName);
             var genericMethodName = new NonTerminal(GrammarNames.genericMethodName);
             var hexbytes = new NonTerminal(GrammarNames.hexbytes);
@@ -314,6 +320,11 @@ namespace CILantro.Grammar
             var INSTR_I8 = new NonTerminal(GrammarNames.INSTR_I8);
             INSTR_I8.Rule =
                 ToTerm("ldc.i8");
+
+            var INSTR_R = new NonTerminal(GrammarNames.INSTR_R);
+            INSTR_R.Rule =
+                ToTerm("ldc.r4") |
+                ToTerm("ldc.r8");
 
             var INSTR_BRTARGET = new NonTerminal(GrammarNames.INSTR_BRTARGET);
             INSTR_BRTARGET.Rule =
@@ -545,6 +556,7 @@ namespace CILantro.Grammar
                 INSTR_VAR + id |
                 INSTR_I + int32 |
                 INSTR_I8 + int64 |
+                INSTR_R + float64 |
                 INSTR_BRTARGET + id |
                 INSTR_METHOD + callConv + type + typeSpec + ToTerm("::") + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
                 INSTR_METHOD + callConv + type + methodName + ToTerm("(") + sigArgs0 + ToTerm(")") |
@@ -631,6 +643,9 @@ namespace CILantro.Grammar
 
             int64.Rule =
                 INT64;
+
+            float64.Rule =
+                FLOAT64;
 
             assemblyHead.Rule =
                 ToTerm(".assembly") + asmAttr + name1;

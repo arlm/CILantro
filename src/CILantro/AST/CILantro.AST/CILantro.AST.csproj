@@ -52,6 +52,7 @@
     <Compile Include="CILASTNodes\CILInstructionI8.cs" />
     <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
     <Compile Include="CILASTNodes\CILInstructionNone.cs" />
+    <Compile Include="CILASTNodes\CILInstructionR.cs" />
     <Compile Include="CILASTNodes\CILInstructionString.cs" />
     <Compile Include="CILASTNodes\CILInstructionSwitch.cs" />
     <Compile Include="CILASTNodes\CILInstructions\AddInstruction.cs" />
@@ -77,6 +78,8 @@
     <Compile Include="CILASTNodes\CILInstructions\DivideInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DuplicateInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantDoubleInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadConstantFloatInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt2Instruction.cs" />

@@ -821,6 +821,21 @@ namespace InputDataGenerator
                         for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_FloatingPointLiterals_Integers":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_FloatingPointLiterals_SimpleIntegers":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_FloatingPointLiterals_Doubles":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_FloatingPointLiterals_Floats":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_FloatingPointLiterals_Exp":
+                    return new EmptyInputDataCreator();
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

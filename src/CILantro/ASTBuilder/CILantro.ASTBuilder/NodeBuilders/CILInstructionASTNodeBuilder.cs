@@ -28,6 +28,8 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
         private readonly CILInstructionTypeASTNodeBuilder _instructionTypeBuilder;
 
+        private readonly CILInstructionRASTNodeBuilder _instructionRBuilder;
+
         public CILInstructionASTNodeBuilder()
         {
             _instructionMethodBuilder = new CILInstructionMethodASTNodeBuilder();
@@ -40,6 +42,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
             _instructionSwitchBuilder = new CILInstructionSwitchASTNodeBuilder();
             _instructionTokBuilder = new CILInstructionTokASTNodeBuilder();
             _instructionTypeBuilder = new CILInstructionTypeASTNodeBuilder();
+            _instructionRBuilder = new CILInstructionRASTNodeBuilder();
         }
 
         public override CILInstruction BuildNode(ParseTreeNode node)
@@ -91,6 +94,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 var instructionBranchTarget = _instructionBranchTargetBuilder.BuildNode(node);
                 return instructionBranchTarget;
+            }
+
+            var instrRParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_R);
+            if(instrRParseTreeNode != null)
+            {
+                var instructionR = _instructionRBuilder.BuildNode(node);
+                return instructionR;
             }
 
             var instrSwitchParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.INSTR_SWITCH);

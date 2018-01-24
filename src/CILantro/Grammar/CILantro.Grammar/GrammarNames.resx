@@ -672,4 +672,19 @@
   <data name="keyword_convu8" xml:space="preserve">
     <value>conv.u8</value>
   </data>
+  <data name="float64" xml:space="preserve">
+    <value>float64</value>
+  </data>
+  <data name="INSTR_R" xml:space="preserve">
+    <value>INSTR_R</value>
+  </data>
+  <data name="keyword_ldcr8" xml:space="preserve">
+    <value>ldc.r8</value>
+  </data>
+  <data name="LEXICALS_FLOAT64" xml:space="preserve">
+    <value>LEXICALS_FLOAT64</value>
+  </data>
+  <data name="keyword_ldcr4" xml:space="preserve">
+    <value>ldc.r4</value>
+  </data>
 </root>

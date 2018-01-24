@@ -359,6 +359,21 @@ namespace OutputChecker
                 case "TP_CSF_Loops_ForEach":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_FloatingPointLiterals_Integers":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_FloatingPointLiterals_SimpleIntegers":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_FloatingPointLiterals_Doubles":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_FloatingPointLiterals_Floats":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_FloatingPointLiterals_Exp":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

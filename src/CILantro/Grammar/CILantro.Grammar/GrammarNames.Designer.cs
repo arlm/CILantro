@@ -340,6 +340,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to float64.
+        /// </summary>
+        public static string float64 {
+            get {
+                return ResourceManager.GetString("float64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to genericClassName.
         /// </summary>
         public static string genericClassName {
@@ -462,6 +471,15 @@ namespace CILantro.Grammar {
         public static string INSTR_NONE {
             get {
                 return ResourceManager.GetString("INSTR_NONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSTR_R.
+        /// </summary>
+        public static string INSTR_R {
+            get {
+                return ResourceManager.GetString("INSTR_R", resourceCulture);
             }
         }
         
@@ -979,6 +997,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldc.r4.
+        /// </summary>
+        public static string keyword_ldcr4 {
+            get {
+                return ResourceManager.GetString("keyword_ldcr4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldc.r8.
+        /// </summary>
+        public static string keyword_ldcr8 {
+            get {
+                return ResourceManager.GetString("keyword_ldcr8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldelem.i4.
         /// </summary>
         public static string keyword_ldelemi4 {
@@ -1371,6 +1407,15 @@ namespace CILantro.Grammar {
         public static string labels {
             get {
                 return ResourceManager.GetString("labels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEXICALS_FLOAT64.
+        /// </summary>
+        public static string LEXICALS_FLOAT64 {
+            get {
+                return ResourceManager.GetString("LEXICALS_FLOAT64", resourceCulture);
             }
         }
         

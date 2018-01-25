@@ -12,5 +12,7 @@ namespace CILantro.AST.CILASTNodes
         public List<CILClassField> Fields { get; set; }
 
         public List<CILMethod> Methods { get; set; } = new List<CILMethod>();
+
+        public List<CILMethod> Constructors { get; set; } = new List<CILMethod>();
     }
 }

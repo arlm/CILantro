@@ -22,6 +22,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
         public override CILClass BuildNode(ParseTreeNode node)
         {
             var methods = new List<CILMethod>();
+            var constructors = new List<CILMethod>();
             var fields = new List<CILClassField>();
 
             var classHeadParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.classHead);
@@ -41,7 +42,9 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 if(methodDeclsParseTreeNode != null)
                 {
                     var method = _methodBuilder.BuildNode(classDeclParseTreeNode);
-                    methods.Add(method);
+
+                    if (method.MethodName.Equals(".ctor")) constructors.Add(method);
+                    else methods.Add(method);
                 }
 
                 var fieldDeclParseTreeNode = classDeclParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.fieldDecl);
@@ -60,6 +63,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
             {
                 Fields = fields,
                 Methods = methods,
+                Constructors = constructors,
                 ClassName = className,
                 Extends = extendsClassName
             };

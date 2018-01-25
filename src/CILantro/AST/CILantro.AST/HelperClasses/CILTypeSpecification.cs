@@ -1,5 +1,4 @@
-﻿using CILantro.Reflection;
-using System;
+﻿using System;
 
 namespace CILantro.AST.HelperClasses
 {
@@ -11,7 +10,6 @@ namespace CILantro.AST.HelperClasses
 
         public Type GetTypeSpecified()
         {
-            if(ClassName != null) return RuntimeTypeManager.GetRuntimeType(ClassName.ClassName, ClassName.AssemblyName);
             if (Type != null) return Type.GetRuntimeType();
 
             throw new ArgumentException("Cannot get type specified.");

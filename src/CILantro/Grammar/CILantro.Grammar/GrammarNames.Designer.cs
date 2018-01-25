@@ -1033,6 +1033,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldfld.
+        /// </summary>
+        public static string keyword_ldfld {
+            get {
+                return ResourceManager.GetString("keyword_ldfld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldlen.
         /// </summary>
         public static string keyword_ldlen {
@@ -1254,6 +1263,15 @@ namespace CILantro.Grammar {
         public static string keyword_stelemref {
             get {
                 return ResourceManager.GetString("keyword_stelemref", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stfld.
+        /// </summary>
+        public static string keyword_stfld {
+            get {
+                return ResourceManager.GetString("keyword_stfld", resourceCulture);
             }
         }
         

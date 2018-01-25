@@ -340,7 +340,9 @@ namespace CILantro.Grammar
 
             var INSTR_FIELD = new NonTerminal(GrammarNames.INSTR_FIELD);
             INSTR_FIELD.Rule =
+                ToTerm("ldfld") |
                 ToTerm("ldsfld") |
+                ToTerm("stfld") |
                 ToTerm("stsfld");
 
             var INSTR_TYPE = new NonTerminal(GrammarNames.INSTR_TYPE);

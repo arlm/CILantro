@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CILantro.Reflection")]
+[assembly: AssemblyTitle("TP_CSF_Classes_PublicFields")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CILantro.Reflection")]
+[assembly: AssemblyProduct("TP_CSF_Classes_PublicFields")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ae034387-faf2-470b-a5b6-f5b7fbdcf2c0")]
+[assembly: Guid("96e04f47-88fe-48c9-b05d-cab0bf230411")]
 
 // Version information for an assembly consists of the following four values:
 //

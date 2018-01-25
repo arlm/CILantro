@@ -1,5 +1,4 @@
-﻿using CILantro.Reflection;
-using System;
+﻿using System;
 
 namespace CILantro.AST.HelperClasses
 {
@@ -13,7 +12,7 @@ namespace CILantro.AST.HelperClasses
         {
             if (SimpleType != null) return SimpleType;
 
-            return RuntimeTypeManager.GetRuntimeType(ClassName.ClassName, ClassName.AssemblyName);
+            throw new NotImplementedException("Complex types are not supported yet.");
         }
     }
 }

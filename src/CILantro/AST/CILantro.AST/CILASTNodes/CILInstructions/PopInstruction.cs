@@ -1,5 +1,4 @@
 ﻿using CILantro.State;
-using System;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
@@ -7,7 +6,9 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
     {
         public override CILInstruction Execute(CILProgramState state, CILProgram program)
         {
-            throw new NotImplementedException();
+            state.Stack.Pop();
+
+            return ParentMethod.GetNextInstruction(this);
         }
     }
 }

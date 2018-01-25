@@ -687,4 +687,10 @@
   <data name="keyword_ldcr4" xml:space="preserve">
     <value>ldc.r4</value>
   </data>
+  <data name="keyword_stfld" xml:space="preserve">
+    <value>stfld</value>
+  </data>
+  <data name="keyword_ldfld" xml:space="preserve">
+    <value>ldfld</value>
+  </data>
 </root>

@@ -374,6 +374,21 @@ namespace OutputChecker
                 case "TP_CSF_FloatingPointLiterals_Exp":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Classes_EmptyClass":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_PublicFields":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_NoArgumentsConstructor":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_1ArgumentConstructor":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_2ArgumentsConstructor":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

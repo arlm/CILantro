@@ -28,6 +28,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
             var localsTypes = new List<CILType>();
             var locals = new OrderedDictionary();
             var localsAddresses = new List<Guid>();
+            var methodName = string.Empty;
+
+            var methodHeadParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodHead);
+
+            var methodNameParseTreeNode = methodHeadParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.methodName);
+            methodName = MethodNameParseTreeNodeHelper.GetMethodName(methodNameParseTreeNode);
 
             var methodDeclsParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodDecls);
             while(methodDeclsParseTreeNode != null)
@@ -77,7 +83,8 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 IsEntryPoint = isEntryPoint,
                 LocalsTypes = localsTypes,
                 LocalsAddresses = localsAddresses,
-                Locals = locals
+                Locals = locals,
+                MethodName = methodName
             };
 
             foreach (var instruction in instructions)

@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA8AF066-464A-4832-9F2C-EF5AB805A6F1}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{A3BEB130-8BCE-4F52-9F19-798F7D15B75E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CILantro.Engine</RootNamespace>
-    <AssemblyName>CILantro.Engine</AssemblyName>
+    <RootNamespace>TP_CSF_Classes_NoArgumentsConstructor</RootNamespace>
+    <AssemblyName>TP_CSF_Classes_NoArgumentsConstructor</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,22 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CILantroEngine.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AST\CILantro.AST\CILantro.AST.csproj">
-      <Project>{BFE8F89A-87D2-475D-A34F-48753F6AE495}</Project>
-      <Name>CILantro.AST</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Interpreter\CILantro.Interpreter\CILantro.Interpreter.csproj">
-      <Project>{E0DCB7F3-2A13-4402-A0FF-E8D900BDD9C9}</Project>
-      <Name>CILantro.Interpreter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Parser\CILantro.Parser\CILantro.Parser.csproj">
-      <Project>{A06EC1E5-1EFC-46E9-8826-C77D97DE35CB}</Project>
-      <Name>CILantro.Parser</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,6 +7,8 @@ namespace CILantro.AST.CILASTNodes
 {
     public class CILMethod : CILASTNode
     {
+        public string MethodName { get; set; }
+
         public List<CILInstruction> Instructions { get; set; }
 
         public List<string> InstructionsLabels { get; set; }

@@ -836,6 +836,32 @@ namespace InputDataGenerator
                 case "TP_CSF_FloatingPointLiterals_Exp":
                     return new EmptyInputDataCreator();
 
+                case "TP_CSF_Classes_EmptyClass":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_Classes_PublicFields":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardString());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Classes_NoArgumentsConstructor":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_Classes_1ArgumentConstructor":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Classes_2ArgumentsConstructor":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

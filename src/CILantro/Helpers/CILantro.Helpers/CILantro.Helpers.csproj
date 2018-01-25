@@ -82,10 +82,6 @@
       <Project>{F54FCA78-7B13-4380-B2DA-BE289388144A}</Project>
       <Name>CILantro.Grammar</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Reflection\CILantro.Reflection\CILantro.Reflection.csproj">
-      <Project>{AE034387-FAF2-470B-A5B6-F5B7FBDCF2C0}</Project>
-      <Name>CILantro.Reflection</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

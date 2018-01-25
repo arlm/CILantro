@@ -48,6 +48,7 @@
     <Compile Include="CILASTNodes\CILExternalAssembly.cs" />
     <Compile Include="CILASTNodes\CILInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructionBranchTarget.cs" />
+    <Compile Include="CILASTNodes\CILInstructionField.cs" />
     <Compile Include="CILASTNodes\CILInstructionI.cs" />
     <Compile Include="CILASTNodes\CILInstructionI8.cs" />
     <Compile Include="CILASTNodes\CILInstructionMethod.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantLongInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementRefInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadFieldInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLengthInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable1Instruction.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="CILASTNodes\CILInstructions\ReturnInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetElementIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetElementRefInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\SetFieldInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable2Instruction.cs" />
@@ -144,10 +147,6 @@
     <ProjectReference Include="..\..\Helpers\CILantro.Helpers.Convert\CILantro.Helpers.Convertions.csproj">
       <Project>{0534119C-0967-44E9-A368-9271D164393F}</Project>
       <Name>CILantro.Helpers.Convertions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Reflection\CILantro.Reflection\CILantro.Reflection.csproj">
-      <Project>{ae034387-faf2-470b-a5b6-f5b7fbdcf2c0}</Project>
-      <Name>CILantro.Reflection</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\State\CILantro.State\CILantro.State.csproj">
       <Project>{D0D15302-773B-4BB9-B02F-05357C060362}</Project>

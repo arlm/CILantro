@@ -94,6 +94,7 @@ namespace CILantro.Grammar
                 "int32",
                 "ldarg.0",
                 "ldarg.1",
+                "ldarg.2",
                 "ldc.i4",
                 "ldc.i4.0",
                 "ldc.i4.1",
@@ -270,6 +271,7 @@ namespace CILantro.Grammar
                 ToTerm("dup") |
                 ToTerm("ldarg.0") |
                 ToTerm("ldarg.1") |
+                ToTerm("ldarg.2") |
                 ToTerm("ldc.i4.0") |
                 ToTerm("ldc.i4.1") |
                 ToTerm("ldc.i4.2") |

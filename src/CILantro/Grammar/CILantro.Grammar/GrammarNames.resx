@@ -693,4 +693,10 @@
   <data name="keyword_ldfld" xml:space="preserve">
     <value>ldfld</value>
   </data>
+  <data name="keyword_ldarg1" xml:space="preserve">
+    <value>ldarg.1</value>
+  </data>
+  <data name="keyword_ldarg2" xml:space="preserve">
+    <value>ldarg.2</value>
+  </data>
 </root>

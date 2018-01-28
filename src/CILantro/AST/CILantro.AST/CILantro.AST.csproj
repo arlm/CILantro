@@ -79,6 +79,8 @@
     <Compile Include="CILASTNodes\CILInstructions\DivideInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DuplicateInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadArgument1Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadArgument2Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantDoubleInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantFloatInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt0Instruction.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILModule.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
+    <Compile Include="CILCustomTypes\CILantroConstructorInfo.cs" />
     <Compile Include="CILCustomTypes\CILantroType.cs" />
     <Compile Include="CILCustomTypes\CILantroFieldInfo.cs" />
     <Compile Include="CILInstances\CILClassInstance.cs" />

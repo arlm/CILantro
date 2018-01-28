@@ -11,16 +11,6 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
         public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
             var reflectedType = TypeSpecification.GetTypeSpecified(programInstance);
-            if(reflectedType is CILantroType)
-            {
-                var customType = reflectedType as CILantroType;
-
-                callStack.Push(instructionInstance.GetNextInstructionInstance());
-
-                var constructor = customType.CreateDefaultCILConstructorInstance();
-                return constructor.GetFirstInstructionInstance();
-            }
-
             var reflectedConstructor = reflectedType.GetConstructor(GetMethodArgumentRuntimeTypes(programInstance).ToArray());
 
             var methodArguments = new List<object>();
@@ -36,6 +26,14 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 methodArguments.Add(methodArgument);
             }
             methodArguments.Reverse();
+
+            if (reflectedConstructor is CILantroConstructorInfo)
+            {
+                callStack.Push(instructionInstance.GetNextInstructionInstance());
+
+                var cilantroConstructor = reflectedConstructor as CILantroConstructorInfo;
+                return cilantroConstructor.Method.CreateInstance(methodArguments.ToArray()).GetFirstInstructionInstance();
+            }
 
             var methodResult = reflectedConstructor.Invoke(methodArguments.ToArray());
             state.Stack.Push(methodResult);

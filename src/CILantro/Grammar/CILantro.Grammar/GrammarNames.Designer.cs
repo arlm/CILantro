@@ -880,6 +880,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldarg.1.
+        /// </summary>
+        public static string keyword_ldarg1 {
+            get {
+                return ResourceManager.GetString("keyword_ldarg1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldarg.2.
+        /// </summary>
+        public static string keyword_ldarg2 {
+            get {
+                return ResourceManager.GetString("keyword_ldarg2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldc.i4.
         /// </summary>
         public static string keyword_ldci4 {

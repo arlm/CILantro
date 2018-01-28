@@ -1,5 +1,4 @@
 ﻿using CILantro.AST.CILASTNodes;
-using CILantro.AST.CILInstances;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -16,18 +15,15 @@ namespace CILantro.AST.CILCustomTypes
 
         private List<CILantroFieldInfo> _fields;
 
+        private List<CILantroConstructorInfo> _constructors;
+
         public CILantroType(CILClass cilClass, Type runtimeType)
         {
             _cilClass = cilClass;
             _runtimeType = runtimeType;
 
             _fields = _cilClass.Fields.Select(f => new CILantroFieldInfo(f.Name)).ToList();
-        }
-
-        public CILMethodInstance CreateDefaultCILConstructorInstance()
-        {
-            var constructor = _cilClass.Constructors.SingleOrDefault();
-            return constructor.CreateInstance();
+            _constructors = _cilClass.Constructors.Select(c => new CILantroConstructorInfo(c)).ToList();
         }
 
         public Type GetRuntimeType()
@@ -193,7 +189,7 @@ namespace CILantro.AST.CILCustomTypes
 
         protected override ConstructorInfo GetConstructorImpl(BindingFlags bindingAttr, Binder binder, CallingConventions callConvention, Type[] types, ParameterModifier[] modifiers)
         {
-            throw new NotImplementedException();
+            return _constructors.SingleOrDefault();
         }
 
         protected override MethodInfo GetMethodImpl(string name, BindingFlags bindingAttr, Binder binder, CallingConventions callConvention, Type[] types, ParameterModifier[] modifiers)

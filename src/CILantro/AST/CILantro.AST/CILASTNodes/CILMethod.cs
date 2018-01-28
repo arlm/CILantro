@@ -60,10 +60,10 @@ namespace CILantro.AST.CILASTNodes
             return Locals[localIndex];
         }
 
-        public CILMethodInstance CreateInstance()
+        public CILMethodInstance CreateInstance(object[] arguments)
         {
             var classInstance = ParentClass.CreateInstance();
-            return new CILMethodInstance(this, classInstance);
+            return new CILMethodInstance(this, classInstance, arguments);
         }
     }
 }

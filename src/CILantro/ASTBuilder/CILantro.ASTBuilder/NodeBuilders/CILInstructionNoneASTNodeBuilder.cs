@@ -90,6 +90,20 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return loadArgument0Instruction;
             }
 
+            var ldarg1ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldarg1);
+            if(ldarg1ParseTreeNode != null)
+            {
+                var loadArgument1Instruction = new LoadArgument1Instruction();
+                return loadArgument1Instruction;
+            }
+
+            var ldarg2ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldarg2);
+            if(ldarg2ParseTreeNode != null)
+            {
+                var loadArgument2Instruction = new LoadArgument2Instruction();
+                return loadArgument2Instruction;
+            }
+
             var ldci40ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldci40);
             if(ldci40ParseTreeNode != null)
             {

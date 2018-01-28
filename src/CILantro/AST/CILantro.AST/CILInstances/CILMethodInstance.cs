@@ -9,10 +9,13 @@ namespace CILantro.AST.CILInstances
 
         public CILClassInstance This { get; private set; }
 
-        public CILMethodInstance(CILMethod method, CILClassInstance thisInstance)
+        public object[] Arguments { get; private set; }
+
+        public CILMethodInstance(CILMethod method, CILClassInstance thisInstance, object[] arguments)
         {
             Method = method;
             This = thisInstance;
+            Arguments = arguments;
         }
 
         public CILInstructionInstance GetFirstInstructionInstance()

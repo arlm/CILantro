@@ -43,7 +43,7 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 {
                     var method = _methodBuilder.BuildNode(classDeclParseTreeNode);
 
-                    if (method.MethodName.Equals(".ctor")) constructors.Add(method);
+                    if (method.IsConstructor) constructors.Add(method);
                     else methods.Add(method);
                 }
 
@@ -67,6 +67,16 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 ClassName = className,
                 Extends = extendsClassName
             };
+
+            foreach(var resultMethod in result.Methods)
+            {
+                resultMethod.ParentClass = result;
+            }
+
+            foreach(var resultConstructor in result.Constructors)
+            {
+                resultConstructor.ParentClass = result;
+            }
 
             return result;
         }

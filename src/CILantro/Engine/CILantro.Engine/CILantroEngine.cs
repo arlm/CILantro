@@ -23,8 +23,9 @@ namespace CILantro.Engine
         public void Process(StreamReader inputStream, StreamWriter outputStream)
         {
             var programTree = _cilParser.Parse(SourceCode);
+            var programInstance = programTree.CreateInstance();
 
-            _cilInterpreter.Interpret(programTree, inputStream, outputStream);
+            _cilInterpreter.Interpret(programInstance, inputStream, outputStream);
         }
 
         public CILProgram Parse()

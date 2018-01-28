@@ -1,4 +1,5 @@
-﻿using CILantro.AST.HelperClasses;
+﻿using CILantro.AST.CILInstances;
+using CILantro.AST.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -20,6 +21,10 @@ namespace CILantro.AST.CILASTNodes
         public List<Guid> LocalsAddresses { get; set; }
 
         public OrderedDictionary Locals { get; set; }
+
+        public CILClass ParentClass { get; set; }
+
+        public bool IsConstructor => MethodName.Equals(".ctor");
 
         public CILInstruction GetNextInstruction(CILInstruction currentInstruction)
         {
@@ -53,6 +58,12 @@ namespace CILantro.AST.CILASTNodes
         {
             var localIndex = LocalsAddresses.IndexOf(address);
             return Locals[localIndex];
+        }
+
+        public CILMethodInstance CreateInstance()
+        {
+            var classInstance = ParentClass.CreateInstance();
+            return new CILMethodInstance(this, classInstance);
         }
     }
 }

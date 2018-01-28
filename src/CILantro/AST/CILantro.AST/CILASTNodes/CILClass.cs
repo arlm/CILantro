@@ -1,4 +1,5 @@
-﻿using CILantro.AST.HelperClasses;
+﻿using CILantro.AST.CILInstances;
+using CILantro.AST.HelperClasses;
 using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes
@@ -14,5 +15,12 @@ namespace CILantro.AST.CILASTNodes
         public List<CILMethod> Methods { get; set; } = new List<CILMethod>();
 
         public List<CILMethod> Constructors { get; set; } = new List<CILMethod>();
+
+        public bool IsEnum { get { return Extends.ClassName.Equals("System.Enum"); } }
+
+        public CILClassInstance CreateInstance()
+        {
+            return new CILClassInstance(this);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILInstances;
+using CILantro.State;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -7,11 +8,11 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class CallVirtualInstruction : CILInstructionMethod
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
             var reflectedAssembly = Assembly.Load(TypeSpecification.ClassName.AssemblyName);
             var reflectedClass = reflectedAssembly.GetType(TypeSpecification.ClassName.ClassName);
-            var reflectedMethod = reflectedClass.GetMethod(MethodName, GetMethodArgumentRuntimeTypes().ToArray());
+            var reflectedMethod = reflectedClass.GetMethod(MethodName, GetMethodArgumentRuntimeTypes(programInstance).ToArray());
 
             var methodArguments = new List<object>();
             for (int i = 0; i < MethodArgumentTypes.Count; i++)
@@ -20,7 +21,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 var methodArgument = argument;
                 try
                 {
-                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes()[MethodArgumentTypes.Count - i - 1]);
+                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes(programInstance)[MethodArgumentTypes.Count - i - 1]);
                 }
                 catch (Exception) { }
                 methodArguments.Add(methodArgument);
@@ -40,12 +41,12 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             }
 
             var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
-            if (MethodReturnType.GetRuntimeType() != typeof(void))
+            if (MethodReturnType.GetRuntimeType(programInstance) != typeof(void))
             {
                 state.Stack.Push(methodResult);
             }
 
-            return ParentMethod.GetNextInstruction(this);
+            return instructionInstance.GetNextInstructionInstance();
         }
     }
 }

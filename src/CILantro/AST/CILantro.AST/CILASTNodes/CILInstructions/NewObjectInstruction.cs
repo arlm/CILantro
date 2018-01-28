@@ -1,4 +1,6 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILCustomTypes;
+using CILantro.AST.CILInstances;
+using CILantro.State;
 using System;
 using System.Collections.Generic;
 
@@ -6,10 +8,20 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class NewObjectInstruction : CILInstructionMethod
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
-            var reflectedType = TypeSpecification.GetTypeSpecified();
-            var reflectedConstructor = reflectedType.GetConstructor(GetMethodArgumentRuntimeTypes().ToArray());
+            var reflectedType = TypeSpecification.GetTypeSpecified(programInstance);
+            if(reflectedType is CILantroType)
+            {
+                var customType = reflectedType as CILantroType;
+
+                callStack.Push(instructionInstance.GetNextInstructionInstance());
+
+                var constructor = customType.CreateDefaultCILConstructorInstance();
+                return constructor.GetFirstInstructionInstance();
+            }
+
+            var reflectedConstructor = reflectedType.GetConstructor(GetMethodArgumentRuntimeTypes(programInstance).ToArray());
 
             var methodArguments = new List<object>();
             for (int i = 0; i < MethodArgumentTypes.Count; i++)
@@ -18,7 +30,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 var methodArgument = argument;
                 try
                 {
-                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes()[MethodArgumentTypes.Count - i - 1]);
+                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes(programInstance)[MethodArgumentTypes.Count - i - 1]);
                 }
                 catch (Exception) { }
                 methodArguments.Add(methodArgument);
@@ -28,7 +40,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             var methodResult = reflectedConstructor.Invoke(methodArguments.ToArray());
             state.Stack.Push(methodResult);
 
-            return ParentMethod.GetNextInstruction(this);
+            return instructionInstance.GetNextInstructionInstance();
         }
     }
 }

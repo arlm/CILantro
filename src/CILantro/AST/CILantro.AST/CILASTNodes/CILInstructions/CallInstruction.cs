@@ -1,21 +1,27 @@
-﻿using CILantro.Helpers.Convertions;
+﻿using CILantro.AST.CILInstances;
+using CILantro.Helpers.Convertions;
 using CILantro.State;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class CallInstruction : CILInstructionMethod
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
-            var reflectedType = TypeSpecification.GetTypeSpecified();
-            var reflectedMethod = reflectedType.GetMethod(MethodName, GetMethodArgumentRuntimeTypes().ToArray());
+            var reflectedType = TypeSpecification.GetTypeSpecified(programInstance);
+            var reflectedMethod = (MethodBase)reflectedType.GetMethod(MethodName, GetMethodArgumentRuntimeTypes(programInstance).ToArray());
+            if(reflectedMethod == null && MethodName.Equals(".ctor") && ParentMethod.IsConstructor)
+            {
+                return instructionInstance.GetNextInstructionInstance();
+            }
 
             var methodArguments = new List<object>();
             for(int i = 0; i < MethodArgumentTypes.Count; i++)
             {
-                var argumentType = GetMethodArgumentRuntimeTypes()[MethodArgumentTypes.Count - i - 1];
+                var argumentType = GetMethodArgumentRuntimeTypes(programInstance)[MethodArgumentTypes.Count - i - 1];
 
                 var argument = state.Stack.Pop();
                 var methodArgument = ConvertHelper.ConvertIfPossible(argument, argumentType);
@@ -36,12 +42,12 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             }
 
             var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
-            if(MethodReturnType.GetRuntimeType() != typeof(void))
+            if(MethodReturnType.GetRuntimeType(programInstance) != typeof(void))
             {
                 state.Stack.Push(methodResult);
             }
 
-            return ParentMethod.GetNextInstruction(this);
+            return instructionInstance.GetNextInstructionInstance();
         }
     }
 }

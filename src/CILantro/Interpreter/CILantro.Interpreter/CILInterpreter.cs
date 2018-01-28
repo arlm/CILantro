@@ -1,20 +1,23 @@
-﻿using CILantro.AST.CILASTNodes;
+﻿using CILantro.AST.CILInstances;
 using CILantro.State;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace CILantro.Interpreter
 {
     public class CILInterpreter
     {
-        public void Interpret(CILProgram program, StreamReader inputStream, StreamWriter outputStrem)
+        public void Interpret(CILProgramInstance programInstance, StreamReader inputStream, StreamWriter outputStrem)
         {
             var state = new CILProgramState();
+            var callStack = new Stack<CILInstructionInstance>();
 
-            var instruction = program.EntryPoint.Instructions.First();
-            while(instruction != null)
+            var entryPointInstance = programInstance.CreateEntryPointInstance();
+
+            var instructionInstance = entryPointInstance.GetFirstInstructionInstance();
+            while(instructionInstance != null)
             {
-                instruction = instruction.Execute(state, program);
+                instructionInstance = instructionInstance.Execute(state, programInstance, callStack);
             }
         }
     }

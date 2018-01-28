@@ -1,12 +1,14 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILInstances;
+using CILantro.State;
+using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class BranchShortInstruction : CILInstructionBranchTarget
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
-            return ParentMethod.GetInstructionByBranchTarget(Label);
+            return instructionInstance.GetInstructionInstanceByBranchTarget(Label);
         }
     }
 }

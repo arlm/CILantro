@@ -1,4 +1,6 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILInstances;
+using CILantro.State;
+using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes
 {
@@ -6,6 +8,11 @@ namespace CILantro.AST.CILASTNodes
     {
         public CILMethod ParentMethod { get; set; }
 
-        public abstract CILInstruction Execute(CILProgramState state, CILProgram program);
+        public abstract CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack);
+
+        public CILInstructionInstance CreateInstance(CILMethodInstance methodInstance)
+        {
+            return new CILInstructionInstance(this, methodInstance);
+        }
     }
 }

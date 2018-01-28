@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CILantro.AST.CILInstances;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CILantro.AST.CILASTNodes
@@ -13,6 +14,14 @@ namespace CILantro.AST.CILASTNodes
 
         public List<CILClass> Classes { get; set; } = new List<CILClass>();
 
-        public CILMethod EntryPoint => Classes.SelectMany(c => c.Methods).SingleOrDefault(m => m.IsEntryPoint);
+        public CILProgramInstance CreateInstance()
+        {
+            return new CILProgramInstance(this);
+        }
+
+        public CILMethod GetEntryPoint()
+        {
+            return Classes.SelectMany(c => c.Methods).SingleOrDefault(m => m.IsEntryPoint);
+        }
     }
 }

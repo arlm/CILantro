@@ -134,6 +134,12 @@
     <Compile Include="CILASTNodes\CILMethod.cs" />
     <Compile Include="CILASTNodes\CILModule.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
+    <Compile Include="CILCustomTypes\CILantroType.cs" />
+    <Compile Include="CILCustomTypes\CILantroFieldInfo.cs" />
+    <Compile Include="CILInstances\CILClassInstance.cs" />
+    <Compile Include="CILInstances\CILInstructionInstance.cs" />
+    <Compile Include="CILInstances\CILMethodInstance.cs" />
+    <Compile Include="CILInstances\CILProgramInstance.cs" />
     <Compile Include="HelperClasses\CILBound.cs" />
     <Compile Include="HelperClasses\CILCallConvention.cs" />
     <Compile Include="HelperClasses\CILClassName.cs" />
@@ -142,6 +148,8 @@
     <Compile Include="HelperClasses\CILTypeSpecification.cs" />
     <Compile Include="HelperEnums\CILClassFieldAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuntimeTypes\RuntimeTypeFactory.cs" />
+    <Compile Include="RuntimeTypes\RuntimeTypeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Helpers\CILantro.Helpers.Convert\CILantro.Helpers.Convertions.csproj">

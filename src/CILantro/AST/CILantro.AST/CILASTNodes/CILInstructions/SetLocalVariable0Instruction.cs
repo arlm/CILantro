@@ -1,15 +1,17 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILInstances;
+using CILantro.State;
+using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class SetLocalVariable0Instruction : CILInstructionNone
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
             var value = state.Stack.Pop();
             ParentMethod.Locals[0] = value;
 
-            return ParentMethod.GetNextInstruction(this);
+            return instructionInstance.GetNextInstructionInstance();
         }
     }
 }

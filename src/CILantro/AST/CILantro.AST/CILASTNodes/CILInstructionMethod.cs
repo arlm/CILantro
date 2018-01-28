@@ -1,4 +1,5 @@
-﻿using CILantro.AST.HelperClasses;
+﻿using CILantro.AST.CILInstances;
+using CILantro.AST.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace CILantro.AST.CILASTNodes
 
         public CILCallConvention CallConvention { get; set; }
 
-        public List<Type> GetMethodArgumentRuntimeTypes()
+        public List<Type> GetMethodArgumentRuntimeTypes(CILProgramInstance programInstance)
         {
-            return MethodArgumentTypes.Select(at => at.GetRuntimeType()).ToList();
+            return MethodArgumentTypes.Select(at => at.GetRuntimeType(programInstance)).ToList();
         }
     }
 }

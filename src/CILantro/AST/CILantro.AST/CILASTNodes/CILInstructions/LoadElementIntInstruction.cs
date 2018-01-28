@@ -1,11 +1,13 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILInstances;
+using CILantro.State;
 using System;
+using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class LoadElementIntInstruction : CILInstructionNone
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
             var index = (int)state.Stack.Pop();
             var array = state.Stack.Pop() as Array;
@@ -13,7 +15,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             var value = array.GetValue(index);
             state.Stack.Push(value);
 
-            return ParentMethod.GetNextInstruction(this);
+            return instructionInstance.GetNextInstructionInstance();
         }
     }
 }

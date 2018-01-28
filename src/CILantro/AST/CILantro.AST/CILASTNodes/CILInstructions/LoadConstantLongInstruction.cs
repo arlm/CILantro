@@ -1,14 +1,16 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILInstances;
+using CILantro.State;
+using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class LoadConstantLongInstruction : CILInstructionI8
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
             state.Stack.Push(Value);
 
-            return ParentMethod.GetNextInstruction(this);
+            return instructionInstance.GetNextInstructionInstance();
         }
     }
 }

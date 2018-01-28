@@ -1,18 +1,20 @@
-﻿using CILantro.State;
+﻿using CILantro.AST.CILInstances;
+using CILantro.State;
 using System;
+using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class ConvertToLongInstruction : CILInstructionNone
     {
-        public override CILInstruction Execute(CILProgramState state, CILProgram program)
+        public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
             var value = state.Stack.Pop();
 
             var result = Convert.ToInt64(value);
             state.Stack.Push(result);
 
-            return ParentMethod.GetNextInstruction(this);
+            return instructionInstance.GetNextInstructionInstance();
         }
     }
 }

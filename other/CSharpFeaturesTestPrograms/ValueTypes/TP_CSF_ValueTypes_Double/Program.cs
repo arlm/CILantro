@@ -2,11 +2,6 @@
 
 namespace TP_CSF_ValueTypes_Double
 {
-    /// <summary>
-    /// DESC: Reads and writes out double.
-    /// IN: n - double
-    /// OUT: n
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

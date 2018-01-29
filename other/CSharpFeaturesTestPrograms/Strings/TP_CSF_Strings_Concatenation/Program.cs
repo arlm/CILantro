@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Strings_Concatenation
 {
-    /// <summary>
-    /// DESC: Reads three strings and writes out their concatenation result.
-    /// 
-    /// IN:
-    /// s - string
-    /// t - string
-    /// u - string
-    /// 
-    /// OUT: s + t + u
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

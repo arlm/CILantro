@@ -6,7 +6,7 @@ param
 
 $totalStopWatch = [System.Diagnostics.StopWatch]::StartNew()
 
-$allSteps = 8
+$allSteps = 9
 
 # collect tests
 
@@ -453,6 +453,55 @@ foreach($test in $testsAfterGeneratingOutputDataCheckers)
 }
 
 $step8StopWatch.Stop()
+
+# check documentation
+
+$step9StopWatch = [System.Diagnostics.StopWatch]::StartNew()
+
+$testsAfterCheckingDocumentation = @()
+
+foreach($test in $testsAfterCheckingOutput)
+{
+	cls
+
+	Write-Host ("STEP 9 / " + $allSteps.ToString()) -foreground "yellow"
+	Write-Host "Checking documentation..." -foreground "yellow"
+	Write-Host
+	
+	$testIndex = $testsAfterCheckingOutput.IndexOf($test) + 1
+	Write-Host -NoNewLine "Test: " -foreground "yellow"
+	Write-Host -NoNewLine $testIndex -foreground "yellow"
+	Write-Host -NoNewLine " / " -foreground "yellow"
+	Write-Host -NoNewLine $testsAfterCheckingOutput.Length -foreground "yellow"
+	$testIndexPercent = $testIndex / $testsAfterCheckingOutput.Length * 100.0
+	Write-Host (" (" + "{0:N2}" -f $testIndexPercent + "%)") -foreground "yellow"
+	Write-Host
+	
+	$testNameInfo = $test.Name + " "
+	Write-Host -NoNewLine $testNameInfo
+	
+	$documentationFolderPath = "..\docs\"
+	$checkDocumentationCommand = "& ./check-docs.ps1 " + $test.Name + " " + '"' + $documentationFolderPath + '"' + " `$false"
+	$checkDocumentationResult = Invoke-Expression $checkDocumentationCommand
+	
+	if($checkDocumentationResult -match "^SUCCESS.*")
+	{
+		$testsAfterCheckingDocumentation = $testsAfterCheckingDocumentation += $test
+	}
+	else
+	{
+		$errorMessage = $test.Name + " - documentation could not be found"
+		$errors += $errorMessage
+		
+		if($StopOnError)
+		{
+			$testsAfterCheckingDocumentation = @()
+			break
+		}
+	}
+}
+
+$step9StopWatch.Stop()
 $totalStopWatch.Stop()
 
 # summary
@@ -515,6 +564,16 @@ if($testsAfterCheckingOutputCount -eq $allTestsCount)
 	$checkOutputCountInfoColor = "green"
 }
 Write-Host $checkOutputCountInfo -foreground $checkOutputCountInfoColor
+
+$testsAfterCheckingDocumentationCount = $testsAfterCheckingDocumentation.Length
+$testsAfterCheckingDocumentationPercent = $testsAfterCheckingDocumentationCount / $allTestsCount * 100
+$checkDocumentationCountInfo = $testsAfterCheckingDocumentationCount.ToString() + " / " + $allTestsCount.ToString() + " (" + "{0:N2}" -f $testsAfterCheckingDocumentationPercent + " %)" + " tests have had documentation found."
+$checkDocumentationCountInfoColor = "red"
+if($testsAfterCheckingDocumentationCount -eq $allTestsCount)
+{
+	$checkDocumentationCountInfoColor = "green"
+}
+Write-Host $checkDocumentationCountInfo -foreground $checkDocumentationCountInfoColor
 
 if($errors.length -gt 0)
 {

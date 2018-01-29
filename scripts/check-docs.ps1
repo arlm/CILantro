@@ -2,44 +2,15 @@ param
 (
 	[string]$programName,
 	[string]$docsFolderPath,
-	[bool]$showMessaages = $true
+	[bool]$showMessages = $true
 )
 
-Write-Host $docsFolderPath
-Write-Host (Test-Path($docsFolderPath))
-if(-not (Test-Path($docsFolderPath)))
-{
-	New-Item $docsFolderPath -type directory | Out-Null
-}
-
-$inDocsFilePath = $docsFolderPath + "\in.txt"
-if(-not (Test-Path($inDocsFilePath)))
-{
-	New-Item $inDocsFilePath | Out-Null
-}
-
-$outDocsFilePath = $docsFolderPath + "\out.txt"
-if(-not (Test-Path($outDocsFilePath)))
-{
-	New-Item $outDocsFilePath | Out-Null
-}
-
-$descDocsFilePath = $docsFolderPath + "\description.txt"
-if(-not (Test-Path($descDocsFilePath)))
-{
-	New-Item $descDocsFilePath | Out-Null
-}
+$docsFileName = $programName + ".docx"
+$docsNormalizedPath = [System.IO.Path]::GetFullPath((Join-Path (Join-Path (pwd) $docsFolderPath) $docsFileName))
+Write-Host $docsNormalizedPath
 
 $success = $true
-if((Get-Content($inDocsFilePath)) -eq $null)
-{
-	$success = $false
-}
-if((Get-Content($outDocsFilePath)) -eq $null)
-{
-	$success = $false
-}
-if((Get-Content($descDocsFilePath)) -eq $null)
+if(![System.IO.File]::Exists($docsNormalizedPath))
 {
 	$success = $false
 }

@@ -2,18 +2,6 @@
 
 namespace TP_CSF_Variables_4Variables
 {
-    /// <summary>
-    /// DESC: Reads 4 integers and writes sum.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// c - integer
-    /// d - integer
-    /// 
-    /// OUT:
-    /// a + b + c + d
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

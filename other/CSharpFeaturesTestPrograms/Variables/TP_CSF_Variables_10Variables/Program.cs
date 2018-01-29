@@ -2,24 +2,6 @@
 
 namespace TP_CSF_Variables_10Variables
 {
-    /// <summary>
-    /// DESC: Reads 10 integers and writes sum.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// c - integer
-    /// d - integer
-    /// e - integer
-    /// f - integer
-    /// g - integer
-    /// h - integer
-    /// i - integer
-    /// j - integer
-    /// 
-    /// OUT:
-    /// a + b + c + d + e + f + g + h + i + j
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

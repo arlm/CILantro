@@ -2,19 +2,6 @@
 
 namespace TP_CSF_Variables_5Variables
 {
-    /// <summary>
-    /// DESC: Reads 5 integers and writes sum.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// c - integer
-    /// d - integer
-    /// e - integer
-    /// 
-    /// OUT:
-    /// a + b + c + d + e
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

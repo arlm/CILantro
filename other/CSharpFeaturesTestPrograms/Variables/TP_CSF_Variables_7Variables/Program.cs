@@ -2,21 +2,6 @@
 
 namespace TP_CSF_Variables_7Variables
 {
-    /// <summary>
-    /// DESC: Reads 7 integers and writes sum.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// c - integer
-    /// d - integer
-    /// e - integer
-    /// f - integer
-    /// g - integer
-    /// 
-    /// OUT:
-    /// a + b + c + d + e + f + g
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

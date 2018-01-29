@@ -2,23 +2,6 @@
 
 namespace TP_CSF_Variables_9Variables
 {
-    /// <summary>
-    /// DESC: Reads 9 integers and writes sum.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// c - integer
-    /// d - integer
-    /// e - integer
-    /// f - integer
-    /// g - integer
-    /// h - integer
-    /// i - integer
-    /// 
-    /// OUT:
-    /// a + b + c + d + e + f + g + h + i
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -2,17 +2,6 @@
 
 namespace TP_CSF_Variables_3Variables
 {
-    /// <summary>
-    /// DESC: Reads 3 integers and writes sum.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// c - integer
-    /// 
-    /// OUT:
-    /// a + b + c
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

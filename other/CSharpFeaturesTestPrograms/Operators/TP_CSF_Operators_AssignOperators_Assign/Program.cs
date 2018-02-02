@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Operators_AssignOperators_Assign
 {
-    /// <summary>
-    /// DESC: Reads and writes out integer.
-    /// 
-    /// IN: n - integer
-    /// 
-    /// OUT: n
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

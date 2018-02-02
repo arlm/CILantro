@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Operators_AssignOperators_RShiftAndAssign
 {
-    /// <summary>
-    /// DESC: Reads two integers and writes out their bitwise right shift operation result.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// 
-    /// OUT:
-    /// a >> b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

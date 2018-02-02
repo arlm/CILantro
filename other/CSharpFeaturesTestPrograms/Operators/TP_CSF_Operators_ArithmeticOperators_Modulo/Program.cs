@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Operators_ArithmeticOperators_Modulo
 {
-    /// <summary>
-    /// DESC: Reads two integers (a, b) and writes out result of their modulo operation.
-    /// 
-    /// IN:
-    /// a - int
-    /// b - int
-    /// 
-    /// OUT:
-    /// a % b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

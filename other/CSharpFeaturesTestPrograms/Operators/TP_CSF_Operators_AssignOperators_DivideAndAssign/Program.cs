@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Operators_AssignOperators_DivideAndAssign
 {
-    /// <summary>
-    /// DESC: Reads two integers and writes out their quotient.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// 
-    /// OUT:
-    /// a / b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

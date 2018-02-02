@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Operators_AssignOperators_SubtractAndAssign
 {
-    /// <summary>
-    /// DESC: Reads two integers and writes out their difference.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// 
-    /// OUT:
-    /// a - b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

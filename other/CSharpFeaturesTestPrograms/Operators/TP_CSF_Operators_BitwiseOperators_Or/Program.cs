@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Operators_BitwiseOperators_Or
 {
-    /// <summary>
-    /// DESC: Reads two integers and writes out its bitwise disjunction.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// 
-    /// OUT:
-    /// a | b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Operators_BitwiseOperators_Xor
 {
-    /// <summary>
-    /// DESC: Reads two integers and writes out its bitwise xor.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// 
-    /// OUT:
-    /// a ^ b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

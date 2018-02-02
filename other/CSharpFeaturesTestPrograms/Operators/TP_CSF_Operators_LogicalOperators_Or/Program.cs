@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Operators_LogicalOperators_Or
 {
-    /// <summary>
-    /// DESC: Reads two booleans and writes out its disjunction.
-    /// 
-    /// IN:
-    /// a - bool
-    /// b - bool
-    /// 
-    /// OUT:
-    /// a || b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

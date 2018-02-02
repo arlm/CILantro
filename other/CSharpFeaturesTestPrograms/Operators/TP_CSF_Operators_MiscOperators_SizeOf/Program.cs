@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Operators_MiscOperators_SizeOf
 {
-    /// <summary>
-    /// DESC: Writes out some sizeof results.
-    /// 
-    /// IN: NOTHING
-    /// 
-    /// OUT: system size of 10 types
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

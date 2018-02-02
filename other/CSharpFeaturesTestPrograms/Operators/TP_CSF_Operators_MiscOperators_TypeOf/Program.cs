@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Operators_MiscOperators_TypeOf
 {
-    /// <summary>
-    /// DESC: Writes out some system types names.
-    /// 
-    /// IN: NOTHING
-    /// 
-    /// OUT: system names of 10 types
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

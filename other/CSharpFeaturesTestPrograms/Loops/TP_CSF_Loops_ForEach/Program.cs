@@ -2,9 +2,6 @@
 
 namespace TP_CSF_Loops_ForEach
 {
-    /// <summary>
-    /// DESC: Reads n and n numbers and writes them out.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Loops_ContinueStatement
 {
-    /// <summary>
-    /// DESC: Reads n integers and writes only those which are even.
-    /// 
-    /// IN:
-    /// n - integer
-    /// n integers
-    /// 
-    /// OUT:
-    /// all the integers which are even
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

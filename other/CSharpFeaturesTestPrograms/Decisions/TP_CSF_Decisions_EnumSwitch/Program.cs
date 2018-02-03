@@ -13,13 +13,6 @@ namespace TP_CSF_Decisions_EnumSwitch
         Sunday = 7
     }
 
-    /// <summary>
-    /// DESC: Reads day of the week number and writes out its name or "not a day".
-    /// 
-    /// IN: n - integer
-    /// 
-    /// OUT: n-th day of the week name or "not a day number"
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

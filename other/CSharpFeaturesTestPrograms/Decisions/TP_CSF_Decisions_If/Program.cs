@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Decisions_If
 {
-    /// <summary>
-    /// DESC: Reads integer and writes it out with its sign.
-    /// 
-    /// IN: n - integer
-    /// 
-    /// OUT: n with sign (+ or -)
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

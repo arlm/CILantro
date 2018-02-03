@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Decisions_ByteSwitch
 {
-    /// <summary>
-    /// DESC: Reads byte and writes out its name if it is a digit or "other" otherwise.
-    /// 
-    /// IN: b - byte
-    /// 
-    /// OUT: b's name if b is a digit, "other" otherwise
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Decisions_NestedSwitch
 {
-    /// <summary>
-    /// DESC: Reads two integers and writes out their names or "not a digit" info.
-    /// 
-    /// IN: n, m - integers
-    /// 
-    /// OUT: n's and m's name if they are digits, "not a digit" otherwise.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

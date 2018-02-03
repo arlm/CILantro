@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Decisions_ShortSwitch
 {
-    /// <summary>
-    /// DESC: Reads short integer, writes it out if it is a digit, writer out "NO" otherwise.
-    /// 
-    /// IN: s - short
-    /// 
-    /// OUT: s if s is a digit, "NO" otherwise
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

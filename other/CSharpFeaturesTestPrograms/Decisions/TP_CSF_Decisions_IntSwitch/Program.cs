@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Decisions_IntSwitch
 {
-    /// <summary>
-    /// DESC: Reads integer and writes out its name if it is a digit or "other" otherwise.
-    /// 
-    /// IN: n - integer
-    /// 
-    /// OUT: n's name if n is a digit, "other" otherwise
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

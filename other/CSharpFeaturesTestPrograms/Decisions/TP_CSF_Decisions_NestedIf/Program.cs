@@ -2,17 +2,6 @@
 
 namespace TP_CSF_Decisions_NestedIf
 {
-    /// <summary>
-    /// DESC: Reads two integers and checks if they are positive, negative or zero.
-    /// 
-    /// IN:
-    /// a - integer
-    /// b - integer
-    /// 
-    /// OUT:
-    /// "positive" if a > 0, "negative" if a < 0, "zero" otherwise
-    /// "positive" if b > 0, "negative" if b < 0, "zero" otherwise
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

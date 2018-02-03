@@ -2,13 +2,6 @@
 
 namespace TP_CSF_Decisions_CharSwitch
 {
-    /// <summary>
-    /// DESC: Reads char and writes out its capital form if it is A-Z or a-z letter, "non-letter" otherwise.
-    /// 
-    /// IN: c - char
-    /// 
-    /// OUT: c in capital if c is in A-Z or a-z, "non-letter" otherwise
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -2,15 +2,6 @@
 
 namespace TP_CSF_Identifiers_LettersAndDigits
 {
-    /// <summary>
-    /// DESC: Reads two short integers and writes their sum.
-    /// 
-    /// IN:
-    /// n - short
-    /// m - short
-    /// 
-    /// OUT: n + m
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

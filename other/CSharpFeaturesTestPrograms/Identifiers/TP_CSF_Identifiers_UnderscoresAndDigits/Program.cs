@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Identifiers_UnderscoresAndDigits
 {
-    /// <summary>
-    /// DESC: Reads two integers and writes out their sum.
-    /// 
-    /// IN:
-    /// n - integer
-    /// m - integer
-    /// 
-    /// OUT:
-    /// n + m
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

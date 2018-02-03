@@ -13,14 +13,7 @@ namespace TP_CSF_Enums_Enum
         Purple,
         Pink
     }
-
-    /// <summary>
-    /// DESC: Reads color code and writes out its color name.
-    /// 
-    /// IN: n - color number
-    /// 
-    /// OUT: the name of n-th color
-    /// </summary>
+    
     class Program
     {
         static void Main(string[] args)

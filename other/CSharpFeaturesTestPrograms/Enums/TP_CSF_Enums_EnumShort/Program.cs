@@ -18,13 +18,6 @@ namespace TP_CSF_Enums_EnumShort
         December = 12
     }
 
-    /// <summary>
-    /// DESC: Reads month number and writes month name.
-    /// 
-    /// IN: n - month number
-    /// 
-    /// OUT: month's name
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

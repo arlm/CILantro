@@ -13,13 +13,6 @@ namespace TP_CSF_Enums_EnumWithAssignedValues
         Sunday = 7
     }
 
-    /// <summary>
-    /// DESC: Reads a number and writes out a day of the week.
-    /// 
-    /// IN: n - number (1 - 7)
-    /// 
-    /// OUT: n-th day of the week name
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

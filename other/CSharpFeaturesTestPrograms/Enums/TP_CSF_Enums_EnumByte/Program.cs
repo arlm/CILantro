@@ -17,13 +17,6 @@ namespace TP_CSF_Enums_EnumByte
         Ten
     }
 
-    /// <summary>
-    /// DESC: Reads byte and writes appropriate enum value.
-    /// 
-    /// IN: b - byte
-    /// 
-    /// OUT: enum value for b
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

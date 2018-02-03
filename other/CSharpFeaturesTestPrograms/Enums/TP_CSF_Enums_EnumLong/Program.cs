@@ -16,13 +16,6 @@ namespace TP_CSF_Enums_EnumLong
         J = 12
     }
 
-    /// <summary>
-    /// DESC: Reads one of ten long enum value and writes out its name.
-    /// 
-    /// IN: n - enum number
-    /// 
-    /// OUT: enum string of n value
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

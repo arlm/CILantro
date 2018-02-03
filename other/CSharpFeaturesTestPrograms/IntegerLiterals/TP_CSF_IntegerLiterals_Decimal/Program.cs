@@ -2,13 +2,6 @@
 
 namespace TP_CSF_IntegerLiterals_Decimal
 {
-    /// <summary>
-    /// DESC: Writes out 10 integers.
-    /// 
-    /// IN: NOTHING
-    /// 
-    /// OUT:
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

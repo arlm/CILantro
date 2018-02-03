@@ -2,13 +2,6 @@
 
 namespace TP_CSF_IntegerLiterals_UnsignedDecimal
 {
-    /// <summary>
-    /// DESC: Writes out 10 unsigned integers.
-    /// 
-    /// IN: NOTHING
-    /// 
-    /// OUT: integers
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

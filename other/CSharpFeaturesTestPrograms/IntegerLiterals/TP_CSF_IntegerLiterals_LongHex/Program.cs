@@ -2,11 +2,6 @@
 
 namespace TP_CSF_IntegerLiterals_LongHex
 {
-    /// <summary>
-    /// DESC: Writes out 10 long integers.
-    /// 
-    /// IN: NOTHING
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -2,11 +2,6 @@
 
 namespace TP_CSF_IntegerLiterals_UnsignedHex
 {
-    /// <summary>
-    /// DESC: Writes out 10 unsigned integers.
-    /// 
-    /// IN: NOTHING
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

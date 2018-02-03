@@ -2,11 +2,6 @@
 
 namespace TP_CSF_IntegerLiterals_UnsignedLongDecimal
 {
-    /// <summary>
-    /// DESC: Writes out 10 unsigned long integers.
-    /// 
-    /// IN: NOTHING
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -2,9 +2,6 @@
 
 namespace TP_CSF_FloatingPointLiterals_Doubles
 {
-    /// <summary>
-    /// DESC: Writes out 10 doubles.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

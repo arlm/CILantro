@@ -2,9 +2,6 @@
 
 namespace TP_CSF_FloatingPointLiterals_Integers
 {
-    /// <summary>
-    /// DESC: Writes out 10 floating-point integers.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

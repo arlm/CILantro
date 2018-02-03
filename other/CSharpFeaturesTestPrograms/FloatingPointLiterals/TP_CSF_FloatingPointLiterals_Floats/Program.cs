@@ -2,9 +2,6 @@
 
 namespace TP_CSF_FloatingPointLiterals_Floats
 {
-    /// <summary>
-    /// DESC: Writes out 10 floats.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

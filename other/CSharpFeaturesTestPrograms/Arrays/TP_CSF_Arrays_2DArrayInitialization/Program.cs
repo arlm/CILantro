@@ -2,16 +2,6 @@
 
 namespace TP_CSF_Arrays_2DArrayInitialization
 {
-    /// <summary>
-    /// DESC: reads (n, m) - integers and writes out its appropriate coordinates on the chessboard
-    /// 
-    /// IN:
-    /// n - integer
-    /// m - integer
-    /// 
-    /// OUT:
-    /// chessboard coordinates (e.g. "A1")
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

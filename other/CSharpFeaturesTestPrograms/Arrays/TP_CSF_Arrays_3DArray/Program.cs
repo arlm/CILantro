@@ -2,26 +2,6 @@
 
 namespace TP_CSF_Arrays_3DArray
 {
-    /// <summary>
-    /// DESC: Reads (x, y, z) - integers and x * y * z integers and writes them out.
-    /// 
-    /// IN:
-    /// x - integer
-    /// y - integer
-    /// z - integer
-    /// a1,1,1
-    /// a1,1,2
-    /// ...
-    /// a1,1,z
-    /// a1,2,1
-    /// a1,2,2
-    /// ...
-    /// a1,2,z
-    /// ...
-    /// ax,y,z
-    /// 
-    /// OUT:
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

@@ -693,6 +693,18 @@ else
 	Write-Host -foreground "magenta" (" | {0:N2}" -f $step8Seconds + "s") -NoNewLine
 	Write-Host -foreground "magenta" (" | {0:N2}" -f $step8SecondsPerTest + "s / test") -NoNewLine
 	Write-Host -foreground "magenta" (" | {0:N2}" -f $step8SecondsPerData + "s / data")
+	
+	$step9Minutes = $step9StopWatch.Elapsed.TotalMinutes
+	$step9Seconds = $step9StopWatch.Elapsed.TotalSeconds
+	$step9SecondsPerTest = $step9Seconds / $allTestsCount
+	$step9SecondsPerData = $step9Seconds / $processedInputDataFiles
+	Write-Host
+	Write-Host "STEP 9 - checking documentation" -foreground "magenta"
+	Write-Host -foreground "magenta" $step9StopWatch.Elapsed.ToString('dd\:hh\:mm\:ss') -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step9Minutes + "min") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step9Seconds + "s") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step9SecondsPerTest + "s / test") -NoNewLine
+	Write-Host -foreground "magenta" (" | {0:N2}" -f $step9SecondsPerData + "s / data")
 }
 
 Write-Host

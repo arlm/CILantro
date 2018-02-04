@@ -15,9 +15,6 @@ namespace TP_CSF_Classes_NoArgumentsConstructor
         }
     }
 
-    /// <summary>
-    /// DESC: Writes out 4 and "It's four!".
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

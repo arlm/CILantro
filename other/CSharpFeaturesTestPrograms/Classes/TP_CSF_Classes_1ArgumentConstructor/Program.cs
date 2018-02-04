@@ -12,9 +12,6 @@ namespace TP_CSF_Classes_1ArgumentConstructor
         }
     }
 
-    /// <summary>
-    /// DESC: Reads and writes out an integer.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

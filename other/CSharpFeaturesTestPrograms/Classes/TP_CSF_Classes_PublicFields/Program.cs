@@ -9,9 +9,6 @@ namespace TP_CSF_Classes_PublicFields
         public int _intField;
     }
 
-    /// <summary>
-    /// DESC: Reads string and int and writes them out.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)

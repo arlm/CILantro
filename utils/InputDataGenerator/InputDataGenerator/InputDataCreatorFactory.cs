@@ -942,6 +942,44 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Methods_RecursiveMethod":
+                    return new EnumerableInputDataCreator(IntHelper.GetRange(0, 99).SelectCreateInputActions(n => writer =>
+                    {
+                        writer.WriteLine(n);
+                    }));
+
+                case "TP_CSF_Methods_ManyRecursiveMethods":
+                    return new EnumerableInputDataCreator(IntHelper.GetRange(0, 99).SelectCreateInputActions(n => writer =>
+                    {
+                        writer.WriteLine(n);
+                    }));
+
+                case "TP_CSF_Classes_InitFields":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_Classes_ConstructorWithCustomArguments":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Methods_CustomArguments":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Methods_Params":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(0, 6);
+                        writer.WriteLine(n);
+
+                        for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

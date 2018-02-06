@@ -47,7 +47,7 @@ namespace CILantro.AST.CILInstances
                     runtimeType = runtimeTypeFactory.RegisterEnumType(cilClass);
                 }
 
-                var customType = new CILantroType(cilClass, runtimeType);
+                var customType = new CILantroType(cilClass, runtimeType, this);
                 result.Add(cilClass.ClassName.UniqueName, customType);
             }
 

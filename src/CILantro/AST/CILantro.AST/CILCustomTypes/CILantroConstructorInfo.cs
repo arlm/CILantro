@@ -1,4 +1,5 @@
 ﻿using CILantro.AST.CILASTNodes;
+using CILantro.AST.CILInstances;
 using System;
 using System.Globalization;
 using System.Linq;
@@ -8,10 +9,13 @@ namespace CILantro.AST.CILCustomTypes
 {
     public class CILantroConstructorInfo : ConstructorInfo
     {
+        private CILProgramInstance _programInstance;
+
         public CILMethod Method { get; private set; }
 
-        public CILantroConstructorInfo(CILMethod cilMethod)
+        public CILantroConstructorInfo(CILMethod cilMethod, CILProgramInstance programInstance)
         {
+            _programInstance = programInstance;
             Method = cilMethod;
         }
 
@@ -72,7 +76,7 @@ namespace CILantro.AST.CILCustomTypes
 
         public override ParameterInfo[] GetParameters()
         {
-            return Method.ArgumentTypes.Select(at => new CILantroParameterInfo(at)).ToArray();
+            return Method.ArgumentTypes.Select(at => new CILantroParameterInfo(at, _programInstance)).ToArray();
         }
 
         public override object Invoke(BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)

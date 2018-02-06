@@ -419,6 +419,24 @@ namespace OutputChecker
                 case "TP_CSF_Methods_ManyMethods":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Methods_RecursiveMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_ManyRecursiveMethods":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_InitFields":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_ConstructorWithCustomArguments":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_CustomArguments":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_Params":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

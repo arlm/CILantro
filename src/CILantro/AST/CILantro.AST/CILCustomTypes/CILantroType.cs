@@ -1,4 +1,5 @@
 ﻿using CILantro.AST.CILASTNodes;
+using CILantro.AST.CILInstances;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -19,14 +20,17 @@ namespace CILantro.AST.CILCustomTypes
 
         private List<CILantroMethodInfo> _methods;
 
-        public CILantroType(CILClass cilClass, Type runtimeType)
+        private CILProgramInstance _programInstance;
+
+        public CILantroType(CILClass cilClass, Type runtimeType, CILProgramInstance programInstance)
         {
+            _programInstance = programInstance;
             _cilClass = cilClass;
             _runtimeType = runtimeType;
 
             _fields = _cilClass.Fields.Select(f => new CILantroFieldInfo(f, cilClass)).ToList();
-            _constructors = _cilClass.Constructors.Select(c => new CILantroConstructorInfo(c)).ToList();
-            _methods = _cilClass.Methods.Select(m => new CILantroMethodInfo(m)).ToList();
+            _constructors = _cilClass.Constructors.Select(c => new CILantroConstructorInfo(c, _programInstance)).ToList();
+            _methods = _cilClass.Methods.Select(m => new CILantroMethodInfo(m, _programInstance)).ToList();
         }
 
         public Type GetRuntimeType()

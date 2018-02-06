@@ -542,7 +542,8 @@ namespace CILantro.Grammar
                 ToTerm(".entrypoint") |
                 instr |
                 id + ToTerm(":") |
-                customAttrDecl;
+                customAttrDecl |
+                ToTerm(".param") + ToTerm("[") + int32 + ToTerm("]") + initOpt;
 
             methodDecls.Rule =
                 Empty |

@@ -15,6 +15,12 @@ namespace CILantro.Helpers.Irony
                 return ".ctor";
             }
 
+            var dotCctorParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.keyword_dotCctor);
+            if(dotCctorParseTreeNode != null)
+            {
+                return ".cctor";
+            }
+
             var name1ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.name1);
             if (name1ParseTreeNode != null)
             {

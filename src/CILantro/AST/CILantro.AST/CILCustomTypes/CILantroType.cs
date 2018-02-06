@@ -17,13 +17,16 @@ namespace CILantro.AST.CILCustomTypes
 
         private List<CILantroConstructorInfo> _constructors;
 
+        private List<CILantroMethodInfo> _methods;
+
         public CILantroType(CILClass cilClass, Type runtimeType)
         {
             _cilClass = cilClass;
             _runtimeType = runtimeType;
 
-            _fields = _cilClass.Fields.Select(f => new CILantroFieldInfo(f.Name)).ToList();
+            _fields = _cilClass.Fields.Select(f => new CILantroFieldInfo(f, cilClass)).ToList();
             _constructors = _cilClass.Constructors.Select(c => new CILantroConstructorInfo(c)).ToList();
+            _methods = _cilClass.Methods.Select(m => new CILantroMethodInfo(m)).ToList();
         }
 
         public Type GetRuntimeType()
@@ -79,7 +82,7 @@ namespace CILantro.AST.CILCustomTypes
             }
         }
 
-        public override string Name => $"[CILCustomType] {_cilClass.ClassName.ClassName}";
+        public override string Name => $"[CILantroType] {_cilClass.ClassName.ClassName}";
 
         public override string Namespace
         {
@@ -129,7 +132,10 @@ namespace CILantro.AST.CILCustomTypes
 
         public override FieldInfo GetField(string name, BindingFlags bindingAttr)
         {
-            return _fields.SingleOrDefault(f => f.Name == name);
+            if (bindingAttr.HasFlag(BindingFlags.Static))
+                return _fields.Where(f => f.IsStatic).SingleOrDefault(f => f.Name == name);
+
+            return _fields.Where(f => !f.IsStatic).SingleOrDefault(f => f.Name == name);
         }
 
         public override FieldInfo[] GetFields(BindingFlags bindingAttr)
@@ -189,12 +195,12 @@ namespace CILantro.AST.CILCustomTypes
 
         protected override ConstructorInfo GetConstructorImpl(BindingFlags bindingAttr, Binder binder, CallingConventions callConvention, Type[] types, ParameterModifier[] modifiers)
         {
-            return _constructors.SingleOrDefault();
+            return _constructors.Single(c => CompareArgumentTypes(types, c.GetParameters().Select(p => p.ParameterType).ToArray()));
         }
 
         protected override MethodInfo GetMethodImpl(string name, BindingFlags bindingAttr, Binder binder, CallingConventions callConvention, Type[] types, ParameterModifier[] modifiers)
         {
-            throw new NotImplementedException();
+            return _methods.Single(m => m.Name == name && CompareArgumentTypes(types, m.GetParameters().Select(p => p.ParameterType).ToArray()));
         }
 
         protected override PropertyInfo GetPropertyImpl(string name, BindingFlags bindingAttr, Binder binder, Type returnType, Type[] types, ParameterModifier[] modifiers)
@@ -238,6 +244,18 @@ namespace CILantro.AST.CILCustomTypes
             {
                 return _runtimeType.TypeHandle;
             }
+        }
+
+        private bool CompareArgumentTypes(Type[] args1, Type[] args2)
+        {
+            if (args1.Length != args2.Length) return false;
+
+            for(int i = 0; i < args1.Length; i++)
+            {
+                if (args1[i] != args2[i]) return false;
+            }
+
+            return true;
         }
     }
 }

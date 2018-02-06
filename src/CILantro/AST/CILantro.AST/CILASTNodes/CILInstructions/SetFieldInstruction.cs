@@ -1,6 +1,7 @@
 ﻿using CILantro.AST.CILInstances;
 using CILantro.State;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
@@ -12,7 +13,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             var instance = state.Stack.Pop();
 
             var reflectedType = FieldOwnerTypeSpecification.GetTypeSpecified(programInstance);
-            var reflectedField = reflectedType.GetField(FieldName);
+            var reflectedField = reflectedType.GetField(FieldName, BindingFlags.Instance);
             reflectedField.SetValue(instance, value);
 
             return instructionInstance.GetNextInstructionInstance();

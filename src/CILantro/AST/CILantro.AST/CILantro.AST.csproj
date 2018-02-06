@@ -81,6 +81,8 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument0Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument1Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadArgument2Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadArgument3Instruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadArgumentShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantDoubleInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantFloatInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantInt0Instruction.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable3Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariableAddressShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariableShortInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadStaticFieldInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadStringInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadTokenInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\MultiplyInstruction.cs" />
@@ -124,6 +127,7 @@
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable2Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariable3Instruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SetLocalVariableShortInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\SetStaticFieldInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ShiftLeftInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ShiftRightInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\SubtractInstruction.cs" />
@@ -137,6 +141,8 @@
     <Compile Include="CILASTNodes\CILModule.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
     <Compile Include="CILCustomTypes\CILantroConstructorInfo.cs" />
+    <Compile Include="CILCustomTypes\CILantroMethodInfo.cs" />
+    <Compile Include="CILCustomTypes\CILantroParameterInfo.cs" />
     <Compile Include="CILCustomTypes\CILantroType.cs" />
     <Compile Include="CILCustomTypes\CILantroFieldInfo.cs" />
     <Compile Include="CILInstances\CILClassInstance.cs" />

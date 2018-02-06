@@ -9,7 +9,7 @@ namespace CILantro.Helpers.Irony
 {
     public static class SigArgs0ParseTreeNodeHelper
     {
-        public static List<CILType> GetTypes(this ParseTreeNode node)
+        public static List<CILType> GetTypes(ParseTreeNode node)
         {
             var sigArgs1ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs1);
             if (sigArgs1ParseTreeNode != null)
@@ -21,7 +21,19 @@ namespace CILantro.Helpers.Irony
             return new List<CILType>();
         }
 
-        public static OrderedDictionary GetLocalsDictionary(this ParseTreeNode node)
+        public static List<string> GetNames(ParseTreeNode node)
+        {
+            var sigArgs1ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs1);
+            if (sigArgs1ParseTreeNode != null)
+            {
+                var result = SigArgs1ParseTreeNodeHelper.GetNames(sigArgs1ParseTreeNode);
+                return result;
+            }
+
+            return new List<string>();
+        }
+
+        public static OrderedDictionary GetLocalsDictionary(ParseTreeNode node)
         {
             var sigArgs1ParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.sigArgs1);
             if(sigArgs1ParseTreeNode != null)

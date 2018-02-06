@@ -772,6 +772,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .cctor.
+        /// </summary>
+        public static string keyword_dotCctor {
+            get {
+                return ResourceManager.GetString("keyword_dotCctor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .entrypoint.
         /// </summary>
         public static string keyword_dotEntrypoint {
@@ -894,6 +903,24 @@ namespace CILantro.Grammar {
         public static string keyword_ldarg2 {
             get {
                 return ResourceManager.GetString("keyword_ldarg2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldarg.3.
+        /// </summary>
+        public static string keyword_ldarg3 {
+            get {
+                return ResourceManager.GetString("keyword_ldarg3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ldarg.s.
+        /// </summary>
+        public static string keyword_ldargs {
+            get {
+                return ResourceManager.GetString("keyword_ldargs", resourceCulture);
             }
         }
         
@@ -1123,6 +1150,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldsfld.
+        /// </summary>
+        public static string keyword_ldsfld {
+            get {
+                return ResourceManager.GetString("keyword_ldsfld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldstr.
         /// </summary>
         public static string keyword_ldstr {
@@ -1344,6 +1380,15 @@ namespace CILantro.Grammar {
         public static string keyword_string {
             get {
                 return ResourceManager.GetString("keyword_string", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stsfld.
+        /// </summary>
+        public static string keyword_stsfld {
+            get {
+                return ResourceManager.GetString("keyword_stsfld", resourceCulture);
             }
         }
         

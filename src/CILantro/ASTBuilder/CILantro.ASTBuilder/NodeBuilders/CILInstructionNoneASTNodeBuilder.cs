@@ -104,6 +104,13 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return loadArgument2Instruction;
             }
 
+            var ldarg3ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldarg3);
+            if(ldarg3ParseTreeNode != null)
+            {
+                var loadArgument3Instruction = new LoadArgument3Instruction();
+                return loadArgument3Instruction;
+            }
+
             var ldci40ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldci40);
             if(ldci40ParseTreeNode != null)
             {

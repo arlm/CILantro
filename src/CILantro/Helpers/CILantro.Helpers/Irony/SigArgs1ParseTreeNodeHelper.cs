@@ -29,6 +29,26 @@ namespace CILantro.Helpers.Irony
             return result;
         }
 
+        public static List<string> GetNames(ParseTreeNode node)
+        {
+            var result = new List<string>();
+
+            var sigArgs1ParseTreeNode = node;
+            var sigArgParseTreeNode = sigArgs1ParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.sigArg);
+            while(sigArgParseTreeNode != null)
+            {
+                var sigArgId = SigArgParseTreeNodeHelper.GetId(sigArgParseTreeNode);
+                result.Add(sigArgId);
+
+                sigArgs1ParseTreeNode = sigArgs1ParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.sigArgs1);
+                sigArgParseTreeNode = sigArgs1ParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.sigArg);
+            }
+
+            result.Reverse();
+
+            return result;
+        }
+
         public static OrderedDictionary GetLocalsDictionary(ParseTreeNode node)
         {
             var types = GetTypes(node);

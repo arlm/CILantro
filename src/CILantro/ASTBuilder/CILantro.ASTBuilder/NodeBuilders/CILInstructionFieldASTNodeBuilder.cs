@@ -22,10 +22,22 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 result = new LoadFieldInstruction();
             }
 
+            var ldsfldParseTreeNode = instrFieldParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldsfld);
+            if(ldsfldParseTreeNode != null)
+            {
+                result = new LoadStaticFieldInstruction();
+            }
+
             var stfldParseTreeNode = instrFieldParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_stfld);
             if(stfldParseTreeNode != null)
             {
                 result = new SetFieldInstruction();
+            }
+
+            var stsfldParseTreeNode = instrFieldParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_stsfld);
+            if(stsfldParseTreeNode != null)
+            {
+                result = new SetStaticFieldInstruction();
             }
 
             if(result != null)

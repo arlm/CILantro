@@ -13,6 +13,10 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 state.Stack.Push(instructionInstance.MethodInstance.This);
                 return callStack.Pop();
             }
+            else if(!ParentMethod.IsEntryPoint)
+            {
+                return callStack.Pop();
+            }
 
             return null;
         }

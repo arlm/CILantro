@@ -12,7 +12,7 @@ namespace CILantro.AST.CILInstances
             Fields = new Dictionary<string, object>();
             foreach(var cilField in cilClass.Fields)
             {
-                Fields.Add(cilField.Name, null);
+                if(!cilField.IsStatic()) Fields.Add(cilField.Name, null);
             }
         }
 

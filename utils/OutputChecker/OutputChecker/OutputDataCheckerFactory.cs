@@ -389,6 +389,36 @@ namespace OutputChecker
                 case "TP_CSF_Classes_2ArgumentsConstructor":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Classes_PublicStaticFields":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_ManyConstructors":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_PrivateMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_PublicMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_PrivateFields":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_Destructor":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Classes_PrivateStaticFields":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_PrivateStaticMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_PublicStaticMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Methods_ManyMethods":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

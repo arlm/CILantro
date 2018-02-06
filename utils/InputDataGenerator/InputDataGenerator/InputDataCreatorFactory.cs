@@ -862,6 +862,86 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextStandardString());
                     });
 
+                case "TP_CSF_Classes_PublicStaticFields":
+                    return new EnumerableInputDataCreator(IntHelper.GetRange(1, 100).SelectCreateInputActions(n => writer =>
+                    {
+                        writer.WriteLine(n);
+                    }));
+
+                case "TP_CSF_Classes_ManyConstructors":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(1, 4);
+                        writer.WriteLine(n);
+
+                        var f1 = rand.NextInt();
+                        writer.WriteLine(f1);
+
+                        if (n > 1)
+                        {
+                            var f2 = rand.NextInt();
+                            writer.WriteLine(f2);
+                        }
+
+                        if(n > 2)
+                        {
+                            var f3 = rand.NextInt();
+                            writer.WriteLine(f3);
+                        }
+                    });
+
+                case "TP_CSF_Methods_PrivateMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Methods_PublicMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Classes_PrivateFields":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
+                case "TP_CSF_Classes_Destructor":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Classes_PrivateStaticFields":
+                    return new EnumerableInputDataCreator(IntHelper.GetRange(1, 100).SelectCreateInputActions(n => writer =>
+                    {
+                        writer.WriteLine(n);
+                    }));
+
+                case "TP_CSF_Methods_PrivateStaticMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Methods_PublicStaticMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Methods_ManyMethods":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

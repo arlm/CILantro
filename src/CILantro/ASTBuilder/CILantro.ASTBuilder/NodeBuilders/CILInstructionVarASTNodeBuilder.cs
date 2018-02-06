@@ -16,6 +16,12 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             CILInstructionVar result = null;
 
+            var ldargsParseTreeNode = instrVarParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldargs);
+            if(ldargsParseTreeNode != null)
+            {
+                result = new LoadArgumentShortInstruction();
+            }
+
             var ldlocasParseTreeNode = instrVarParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_ldlocas);
             if(ldlocasParseTreeNode != null)
             {

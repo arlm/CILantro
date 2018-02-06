@@ -95,6 +95,8 @@ namespace CILantro.Grammar
                 "ldarg.0",
                 "ldarg.1",
                 "ldarg.2",
+                "ldarg.3",
+                "ldarg.s",
                 "ldc.i4",
                 "ldc.i4.0",
                 "ldc.i4.1",
@@ -272,6 +274,7 @@ namespace CILantro.Grammar
                 ToTerm("ldarg.0") |
                 ToTerm("ldarg.1") |
                 ToTerm("ldarg.2") |
+                ToTerm("ldarg.3") |
                 ToTerm("ldc.i4.0") |
                 ToTerm("ldc.i4.1") |
                 ToTerm("ldc.i4.2") |
@@ -310,6 +313,7 @@ namespace CILantro.Grammar
 
             var INSTR_VAR = new NonTerminal(GrammarNames.INSTR_VAR);
             INSTR_VAR.Rule =
+                ToTerm("ldarg.s") |
                 ToTerm("ldloc.s") |
                 ToTerm("ldloca.s") |
                 ToTerm("stloc.s");

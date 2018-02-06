@@ -23,7 +23,7 @@ namespace CILantro.AST.CILInstances
 
         public CILMethodInstance CreateEntryPointInstance()
         {
-            return Program.GetEntryPoint().CreateInstance(new object[0]);
+            return Program.GetEntryPoint().CreateInstance(null, new object[0]);
         }
 
         public CILantroType GetCustomType(CILClassName className)

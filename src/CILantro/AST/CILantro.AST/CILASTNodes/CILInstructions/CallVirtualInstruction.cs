@@ -1,4 +1,6 @@
-﻿using CILantro.AST.CILInstances;
+﻿using CILantro.AST.CILCustomTypes;
+using CILantro.AST.CILInstances;
+using CILantro.Helpers.Convertions;
 using CILantro.State;
 using System;
 using System.Collections.Generic;
@@ -10,23 +12,37 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
     {
         public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
-            var reflectedAssembly = Assembly.Load(TypeSpecification.ClassName.AssemblyName);
-            var reflectedClass = reflectedAssembly.GetType(TypeSpecification.ClassName.ClassName);
-            var reflectedMethod = reflectedClass.GetMethod(MethodName, GetMethodArgumentRuntimeTypes(programInstance).ToArray());
+            var reflectedType = TypeSpecification.GetTypeSpecified(programInstance);
+            var reflectedMethod = (MethodBase)reflectedType.GetMethod(MethodName, GetMethodArgumentRuntimeTypes(programInstance).ToArray());
+            if (reflectedMethod == null && MethodName.Equals(".ctor") && ParentMethod.IsConstructor)
+            {
+                return instructionInstance.GetNextInstructionInstance();
+            }
 
             var methodArguments = new List<object>();
             for (int i = 0; i < MethodArgumentTypes.Count; i++)
             {
+                var argumentType = GetMethodArgumentRuntimeTypes(programInstance)[MethodArgumentTypes.Count - i - 1];
+
                 var argument = state.Stack.Pop();
-                var methodArgument = argument;
-                try
-                {
-                    methodArgument = Convert.ChangeType(argument, GetMethodArgumentRuntimeTypes(programInstance)[MethodArgumentTypes.Count - i - 1]);
-                }
-                catch (Exception) { }
+                var methodArgument = ConvertHelper.ConvertIfPossible(argument, argumentType);
                 methodArguments.Add(methodArgument);
             }
             methodArguments.Reverse();
+
+            if (reflectedMethod is CILantroMethodInfo)
+            {
+                callStack.Push(instructionInstance.GetNextInstructionInstance());
+
+                object obj = null;
+                if (CallConvention.Instance)
+                {
+                    obj = state.Stack.Pop();
+                }
+
+                var cilantroMethod = reflectedMethod as CILantroMethodInfo;
+                return cilantroMethod.Method.CreateInstance(obj, methodArguments.ToArray()).GetFirstInstructionInstance();
+            }
 
             object methodObject = null;
             if (CallConvention.Instance)

@@ -29,11 +29,23 @@ namespace CILantro.ASTBuilder.NodeBuilders
             var locals = new OrderedDictionary();
             var localsAddresses = new List<Guid>();
             var methodName = string.Empty;
+            CILType returnType = null;
+            CILCallConvention callConvention = null;
 
             var methodHeadParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodHead);
 
             var methodNameParseTreeNode = methodHeadParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.methodName);
             methodName = MethodNameParseTreeNodeHelper.GetMethodName(methodNameParseTreeNode);
+
+            var headSigArgs0ParseTreeNode = methodHeadParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.sigArgs0);
+            var argumentTypes = SigArgs0ParseTreeNodeHelper.GetTypes(headSigArgs0ParseTreeNode);
+            var argumentNames = SigArgs0ParseTreeNodeHelper.GetNames(headSigArgs0ParseTreeNode);
+
+            var callConvParseTreeNode = methodHeadParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.callConv);
+            callConvention = CallConvParseTreeNodeHelper.GetValue(callConvParseTreeNode);
+
+            var headTypeParseTreeNode = methodHeadParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.type);
+            returnType = TypeParseTreeNodeHelper.GetType(headTypeParseTreeNode);
 
             var methodDeclsParseTreeNode = node.GetFirstChildWithGrammarName(GrammarNames.methodDecls);
             while(methodDeclsParseTreeNode != null)
@@ -78,13 +90,17 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             var result = new CILMethod
             {
+                ArgumentTypes = argumentTypes,
                 Instructions = instructions,
                 InstructionsLabels = instructionsLabels,
                 IsEntryPoint = isEntryPoint,
                 LocalsTypes = localsTypes,
                 LocalsAddresses = localsAddresses,
                 Locals = locals,
-                MethodName = methodName
+                MethodName = methodName,
+                CallConvention = callConvention,
+                ReturnType = returnType,
+                ArgumentNames = argumentNames
             };
 
             foreach (var instruction in instructions)

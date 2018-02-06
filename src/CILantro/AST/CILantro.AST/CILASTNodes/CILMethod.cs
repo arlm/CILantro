@@ -10,6 +10,12 @@ namespace CILantro.AST.CILASTNodes
     {
         public string MethodName { get; set; }
 
+        public CILType ReturnType { get; set; }
+
+        public List<CILType> ArgumentTypes { get; set; }
+
+        public List<string> ArgumentNames { get; set; }
+
         public List<CILInstruction> Instructions { get; set; }
 
         public List<string> InstructionsLabels { get; set; }
@@ -25,6 +31,8 @@ namespace CILantro.AST.CILASTNodes
         public CILClass ParentClass { get; set; }
 
         public bool IsConstructor => MethodName.Equals(".ctor");
+
+        public CILCallConvention CallConvention { get; set; }
 
         public CILInstruction GetNextInstruction(CILInstruction currentInstruction)
         {
@@ -60,10 +68,16 @@ namespace CILantro.AST.CILASTNodes
             return Locals[localIndex];
         }
 
-        public CILMethodInstance CreateInstance(object[] arguments)
+        public CILMethodInstance CreateInstance(object obj, object[] arguments)
         {
-            var classInstance = ParentClass.CreateInstance();
-            return new CILMethodInstance(this, classInstance, arguments);
+            var argumentsDictionary = new OrderedDictionary(arguments.Length);
+            for (int i = 0; i < arguments.Length; i++)
+            {
+                argumentsDictionary.Add(ArgumentNames[i], arguments[i]);
+            }
+
+            var classInstance = obj != null ? obj as CILClassInstance : ParentClass.CreateInstance();
+            return new CILMethodInstance(this, classInstance, argumentsDictionary);
         }
     }
 }

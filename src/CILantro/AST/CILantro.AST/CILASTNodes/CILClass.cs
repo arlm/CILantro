@@ -18,9 +18,21 @@ namespace CILantro.AST.CILASTNodes
 
         public bool IsEnum { get { return Extends.ClassName.Equals("System.Enum"); } }
 
+        public Dictionary<string, object> StaticFields { get; set; }
+
         public CILClassInstance CreateInstance()
         {
             return new CILClassInstance(this);
+        }
+
+        public void SetStaticField(string fieldName, object value)
+        {
+            StaticFields[fieldName] = value;
+        }
+
+        public object GetStaticField(string fieldName)
+        {
+            return StaticFields[fieldName];
         }
     }
 }

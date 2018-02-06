@@ -8,7 +8,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
     {
         public override CILInstructionInstance Execute(CILInstructionInstance instructionInstance, CILProgramState state, CILProgramInstance programInstance, Stack<CILInstructionInstance> callStack)
         {
-            if(ParentMethod.IsConstructor)
+            if(ParentMethod.CallConvention.Instance)
             {
                 state.Stack.Push(instructionInstance.MethodInstance.Arguments[0]);
             }

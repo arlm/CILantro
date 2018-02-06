@@ -59,13 +59,20 @@ namespace CILantro.ASTBuilder.NodeBuilders
 
             fields.Reverse();
 
+            var staticFields = new Dictionary<string, object>();
+            foreach(var field in fields)
+            {
+                if (field.IsStatic()) staticFields.Add(field.Name, null);
+            }
+
             var result = new CILClass
             {
                 Fields = fields,
                 Methods = methods,
                 Constructors = constructors,
                 ClassName = className,
-                Extends = extendsClassName
+                Extends = extendsClassName,
+                StaticFields = staticFields
             };
 
             foreach(var resultMethod in result.Methods)

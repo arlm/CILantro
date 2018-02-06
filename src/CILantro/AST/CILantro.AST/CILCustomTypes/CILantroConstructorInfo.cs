@@ -1,6 +1,7 @@
 ﻿using CILantro.AST.CILASTNodes;
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 
 namespace CILantro.AST.CILCustomTypes
@@ -71,7 +72,7 @@ namespace CILantro.AST.CILCustomTypes
 
         public override ParameterInfo[] GetParameters()
         {
-            throw new NotImplementedException();
+            return Method.ArgumentTypes.Select(at => new CILantroParameterInfo(at)).ToArray();
         }
 
         public override object Invoke(BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)

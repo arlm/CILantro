@@ -1,4 +1,5 @@
 ﻿using CILantro.AST.CILASTNodes;
+using System.Collections.Specialized;
 using System.Linq;
 
 namespace CILantro.AST.CILInstances
@@ -9,9 +10,9 @@ namespace CILantro.AST.CILInstances
 
         public CILClassInstance This { get; private set; }
 
-        public object[] Arguments { get; private set; }
+        public OrderedDictionary Arguments { get; private set; }
 
-        public CILMethodInstance(CILMethod method, CILClassInstance thisInstance, object[] arguments)
+        public CILMethodInstance(CILMethod method, CILClassInstance thisInstance, OrderedDictionary arguments)
         {
             Method = method;
             This = thisInstance;

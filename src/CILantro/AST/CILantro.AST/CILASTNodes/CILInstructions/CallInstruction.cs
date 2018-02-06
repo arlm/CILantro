@@ -1,4 +1,5 @@
-﻿using CILantro.AST.CILInstances;
+﻿using CILantro.AST.CILCustomTypes;
+using CILantro.AST.CILInstances;
 using CILantro.Helpers.Convertions;
 using CILantro.State;
 using System;
@@ -28,6 +29,20 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 methodArguments.Add(methodArgument);
             }
             methodArguments.Reverse();
+
+            if(reflectedMethod is CILantroMethodInfo)
+            {
+                callStack.Push(instructionInstance.GetNextInstructionInstance());
+
+                object obj = null;
+                if(CallConvention.Instance)
+                {
+                    obj = state.Stack.Pop();
+                }
+
+                var cilantroMethod = reflectedMethod as CILantroMethodInfo;
+                return cilantroMethod.Method.CreateInstance(obj, methodArguments.ToArray()).GetFirstInstructionInstance();
+            }
 
             object methodObject = null;
             if (CallConvention.Instance)

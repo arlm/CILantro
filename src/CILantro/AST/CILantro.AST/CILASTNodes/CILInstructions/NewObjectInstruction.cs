@@ -32,7 +32,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 callStack.Push(instructionInstance.GetNextInstructionInstance());
 
                 var cilantroConstructor = reflectedConstructor as CILantroConstructorInfo;
-                return cilantroConstructor.Method.CreateInstance(methodArguments.ToArray()).GetFirstInstructionInstance();
+                return cilantroConstructor.Method.CreateInstance(null, methodArguments.ToArray()).GetFirstInstructionInstance();
             }
 
             var methodResult = reflectedConstructor.Invoke(methodArguments.ToArray());

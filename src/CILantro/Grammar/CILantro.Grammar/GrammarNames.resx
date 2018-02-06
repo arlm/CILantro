@@ -699,4 +699,19 @@
   <data name="keyword_ldarg2" xml:space="preserve">
     <value>ldarg.2</value>
   </data>
+  <data name="keyword_ldsfld" xml:space="preserve">
+    <value>ldsfld</value>
+  </data>
+  <data name="keyword_dotCctor" xml:space="preserve">
+    <value>.cctor</value>
+  </data>
+  <data name="keyword_stsfld" xml:space="preserve">
+    <value>stsfld</value>
+  </data>
+  <data name="keyword_ldarg3" xml:space="preserve">
+    <value>ldarg.3</value>
+  </data>
+  <data name="keyword_ldargs" xml:space="preserve">
+    <value>ldarg.s</value>
+  </data>
 </root>

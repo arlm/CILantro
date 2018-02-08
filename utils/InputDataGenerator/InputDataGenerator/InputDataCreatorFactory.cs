@@ -980,6 +980,38 @@ namespace InputDataGenerator
                         for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_ReferenceTypes_ExistingType":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardString());
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
+                case "TP_CSF_ReferenceTypes_CustomType":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_ReferenceTypes_DynamicType":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
+                case "TP_CSF_ImplicitConv_ShortToInt":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextShort());
+                    });
+
+                case "TP_CSF_ImplicitConv_IntToLong":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

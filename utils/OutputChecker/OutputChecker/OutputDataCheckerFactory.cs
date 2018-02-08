@@ -437,6 +437,21 @@ namespace OutputChecker
                 case "TP_CSF_Methods_Params":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_ReferenceTypes_ExistingType":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ReferenceTypes_CustomType":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ReferenceTypes_DynamicType":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_ShortToInt":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_IntToLong":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

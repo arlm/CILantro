@@ -714,4 +714,10 @@
   <data name="keyword_ldargs" xml:space="preserve">
     <value>ldarg.s</value>
   </data>
+  <data name="keyword_convr8" xml:space="preserve">
+    <value>conv.r8</value>
+  </data>
+  <data name="keyword_convr4" xml:space="preserve">
+    <value>conv.r4</value>
+  </data>
 </root>

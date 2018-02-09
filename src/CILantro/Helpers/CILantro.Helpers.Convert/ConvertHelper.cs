@@ -9,6 +9,7 @@ namespace CILantro.Helpers.Convertions
             var valueBytes = new byte[0];
 
             if (value is int) valueBytes = BitConverter.GetBytes((int)value);
+            if (value is uint) valueBytes = BitConverter.GetBytes((uint)value);
 
             var resultBytes = new byte[length];
             Array.Copy(valueBytes, resultBytes, valueBytes.Length);

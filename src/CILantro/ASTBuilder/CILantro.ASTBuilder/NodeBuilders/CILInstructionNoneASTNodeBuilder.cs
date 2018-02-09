@@ -62,6 +62,20 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 return convertToLongInstruction;
             }
 
+            var convr4ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_convr4);
+            if(convr4ParseTreeNode != null)
+            {
+                var convertToFloatInstruction = new ConvertToFloatInstruction();
+                return convertToFloatInstruction;
+            }
+
+            var convr8ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_convr8);
+            if(convr8ParseTreeNode != null)
+            {
+                var convertToDoubleInstruction = new ConvertToDoubleInstruction();
+                return convertToDoubleInstruction;
+            }
+
             var convu8ParseTreeNode = instrNoneParseTreeNode?.GetFirstChildWithGrammarName(GrammarNames.keyword_convu8);
             if(convu8ParseTreeNode != null)
             {

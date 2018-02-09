@@ -754,6 +754,24 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to conv.r4.
+        /// </summary>
+        public static string keyword_convr4 {
+            get {
+                return ResourceManager.GetString("keyword_convr4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to conv.r8.
+        /// </summary>
+        public static string keyword_convr8 {
+            get {
+                return ResourceManager.GetString("keyword_convr8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to conv.u8.
         /// </summary>
         public static string keyword_convu8 {

@@ -73,6 +73,8 @@
     <Compile Include="CILASTNodes\CILInstructions\CheckIfEqualInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfGreaterInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\CheckIfLessInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ConvertToDoubleInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ConvertToFloatInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ConvertToIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ConvertToLongInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ConvertToUnsignedLongInstruction.cs" />

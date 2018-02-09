@@ -452,6 +452,30 @@ namespace OutputChecker
                 case "TP_CSF_ImplicitConv_IntToLong":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_ImplicitConv_SByteToShort":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_ByteToUShort":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_UShortToUInt":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_UIntToULong":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_FloatToDouble":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_ShortToFloat":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_IntToDouble":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_ImplicitConv_LongToDecimal":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

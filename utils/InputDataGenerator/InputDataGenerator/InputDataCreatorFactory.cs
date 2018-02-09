@@ -1012,6 +1012,54 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_ImplicitConv_SByteToShort":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextSByte());
+                    });
+
+                case "TP_CSF_ImplicitConv_ByteToUShort":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextByte());
+                    });
+
+                case "TP_CSF_ImplicitConv_UShortToUInt":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextUShort());
+                    });
+
+                case "TP_CSF_ImplicitConv_UIntToULong":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextUInt());
+                    });
+
+                case "TP_CSF_ImplicitConv_FloatToDouble":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextFloat());
+                    });
+
+                case "TP_CSF_ImplicitConv_ShortToFloat":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextShort());
+                    });
+
+                case "TP_CSF_ImplicitConv_IntToDouble":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_ImplicitConv_LongToDecimal":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextLong());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

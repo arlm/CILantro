@@ -82,6 +82,8 @@ namespace CILantro.Grammar
                 "class",
                 "conv.i4",
                 "conv.i8",
+                "conv.r4",
+                "conv.r8",
                 "conv.u8",
                 "extends",
                 "extern",
@@ -268,6 +270,8 @@ namespace CILantro.Grammar
                 ToTerm("clt") |
                 ToTerm("conv.i4") |
                 ToTerm("conv.i8") |
+                ToTerm("conv.r4") |
+                ToTerm("conv.r8") |
                 ToTerm("conv.u8") |
                 ToTerm("div") |
                 ToTerm("dup") |

@@ -497,10 +497,13 @@ namespace CILantro.Grammar
                 methAttr + ToTerm("static") |
                 methAttr + ToTerm("public") |
                 methAttr + ToTerm("private") |
+                methAttr + ToTerm("family") |
                 methAttr + ToTerm("specialname") |
                 methAttr + ToTerm("virtual") |
+                methAttr + ToTerm("abstract") |
                 methAttr + ToTerm("assembly") |
                 methAttr + ToTerm("hidebysig") |
+                methAttr + ToTerm("newslot") |
                 methAttr + ToTerm("rtspecialname") |
                 methAttr + ToTerm("strict");
 
@@ -524,6 +527,7 @@ namespace CILantro.Grammar
                 fieldAttr + ToTerm("static") |
                 fieldAttr + ToTerm("public") |
                 fieldAttr + ToTerm("private") |
+                fieldAttr + ToTerm("family") |
                 fieldAttr + ToTerm("initonly") |
                 fieldAttr + ToTerm("rtspecialname") |
                 fieldAttr + ToTerm("specialname") |

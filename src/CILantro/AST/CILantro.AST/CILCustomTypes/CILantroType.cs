@@ -30,7 +30,10 @@ namespace CILantro.AST.CILCustomTypes
 
             _fields = _cilClass.Fields.Select(f => new CILantroFieldInfo(f, cilClass)).ToList();
             _constructors = _cilClass.Constructors.Select(c => new CILantroConstructorInfo(c, _programInstance)).ToList();
-            _methods = _cilClass.Methods.Select(m => new CILantroMethodInfo(m, _programInstance)).ToList();
+
+            var methods = _cilClass.Methods.Select(m => new CILantroMethodInfo(m, _programInstance)).ToList();
+            var constructorMethods = _cilClass.Constructors.Select(m => new CILantroMethodInfo(m, _programInstance)).ToList();
+            _methods = methods.Union(constructorMethods).ToList();
         }
 
         public Type GetRuntimeType()
@@ -250,7 +253,7 @@ namespace CILantro.AST.CILCustomTypes
             }
         }
 
-        private bool CompareArgumentTypes(Type[] args1, Type[] args2)
+        public static bool CompareArgumentTypes(Type[] args1, Type[] args2)
         {
             if (args1.Length != args2.Length) return false;
 

@@ -485,6 +485,36 @@ namespace OutputChecker
                 case "TP_CSF_ExplicitConv_LongToInt":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Inheritance_SimpleInheritance":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_BaseClassMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_BaseConstructor":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_ProtectedField":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_ProtectedConstructor":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_ProtectedMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_InheritanceTree":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_InheritanceChain":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_AbstractClass":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_InheritedAbstractMethod":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

@@ -4,6 +4,7 @@ using CILantro.Helpers.Convertions;
 using CILantro.State;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
@@ -34,14 +35,51 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             {
                 callStack.Push(instructionInstance.GetNextInstructionInstance());
 
+                //var cilantroMethod = reflectedMethod as CILantroMethodInfo;
+                //var methodToCall = cilantroMethod.Method;
+
+                //object obj = null;
+                //if (CallConvention.Instance)
+                //{
+                //    obj = state.Stack.Pop();
+                //    var cilClassInstance = obj as CILClassInstance;
+
+                //    if(!cilClassInstance._cilClass.ClassName.UniqueName.Equals(cilantroMethod.Method.ParentClass.ClassName.UniqueName))
+                //    {
+                //        var exactMethod = cilClassInstance._cilClass.Methods.FirstOrDefault(m => m.MethodName.Equals(MethodName) && CILantroType.CompareArgumentTypes(GetMethodArgumentRuntimeTypes(programInstance).ToArray(), m.ArgumentTypes.Select(ct => ct.GetRuntimeType(programInstance)).ToArray()));
+                //        if(exactMethod != null)
+                //        {
+                //            methodToCall = exactMethod;
+                //        }
+                //    }
+                //}
+
+                var cilantroMethodInfo = reflectedMethod as CILantroMethodInfo;
+                CILMethod methodToCall = null;
+
                 object obj = null;
-                if (CallConvention.Instance)
+                if(CallConvention.Instance)
                 {
                     obj = state.Stack.Pop();
+                    var cilClassInstance = obj as CILClassInstance;
+                    var cilClass = cilClassInstance._cilClass;
+
+                    while(cilClass != null)
+                    {
+                        var matchingMethod = cilClass.Methods.FirstOrDefault(m => m.MethodName.Equals(MethodName) && CILantroType.CompareArgumentTypes(GetMethodArgumentRuntimeTypes(programInstance).ToArray(), m.ArgumentTypes.Select(ct => ct.GetRuntimeType(programInstance)).ToArray()));
+                        if(matchingMethod != null)
+                        {
+                            methodToCall = matchingMethod;
+                            break;
+                        }
+
+                        cilClass = programInstance.Program.Classes.FirstOrDefault(c => c.ClassName.UniqueName == cilClass.Extends.UniqueName);
+                    }
                 }
 
-                var cilantroMethod = reflectedMethod as CILantroMethodInfo;
-                return cilantroMethod.Method.CreateInstance(obj, methodArguments.ToArray()).GetFirstInstructionInstance();
+                if (methodToCall == null) methodToCall = cilantroMethodInfo.Method;
+
+                return methodToCall.CreateInstance(obj, methodArguments.ToArray()).GetFirstInstructionInstance();
             }
 
             object methodObject = null;

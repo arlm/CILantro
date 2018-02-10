@@ -8,6 +8,8 @@ namespace CILantro.AST.RuntimeTypes
     {
         public static Type GetRuntimeType(CILClassName className)
         {
+            if (string.IsNullOrEmpty(className.AssemblyName)) return null;
+
             var reflectedAssembly = Assembly.Load(className.AssemblyName);
             var reflectedType = reflectedAssembly.GetType(className.ClassName);
             return reflectedType;

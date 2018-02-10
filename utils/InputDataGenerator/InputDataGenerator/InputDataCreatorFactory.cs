@@ -1078,6 +1078,62 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextLong());
                     });
 
+                case "TP_CSF_Inheritance_SimpleInheritance":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_Inheritance_BaseClassMethod":
+                    return new EmptyInputDataCreator();
+
+                case "TP_CSF_Inheritance_BaseConstructor":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_ProtectedField":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_ProtectedConstructor":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_ProtectedMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_InheritanceTree":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_InheritanceChain":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_AbstractClass":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                        writer.WriteLine(rand.NextInt(true));
+                    });
+
+                case "TP_CSF_Inheritance_InheritedAbstractMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

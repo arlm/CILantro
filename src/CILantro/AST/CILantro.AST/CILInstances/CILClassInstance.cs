@@ -5,10 +5,14 @@ namespace CILantro.AST.CILInstances
 {
     public class CILClassInstance
     {
+        public CILClass _cilClass;
+
         public Dictionary<string, object> Fields { get; set; }
 
         public CILClassInstance(CILClass cilClass)
         {
+            _cilClass = cilClass;
+
             Fields = new Dictionary<string, object>();
             foreach(var cilField in cilClass.Fields)
             {

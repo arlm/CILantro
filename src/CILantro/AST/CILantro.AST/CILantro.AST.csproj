@@ -77,6 +77,8 @@
     <Compile Include="CILASTNodes\CILInstructions\ConvertToFloatInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ConvertToIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ConvertToLongInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ConvertToSByteInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\ConvertToShortInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\ConvertToUnsignedLongInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DivideInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\DuplicateInstruction.cs" />

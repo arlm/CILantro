@@ -80,6 +80,8 @@ namespace CILantro.Grammar
                 "castclass",
                 "cil",
                 "class",
+                "conv.i1",
+                "conv.i2",
                 "conv.i4",
                 "conv.i8",
                 "conv.r4",
@@ -268,6 +270,8 @@ namespace CILantro.Grammar
                 ToTerm("ceq") |
                 ToTerm("cgt") |
                 ToTerm("clt") |
+                ToTerm("conv.i1") |
+                ToTerm("conv.i2") |
                 ToTerm("conv.i4") |
                 ToTerm("conv.i8") |
                 ToTerm("conv.r4") |

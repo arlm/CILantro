@@ -1060,6 +1060,24 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextLong());
                     });
 
+                case "TP_CSF_ExplicitConv_IntToShort":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_ExplicitConv_ShortToSByte":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextShort());
+                    });
+
+                case "TP_CSF_ExplicitConv_LongToInt":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextLong());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

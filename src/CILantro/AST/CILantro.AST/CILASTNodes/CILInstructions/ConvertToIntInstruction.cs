@@ -1,6 +1,6 @@
 ﻿using CILantro.AST.CILInstances;
+using CILantro.Helpers.Convertions;
 using CILantro.State;
-using System;
 using System.Collections.Generic;
 
 namespace CILantro.AST.CILASTNodes.CILInstructions
@@ -11,7 +11,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
         {
             var value = state.Stack.Pop();
 
-            var result = Convert.ToInt32(value);
+            var result = ConvertHelper.ToInt(value);
             state.Stack.Push(result);
 
             return instructionInstance.GetNextInstructionInstance();

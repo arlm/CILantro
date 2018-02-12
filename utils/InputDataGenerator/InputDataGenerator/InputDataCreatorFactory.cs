@@ -1159,6 +1159,36 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextStandardString());
                     });
 
+                case "TP_CSF_Polymorphism_MethodsInOneClass":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(1, 4);
+                        writer.WriteLine(n);
+
+                        for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Polymorphism_MethodsInRelatedClasses":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(1, 4);
+                        writer.WriteLine(n);
+
+                        for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Polymorphism_ClassWithVirtualMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Polymorphism_ExistingClassWithVirtualMethod":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextInt());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

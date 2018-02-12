@@ -524,6 +524,18 @@ namespace OutputChecker
                 case "TP_CSF_Inheritance_ExistingAbstractClass":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Polymorphism_MethodsInOneClass":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Polymorphism_MethodsInRelatedClasses":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Polymorphism_ClassWithVirtualMethod":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Polymorphism_ExistingClassWithVirtualMethod":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

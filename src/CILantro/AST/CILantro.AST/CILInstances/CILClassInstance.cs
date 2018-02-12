@@ -1,6 +1,5 @@
 ﻿using CILantro.AST.CILASTNodes;
 using CILantro.AST.CILCustomTypes;
-using CILantro.AST.RuntimeTypes;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -16,14 +15,18 @@ namespace CILantro.AST.CILInstances
 
         public Dictionary<string, object> Fields { get; set; }
 
+        public Dictionary<string, Guid> FieldAddresses { get; set; }
+
         public CILClassInstance(CILClass cilClass)
         {
             _cilClass = cilClass;
 
             Fields = new Dictionary<string, object>();
-            foreach(var cilField in cilClass.Fields)
+            FieldAddresses = new Dictionary<string, Guid>();
+            foreach (var cilField in cilClass.Fields)
             {
                 if(!cilField.IsStatic()) Fields.Add(cilField.Name, null);
+                if (!cilField.IsStatic()) FieldAddresses.Add(cilField.Name, Guid.NewGuid());
             }
 
             var baseClass = _cilClass;
@@ -54,6 +57,11 @@ namespace CILantro.AST.CILInstances
         public object GetField(string fieldName)
         {
             return Fields[fieldName];
+        }
+
+        public Guid GetFieldAddress(string fieldName)
+        {
+            return FieldAddresses[fieldName];
         }
 
         public new Type GetType()

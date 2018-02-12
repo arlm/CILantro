@@ -1123,6 +1123,15 @@ namespace CILantro.Grammar {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ldflda.
+        /// </summary>
+        public static string keyword_ldflda {
+            get {
+                return ResourceManager.GetString("keyword_ldflda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ldlen.
         /// </summary>
         public static string keyword_ldlen {

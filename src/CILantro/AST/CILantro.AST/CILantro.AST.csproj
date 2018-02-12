@@ -104,6 +104,7 @@
     <Compile Include="CILASTNodes\CILInstructions\LoadConstantLongInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementIntInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadElementRefInstruction.cs" />
+    <Compile Include="CILASTNodes\CILInstructions\LoadFieldAddressInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadFieldInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLengthInstruction.cs" />
     <Compile Include="CILASTNodes\CILInstructions\LoadLocalVariable0Instruction.cs" />

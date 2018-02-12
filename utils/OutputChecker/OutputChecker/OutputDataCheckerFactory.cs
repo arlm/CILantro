@@ -515,6 +515,15 @@ namespace OutputChecker
                 case "TP_CSF_Inheritance_InheritedAbstractMethod":
                     return new SameOutputsOutputDataChecker();
 
+                case "TP_CSF_Inheritance_ExistingClassInheritance":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_ExistingClassInheritance2":
+                    return new SameOutputsOutputDataChecker();
+
+                case "TP_CSF_Inheritance_ExistingAbstractClass":
+                    return new SameOutputsOutputDataChecker();
+
                 default:
                     return null;
             }

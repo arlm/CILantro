@@ -31,43 +31,60 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
             }
             methodArguments.Reverse();
 
+            
+
+            object methodObject = null;
+            if (CallConvention.Instance)
+            {
+                methodObject = state.Stack.Pop();
+
+                if (methodObject is Guid)
+                {
+                    var objectAddress = (Guid)methodObject;
+                    methodObject = ParentMethod.GetLocalByAddress(objectAddress);
+                }
+            }
+
+            var methodObjectToCall = methodObject;
+            if (methodObjectToCall is CILClassInstance) methodObjectToCall = (methodObjectToCall as CILClassInstance).BaseInstance;
+
+            if(methodObject is CILClassInstance)
+            {
+                var cilClass = (methodObject as CILClassInstance)._cilClass;
+                var cilMethod = cilClass.Methods.SingleOrDefault(m => m.MethodName == this.MethodName && CILantroType.CompareArgumentTypes(m.ArgumentTypes.Select(at => at.GetRuntimeType(programInstance)).ToArray(), this.GetMethodArgumentRuntimeTypes(programInstance).ToArray()));
+                while(cilClass != null && cilMethod == null)
+                {
+                    cilClass = cilClass.ExtendsClass;
+                    if(cilClass != null)
+                        cilMethod = cilClass.Methods.SingleOrDefault(m => m.MethodName == this.MethodName && CILantroType.CompareArgumentTypes(m.ArgumentTypes.Select(at => at.GetRuntimeType(programInstance)).ToArray(), this.GetMethodArgumentRuntimeTypes(programInstance).ToArray()));
+                }
+
+                if(cilMethod != null)
+                {
+                    var newMethodInfo = new CILantroMethodInfo(cilMethod, programInstance, cilMethod.ReturnType.GetRuntimeType(programInstance));
+                    reflectedMethod = newMethodInfo;
+                }
+            }
+
             if (reflectedMethod is CILantroMethodInfo)
             {
                 callStack.Push(instructionInstance.GetNextInstructionInstance());
 
-                //var cilantroMethod = reflectedMethod as CILantroMethodInfo;
-                //var methodToCall = cilantroMethod.Method;
-
-                //object obj = null;
-                //if (CallConvention.Instance)
-                //{
-                //    obj = state.Stack.Pop();
-                //    var cilClassInstance = obj as CILClassInstance;
-
-                //    if(!cilClassInstance._cilClass.ClassName.UniqueName.Equals(cilantroMethod.Method.ParentClass.ClassName.UniqueName))
-                //    {
-                //        var exactMethod = cilClassInstance._cilClass.Methods.FirstOrDefault(m => m.MethodName.Equals(MethodName) && CILantroType.CompareArgumentTypes(GetMethodArgumentRuntimeTypes(programInstance).ToArray(), m.ArgumentTypes.Select(ct => ct.GetRuntimeType(programInstance)).ToArray()));
-                //        if(exactMethod != null)
-                //        {
-                //            methodToCall = exactMethod;
-                //        }
-                //    }
-                //}
-
                 var cilantroMethodInfo = reflectedMethod as CILantroMethodInfo;
                 CILMethod methodToCall = null;
 
-                object obj = null;
-                if(CallConvention.Instance)
+                object obj = methodObject;
+                //object obj = null;
+                if (CallConvention.Instance)
                 {
-                    obj = state.Stack.Pop();
+                    //obj = state.Stack.Pop();
                     var cilClassInstance = obj as CILClassInstance;
                     var cilClass = cilClassInstance._cilClass;
 
-                    while(cilClass != null)
+                    while (cilClass != null)
                     {
                         var matchingMethod = cilClass.Methods.FirstOrDefault(m => m.MethodName.Equals(MethodName) && CILantroType.CompareArgumentTypes(GetMethodArgumentRuntimeTypes(programInstance).ToArray(), m.ArgumentTypes.Select(ct => ct.GetRuntimeType(programInstance)).ToArray()));
-                        if(matchingMethod != null)
+                        if (matchingMethod != null)
                         {
                             methodToCall = matchingMethod;
                             break;
@@ -82,19 +99,7 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 return methodToCall.CreateInstance(obj, methodArguments.ToArray()).GetFirstInstructionInstance();
             }
 
-            object methodObject = null;
-            if (CallConvention.Instance)
-            {
-                methodObject = state.Stack.Pop();
-
-                if (methodObject is Guid)
-                {
-                    var objectAddress = (Guid)methodObject;
-                    methodObject = ParentMethod.GetLocalByAddress(objectAddress);
-                }
-            }
-
-            var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
+            var methodResult = reflectedMethod.Invoke(methodObjectToCall, methodArguments.ToArray());
             if (MethodReturnType.GetRuntimeType(programInstance) != typeof(void))
             {
                 state.Stack.Push(methodResult);

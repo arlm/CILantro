@@ -1134,6 +1134,31 @@ namespace InputDataGenerator
                         writer.WriteLine(rand.NextInt());
                     });
 
+                case "TP_CSF_Inheritance_ExistingClassInheritance":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(0, 101);
+                        writer.WriteLine(n);
+
+                        for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_ExistingClassInheritance2":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        var n = rand.Next(0, 101);
+                        writer.WriteLine(n);
+
+                        for (int i = 0; i < n; i++) writer.WriteLine(rand.NextInt());
+                    });
+
+                case "TP_CSF_Inheritance_ExistingAbstractClass":
+                    return new RandomInputDataCreator((writer, rand) =>
+                    {
+                        writer.WriteLine(rand.NextStandardString());
+                        writer.WriteLine(rand.NextStandardString());
+                    });
+
                 default:
                     throw new ArgumentException("Cannot recognize program name.");
             }

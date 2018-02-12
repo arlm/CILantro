@@ -145,6 +145,7 @@
     <Compile Include="CILASTNodes\CILModule.cs" />
     <Compile Include="CILASTNodes\CILProgram.cs" />
     <Compile Include="CILCustomTypes\CILantroConstructorInfo.cs" />
+    <Compile Include="CILCustomTypes\CILantroMethodBody.cs" />
     <Compile Include="CILCustomTypes\CILantroMethodInfo.cs" />
     <Compile Include="CILCustomTypes\CILantroParameterInfo.cs" />
     <Compile Include="CILCustomTypes\CILantroType.cs" />

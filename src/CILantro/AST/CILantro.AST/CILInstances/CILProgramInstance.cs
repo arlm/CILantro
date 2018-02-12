@@ -41,13 +41,20 @@ namespace CILantro.AST.CILInstances
             foreach(var cilClass in program.Classes)
             {
                 Type runtimeType = null;
+                var customType = new CILantroType(cilClass, this);
 
-                if(RuntimeTypeHelper.GetRuntimeType(cilClass.Extends) == typeof(Enum))
+                if (RuntimeTypeHelper.GetRuntimeType(cilClass.Extends) == typeof(Enum))
                 {
                     runtimeType = runtimeTypeFactory.RegisterEnumType(cilClass);
                 }
+                else if(RuntimeTypeHelper.GetRuntimeType(cilClass.Extends) != null)
+                {
+                    runtimeType = runtimeTypeFactory.RegisterType(cilClass, this, customType);
+                }
 
-                var customType = new CILantroType(cilClass, runtimeType, this);
+                cilClass.RuntimeType = runtimeType;
+                customType._runtimeType = runtimeType;
+
                 result.Add(cilClass.ClassName.UniqueName, customType);
             }
 

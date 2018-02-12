@@ -14,9 +14,12 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
         {
             var reflectedType = TypeSpecification.GetTypeSpecified(programInstance);
             var reflectedMethod = (MethodBase)reflectedType.GetMethod(MethodName, GetMethodArgumentRuntimeTypes(programInstance).ToArray());
-            if(reflectedMethod == null && MethodName.Equals(".ctor") && ParentMethod.IsConstructor)
+            if(reflectedMethod == null && MethodName.Equals(".ctor"))
             {
-                return instructionInstance.GetNextInstructionInstance();
+                var reflectedConstructor = reflectedType.GetConstructor(GetMethodArgumentRuntimeTypes(programInstance).ToArray());
+                if (reflectedConstructor == null)
+                    reflectedConstructor = reflectedType.GetConstructor(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance, null, GetMethodArgumentRuntimeTypes(programInstance).ToArray(), null);
+                reflectedMethod = (MethodBase)reflectedConstructor;
             }
 
             var methodArguments = new List<object>();
@@ -56,10 +59,17 @@ namespace CILantro.AST.CILASTNodes.CILInstructions
                 }
             }
 
-            var methodResult = reflectedMethod.Invoke(methodObject, methodArguments.ToArray());
+            var methodObjectToCall = methodObject;
+            if (methodObjectToCall is CILClassInstance) methodObjectToCall = (methodObjectToCall as CILClassInstance).BaseInstance;
+
+            var methodResult = reflectedMethod.Invoke(methodObjectToCall, methodArguments.ToArray());
             if(MethodReturnType.GetRuntimeType(programInstance) != typeof(void))
             {
                 state.Stack.Push(methodResult);
+            }
+            else if(MethodName.Equals(".ctor"))
+            {
+                state.Stack.Push(methodObject);
             }
 
             return instructionInstance.GetNextInstructionInstance();

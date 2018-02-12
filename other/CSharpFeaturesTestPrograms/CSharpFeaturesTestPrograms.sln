@@ -379,6 +379,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Inheritance_Abstract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Inheritance_InheritedAbstractMethod", "Inheritance\TP_CSF_Inheritance_InheritedAbstractMethod\TP_CSF_Inheritance_InheritedAbstractMethod.csproj", "{9D800D4D-E44E-441A-AF7C-4B445D805A90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Inheritance_ExistingClassInheritance", "Inheritance\TP_CSF_Inheritance_ExistingClassInheritance\TP_CSF_Inheritance_ExistingClassInheritance.csproj", "{2319F014-E076-4B07-ABF4-E8F092CD89E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Inheritance_ExistingClassInheritance2", "Inheritance\TP_CSF_Inheritance_ExistingClassInheritance2\TP_CSF_Inheritance_ExistingClassInheritance2.csproj", "{6F8440D1-B4E5-42AF-9268-B38B71165274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_CSF_Inheritance_ExistingAbstractClass", "Inheritance\TP_CSF_Inheritance_ExistingAbstractClass\TP_CSF_Inheritance_ExistingAbstractClass.csproj", "{79B66769-C335-40C1-82DA-CA5FD566156D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1061,6 +1067,18 @@ Global
 		{9D800D4D-E44E-441A-AF7C-4B445D805A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D800D4D-E44E-441A-AF7C-4B445D805A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D800D4D-E44E-441A-AF7C-4B445D805A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2319F014-E076-4B07-ABF4-E8F092CD89E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2319F014-E076-4B07-ABF4-E8F092CD89E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2319F014-E076-4B07-ABF4-E8F092CD89E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2319F014-E076-4B07-ABF4-E8F092CD89E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8440D1-B4E5-42AF-9268-B38B71165274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8440D1-B4E5-42AF-9268-B38B71165274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8440D1-B4E5-42AF-9268-B38B71165274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8440D1-B4E5-42AF-9268-B38B71165274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B66769-C335-40C1-82DA-CA5FD566156D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B66769-C335-40C1-82DA-CA5FD566156D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B66769-C335-40C1-82DA-CA5FD566156D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B66769-C335-40C1-82DA-CA5FD566156D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1235,5 +1253,8 @@ Global
 		{418B341F-BD5B-40D6-891A-DE290DF54A02} = {F32EC11C-9610-4F13-9517-3672F5EDF249}
 		{58BADED7-5694-406E-B06A-AACF37F70605} = {F32EC11C-9610-4F13-9517-3672F5EDF249}
 		{9D800D4D-E44E-441A-AF7C-4B445D805A90} = {F32EC11C-9610-4F13-9517-3672F5EDF249}
+		{2319F014-E076-4B07-ABF4-E8F092CD89E5} = {F32EC11C-9610-4F13-9517-3672F5EDF249}
+		{6F8440D1-B4E5-42AF-9268-B38B71165274} = {F32EC11C-9610-4F13-9517-3672F5EDF249}
+		{79B66769-C335-40C1-82DA-CA5FD566156D} = {F32EC11C-9610-4F13-9517-3672F5EDF249}
 	EndGlobalSection
 EndGlobal

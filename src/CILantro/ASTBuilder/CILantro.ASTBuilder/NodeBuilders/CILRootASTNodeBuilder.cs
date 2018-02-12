@@ -3,6 +3,7 @@ using CILantro.Extensions.Irony;
 using CILantro.Grammar;
 using Irony.Parsing;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CILantro.ASTBuilder.NodeBuilders
 {
@@ -65,6 +66,11 @@ namespace CILantro.ASTBuilder.NodeBuilders
                 }
 
                 declsParseTreeNode = declsParseTreeNode.GetFirstChildWithGrammarName(GrammarNames.decls);
+            }
+
+            foreach (var cilClass in classes)
+            {
+                cilClass.ExtendsClass = classes.FirstOrDefault(c => c.ClassName.UniqueName == cilClass.Extends.UniqueName);
             }
 
             var result = new CILProgram

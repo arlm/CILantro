@@ -12,7 +12,7 @@ namespace CILantro.AST.CILCustomTypes
     {
         private CILClass _cilClass;
 
-        private Type _runtimeType;
+        public Type _runtimeType;
 
         private List<CILantroFieldInfo> _fields;
 
@@ -22,17 +22,16 @@ namespace CILantro.AST.CILCustomTypes
 
         private CILProgramInstance _programInstance;
 
-        public CILantroType(CILClass cilClass, Type runtimeType, CILProgramInstance programInstance)
+        public CILantroType(CILClass cilClass, CILProgramInstance programInstance)
         {
             _programInstance = programInstance;
             _cilClass = cilClass;
-            _runtimeType = runtimeType;
 
             _fields = _cilClass.Fields.Select(f => new CILantroFieldInfo(f, cilClass)).ToList();
             _constructors = _cilClass.Constructors.Select(c => new CILantroConstructorInfo(c, _programInstance)).ToList();
 
-            var methods = _cilClass.Methods.Select(m => new CILantroMethodInfo(m, _programInstance)).ToList();
-            var constructorMethods = _cilClass.Constructors.Select(m => new CILantroMethodInfo(m, _programInstance)).ToList();
+            var methods = _cilClass.Methods.Select(m => new CILantroMethodInfo(m, _programInstance, this)).ToList();
+            var constructorMethods = _cilClass.Constructors.Select(m => new CILantroMethodInfo(m, _programInstance, this)).ToList();
             _methods = methods.Union(constructorMethods).ToList();
         }
 

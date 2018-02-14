@@ -4,6 +4,8 @@ using CILantro.State;
 using System;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class NewObjectInstruction : CILInstructionMethod

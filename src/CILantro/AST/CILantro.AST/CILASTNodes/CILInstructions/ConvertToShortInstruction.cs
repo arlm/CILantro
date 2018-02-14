@@ -3,6 +3,8 @@ using CILantro.Helpers.Convertions;
 using CILantro.State;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class ConvertToShortInstruction : CILInstructionNone

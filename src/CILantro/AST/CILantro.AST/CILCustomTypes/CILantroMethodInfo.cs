@@ -6,6 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILCustomTypes
 {
     public class CILantroMethodInfo : MethodInfo

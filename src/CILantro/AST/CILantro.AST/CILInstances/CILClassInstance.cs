@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.Serialization;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILInstances
 {
     public class CILClassInstance

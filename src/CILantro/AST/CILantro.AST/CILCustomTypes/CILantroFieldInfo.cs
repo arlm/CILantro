@@ -4,6 +4,8 @@ using System;
 using System.Globalization;
 using System.Reflection;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILCustomTypes
 {
     public class CILantroFieldInfo : FieldInfo

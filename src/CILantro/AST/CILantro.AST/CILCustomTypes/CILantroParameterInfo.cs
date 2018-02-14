@@ -3,6 +3,8 @@ using CILantro.AST.HelperClasses;
 using System;
 using System.Reflection;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILCustomTypes
 {
     public class CILantroParameterInfo : ParameterInfo

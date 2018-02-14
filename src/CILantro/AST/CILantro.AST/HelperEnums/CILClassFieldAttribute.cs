@@ -1,4 +1,6 @@
-﻿namespace CILantro.AST.HelperEnums
+﻿// TODO - REFAKTORING
+
+namespace CILantro.AST.HelperEnums
 {
     public enum CILClassFieldAttribute
     {

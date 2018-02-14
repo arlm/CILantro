@@ -2,6 +2,8 @@
 using System;
 using System.IO;
 
+// TODO - REFAKTORING
+
 namespace CILantro.UI.HiddenUI
 {
     class Program

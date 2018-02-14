@@ -1,4 +1,6 @@
-﻿namespace CILantro.UI.HiddenUI
+﻿// TODO - REFAKTORING
+
+namespace CILantro.UI.HiddenUI
 {
     internal enum HiddenUIMode
     {

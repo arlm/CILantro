@@ -6,6 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.RuntimeTypes
 {
     public class RuntimeTypeFactory

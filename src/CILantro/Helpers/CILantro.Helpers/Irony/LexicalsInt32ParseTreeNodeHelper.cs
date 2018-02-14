@@ -4,6 +4,8 @@ using Irony.Parsing;
 using System;
 using System.Globalization;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Helpers.Irony
 {
     public static class LexicalsInt32ParseTreeNodeHelper

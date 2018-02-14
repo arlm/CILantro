@@ -4,6 +4,8 @@ using Irony.Parsing;
 using System;
 using System.Linq;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Helpers.Irony
 {
     public static class Name1ParseTreeNodeHelper

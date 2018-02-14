@@ -3,6 +3,8 @@ using CILantro.State;
 using System.Collections.Generic;
 using System.Reflection;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class LoadFieldInstruction : CILInstructionField

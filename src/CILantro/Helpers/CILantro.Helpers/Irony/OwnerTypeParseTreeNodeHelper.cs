@@ -3,6 +3,8 @@ using CILantro.Extensions.Irony;
 using CILantro.Grammar;
 using Irony.Parsing;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Helpers.Irony
 {
     public static class OwnerTypeParseTreeNodeHelper

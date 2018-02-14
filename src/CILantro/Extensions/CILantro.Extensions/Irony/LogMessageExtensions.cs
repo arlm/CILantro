@@ -1,5 +1,7 @@
 ﻿using Irony;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Extensions.Irony
 {
     public static class LogMessageExtensions

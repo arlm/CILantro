@@ -3,6 +3,8 @@ using CILantro.AST.HelperClasses;
 using System;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILASTNodes
 {
     public class CILClass : CILASTNode

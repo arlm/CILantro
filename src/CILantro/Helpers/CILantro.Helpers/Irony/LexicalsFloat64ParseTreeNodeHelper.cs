@@ -1,5 +1,7 @@
 ﻿using Irony.Parsing;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Helpers.Irony
 {
     public static class LexicalsFloat64ParseTreeNodeHelper

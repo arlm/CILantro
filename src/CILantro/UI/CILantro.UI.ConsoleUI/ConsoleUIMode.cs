@@ -1,4 +1,6 @@
-﻿namespace CILantro.UI.ConsoleUI
+﻿// TODO - REFAKTORING
+
+namespace CILantro.UI.ConsoleUI
 {
     internal enum ConsoleUIMode
     {

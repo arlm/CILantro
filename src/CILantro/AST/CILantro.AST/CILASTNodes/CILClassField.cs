@@ -2,6 +2,8 @@
 using CILantro.AST.HelperEnums;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILASTNodes
 {
     public class CILClassField : CILASTNode

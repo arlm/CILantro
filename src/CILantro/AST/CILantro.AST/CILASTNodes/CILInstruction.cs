@@ -2,6 +2,8 @@
 using CILantro.State;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILASTNodes
 {
     public abstract class CILInstruction : CILASTNode

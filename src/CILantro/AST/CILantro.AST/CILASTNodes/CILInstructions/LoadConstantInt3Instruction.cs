@@ -2,6 +2,8 @@
 using CILantro.State;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.CILASTNodes.CILInstructions
 {
     public class LoadConstantInt3Instruction : CILInstructionNone

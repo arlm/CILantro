@@ -3,6 +3,8 @@ using CILantro.State;
 using System.Collections.Generic;
 using System.IO;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Interpreter
 {
     public class CILInterpreter

@@ -2,6 +2,8 @@
 using System;
 using System.Reflection;
 
+// TODO - REFAKTORING
+
 namespace CILantro.AST.RuntimeTypes
 {
     public static class RuntimeTypeHelper

@@ -5,6 +5,8 @@ using CILantro.Helpers.Irony;
 using Irony.Parsing;
 using System.Collections.Generic;
 
+// TODO - REFAKTORING
+
 namespace CILantro.ASTBuilder.NodeBuilders
 {
     public class CILClassASTNodeBuilder : CILASTNodeBuilder<CILClass>

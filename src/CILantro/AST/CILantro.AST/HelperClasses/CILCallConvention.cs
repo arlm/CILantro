@@ -1,4 +1,6 @@
-﻿namespace CILantro.AST.HelperClasses
+﻿// TODO - REFAKTORING
+
+namespace CILantro.AST.HelperClasses
 {
     public class CILCallConvention
     {

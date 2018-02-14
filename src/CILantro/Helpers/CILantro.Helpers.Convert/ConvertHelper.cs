@@ -1,5 +1,7 @@
 ﻿using System;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Helpers.Convertions
 {
     public static class ConvertHelper

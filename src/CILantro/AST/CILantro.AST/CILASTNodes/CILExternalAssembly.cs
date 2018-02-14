@@ -1,4 +1,6 @@
-﻿namespace CILantro.AST.CILASTNodes
+﻿// TODO - REFAKTORING
+
+namespace CILantro.AST.CILASTNodes
 {
     public class CILExternalAssembly : CILASTNode
     {

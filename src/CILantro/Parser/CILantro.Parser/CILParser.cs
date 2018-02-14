@@ -5,6 +5,8 @@ using CILantro.Grammar;
 using System;
 using System.Linq;
 
+// TODO - REFAKTORING
+
 namespace CILantro.Parser
 {
     public class CILParser

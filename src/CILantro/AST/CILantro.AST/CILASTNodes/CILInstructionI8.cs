@@ -1,4 +1,6 @@
-﻿namespace CILantro.AST.CILASTNodes
+﻿// TODO - REFAKTORING
+
+namespace CILantro.AST.CILASTNodes
 {
     public abstract class CILInstructionI8 : CILInstruction
     {
